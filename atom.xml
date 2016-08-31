@@ -4,10 +4,10 @@
   <title><![CDATA[Rude Boy Solutions]]></title>
   <link href="http://skamansam.github.io/atom.xml" rel="self"/>
   <link href="http://skamansam.github.io/"/>
-  <updated>2016-08-30T20:50:02-04:00</updated>
+  <updated>2016-08-30T21:32:08-04:00</updated>
   <id>http://skamansam.github.io/</id>
   <author>
-    <name><![CDATA[\"Skaman Sam\" Tyler]]></name>
+    <name><![CDATA["Skaman Sam" Tyler]]></name>
     <email><![CDATA[skamansam@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -18,9 +18,148 @@
     <link href="http://skamansam.github.io/blog/2016/08/30/moved-to-octopress/"/>
     <updated>2016-08-30T20:21:48-04:00</updated>
     <id>http://skamansam.github.io/blog/2016/08/30/moved-to-octopress</id>
-    <content type="html"><![CDATA[<h1>Rude Boy Solutions has Moved To Octopress!</h1>
+    <content type="html"><![CDATA[<h3>Rude Boy Solutions has Moved To Octopress!</h3>
 
 <p>Rude Boy Solutions is now moving to Octopress for blogging! Wordpress was great fun while it lasted, but I rarely use it anymore, as I am creating my own blogging platform, pSaMS (padrino Sams Management System), so this is an intermediate step. Also, the first item before pSaMS is production-ready, is the ability to import and export posts from/to github. I chose markdown as that format, so I am trying to create a plugin for pSaMS for Octopress import/export.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cookie Detection in Rails 3]]></title>
+    <link href="http://skamansam.github.io/blog/2013/04/23/cookie-detection-in-rails-3/"/>
+    <updated>2013-04-23T17:14:12-04:00</updated>
+    <id>http://skamansam.github.io/blog/2013/04/23/cookie-detection-in-rails-3</id>
+    <content type="html"><![CDATA[<p>I have seen a lot of posts on cookie detection in Rails. I believe this may be a bad idea, in general, but here is a cheap way to detect whether or not cookies are enabled in the browser. Just add a before_filter that checks for the presence of the application&rsquo;s cookie.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">before_filter</span> <span class="ss">:check_cookie</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">check_cookie</span>
+</span><span class='line'>    <span class="n">cookie_name</span> <span class="o">=</span> <span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">session_options</span><span class="o">[</span><span class="ss">:key</span><span class="o">]</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="o">[</span><span class="n">cookie_name</span><span class="o">].</span><span class="n">to_s</span><span class="o">.</span><span class="n">blank?</span>
+</span><span class='line'>      <span class="n">flash</span><span class="o">[</span><span class="ss">:error</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;To use this site, you must enable cookies in your browser&#39;s settings.&quot;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>..And Voila! Now if your users try to view any page, they will see a nice Flash message about their cookies!</p>
+
+<p>UPDATE 8-30-2016: Rails apps should use cookies. If users don&rsquo;t have cookies enabled, they should not be using your app. Plan for the future and leave behind older browsers. You are not expected to support everyone!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Building a Unified Time_select Field]]></title>
+    <link href="http://skamansam.github.io/blog/2013/04/10/building-a-unified-time-select-field/"/>
+    <updated>2013-04-10T11:10:11-04:00</updated>
+    <id>http://skamansam.github.io/blog/2013/04/10/building-a-unified-time-select-field</id>
+    <content type="html"><![CDATA[<p>Before I migrated to Rails 3.2, I used a plugin to provide a unified input field for time_select with either the standard Rails ActionView or the SimpleForm gem (SimpleForm uses ActionView under the hood). I was happy until the Rails upgrade caused my gem to inexplicably stop working. I had a deadline to meet and could not be bothered with complicated solutions. I searched and searched for alternatives to this fine gem, but none were found. Then it hit me: why not just write my own code and replace the inputs with my own code? Surely it can&rsquo;t take too long to build a time input based on the simple_time_select gem! So here it is: my simple version of the gem, with only a few modifications from the simple_time_select gem.</p>
+
+<p>Here is my old code, utilizing simple_time_select. The gem is used only if :simple_time_select is true, and it uses the :minute_interval, :time_separator, :start_hour, :end_hour, and a host of other options for setting the times. I wish it had a way for specifying just a start_time and end_time.</p>
+
+<pre lang="ruby">&lt;div class="field"&gt;
+  &lt;%= f.input :start_time,
+              :label=&gt;"Start Time:",
+              :default=&gt;appt.start_time,
+              :wrapper=&gt;false,
+              :simple_time_select =&gt; true,
+              :label_html=&gt;{:class=&gt;"head"},
+              :minute_interval =&gt; 5,
+              :time_separator =&gt; "",
+              :start_hour =&gt; 06,
+              :end_hour =&gt; 17
+   %&gt;
+&lt;/div&gt;</pre>
+
+
+<p>I had to search for an algorithm to use for the periodicity, and settled on the algorithm discussed in <a href="http://stackoverflow.com/questions/6783589/display-15-minute-steps-between-two-given-times">this discussion on Stack Overflow</a>, and is inlined as the :collection option. Since the :default option removes the inital blank I wanted as the first item in the list, I has to add a blank :include_blank option.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field&quot;</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="sx">%- time_start = Time.now.change(:hour=&gt;6,:minute=&gt;0) %&amp;gt;</span>
+</span><span class='line'><span class="sx">  &amp;lt;%-</span> <span class="n">time_end</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="ss">:hour</span><span class="o">=&gt;</span><span class="mi">17</span><span class="p">,</span><span class="ss">:minute</span><span class="o">=&gt;</span><span class="mi">55</span><span class="p">)</span> <span class="sx">%&amp;gt;</span>
+</span><span class='line'><span class="sx">  &amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">%-</span> <span class="n">period</span> <span class="o">=</span> <span class="mi">5</span><span class="o">.</span><span class="n">minutes</span> <span class="sx">%&amp;gt;</span>
+</span><span class='line'><span class="sx">  &amp;</span><span class="n">lt</span><span class="p">;</span><span class="sx">%= f.input :start_time,</span>
+</span><span class='line'><span class="sx">           :as=</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="ss">:collection_select</span><span class="p">,</span>
+</span><span class='line'>           <span class="ss">:required</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span><span class="kp">true</span><span class="p">,</span>
+</span><span class='line'>           <span class="ss">:include_blank</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span class='line'>           <span class="ss">:selected</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;(</span>
+</span><span class='line'>             <span class="n">f</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">start_time</span><span class="o">.</span><span class="n">blank?</span> <span class="p">?</span>
+</span><span class='line'>               <span class="s2">&quot;&quot;</span> <span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">start_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">)</span>
+</span><span class='line'>           <span class="p">),</span>
+</span><span class='line'>           <span class="ss">:input_html</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;{</span>
+</span><span class='line'>             <span class="ss">:name</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span><span class="s2">&quot;appt[start_time(5i)]&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="ss">:id</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span><span class="s2">&quot;appt_start_time_5i&quot;</span><span class="p">},</span>
+</span><span class='line'>           <span class="ss">:collection</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">(</span>
+</span><span class='line'>             <span class="o">[</span><span class="n">time_start</span><span class="o">].</span><span class="n">tap</span><span class="p">{</span>
+</span><span class='line'>               <span class="o">|</span><span class="n">array</span><span class="o">|</span> <span class="n">array</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">array</span><span class="o">.</span><span class="n">last</span> <span class="o">+</span> <span class="n">period</span>
+</span><span class='line'>                 <span class="k">while</span> <span class="n">array</span><span class="o">.</span><span class="n">last</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">time_end</span>
+</span><span class='line'>             <span class="p">})</span><span class="o">.</span><span class="n">map</span><span class="p">{</span>
+</span><span class='line'>               <span class="o">|</span><span class="n">t</span><span class="o">|</span> <span class="o">[</span><span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%l:%M %p&quot;</span><span class="p">),</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">)</span><span class="o">]</span>
+</span><span class='line'>             <span class="p">}</span>
+</span><span class='line'>   <span class="sx">%&amp;gt;</span>
+</span><span class='line'><span class="sx">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">/</span><span class="n">div</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I am sure you can wrap this in a Helper class somewhere, and it should be easy to monkeypatch ActiveView or SimpleForm to display this instead of the default.</p>
+
+<p>References:</p>
+
+<ul>
+    <li><span style="line-height: 13px;"><a href="http://stackoverflow.com/questions/6783589/display-15-minute-steps-between-two-given-times" target="_blank">Stack Overflow discussion on time periodicity in Rails</a> (used for periodicity algorithm)</span></li>
+    <li><a href="http://www.tonyamoyal.com/2009/04/21/simple-time-select-the-most-compact-time_select-for-ruby-on-rails/" target="_blank">Tutorial on using simple_time_select</a></li>
+    <li><a href="https://github.com/plataformatec/simple_form" target="_blank">SimpleForm gem</a></li>
+    <li><a href="https://github.com/tamoyal/simple_time_select" target="_blank">simple_time_select gem</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
