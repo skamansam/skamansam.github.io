@@ -50,7 +50,7 @@
   <header role="banner"><hgroup>
   <h1><a href="/">Rude Boy Solutions</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>Solutions. For Life.</h2>
   
 </hgroup>
 
@@ -213,19 +213,33 @@
 
 <p>Here is my old code, utilizing simple_time_select. The gem is used only if :simple_time_select is true, and it uses the :minute_interval, :time_separator, :start_hour, :end_hour, and a host of other options for setting the times. I wish it had a way for specifying just a start_time and end_time.</p>
 
-<pre lang="ruby">&lt;div class="field"&gt;
-  &lt;%= f.input :start_time,
-              :label=&gt;"Start Time:",
-              :default=&gt;appt.start_time,
-              :wrapper=&gt;false,
-              :simple_time_select =&gt; true,
-              :label_html=&gt;{:class=&gt;"head"},
-              :minute_interval =&gt; 5,
-              :time_separator =&gt; "",
-              :start_hour =&gt; 06,
-              :end_hour =&gt; 17
-   %&gt;
-&lt;/div&gt;</pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="sx">%= f.input :start_time,</span>
+</span><span class='line'><span class="sx">              :label=</span><span class="o">&gt;</span><span class="s2">&quot;Start Time:&quot;</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:default</span><span class="o">=&gt;</span><span class="n">appt</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:wrapper</span><span class="o">=&gt;</span><span class="kp">false</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:simple_time_select</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:label_html</span><span class="o">=&gt;</span><span class="p">{</span><span class="ss">:class</span><span class="o">=&gt;</span><span class="s2">&quot;head&quot;</span><span class="p">},</span>
+</span><span class='line'>              <span class="ss">:minute_interval</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:time_separator</span> <span class="o">=&gt;</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:start_hour</span> <span class="o">=&gt;</span> <span class="mo">06</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:end_hour</span> <span class="o">=&gt;</span> <span class="mi">17</span>
+</span><span class='line'>   <span class="sx">%&gt;</span>
+</span><span class='line'><span class="sx">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>I had to search for an algorithm to use for the periodicity, and settled on the algorithm discussed in <a href="http://stackoverflow.com/questions/6783589/display-15-minute-steps-between-two-given-times">this discussion on Stack Overflow</a>, and is inlined as the :collection option. Since the :default option removes the inital blank I wanted as the first item in the list, I has to add a blank :include_blank option.</p>
@@ -254,30 +268,30 @@
 <span class='line-number'>22</span>
 <span class='line-number'>23</span>
 <span class='line-number'>24</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field&quot;</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="sx">%- time_start = Time.now.change(:hour=&gt;6,:minute=&gt;0) %&amp;gt;</span>
-</span><span class='line'><span class="sx">  &amp;lt;%-</span> <span class="n">time_end</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="ss">:hour</span><span class="o">=&gt;</span><span class="mi">17</span><span class="p">,</span><span class="ss">:minute</span><span class="o">=&gt;</span><span class="mi">55</span><span class="p">)</span> <span class="sx">%&amp;gt;</span>
-</span><span class='line'><span class="sx">  &amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">%-</span> <span class="n">period</span> <span class="o">=</span> <span class="mi">5</span><span class="o">.</span><span class="n">minutes</span> <span class="sx">%&amp;gt;</span>
-</span><span class='line'><span class="sx">  &amp;</span><span class="n">lt</span><span class="p">;</span><span class="sx">%= f.input :start_time,</span>
-</span><span class='line'><span class="sx">           :as=</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="ss">:collection_select</span><span class="p">,</span>
-</span><span class='line'>           <span class="ss">:required</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span><span class="kp">true</span><span class="p">,</span>
-</span><span class='line'>           <span class="ss">:include_blank</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-</span><span class='line'>           <span class="ss">:selected</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;(</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="sx">%- time_start = Time.now.change(:hour=&gt;6,:minute=&gt;0) %&gt;</span>
+</span><span class='line'><span class="sx">  &lt;%-</span> <span class="n">time_end</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="ss">:hour</span><span class="o">=&gt;</span><span class="mi">17</span><span class="p">,</span><span class="ss">:minute</span><span class="o">=&gt;</span><span class="mi">55</span><span class="p">)</span> <span class="sx">%&gt;</span>
+</span><span class='line'><span class="sx">  &lt;%- period = 5.minutes %&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="sx">%= f.input :start_time,</span>
+</span><span class='line'><span class="sx">           :as=</span><span class="o">&gt;</span><span class="ss">:collection_select</span><span class="p">,</span>
+</span><span class='line'>           <span class="ss">:required</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span>
+</span><span class='line'>           <span class="ss">:include_blank</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span class='line'>           <span class="ss">:selected</span><span class="o">=&gt;</span><span class="p">(</span>
 </span><span class='line'>             <span class="n">f</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">start_time</span><span class="o">.</span><span class="n">blank?</span> <span class="p">?</span>
 </span><span class='line'>               <span class="s2">&quot;&quot;</span> <span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">start_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">)</span>
 </span><span class='line'>           <span class="p">),</span>
-</span><span class='line'>           <span class="ss">:input_html</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;{</span>
-</span><span class='line'>             <span class="ss">:name</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span><span class="s2">&quot;appt[start_time(5i)]&quot;</span><span class="p">,</span>
-</span><span class='line'>             <span class="ss">:id</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span><span class="s2">&quot;appt_start_time_5i&quot;</span><span class="p">},</span>
-</span><span class='line'>           <span class="ss">:collection</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">(</span>
+</span><span class='line'>           <span class="ss">:input_html</span><span class="o">=&gt;</span><span class="p">{</span>
+</span><span class='line'>             <span class="ss">:name</span><span class="o">=&gt;</span><span class="s2">&quot;appt[start_time(5i)]&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="ss">:id</span><span class="o">=&gt;</span><span class="s2">&quot;appt_start_time_5i&quot;</span><span class="p">},</span>
+</span><span class='line'>           <span class="ss">:collection</span><span class="o">=&gt;</span> <span class="p">(</span>
 </span><span class='line'>             <span class="o">[</span><span class="n">time_start</span><span class="o">].</span><span class="n">tap</span><span class="p">{</span>
-</span><span class='line'>               <span class="o">|</span><span class="n">array</span><span class="o">|</span> <span class="n">array</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">array</span><span class="o">.</span><span class="n">last</span> <span class="o">+</span> <span class="n">period</span>
-</span><span class='line'>                 <span class="k">while</span> <span class="n">array</span><span class="o">.</span><span class="n">last</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="n">time_end</span>
+</span><span class='line'>               <span class="o">|</span><span class="n">array</span><span class="o">|</span> <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="n">array</span><span class="o">.</span><span class="n">last</span> <span class="o">+</span> <span class="n">period</span>
+</span><span class='line'>                 <span class="k">while</span> <span class="n">array</span><span class="o">.</span><span class="n">last</span> <span class="o">&lt;</span> <span class="n">time_end</span>
 </span><span class='line'>             <span class="p">})</span><span class="o">.</span><span class="n">map</span><span class="p">{</span>
 </span><span class='line'>               <span class="o">|</span><span class="n">t</span><span class="o">|</span> <span class="o">[</span><span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%l:%M %p&quot;</span><span class="p">),</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">)</span><span class="o">]</span>
 </span><span class='line'>             <span class="p">}</span>
-</span><span class='line'>   <span class="sx">%&amp;gt;</span>
-</span><span class='line'><span class="sx">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">/</span><span class="n">div</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
+</span><span class='line'>   <span class="sx">%&gt;</span>
+</span><span class='line'><span class="sx">&lt;/div&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 

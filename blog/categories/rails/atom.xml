@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | Rude Boy Solutions]]></title>
   <link href="http://skamansam.github.io/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://skamansam.github.io/"/>
-  <updated>2016-08-30T21:32:08-04:00</updated>
+  <updated>2016-08-30T22:17:36-04:00</updated>
   <id>http://skamansam.github.io/</id>
   <author>
     <name><![CDATA["Skaman Sam" Tyler]]></name>
@@ -53,48 +53,54 @@ end
 
 <p>Here is my old code, utilizing simple_time_select. The gem is used only if :simple_time_select is true, and it uses the :minute_interval, :time_separator, :start_hour, :end_hour, and a host of other options for setting the times. I wish it had a way for specifying just a start_time and end_time.</p>
 
-<pre lang="ruby">&lt;div class="field"&gt;
-  &lt;%= f.input :start_time,
-              :label=&gt;"Start Time:",
-              :default=&gt;appt.start_time,
-              :wrapper=&gt;false,
-              :simple_time_select =&gt; true,
-              :label_html=&gt;{:class=&gt;"head"},
-              :minute_interval =&gt; 5,
-              :time_separator =&gt; "",
-              :start_hour =&gt; 06,
-              :end_hour =&gt; 17
-   %&gt;
-&lt;/div&gt;</pre>
+<p>```ruby</p>
+
+<div class="field">
+  <%= f.input :start_time,
+              :label=>"Start Time:",
+              :default=>appt.start_time,
+              :wrapper=>false,
+              :simple_time_select => true,
+              :label_html=>{:class=>"head"},
+              :minute_interval => 5,
+              :time_separator => "",
+              :start_hour => 06,
+              :end_hour => 17
+   %>
+</div>
 
 
-<p>I had to search for an algorithm to use for the periodicity, and settled on the algorithm discussed in <a href="http://stackoverflow.com/questions/6783589/display-15-minute-steps-between-two-given-times">this discussion on Stack Overflow</a>, and is inlined as the :collection option. Since the :default option removes the inital blank I wanted as the first item in the list, I has to add a blank :include_blank option.</p>
+<pre><code>
+I had to search for an algorithm to use for the periodicity, and settled on the algorithm discussed in &lt;a href="http://stackoverflow.com/questions/6783589/display-15-minute-steps-between-two-given-times"&gt;this discussion on Stack Overflow&lt;/a&gt;, and is inlined as the :collection option. Since the :default option removes the inital blank I wanted as the first item in the list, I has to add a blank :include_blank option.
+</code></pre>
 
-<pre><code class="ruby">&amp;lt;div class="field"&amp;gt;
-  &amp;lt;%- time_start = Time.now.change(:hour=&gt;6,:minute=&gt;0) %&amp;gt;
-  &amp;lt;%- time_end = Time.now.change(:hour=&gt;17,:minute=&gt;55) %&amp;gt;
-  &amp;lt;%- period = 5.minutes %&amp;gt;
-  &amp;lt;%= f.input :start_time,
-           :as=&amp;gt;:collection_select,
-           :required=&amp;gt;true,
-           :include_blank =&amp;gt; '',
-           :selected=&amp;gt;(
+<div class="field">
+  <%- time_start = Time.now.change(:hour=>6,:minute=>0) %>
+  <%- time_end = Time.now.change(:hour=>17,:minute=>55) %>
+  <%- period = 5.minutes %>
+  <%= f.input :start_time,
+           :as=>:collection_select,
+           :required=>true,
+           :include_blank => '',
+           :selected=>(
              f.object.start_time.blank? ?
                "" : f.object.start_time.strftime("%H:%M")
            ),
-           :input_html=&amp;gt;{
-             :name=&amp;gt;"appt[start_time(5i)]",
-             :id=&amp;gt;"appt_start_time_5i"},
-           :collection=&amp;gt; (
+           :input_html=>{
+             :name=>"appt[start_time(5i)]",
+             :id=>"appt_start_time_5i"},
+           :collection=> (
              [time_start].tap{
-               |array| array &amp;lt;&amp;lt; array.last + period
-                 while array.last &amp;lt; time_end
+               |array| array << array.last + period
+                 while array.last < time_end
              }).map{
                |t| [t.strftime("%l:%M %p"), t.strftime("%H:%M")]
              }
-   %&amp;gt;
-&amp;lt;/div&amp;gt;
-</code></pre>
+   %>
+</div>
+
+
+<p>```</p>
 
 <p>I am sure you can wrap this in a Helper class somewhere, and it should be easy to monkeypatch ActiveView or SimpleForm to display this instead of the default.</p>
 
