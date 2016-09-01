@@ -4,7 +4,7 @@
   <title><![CDATA[Rude Boy Solutions]]></title>
   <link href="http://skamansam.github.io/atom.xml" rel="self"/>
   <link href="http://skamansam.github.io/"/>
-  <updated>2016-08-30T22:17:36-04:00</updated>
+  <updated>2016-08-31T20:22:47-04:00</updated>
   <id>http://skamansam.github.io/</id>
   <author>
     <name><![CDATA["Skaman Sam" Tyler]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Simple Rails Development Part II: Core GEdit Plugins]]></title>
+    <link href="http://skamansam.github.io/blog/2016/08/30/simple-rails-development-part-ii-core-gedit-plugins/"/>
+    <updated>2016-08-30T22:44:51-04:00</updated>
+    <id>http://skamansam.github.io/blog/2016/08/30/simple-rails-development-part-ii-core-gedit-plugins</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Moved to Octopress!]]></title>

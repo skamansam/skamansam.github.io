@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://skamansam.github.io/blog/2016/08/30/simple-rails-development-part-ii-core-gedit-plugins/</loc>
+<lastmod>2016-08-30T22:44:51-04:00</lastmod>
+</url>
+<url>
 <loc>http://skamansam.github.io/blog/2016/08/30/moved-to-octopress/</loc>
 <lastmod>2016-08-30T20:21:48-04:00</lastmod>
 </url>
@@ -13,10 +17,16 @@
 <lastmod>2013-04-10T11:10:11-04:00</lastmod>
 </url>
 <url>
+<loc>http://skamansam.github.io/about.html</loc>
+</url>
+<url>
 <loc>http://skamansam.github.io/</loc>
 </url>
 <url>
 <loc>http://skamansam.github.io/blog/archives/</loc>
+</url>
+<url>
+<loc>http://skamansam.github.io/music.html</loc>
 </url>
 <url>
 <loc>http://skamansam.github.io/blog/categories/programming/</loc>
