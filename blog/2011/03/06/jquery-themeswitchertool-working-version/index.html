@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>jQuery ThemeSwitcherTool - Working Version!!!!! - Rude Boy Solutions</title>
+  <meta name="author" content=""Skaman Sam" Tyler">
+
+  
+  <meta name="description" content="I recently tried to install the jQuery UI  ThemeSwitcher on a site for a project on which I am working. It failed. Miserably! I scoured the interwebs &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://skamansam.github.io/blog/2011/03/06/jquery-themeswitchertool-working-version/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Rude Boy Solutions" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4371156-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Rude Boy Solutions</a></h1>
+  
+    <h2>Solutions. For Life.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="skamansam@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="skamansam.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/music.html">Music</a></li>
+  <li><a href="https://plus.google.com/collection/8RHyXB">Photos</a></li>
+  <li><a href="/about.html">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">jQuery ThemeSwitcherTool - Working Version!!!!!</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2011-03-06T20:20:00-05:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>8:20 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I recently tried to install the jQuery UI  <a title="Theme Switcher" href="http://docs.jquery.com/UI/Theming/ThemeSwitcher">ThemeSwitcher</a> on a site for a project on which I am working. It failed. Miserably! I scoured the interwebs for a working version, but could not find one anywhere. However, I did find out why the tool was not working. It seems the jQuery team disabled hotlinking to its servers. This was extremely good news, as it meant I could simply recode the widget to point to the new files or download them and point the script to the downloaded files.  I dove right in to the code and made some modifications to the start of the script. Then I optimized some of the rest of the code. Finally, I added a few extra options to cover the changes I made.</p>
+
+<h3>Download</h3>
+
+
+<p>You can click on the following links to download the files.</p>
+
+<ul>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/themeswitchertool.js">themeswitchertool.js</a> - The themeswitcher.</li>
+    <li>The Following files are images used by themeswitcher. To use them, place them in /javascripts/jquery/themeswitcher/ or use the imageLocation option to point to the directory where these are stored.
+<ul>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/menuhoverbg.png">menuhoverbg.png</a></li>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/icon_color_arrow.gif">icon_color_arrow.gif</a></li>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/buttonbg.png">buttonbg.png</a></li>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/base.png">base.png</a> This is an icon used for the 'base' theme (no styles), to use this, you need to specify the icon location in the options or put it in with the rest of the images.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Changes</h3>
+
+
+<ul>
+    <li>The old script appended up to three styles to the document, then removed the first one. It now uses the selector "head link#ui-theme" to change the stylesheet. I changed this so you can set the id of your default custom theme to "ui-theme" and it will change this. If the id isn't found, it creates a new one.</li>
+    <li>Added new options for specifying your own themes to add to the list.</li>
+    <li>Added new option, useStandard, for specifying whether to use the themes from the jQuery UI site.</li>
+    <li>Added new options for specifying where to find the UI icons and stylesheets</li>
+    <li>Added new option, imageLocation, for specifying where to find the widget images (found in the downloaded file)</li>
+    <li>Added the widget images to the downloaded file, so you don't have to link to jQuery's servers</li>
+    <li>Added option, useCookie, for whether to use a cookie for saving the theme for later use on the same page.</li>
+</ul>
+
+
+<h3>Examples</h3>
+
+
+<h4>Basic usage, no custom theme support</h4>
+
+
+<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( );</pre>
+
+
+<h4>Adding custom themes</h4>
+
+
+<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( {
+    themes: {
+       'theme1': {
+           icon:"/path/to/theme-icon.png",
+           css:"/path/to/theme.css"
+       },
+       'theme2': {
+           icon:"/path/to/theme2-icon.png",
+           css:"/path/to/theme2.css"
+       }
+    }
+});</pre>
+
+
+<h4>Using Only Custom Themes</h4>
+
+
+<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( {
+    useStandard: false,
+    themes: {
+       'theme1': {
+           icon:"/path/to/theme-icon.png",
+           css:"/path/to/theme.css"
+       },
+       'theme2': {
+           icon:"/path/to/theme2-icon.png",
+           css:"/path/to/theme2.css"
+       }
+    }
+});</pre>
+
+
+<h3>New Options</h3>
+
+
+<dl> <dt>themes</dt> <dd style="font-size: 80%;">Default: {}</dd> <dd>A hash of themes, where each key is the theme name, and the value is another hash specifying the icon to use and the css file for the theme. Here is an example:
+<pre lang="javascript">{
+  'theme1': {
+    icon:"/path/to/theme-icon.png",
+    css:"/path/to/theme.css"
+  }
+}</pre>
+</dd> <dt>useStandard</dt> <dd style="font-size: 80%;">Default: true</dd> <dd>If you don't want the themes from the jQuery UI site to show up in the list, set this to false.</dd> <dt>useCookie</dt> <dd style="font-size: 80%;">Default: true</dd> <dd>The Theme Switcher uses a browser cookie to store and retrieve the theme name for the current site. Set this option to false if you do not want your site to remember the theme.</dd> <dt>imageLocation</dt> <dd style="font-size: 80%;">Default: "/javascripts/jquery/themeswitcher/"</dd> <dd>This is where the images are stored which Theme Switcher uses. The following files must be in the folder: buttonbg.png, icon_color_arrow.gif, menuhoverbg.png . You can get these from the download.</dd> <dt>imgPrefix</dt> <dd style="font-size: 80%;">Default: "http://static.jquery.com/ui/themeroller/images/themeGallery/theme_90_"</dd> <dd>This option specifies the default icon prefix URI. The icons are the previews for each theme. The default option sets the default images to the jquery hotlink site. This may change in the future, so it is specified here as an option.</dd> <dt>imgSuffix</dt> <dd style="font-size: 80%;">Default: ".png"</dd> <dd>This option specifies the rest of the image URI.</dd> <dt>cssPrefix</dt> <dd style="font-size: 80%;">Default: "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/"</dd> <dd>This option specifies the deafault css location prefix.</dd> <dt>cssSuffix</dt> <dd style="font-size: 80%;">Default: "/jquery-ui.css" </dd> <dd> </dd> <dd>This option specifies the deafault css location sufffix.</dd> </dl>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">"Skaman Sam" Tyler</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2011-03-06T20:20:00-05:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>8:20 pm</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://skamansam.github.io/blog/2011/03/06/jquery-themeswitchertool-working-version/" data-via="skamansam" data-counturl="http://skamansam.github.io/blog/2011/03/06/jquery-themeswitchertool-working-version/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/07/28/tango-icons-save-all/" title="Previous Post: Tango Icons: Save All">&laquo; Tango Icons: Save All</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system/" title="Next Post: How to Keep Your Linux Always-On In A Dual-Boot System">How to Keep Your Linux Always-On In A Dual-Boot System &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/moved-to-octopress/">Moved to Octopress!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/23/cookie-detection-in-rails-3/">Cookie Detection in Rails 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/building-a-unified-time-select-field/">Building a Unified Time_select Field</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/31/simple-rails-development-part-ii-core-gedit-plugins/">Simple Rails Development Part II: Core GEdit Plugins</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/30/simple-rails-development-part-i-gedit-click-config/">Simple Rails Development Part I: Gedit Click Config</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/skamansam">@skamansam</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'skamansam',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/skamansam?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - "Skaman Sam" Tyler -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rudeboysolutions';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://skamansam.github.io/blog/2011/03/06/jquery-themeswitchertool-working-version/';
+        var disqus_url = 'http://skamansam.github.io/blog/2011/03/06/jquery-themeswitchertool-working-version/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

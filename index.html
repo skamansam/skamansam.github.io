@@ -9,8 +9,7 @@
   <meta name="author" content=""Skaman Sam" Tyler">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="Rude Boy Solutions has Moved To Octopress! Rude Boy Solutions is now moving to Octopress for blogging! Wordpress was great fun while it lasted, but I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,38 +82,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2016/08/30/simple-rails-development-part-ii-core-gedit-plugins/">Simple Rails Development Part II: Core GEdit Plugins</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2016-08-30T22:44:51-04:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:44 pm</span></time>
-        
-           | <a href="/blog/2016/08/30/simple-rails-development-part-ii-core-gedit-plugins/#disqus_thread"
-             data-disqus-identifier="http://skamansam.github.io/blog/2016/08/30/simple-rails-development-part-ii-core-gedit-plugins/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -349,7 +316,574 @@
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/31/simple-rails-development-part-ii-core-gedit-plugins/">Simple Rails Development Part II: Core GEdit Plugins</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-08-31T22:44:51-04:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2012</span></span> <span class='time'>10:44 pm</span></time>
+        
+           | <a href="/blog/2012/08/31/simple-rails-development-part-ii-core-gedit-plugins/#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io/blog/2012/08/31/simple-rails-development-part-ii-core-gedit-plugins/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This entry continues the Simple Rails Development Series with a discussion of what I consider to be the core GEdit plugins for Rails development. By &ldquo;core,&rdquo; I mean all the plugins which make Rails development a little easier.</p>
+
+<p>More Plugins</p>
+
+<p>In my last Simple Rails Development article, I discussed Click Config, which is an amazing tool for specifying how the mouse-click highlighting should behave. There are many more GEdit plugins which can be used to mkae Rails development easier. In fact, there is an entire project devoted to just such a thing:</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/30/simple-rails-development-part-i-gedit-click-config/">Simple Rails Development Part I: Gedit Click Config</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-08-30T23:29:00-04:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>11:29 pm</span></time>
+        
+           | <a href="/blog/2012/08/30/simple-rails-development-part-i-gedit-click-config/#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io/blog/2012/08/30/simple-rails-development-part-i-gedit-click-config/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After evaluating all editors and IDEs I could ahold of for Ruby On Rails development in Linux, I decided none were really up to my expectations. I was really looking for something as powerful for Rails development as Eclipse is for Java development. Unfortunately, there were not any. Most of them were close, but all lacked some key ingredient necessary to make my life a little easier. However, I did find a great solution which required learning a little more about an undiscovered basic text editor in Fedora: GEdit. In order to make my rails development a little easier, I installed a few plugins, but only one of them took me by surprise: Click Config.</p>
+
+<p><strong>NOTE: This article is written for GEdit 3+. A simple Google search will yield many articles for Gedit 2.</strong></p>
+
+<p>Most IDEs and editors have different functions when multi-clicking in an editor pane. Most of them have the following selection actions:</p>
+
+<ul>
+    <li><strong>Single-Click</strong>: Move the editing cursor to the mouse cursor's location</li>
+    <li><strong>Double-Click</strong>: Select the word that is under the mouse cursor</li>
+    <li><strong>Triple-Click</strong> : Select the entire line that is under the mouse cursor</li>
+</ul>
+
+
+<p>Only a few editors have a quad-click option for selecting an entire paragraph. GEdit Click Config not only has a quad-click option, but has a quit-click (five clicks in quick succession) option as well. Amazing! Not only can you configure what click-types are available in GEdit, but you can configure the click parameters based on a given regular expression (&ldquo;regex&rdquo; for short). And to top it all off, you can configure which click options are activated based on what language GEdit is set to.</p>
+
+<h2>I Gotta Have It!</h2>
+
+
+<p>I have not found a distro yet which ships with GNOME and does not have GEdit as well, so it should be in your local *nix distro&rsquo;s repository or already installed it.  If you don&rsquo;t have it already, you can pick it up at <a href="http://code.google.com/p/gedit-click-config/,">http://code.google.com/p/gedit-click-config/,</a> and it doesn&rsquo;t require root access, so setup should be really simple, just follow the directions.</p>
+
+<h2>You mentioned Ruby on Rails?</h2>
+
+
+<p>Yes&hellip; yes I did.  You can find out more about Ruby words, constants, and other things <a href="http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Variables_and_Constants" target="_blank">here</a>. Ruby words are pretty simple: they:</p>
+
+<ol>
+    <li><strong>can begin with a single $ sign </strong></li>
+    <li><strong>can begin with a single or double @ sign, a</strong></li>
+    <li><strong>can contain any letter a-z, case insensitive</strong></li>
+</ol>
+
+
+<p>I like to add a fourth rule, just for constants, because when i select a part of a constant, i want the whole thing: <strong>can contain two colons in a row</strong>.</p>
+
+<p>To put all that in simple regular expressions: <strong><code>((\$?)|(@?@?))([_a-zA-Z]+(::)?)+</code></strong>. I am sure you can write that in a thousand different ways, but that is the one I like best, because it is really clear what is going on. Also - the matches almost line up at \2,\3,\4.\5 This regex should be newly defined in the Click Config settings. You can get there by menu, at Edit-&gt;Click Config-&gt;Configure. You can create a new selection rule by adding it in the only editable inoput field at the bottom, clicking the &ldquo;Add&rdquo; button and entering a name for it. I suggest using &ldquo;Ruby Word&rdquo; for the name.</p>
+
+<p>I also find myself moving ruby strings around a lot. Wouldn&rsquo;t it be great if you could just triple-click and select the entire string? With GEdit Click Config, you can! All you have to do is create a new selection rule, with the following regular expression: <strong><code>([&lsquo;&ldquo;]).<em>?\1</code></strong>. Make sure to check the &rsquo;M&rsquo; flag to the right of the input field, in prder to make it multi-line, if you wish. To break down the pattern, the first paren matches either single- or double-quotes. Then match anything until you get to the next single- or double-quote. The &lsquo;\1&rsquo; means to match the value from the first parenthetical match, so the quotes will line up properly. The &lsquo;.</em>?&rsquo; means to match anything, but only until the next regex portion matches. If we leave out the question mark, we will match anything until the last next-character match, This is called a non-greedy search, and is necessary for this type of pattern-matching.</p>
+
+<h2>Come Together</h2>
+
+
+<p>I hope you learn to enjoy some of the basics as I have. To close this entry out, I will list all the Click Configs I have for all my Languages:</p>
+
+<h4>Selection Rules</h4>
+
+
+<ul>
+    <li>Ruby Word: ((\$?)|(@?@?))([_a-zA-Z]+(::)?)+    (Flags: None)</li>
+    <li>Full Quote: (['"]).*?\1   (Flags: M)</li>
+    <li>Single-Line Quote  (Flags: None)</li>
+    <li>Haml Word: (\.|\#|\$?|(@?@?))([_a-zA-Z]+(::)?)+</li>
+</ul>
+
+
+<h4></h4>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/25/inline-input-fields-with-mnimal-jquery/">Inline Input Fields With Mnimal jQuery</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-05-25T14:46:00-04:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>2:46 pm</span></time>
+        
+           | <a href="/blog/2012/05/25/inline-input-fields-with-mnimal-jquery/#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io/blog/2012/05/25/inline-input-fields-with-mnimal-jquery/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For one of my projects, i needed to put a text field inside a header element. When I did so, the input field ruined my layout and good looks! So I went the jQuery way and devised a method for hiding inputs when not in use, but when clicking on it, turns into a normal input field. So in my CSS, I add:</p>
+
+<pre lang="css">
+input.hidden{
+    color: inherit;
+    padding: inherit;
+    margin: inherit;
+    border: none;
+    background: transparent;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+
+}
+h2 {
+    color: #648dd7;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 16px;
+    margin-left: 2px;
+}​
+</pre>
+
+
+<p>and in my html, I have:</p>
+
+<pre lang="HTML">
+&lt;h2&gt;Header<input name="myInput" value="[Header Input]" class="hidden"/&gt;&lt;/h2&gt;
+​</pre>
+
+
+<p>And here is the fun part. Essentially one line of javascript to accomplish this easy feat:</p>
+
+<pre lang="javascript">
+$('input.hidden').live('focus',function(){
+    $(this).removeClass('hidden').live('blur',
+                                       function(){$(this).addClass('hidden                                                                                              ')})})​;
+</pre>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system/">How to Keep Your Linux Always-On in a Dual-Boot System</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-02-04T07:10:00-05:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>7:10 am</span></time>
+        
+           | <a href="/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system/#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>During my move from Greensboro, NC to Baltimore, MD, I accidentally threw away my home server (case of mistaken identity), so I needed to build a new one. This was more fortuitous than not, as it gave me the opportunity to build a system which I could use for another decade. I always insist on older hardware, with the most options for upgrade. So I bought a pretty sweet setup that I can upgrade a little at a time until socket LGA1155 goes out of style. As of now, that means a quad-core i7 will run on my machine - not too bad for the next decade! Here are the complete specs for my machine:</p>
+
+<ul>
+    <li>Motherboard: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16813135283&amp;Tpk=p67h2-a2">ECS P67H2-A2 Motherboard</a></li>
+    <li>CPU: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16819116399">Intel G620 2.6GHz</a></li>
+    <li>Memory:<a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16820231311"> 8Gb G.Skill Ripjaw</a></li>
+    <li>Graphics: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16814162054">2x nVidia 9500 1Gb PCIe</a>, in a (software) SLI configuration</li>
+    <li>Power Supply: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16817148041">Apevia Java 650W</a></li>
+    <li>Hard Drive: <a href="Seagate Barracuda Green 2TB SATA 6Gb/s 64MB Cache 3.5-Inch Internal">Seagate Barracuda 2Tb SATA 6Gb/s</a></li>
+    <li>Display: <a href="http://www.amazon.com/gp/product/B004KCPH84/ref=oh_o01_s00_i00_details">ViewSonic 24" Widescreen LCD</a></li>
+    <li>Total Cost to Me: ~650.00usd</li>
+    <li>Total Cost Premade: ~1,400</li>
+    <li>Savings: ~ 100%</li>
+</ul>
+
+
+<p>So my next task, once getting all the required parts and assembling them, was to create a dual-boot system with Fedora 16 and Windows 7. I wanted to use my new graphics goodness for CUDA application design and, of course, games. I installed Windows 7, then Fedora 16 for a normal dual-boot configuration. Then came the hard part: how to make Fedora switch video drivers based on whther it boots in VirtualBox or not.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/03/06/jquery-themeswitchertool-working-version/">jQuery ThemeSwitcherTool - Working Version!!!!!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2011-03-06T20:20:00-05:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>8:20 pm</span></time>
+        
+           | <a href="/blog/2011/03/06/jquery-themeswitchertool-working-version/#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io/blog/2011/03/06/jquery-themeswitchertool-working-version/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I recently tried to install the jQuery UI  <a title="Theme Switcher" href="http://docs.jquery.com/UI/Theming/ThemeSwitcher">ThemeSwitcher</a> on a site for a project on which I am working. It failed. Miserably! I scoured the interwebs for a working version, but could not find one anywhere. However, I did find out why the tool was not working. It seems the jQuery team disabled hotlinking to its servers. This was extremely good news, as it meant I could simply recode the widget to point to the new files or download them and point the script to the downloaded files.  I dove right in to the code and made some modifications to the start of the script. Then I optimized some of the rest of the code. Finally, I added a few extra options to cover the changes I made.</p>
+
+<h3>Download</h3>
+
+
+<p>You can click on the following links to download the files.</p>
+
+<ul>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/themeswitchertool.js">themeswitchertool.js</a> - The themeswitcher.</li>
+    <li>The Following files are images used by themeswitcher. To use them, place them in /javascripts/jquery/themeswitcher/ or use the imageLocation option to point to the directory where these are stored.
+<ul>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/menuhoverbg.png">menuhoverbg.png</a></li>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/icon_color_arrow.gif">icon_color_arrow.gif</a></li>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/buttonbg.png">buttonbg.png</a></li>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/base.png">base.png</a> This is an icon used for the 'base' theme (no styles), to use this, you need to specify the icon location in the options or put it in with the rest of the images.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Changes</h3>
+
+
+<ul>
+    <li>The old script appended up to three styles to the document, then removed the first one. It now uses the selector "head link#ui-theme" to change the stylesheet. I changed this so you can set the id of your default custom theme to "ui-theme" and it will change this. If the id isn't found, it creates a new one.</li>
+    <li>Added new options for specifying your own themes to add to the list.</li>
+    <li>Added new option, useStandard, for specifying whether to use the themes from the jQuery UI site.</li>
+    <li>Added new options for specifying where to find the UI icons and stylesheets</li>
+    <li>Added new option, imageLocation, for specifying where to find the widget images (found in the downloaded file)</li>
+    <li>Added the widget images to the downloaded file, so you don't have to link to jQuery's servers</li>
+    <li>Added option, useCookie, for whether to use a cookie for saving the theme for later use on the same page.</li>
+</ul>
+
+
+<h3>Examples</h3>
+
+
+<h4>Basic usage, no custom theme support</h4>
+
+
+<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( );</pre>
+
+
+<h4>Adding custom themes</h4>
+
+
+<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( {
+    themes: {
+       'theme1': {
+           icon:"/path/to/theme-icon.png",
+           css:"/path/to/theme.css"
+       },
+       'theme2': {
+           icon:"/path/to/theme2-icon.png",
+           css:"/path/to/theme2.css"
+       }
+    }
+});</pre>
+
+
+<h4>Using Only Custom Themes</h4>
+
+
+<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( {
+    useStandard: false,
+    themes: {
+       'theme1': {
+           icon:"/path/to/theme-icon.png",
+           css:"/path/to/theme.css"
+       },
+       'theme2': {
+           icon:"/path/to/theme2-icon.png",
+           css:"/path/to/theme2.css"
+       }
+    }
+});</pre>
+
+
+<h3>New Options</h3>
+
+
+<dl> <dt>themes</dt> <dd style="font-size: 80%;">Default: {}</dd> <dd>A hash of themes, where each key is the theme name, and the value is another hash specifying the icon to use and the css file for the theme. Here is an example:
+<pre lang="javascript">{
+  'theme1': {
+    icon:"/path/to/theme-icon.png",
+    css:"/path/to/theme.css"
+  }
+}</pre>
+</dd> <dt>useStandard</dt> <dd style="font-size: 80%;">Default: true</dd> <dd>If you don't want the themes from the jQuery UI site to show up in the list, set this to false.</dd> <dt>useCookie</dt> <dd style="font-size: 80%;">Default: true</dd> <dd>The Theme Switcher uses a browser cookie to store and retrieve the theme name for the current site. Set this option to false if you do not want your site to remember the theme.</dd> <dt>imageLocation</dt> <dd style="font-size: 80%;">Default: "/javascripts/jquery/themeswitcher/"</dd> <dd>This is where the images are stored which Theme Switcher uses. The following files must be in the folder: buttonbg.png, icon_color_arrow.gif, menuhoverbg.png . You can get these from the download.</dd> <dt>imgPrefix</dt> <dd style="font-size: 80%;">Default: "http://static.jquery.com/ui/themeroller/images/themeGallery/theme_90_"</dd> <dd>This option specifies the default icon prefix URI. The icons are the previews for each theme. The default option sets the default images to the jquery hotlink site. This may change in the future, so it is specified here as an option.</dd> <dt>imgSuffix</dt> <dd style="font-size: 80%;">Default: ".png"</dd> <dd>This option specifies the rest of the image URI.</dd> <dt>cssPrefix</dt> <dd style="font-size: 80%;">Default: "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/"</dd> <dd>This option specifies the deafault css location prefix.</dd> <dt>cssSuffix</dt> <dd style="font-size: 80%;">Default: "/jquery-ui.css" </dd> <dd> </dd> <dd>This option specifies the deafault css location sufffix.</dd> </dl>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/28/tango-icons-save-all/">Tango Icons: Save All</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-07-28T14:35:00-04:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>2:35 pm</span></time>
+        
+           | <a href="/blog/2010/07/28/tango-icons-save-all/#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io/blog/2010/07/28/tango-icons-save-all/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Ever notice how the  <a title="Tango Desktop Project" href="http://tango.freedesktop.org/Tango_Desktop_Project">Tango icons</a> don&rsquo;t have a &ldquo;Save All&rdquo; icon? Well - look no further! I have created a usable set, using the existing icons as a template, all in about 15 minutes. So - without further ado - here they are:</p>
+
+<p>[caption id=&ldquo;attachment_215&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;16&rdquo; caption=&ldquo;16x16&rdquo;]<a href="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all.png"><img class="size-full wp-image-215" title="document-save-all-16x16" src="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all.png" alt="16x16 Tango Save All icon" width="16" height="16" /></a>[/caption]</p>
+
+<p>[caption id=&ldquo;attachment_216&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;22&rdquo; caption=&ldquo;22x22&rdquo;]<a href="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all1.png"><img class="size-full wp-image-216" title="document-save-all-22x22" src="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all1.png" alt="Tango Save All icon - 22x22" width="22" height="22" /></a>[/caption]</p>
+
+<p>[caption id=&ldquo;attachment_217&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;32&rdquo; caption=&ldquo;32x32&rdquo;]<a href="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all2.png"><img class="size-full wp-image-217" title="document-save-all-32x32" src="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all2.png" alt="Tango Save All icon - 32x32" width="32" height="32" /></a>[/caption]</p>
+
+<p>I did not create these for real polish - I just needed something on-the-fly, but if you have any suggestions on making them better, please let me know!</p>
+
+<p>Also - if you would like a zip archive so you can just unzip them into the existing tango folder - here it is: <a href="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/tango-icon-save-all.zip">tango-icon-save-all</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/02/teaching-computer-science-in-a-web-browser/">Teaching Computer Science in a Web Browser?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-06-02T21:48:00-04:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2010</span></span> <span class='time'>9:48 pm</span></time>
+        
+           | <a href="/blog/2010/06/02/teaching-computer-science-in-a-web-browser/#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io/blog/2010/06/02/teaching-computer-science-in-a-web-browser/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>With the web becoming more pervasive and HTML5 threatening to annihilate Flash, is JavaScript becoming a viable language for teaching advanced topics in computer science? Here is a run-down of topics and projects that could be used to teach the courses. The following course listing is taken from my university, the University of North Carolina at Greensboro. I have organized them by course content, as some courses use similar tools/methods. Also note that some courses are designed to teach specific software, outside of the browser, so I have placed them under the topic &ldquo;Outside the Browser&rdquo;</p>
+
+<h2>General Programming Courses</h2>
+
+
+<h2><strong>Graphics</strong></h2>
+
+
+<h2>Algorithms</h2>
+
+
+<p><strong>230 Elementary Data Structures and Algorithm</strong>s
+Advanced syntax of high level language taught in CSC 130. Emphasis on modularization and abstraction. Big-O analysis of algorithms. Design and use of abstract data types with various implementations.</p>
+
+<h2>Networking</h2>
+
+
+<h2>Math-Based Courses</h2>
+
+
+<p><strong>250 Foundations of Computer Science I
+</strong>An introduction to the fundamental ideas underlying contemporary computer science with a focus on the computation and construction of objects.</p>
+
+<h2>Hardware
+<span style="font-weight: normal; font-size: 13px;">These classes are designed to teach specific hardware concepts</span></h2>
+
+
+<p><strong>261 Computer Organization and Assembly Language
+</strong><em>CPU, memory, I/O devices, digital logic design, psw. Number representations and machine language. Assembly language instruction types, registers, addressing, arithmetic, instruction format, opcodes, pseudo-opcodes, assembler directives, system calls, and macros.</em></p>
+
+<p><em><span style="font-style: normal;">Many would think this class would be difficult to do in the browser, but there are many assembly interpreters written in JavaScript.  Here are a few online interpreters of interest for this classJS:</span></em></p>
+
+<ul>
+    <li><a href="http://http://timhatch.com/projects/jsassembly/">JSAssembly </a>- an interpeter for x86 assembly codes</li>
+    <li><a href="http://benfirshman.com/projects/jsnes/">JSNES</a> - Great working interpreter for SNES ROM images</li>
+    <li><a href="http://6502asm.com/">6502asm</a> - 6502 assembly code interpreter</li>
+</ul>
+
+
+<p>I did not find any online SPARC interpreters, as UNCG teaches this course in SPARC assembly, but it would be trivial to modify one of the above to suit. As for the Hardware design portion of this course, it is taught from a G/8llllllllllllllltextbook on SPARC assembly.</p>
+
+<h2>Outside the Browser</h2>
+
+
+<p>These courses are designed to teach specific software, and</p>
+
+<p><strong>330 Advanced Data Structures
+</strong> Static and dynamic data structures emphasizing binary trees and graphs. Advanced programming techniques. Advanced sorting and searching algorithms. Hashing techniques. Performance analysis. Methods of developing large applications programs.</p>
+
+<p><strong>339 Concepts of Programming Languages</strong>
+Concepts of block-structured, object-oriented, functional, logic, and concurrent programming languages. Comparative study of syntactic and semantic features of these languages and writing programs using them.</p>
+
+<p><strong>340 Software Engineering</strong>
+Practical and theoretical concepts of software engineering.</p>
+
+<p><strong>350 Foundations of Computer Science II</strong>
+High level concepts in the theoretical foundations of computer science.</p>
+
+<p><strong>463 Basic Systems Administration Laborator</strong>y
+Installing operating systems, peripherals, hardware, and software. Backups, recompiling the kernel (loading/unloading modules), providing Web services, and user administration. (Formerly CSC 563)</p>
+
+<p><strong>464 Intermediate Systems Administration Laboratory</strong>
+Topics selected from routing, firewall, Primary Domain Controller, Backup Domain Controller, Domain Controller trust, SAMBA, DNS round robin, and PPP connectivity setup. (Formerly CSC 564)</p>
+
+<p><strong>465 Advanced Systems Administration Laboratory</strong>
+Automated installation, software installation, systems programming, system administration in a large organization. Projects will include departmental or university computer system work. (Formerly CSC 565)</p>
+
+<p><strong>471 Principles of Database Systems</strong>
+Contemporary database systems. Emphasis on query processing, design, and implementation of applications in relational (SQL) databases. Introduction to other database models such as XML, object-oriented, and deductive.</p>
+
+<p><strong>490 Senior Project</strong>
+Application of classroom knowledge and skills in computer science to solve real-world problems and to develop research and development skills.</p>
+
+<p><strong>493 Honors Work in Computer Science</strong>
+Research in a topic of special interest at the Honors level.</p>
+
+<p><strong>495 Selected Topics in Computer Science</strong>
+May be repeated for credit for a total of 6 s.h. when topic of study changes.
+A topic of special interest is studied in depth.</p>
+
+<p><strong>521 Computer Graphics</strong>
+Survey of graphics algorithms, data structures, and techniques.</p>
+
+<p><strong>522 Digital Image Processing</strong>
+Image representation, enhancement, compression, coding, restoration, and wavelet transforms.</p>
+
+<p><strong>523 Numerical Analysis and Computing</strong>
+Number systems and errors, solutions of non-linear and linear systems, eigenvalue problems, interpolation and approximation, numerical differentiation and integration, solution of differential equations.</p>
+
+<p><strong>524 Numerical Analysis and Computing</strong>
+Continuation of 523 with special topics in numerical analysis, emphasis on applied mathematics.</p>
+
+<p><strong>526 Bioinformatics</strong>
+Introduction to the problems and methods in Bioinformatics. Problem areas include restriction mapping, map assembly, sequencing, DNA arrays, and sequence comparison.</p>
+
+<p><strong>529 Artificial Intelligence</strong>
+Logical foundations, knowledge representation and reasoning, search, and selected topics such as natural language processing and reasoning under uncertainty.</p>
+
+<p><strong>539 Introduction to Compiler Design</strong>
+Basic techniques of compiler design and implementation: lexical analysis, parsing, code generation. Sizable programming project implementing a compiler for a block-structured language with strong typing.</p>
+
+<p><strong>540 Human-Computer Interface Development</strong>
+Survey of concepts and techniques for human-computer interface development. Topics include user-centered design, user interface programming, and usability evaluation.</p>
+
+<p><strong>550 Combinatorics on Words</strong>
+Introduction to the problems and methods in algorithmic combinatorics on words. Problem areas include periodicity, primitivity, and borderedness.</p>
+
+<p><strong>553 Theory of Computation</strong>
+Finite state automata and regular expressions, context-free grammars, push-down automata and their use in parsing, overview of language translation systems, models for programming language semantics, computability and undecidability.</p>
+
+<p><strong>555 Algorithm Analysis and Design</strong>
+Sequential algorithm design and complexity analysis. Dynamic programming. Greedy algorithms. Graph algorithms. Selected advanced topics from NP-completeness; approximation, randomized, parallel, number-theoretic algorithms; Fast Fourier Transform; computational geometry; string matching.</p>
+
+<p><strong>561 Principles of Computer Architecture</strong>
+Hardware and software components of computer systems, their organization and operations. Topics: comparative instruction set architectures, microprogramming, memory management, processor management, I/O, interrupts, and emulation of processors.</p>
+
+<p><strong>562 Principles of Operating Systems</strong>
+Techniques and strategies used in operating system design and implementation: managing processes, input/output, memory, scheduling, file systems, and protection.</p>
+
+<p><strong>567 Principles of Computer Networks</strong>
+Hardware and software components of computer networks, their organization and operations. Topics: open system interconnection; local area networks; TCP/IP internetworking, routing, and packet switching; network programming.</p>
+
+<p><strong>568 Principles of Wireless Networks</strong>
+Digitial communications, Communication networks, wireless communication technology, wireless networking, wireless LANs and wireless network programming.</p>
+
+<p><strong>580 Cryptography and Security in Computing</strong>
+Modern development of cryptography and secure encryption protocols. Program security and viruses. Operating system protection. Network and distributed system security. Database security. Administering security.</p>
+
+<p><strong>583 Firewall Architecture and Computer Security</strong>
+Firewall hardware and software technologies. Architectures, protocols and their applications.</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -362,10 +896,6 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2016/08/30/simple-rails-development-part-ii-core-gedit-plugins/">Simple Rails Development Part II: Core GEdit Plugins</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2016/08/30/moved-to-octopress/">Moved to Octopress!</a>
       </li>
     
@@ -375,6 +905,14 @@
     
       <li class="post">
         <a href="/blog/2013/04/10/building-a-unified-time-select-field/">Building a Unified Time_select Field</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/31/simple-rails-development-part-ii-core-gedit-plugins/">Simple Rails Development Part II: Core GEdit Plugins</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/30/simple-rails-development-part-i-gedit-click-config/">Simple Rails Development Part I: Gedit Click Config</a>
       </li>
     
   </ul>

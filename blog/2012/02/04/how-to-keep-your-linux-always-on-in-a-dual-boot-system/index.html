@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Keep Your Linux Always-On in a Dual-Boot System - Rude Boy Solutions</title>
+  <meta name="author" content=""Skaman Sam" Tyler">
+
+  
+  <meta name="description" content="During my move from Greensboro, NC to Baltimore, MD, I accidentally threw away my home server (case of mistaken identity), so I needed to build a new &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://skamansam.github.io/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Rude Boy Solutions" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4371156-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Rude Boy Solutions</a></h1>
+  
+    <h2>Solutions. For Life.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="skamansam@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="skamansam.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/music.html">Music</a></li>
+  <li><a href="https://plus.google.com/collection/8RHyXB">Photos</a></li>
+  <li><a href="/about.html">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Keep Your Linux Always-On in a Dual-Boot System</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2012-02-04T07:10:00-05:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>7:10 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>During my move from Greensboro, NC to Baltimore, MD, I accidentally threw away my home server (case of mistaken identity), so I needed to build a new one. This was more fortuitous than not, as it gave me the opportunity to build a system which I could use for another decade. I always insist on older hardware, with the most options for upgrade. So I bought a pretty sweet setup that I can upgrade a little at a time until socket LGA1155 goes out of style. As of now, that means a quad-core i7 will run on my machine - not too bad for the next decade! Here are the complete specs for my machine:</p>
+
+<ul>
+    <li>Motherboard: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16813135283&amp;Tpk=p67h2-a2">ECS P67H2-A2 Motherboard</a></li>
+    <li>CPU: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16819116399">Intel G620 2.6GHz</a></li>
+    <li>Memory:<a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16820231311"> 8Gb G.Skill Ripjaw</a></li>
+    <li>Graphics: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16814162054">2x nVidia 9500 1Gb PCIe</a>, in a (software) SLI configuration</li>
+    <li>Power Supply: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16817148041">Apevia Java 650W</a></li>
+    <li>Hard Drive: <a href="Seagate Barracuda Green 2TB SATA 6Gb/s 64MB Cache 3.5-Inch Internal">Seagate Barracuda 2Tb SATA 6Gb/s</a></li>
+    <li>Display: <a href="http://www.amazon.com/gp/product/B004KCPH84/ref=oh_o01_s00_i00_details">ViewSonic 24" Widescreen LCD</a></li>
+    <li>Total Cost to Me: ~650.00usd</li>
+    <li>Total Cost Premade: ~1,400</li>
+    <li>Savings: ~ 100%</li>
+</ul>
+
+
+<p>So my next task, once getting all the required parts and assembling them, was to create a dual-boot system with Fedora 16 and Windows 7. I wanted to use my new graphics goodness for CUDA application design and, of course, games. I installed Windows 7, then Fedora 16 for a normal dual-boot configuration. Then came the hard part: how to make Fedora switch video drivers based on whther it boots in VirtualBox or not.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">"Skaman Sam" Tyler</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2012-02-04T07:10:00-05:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2012</span></span> <span class='time'>7:10 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://skamansam.github.io/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system/" data-via="skamansam" data-counturl="http://skamansam.github.io/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/03/06/jquery-themeswitchertool-working-version/" title="Previous Post: jQuery ThemeSwitcherTool - Working Version!!!!!">&laquo; jQuery ThemeSwitcherTool - Working Version!!!!!</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/25/inline-input-fields-with-mnimal-jquery/" title="Next Post: Inline input fields with mnimal jQuery">Inline input fields with mnimal jQuery &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/moved-to-octopress/">Moved to Octopress!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/23/cookie-detection-in-rails-3/">Cookie Detection in Rails 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/building-a-unified-time-select-field/">Building a Unified Time_select Field</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/31/simple-rails-development-part-ii-core-gedit-plugins/">Simple Rails Development Part II: Core GEdit Plugins</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/30/simple-rails-development-part-i-gedit-click-config/">Simple Rails Development Part I: Gedit Click Config</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/skamansam">@skamansam</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'skamansam',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/skamansam?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - "Skaman Sam" Tyler -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rudeboysolutions';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://skamansam.github.io/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system/';
+        var disqus_url = 'http://skamansam.github.io/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
