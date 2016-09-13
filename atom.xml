@@ -4,7 +4,7 @@
   <title><![CDATA[Rude Boy Solutions]]></title>
   <link href="http://skamansam.github.io/atom.xml" rel="self"/>
   <link href="http://skamansam.github.io/"/>
-  <updated>2016-09-13T19:22:41-04:00</updated>
+  <updated>2016-09-13T19:24:55-04:00</updated>
   <id>http://skamansam.github.io/</id>
   <author>
     <name><![CDATA["Skaman Sam" Tyler]]></name>
@@ -805,7 +805,7 @@ $$(a+b)^n = \sum_{i=0}^{n}(P_{ni}a^{n-i}b^i)$$
 </div>
 
 
-<p>Where <span class="text">$P<em>{ni}$</span> is the coefficient at row n (starting from 0) and column i in Pascal&rsquo;s Triangle. The formula means to add from i=0 to n all the terms <span class="text">$(P</em>{ni}a^{n-i}b<sup>i</sup>)$</span> , replacing i with the number you are at. For example, supposing i=3, you would get:</p>
+<p>Where <span class="tex">$P<em>{ni}$</span> is the coefficient at row n (starting from 0) and column i in Pascal&rsquo;s Triangle. The formula means to add from i=0 to n all the terms <span class="tex">$(P</em>{ni}a^{n-i}b<sup>i</sup>)$</span> , replacing i with the number you are at. For example, supposing i=3, you would get:</p>
 
 <div class="tex">
 $$\sum_{i=0}^{3}(P_{3i}a^{3-i}b^i) = $$
