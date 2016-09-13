@@ -320,6 +320,7 @@ function render_latex() {
   var tex_elements = document.querySelectorAll('.tex')
   for(elem_idx in tex_elements){
     elem = tex_elements[elem_idx]
+    console.log(elem)
     renderMathInElement(
       elem,
       {
