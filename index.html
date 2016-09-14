@@ -9,7 +9,7 @@
   <meta name="author" content=""Skaman Sam" Tyler">
 
   
-  <meta name="description" content="Rude Boy Solutions has Moved To Octopress! Rude Boy Solutions is now moving to Octopress for blogging! Wordpress was great fun while it lasted, but I &hellip;">
+  <meta name="description" content="This post is heavy with math formualae, so may take a few seconds to format correctly. This post was originally written 2009/05/29, but was never &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,240 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/09/14/fun-with-numbers/">Fun With Numbers! (Revised)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-09-14T07:56:00-04:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>7:56 am</span></time>
+        
+           | <a href="/blog/2016/09/14/fun-with-numbers/#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io/blog/2016/09/14/fun-with-numbers/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='notice'>
+  This post is heavy with math formualae, so may take a few seconds to format correctly.
+</div>
+
+
+
+
+<div class='notice'>
+  This post was originally written 2009/05/29, but was never finished. I just
+  finished the revisions on 2016-09-14 and it is now complete.
+</div>
+
+
+<p>I have always had a certain love for math and the neat things you can do with it. Here is a bit of information and shortcuts I have picked up in a few of my math classes.</p>
+
+<h2>Pascal&rsquo;s Triangle</h2>
+
+<p>Pascal&rsquo;s Triangle is a pretty neat thing. It is very simple to construct and can be used to understand a lot of different ideas. It follows a very simple form: start with a &lsquo;1&rsquo; and add the two digits above  to get the next number. The first few line look like this:</p>
+
+<div class='center'>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>1
+</span><span class='line'>1  1
+</span><span class='line'>1  2  1
+</span><span class='line'>1  3  3  1
+</span><span class='line'>1  4  6  4  1
+</span><span class='line'>1  5 10 10  5  1
+</span><span class='line'>1  6 15 20 15  6  1
+</span><span class='line'>...
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<p>The line numbers start at 0, and continue on ad infinitum. In order to generate this triangle, programmatically, you would use something like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pascal</span><span class="p">(</span>
+</span><span class='line'><span class="err">      </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">prev</span><span class="p">,</span> <span class="c1">//the current (old) row data</span>
+</span><span class='line'><span class="err">      </span><span class="kt">int</span> <span class="o">*</span><span class="n">len</span><span class="p">,</span>       <span class="c1">//the length of the data</span>
+</span><span class='line'><span class="err">      </span><span class="kt">int</span> <span class="n">end</span><span class="p">,</span>           <span class="c1">//the row to retrieve</span>
+</span><span class='line'><span class="err">      </span><span class="kt">int</span> <span class="n">cur</span><span class="o">=</span><span class="mi">0</span>      <span class="c1">//the current row we are on</span>
+</span><span class='line'><span class="err">      </span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pascal</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">prev</span><span class="p">,</span><span class="kt">int</span> <span class="o">*</span><span class="n">len</span><span class="p">,</span><span class="kt">int</span> <span class="n">end</span><span class="p">,</span><span class="kt">int</span> <span class="n">cur</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>       <span class="c1">//return immediately if we are at the last row</span>
+</span><span class='line'><span class="err">      </span><span class="k">if</span> <span class="p">(</span><span class="n">cur</span><span class="o">==</span><span class="n">end</span><span class="p">)</span> <span class="k">return</span> <span class="n">prev</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">     </span>   <span class="c1">//if the current vector length is 0, then set it to 1</span>
+</span><span class='line'><span class="err">      </span> <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">len</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span><span class="n">len</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">      </span> <span class="c1">//create a temp vector (all 1&#39;s) to store the new row data</span>
+</span><span class='line'><span class="err">      </span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">t</span><span class="p">((</span><span class="o">*</span><span class="n">len</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">      </span> <span class="c1">//sum the two rows</span>
+</span><span class='line'><span class="err">      </span> <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="o">*</span><span class="n">len</span><span class="p">);</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span class='line'><span class="err">            </span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">prev</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">prev</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">      </span> <span class="c1">//increase the length by 1</span>
+</span><span class='line'><span class="err">      </span> <span class="o">*</span><span class="n">len</span><span class="o">=</span><span class="p">(</span><span class="o">*</span><span class="n">len</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">      </span> <span class="c1">//return the new row data</span>
+</span><span class='line'><span class="err">      </span> <span class="k">return</span> <span class="n">pascal</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">len</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="n">cur</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Binomial Expansion</h2></h2>
+
+<p>Remember binomials from algebra? They were the pair of numbers used to create or simplify polynomial expressions, something like:</p>
+
+<div class="tex">
+$$ ( x + 3 )^3 = x^3 + 9x^2 + 27x + 27 $$
+</div>
+
+
+<p>You can use Pascal&rsquo;s triangle to find the coefficients of the polynomials. Let&rsquo;s begin by solving for the generic  case:</p>
+
+<div class="tex">
+$(a+b)^n = $
+$(a+b)^{n-1}(a+b) = $
+$(a+b)^{n-2}(a+b)^2 = $
+$(a+b)^{n-2}((a+b)(a+b)) = $
+$( (a*a) + (a*b) + (b*a) + (b*b) )(a+b)^{n-1} = $
+$(a^2+2ab+b^2)(a+b)^{n-1} = $
+</div>
+
+
+<p>See the coefficients so far, with n=2 ? They are [1 2 1], which corresponds to the second row in Pascal&rsquo;s triangle. But this could be a fluke, right, so let&rsquo;s jump ahead to n=5 to see if that works as well.</p>
+
+<div class="tex">
+$(a+b)^n = $
+$(a+b)^{n-6}(a+b)^5 = $
+$(a+b)^{n-6}( (a+b) (a+b) (a+b) (a+b) (a+b) ) = $
+$(a+b)^{n-6}( ( (a+b)(a+b) )( (a+b)(a+b) ) (a+b) ) = $
+<br/>
+[we know what $(a+b)^2$ is, so: ]
+$(( a^2+2ab+b^2 )( a^2+2ab+b^2 )(a+b) )(a+b)^{n-6} = $
+$( ( (a^2*a^2)+(a^2*2ab) + (a^2*b^2) + ( 2ab*a^2) + (2ab*2ab) + $
+$(2ab*b^2) + (b^2*a^2)+(b^2*2ab) + (b^2*b^2) ) (a+b) )(a+b)^{n-6} = $
+$( ( a^4 + 2a^3b+ a^2b^2 + 2a^3b + 4a^2b^2 + 2ab^3 + b^2a^2 + 2ab^3+ b^4) (a+b) )(a+b)^{n-6} = $
+$( ( a^4 + 4a^3b + 6a2b^2 + 4ab^3+b^4) (a+b) )(a+b)^{n-6} = $
+<br/>
+[note: notice that the coefficients of $(a+b)^4$ are (1 4 6 4 1) ! ]
+$( ( a^4*a + a^4*b + 4a^3b*a + 4a^3b*b + 6a^2b^2*a + $ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;$6a^2b^2*b + 4ab^3*a + 4ab^3*b + b^4*a+b^4*b))(a+b)^{n-6} =$
+$( ( a^5 + a^4b + 4a^4b + 4a^3b^2 + 6a^3b^2 + 6a^2b^3 + 4a^2b^3 + 4ab^4 + ab^4+b^5))(a+b)^{n-6}=$
+$( ( a^5 +5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5)(a+b)^{n-6}$
+</div>
+
+
+<p>There it is! The coefficients correspond to the rows on Pascal&rsquo;s Triangle!</p>
+
+<h3>Features</h3>
+
+<p>Now, to make things a little simpler, I will note some interesting &ldquo;features&rdquo; about what we just did.</p>
+
+<h4>General Formula for Binomial Expansion</h4>
+
+<p>The general formula for binomial expansion is:</p>
+
+<div class="tex">
+$$(a+b)^n = \sum_{i=0}^{n}(P_{ni}a^{n-i}b^i)$$
+</div>
+
+
+<div class="tex">
+Where $P_{ni}$ is the coefficient at row $n$ (starting from 0) and column $i$ in Pascal's Triangle. The formula means to add from $i=0$ to $n$ all the terms $(P_{ni}a^{n-i}b^i)$ , replacing $i$ with the number you are at. For example, supposing $i=3$, you would get:
+</div>
+
+
+<div class="tex">
+$$\sum_{i=0}^{3}(P_{3i}a^{3-i}b^i) = $$
+$$(P_{(3,0)}a^{3-0}b^0) + (P_{(3,1)}a^{3-1}b^1) + (P_{(3,2)}a^{3-2}b^2) + (P_{(3,3)}a^{3-3}b^3) = $$
+since $P_3 = [1 3 3 1]$ , we finally get:
+$$((1)a^{3-0}b^0) + ((3)a^{3-1}b^1) + ((3)a^{3-2}b^2) + ((1)a^{3-3}b^3) $$
+cleaning up a bit :
+$$a^3 + 3a^2b + 3ab^2 + b^3$$
+</div>
+
+
+<h4>Exponents</h4>
+
+<p>Note in all the expansions, the first variable counts down from n to 0, while the second variable counts up from 0 to n.</p>
+
+<h3>Does your binomial already have coefficients?</h3>
+
+<p>If your binomial already has coefficients, simply put them with their terms like so:</p>
+
+<div class="tex">
+$$\sum_{i=0}^{n}(P_{ni}(xa)^{n-i}(yb)^i)$$
+Using the commutative property, it can be rewritten as such:
+$$\sum_{i=0}^{n}(P_{3i}(x^{n-i}y^{i})a^{n-i}b^i) $$
+
+Let's try an example!<br/>
+$(3a+2b)^3 = $<br/>
+$(1)(3a)^{3}(2b)^0 + (3)(3a)^{2}(2b) + (3)(3a)(2b)^2 + (1)(2b)^3 = $<br/>
+$(1)(3^3)a^3 + (3)(3^2*2)a^{2}b + (3)(3*2^2)ab^2 + (1)(2^3)b^3 = $<br/>
+$(1)(27)a^3 + (3)(18)a^{2}b + (3)(12)ab^2 + (1)(8)b^3 = $<br/>
+$27a^3 + 54a^{2}b + 36ab^2 + 8b^3$
+</div>
+
+
+<h1>Conclusion</h1>
+
+<p>As you can see, it is fairly easy to use Pascal&rsquo;s Triagel as a lookup table for
+binomial exapnsion&rsquo;s coefficients. I hope you have much more fun in your maths!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -723,167 +957,6 @@ $('input.hidden').live('focus',function(){
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/02/teaching-computer-science-in-a-web-browser/">Teaching Computer Science in a Web Browser?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2010-06-02T21:48:00-04:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2010</span></span> <span class='time'>9:48 pm</span></time>
-        
-           | <a href="/blog/2010/06/02/teaching-computer-science-in-a-web-browser/#disqus_thread"
-             data-disqus-identifier="http://skamansam.github.io/blog/2010/06/02/teaching-computer-science-in-a-web-browser/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>With the web becoming more pervasive and HTML5 threatening to annihilate Flash, is JavaScript becoming a viable language for teaching advanced topics in computer science? Here is a run-down of topics and projects that could be used to teach the courses. The following course listing is taken from my university, the University of North Carolina at Greensboro. I have organized them by course content, as some courses use similar tools/methods. Also note that some courses are designed to teach specific software, outside of the browser, so I have placed them under the topic &ldquo;Outside the Browser&rdquo;</p>
-
-<h2>General Programming Courses</h2>
-
-
-<h2><strong>Graphics</strong></h2>
-
-
-<h2>Algorithms</h2>
-
-
-<p><strong>230 Elementary Data Structures and Algorithm</strong>s
-Advanced syntax of high level language taught in CSC 130. Emphasis on modularization and abstraction. Big-O analysis of algorithms. Design and use of abstract data types with various implementations.</p>
-
-<h2>Networking</h2>
-
-
-<h2>Math-Based Courses</h2>
-
-
-<p><strong>250 Foundations of Computer Science I
-</strong>An introduction to the fundamental ideas underlying contemporary computer science with a focus on the computation and construction of objects.</p>
-
-<h2>Hardware
-<span style="font-weight: normal; font-size: 13px;">These classes are designed to teach specific hardware concepts</span></h2>
-
-
-<p><strong>261 Computer Organization and Assembly Language
-</strong><em>CPU, memory, I/O devices, digital logic design, psw. Number representations and machine language. Assembly language instruction types, registers, addressing, arithmetic, instruction format, opcodes, pseudo-opcodes, assembler directives, system calls, and macros.</em></p>
-
-<p><em><span style="font-style: normal;">Many would think this class would be difficult to do in the browser, but there are many assembly interpreters written in JavaScript.  Here are a few online interpreters of interest for this classJS:</span></em></p>
-
-<ul>
-    <li><a href="http://http://timhatch.com/projects/jsassembly/">JSAssembly </a>- an interpeter for x86 assembly codes</li>
-    <li><a href="http://benfirshman.com/projects/jsnes/">JSNES</a> - Great working interpreter for SNES ROM images</li>
-    <li><a href="http://6502asm.com/">6502asm</a> - 6502 assembly code interpreter</li>
-</ul>
-
-
-<p>I did not find any online SPARC interpreters, as UNCG teaches this course in SPARC assembly, but it would be trivial to modify one of the above to suit. As for the Hardware design portion of this course, it is taught from a G/8llllllllllllllltextbook on SPARC assembly.</p>
-
-<h2>Outside the Browser</h2>
-
-
-<p>These courses are designed to teach specific software, and</p>
-
-<p><strong>330 Advanced Data Structures
-</strong> Static and dynamic data structures emphasizing binary trees and graphs. Advanced programming techniques. Advanced sorting and searching algorithms. Hashing techniques. Performance analysis. Methods of developing large applications programs.</p>
-
-<p><strong>339 Concepts of Programming Languages</strong>
-Concepts of block-structured, object-oriented, functional, logic, and concurrent programming languages. Comparative study of syntactic and semantic features of these languages and writing programs using them.</p>
-
-<p><strong>340 Software Engineering</strong>
-Practical and theoretical concepts of software engineering.</p>
-
-<p><strong>350 Foundations of Computer Science II</strong>
-High level concepts in the theoretical foundations of computer science.</p>
-
-<p><strong>463 Basic Systems Administration Laborator</strong>y
-Installing operating systems, peripherals, hardware, and software. Backups, recompiling the kernel (loading/unloading modules), providing Web services, and user administration. (Formerly CSC 563)</p>
-
-<p><strong>464 Intermediate Systems Administration Laboratory</strong>
-Topics selected from routing, firewall, Primary Domain Controller, Backup Domain Controller, Domain Controller trust, SAMBA, DNS round robin, and PPP connectivity setup. (Formerly CSC 564)</p>
-
-<p><strong>465 Advanced Systems Administration Laboratory</strong>
-Automated installation, software installation, systems programming, system administration in a large organization. Projects will include departmental or university computer system work. (Formerly CSC 565)</p>
-
-<p><strong>471 Principles of Database Systems</strong>
-Contemporary database systems. Emphasis on query processing, design, and implementation of applications in relational (SQL) databases. Introduction to other database models such as XML, object-oriented, and deductive.</p>
-
-<p><strong>490 Senior Project</strong>
-Application of classroom knowledge and skills in computer science to solve real-world problems and to develop research and development skills.</p>
-
-<p><strong>493 Honors Work in Computer Science</strong>
-Research in a topic of special interest at the Honors level.</p>
-
-<p><strong>495 Selected Topics in Computer Science</strong>
-May be repeated for credit for a total of 6 s.h. when topic of study changes.
-A topic of special interest is studied in depth.</p>
-
-<p><strong>521 Computer Graphics</strong>
-Survey of graphics algorithms, data structures, and techniques.</p>
-
-<p><strong>522 Digital Image Processing</strong>
-Image representation, enhancement, compression, coding, restoration, and wavelet transforms.</p>
-
-<p><strong>523 Numerical Analysis and Computing</strong>
-Number systems and errors, solutions of non-linear and linear systems, eigenvalue problems, interpolation and approximation, numerical differentiation and integration, solution of differential equations.</p>
-
-<p><strong>524 Numerical Analysis and Computing</strong>
-Continuation of 523 with special topics in numerical analysis, emphasis on applied mathematics.</p>
-
-<p><strong>526 Bioinformatics</strong>
-Introduction to the problems and methods in Bioinformatics. Problem areas include restriction mapping, map assembly, sequencing, DNA arrays, and sequence comparison.</p>
-
-<p><strong>529 Artificial Intelligence</strong>
-Logical foundations, knowledge representation and reasoning, search, and selected topics such as natural language processing and reasoning under uncertainty.</p>
-
-<p><strong>539 Introduction to Compiler Design</strong>
-Basic techniques of compiler design and implementation: lexical analysis, parsing, code generation. Sizable programming project implementing a compiler for a block-structured language with strong typing.</p>
-
-<p><strong>540 Human-Computer Interface Development</strong>
-Survey of concepts and techniques for human-computer interface development. Topics include user-centered design, user interface programming, and usability evaluation.</p>
-
-<p><strong>550 Combinatorics on Words</strong>
-Introduction to the problems and methods in algorithmic combinatorics on words. Problem areas include periodicity, primitivity, and borderedness.</p>
-
-<p><strong>553 Theory of Computation</strong>
-Finite state automata and regular expressions, context-free grammars, push-down automata and their use in parsing, overview of language translation systems, models for programming language semantics, computability and undecidability.</p>
-
-<p><strong>555 Algorithm Analysis and Design</strong>
-Sequential algorithm design and complexity analysis. Dynamic programming. Greedy algorithms. Graph algorithms. Selected advanced topics from NP-completeness; approximation, randomized, parallel, number-theoretic algorithms; Fast Fourier Transform; computational geometry; string matching.</p>
-
-<p><strong>561 Principles of Computer Architecture</strong>
-Hardware and software components of computer systems, their organization and operations. Topics: comparative instruction set architectures, microprogramming, memory management, processor management, I/O, interrupts, and emulation of processors.</p>
-
-<p><strong>562 Principles of Operating Systems</strong>
-Techniques and strategies used in operating system design and implementation: managing processes, input/output, memory, scheduling, file systems, and protection.</p>
-
-<p><strong>567 Principles of Computer Networks</strong>
-Hardware and software components of computer networks, their organization and operations. Topics: open system interconnection; local area networks; TCP/IP internetworking, routing, and packet switching; network programming.</p>
-
-<p><strong>568 Principles of Wireless Networks</strong>
-Digitial communications, Communication networks, wireless communication technology, wireless networking, wireless LANs and wireless network programming.</p>
-
-<p><strong>580 Cryptography and Security in Computing</strong>
-Modern development of cryptography and secure encryption protocols. Program security and viruses. Operating system protection. Network and distributed system security. Database security. Administering security.</p>
-
-<p><strong>583 Firewall Architecture and Computer Security</strong>
-Firewall hardware and software technologies. Architectures, protocols and their applications.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -899,6 +972,10 @@ Firewall hardware and software technologies. Architectures, protocols and their 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/09/14/fun-with-numbers/">Fun With Numbers! (Revised)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/08/30/moved-to-octopress/">Moved to Octopress!</a>
       </li>
     
@@ -912,10 +989,6 @@ Firewall hardware and software technologies. Architectures, protocols and their 
     
       <li class="post">
         <a href="/blog/2012/08/31/simple-rails-development-part-ii-core-gedit-plugins/">Simple Rails Development Part II: Core GEdit Plugins</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/30/simple-rails-development-part-i-gedit-click-config/">Simple Rails Development Part I: Gedit Click Config</a>
       </li>
     
   </ul>
