@@ -1,2 +1,51 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+body>header {
+  background-color: #aaa;
+}
+article .note {
+  font-size: 90%;
+  font-style: normal;
+  padding-left: 1.5em;
+  border-left: 4px #ccc solid;
+  line-height: 1.2em;
+  margin-bottom: 2em;
+}
+body>header h1 a{
+  color: #333 !important;
+  font-weight: bold;
+}
+body>header h2 {
+  color: #333;
+}
+
+#logo_header_image{
+  float: left;
+  margin-right: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+.center .code .line{
+  text-align: center;
+  display: block;
+}
+.center {
+  text-align: center;
+}
+.katex {
+  line-height: 1.8;
+}
+
+.notice {
+  display: block;
+  border: 2px solid #333;
+  background: #ccc linear-gradient(#e0e0e0,#cccccc,#b0b0b0);
+  margin: 20px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 80%;
+}
+.italics {
+  font-style: italic;
+}

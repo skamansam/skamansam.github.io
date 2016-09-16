@@ -1,3 +1,37 @@
 {% comment %}
   Add content to be output at the bottom of each page. (You might use this for analytics scripts, for example)
 {% endcomment %}
+<script>
+if(window.attachEvent) {
+  window.attachEvent('onload', render_latex);
+} else {
+  if(window.onload) {
+      var curronload = window.onload;
+      var newonload = function(evt) {
+          curronload(evt);
+          render_latex()
+      };
+      window.onload = newonload;
+  } else {
+      window.onload = render_latex;
+  }
+}
+function render_latex() {
+  var tex_elements = document.querySelectorAll('.tex')
+  for(elem_idx in tex_elements){
+    elem = tex_elements[elem_idx]
+    console.log(elem)
+    renderMathInElement(
+      elem,
+      {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+      }
+    )
+  }
+}
+</script>
