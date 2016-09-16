@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cookie Detection in Rails 3"
-date: 2013-04-23 17:14:12 -0400)
+date: 2013-04-23 17:14:12 -0400
 comments: true
 categories:
   - ruby

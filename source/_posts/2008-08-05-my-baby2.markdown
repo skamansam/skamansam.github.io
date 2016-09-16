@@ -1,0 +1,9 @@
+---
+layout: post
+title: "my baby"
+date: 2008-08-05 17:18:00 -0400
+comments: true
+categories:
+---
+
+<a href="http://media2.shozu.com/cache/portal/media/51b3203/16777226"><img src="http://media2.shozu.com/cache/portal/media/51b3203/16777226_journal" /></a><br/>at cafe cabana<p align="right" ><a href="http://www.shozu.com/portal/?utm_source=upload&amp;utm_medium=graphic&amp;utm_campaign=upload_graphic/" target="_blank" ><img src="http://www.shozu.com/resources/messages/logo_blog.gif" alt="Posted by ShoZu" border="0" /></a></p>
