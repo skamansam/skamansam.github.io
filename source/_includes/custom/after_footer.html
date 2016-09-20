@@ -2,25 +2,30 @@
   Add content to be output at the bottom of each page. (You might use this for analytics scripts, for example)
 {% endcomment %}
 <script>
-if(window.attachEvent) {
-  window.attachEvent('onload', render_latex);
-} else {
-  if(window.onload) {
-      var curronload = window.onload;
-      var newonload = function(evt) {
-          curronload(evt);
-          render_latex()
-      };
-      window.onload = newonload;
-  } else {
-      window.onload = render_latex;
+
+var onloadhandler = function(){
+  render_mermaid()
+  render_latex()
+}
+
+var render_mermaid = function(){
+  var elements = document.querySelectorAll(".chart");
+  console.info('elements:', elements)
+  for(i  in elements){
+    var element = elements[i];
+    var insertSvg = function(svgCode, bindFunctions){
+        element.innerHTML = svgCode;
+    };
+
+    var graphDefinition = element.textContent;
+    var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
   }
 }
-function render_latex() {
+
+var render_latex = function() {
   var tex_elements = document.querySelectorAll('.tex')
   for(elem_idx in tex_elements){
     elem = tex_elements[elem_idx]
-    console.log(elem)
     renderMathInElement(
       elem,
       {
@@ -34,4 +39,20 @@ function render_latex() {
     )
   }
 }
+
+if(window.attachEvent) {
+  window.attachEvent('onload', onloadhandler);
+} else {
+  if(window.onload) {
+      var curronload = window.onload;
+      var newonload = function(evt) {
+          curronload(evt);
+          onloadhandler();
+      };
+      window.onload = newonload;
+  } else {
+      window.onload = onloadhandler;
+  }
+}
+
 </script>

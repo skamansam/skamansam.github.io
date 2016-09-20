@@ -3,6 +3,15 @@
 body>header {
   background-color: #aaa;
 }
+
+article ul, ol{
+    margin-left: 3em;
+}
+
+article .chart {
+  font-family: monospace;
+  white-space: pre;
+}
 article .note {
   font-size: 90%;
   font-style: normal;

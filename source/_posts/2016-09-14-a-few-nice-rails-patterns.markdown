@@ -67,23 +67,50 @@ There are a few problems with this approach, chiefly, running a data migration i
 There is also the issue of changes in environemnt. You may have this thoroughly tested while in development or in testing environments, but production is known to throw a wrench in the works. This means you need to baby-sit your data migrations, which you won't be able to do while it's in a deploy migration. You will need to run this separately, in a production console.
 
 Finally, there is the obvious issue of violations to the **SRP**. This migration does three things:
+
 1. creates a new temporary column
 2. creates the new data based on the existing data
 3. replaces the original column with the new column
 
-The best way to address all these issues is to just break the migration up into ints distinct pieces, by doing the following:
+The best way to address all these issues is to just break the migration up into its distinct pieces, by doing the following:
+
 1. create and run a migration to create a new column in the Db
 2. run the data migration (in the production console)
 3. create and run a migration to replace the old column with the new one
 
-For many of us, step 2 is a very daunting task. Rails consoles in production are a hairy endeavor and could lead to bad data integrity and other sorts of bad things, including deleting all data! Fortunately for you guys, Rails already has a solution for this: `rails runner` or `rails r`. While this won't solve data integrity issues, it will allow you to run a script in the current Rails environment. This means you can have tested and peer reviewed data migrations! Amazing!
+For many of us, step 2 is a very daunting task. Rails consoles in production are a hairy endeavor and could lead to bad data integrity and other sorts of bad things, including deleting all data! Fortunately for you guys, Rails already has a solution for this.
 
 ### Introducing Rails Runner
-Rails runner is a great tool for running data migrations and other one-shot data changes in your Rails application. For ease of organization, you can put all your data migrations in `db/migrate/data/`. Another common place is `bin/one-shot/:year/:month/`. If this is a hotfix for a tech support ticket, it is helpful to put the ticket number in the name of the file, for instance `bin/one-shot/2016/09/TS-432098-update-bad-data.rb`. The point is, your team should agree on a place to put all these tickets so everyone can keepo track of the changes. Developers can add a `post_checkout` git hook to automatically run all new scripts in the agreed-upon directory.
 
+Rails runner is a great tool for running data migrations and other one-shot data changes in your Rails application. You can execute rails runner as `rails runner bin/file.rb` or `rails r bin/file.rb`. While this won't solve data integrity issues, it will allow you to run a script in the current Rails context. This means you can have tested and peer reviewed data migrations! Amazing!
+
+Rails runner runs the specified file in the context of your Rals app. This means you can get all the same benefits as running code from the console, but with the added bonus of
+
+For ease of organization, you can put all your data migrations in `db/migrate/data/`. Another common place is `bin/one-shot/:year/:month/`. If this is a hotfix for a tech support ticket, it is helpful to put the ticket number in the name of the file, for instance `bin/one-shot/2016/09/TS-432098-update-bad-data.rb`. The point is, your team should agree on a place to put all these tickets so everyone can keep track of the changes. Developers can add a `post_checkout` git hook to automatically run all new scripts in the agreed-upon directory.
+
+### Flow for Data Migrations
+
+<div class="chart">
+%% Waiting for the following chart to load...
+graph TB;
+  db1{database needs to be changed?}
+  done{Done.}
+  dm1[Run database migration]
+  dm2{data needs to be changed?}
+  dm3[run script to change data]
+  dm4{database needs cleanup?}
+  dm1-->dm2
+  db1 -- yes -->dm1
+  db1-- no -->done
+  dm2 -- no -->done
+  dm2 -- yes --> dm3
+  dm3 --> dm4
+  dm4 -- yes --> dm1
+  dm4 -- no --> done
+</div>
 
 ## Presenting Presenters
-[About Presenters, decorator patters]
+[About Presenters, decorator pattern]
 
 ## Interacting With Objects
 [about interactors, service object patters]
