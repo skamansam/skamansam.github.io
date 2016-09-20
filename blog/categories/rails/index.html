@@ -38,17 +38,32 @@
 <meta content="#ffffff" name="theme-color"/>
 
   <link href="/atom.xml" rel="alternate" title="Rude Boy Solutions" type="application/atom+xml">
+
+  <!-- include modernizr and jquery -->
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/libs/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/contrib/auto-render.min.js"></script>
+  <!--<script src="/javascripts/libs/jquery.min.js"></script>-->
+
+  <!-- include jquery if it isn't already -->
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+
+  <!-- includes for octopress -->
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<!-- For latex rendering with katex -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/contrib/auto-render.min.js"></script>
+
+<!-- For chart rendering with mermaid 6.0.0 -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.css">
+<script src="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.min.js"></script>
+<!-- <script src="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaidAPI.min.js"></script> -->
+<script>mermaid.initialize({startOnLoad:false, cloneCssStyles: false});</script>
 
   
   <script type="text/javascript">
@@ -156,6 +171,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/09/14/data-migrations-and-you/">Data Migrations and You!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/09/14/fun-with-numbers/">Fun With Numbers! (Revised)</a>
       </li>
     
@@ -169,10 +188,6 @@
     
       <li class="post">
         <a href="/blog/2013/04/10/building-a-unified-time-select-field/">Building a Unified Time_select Field</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/31/simple-rails-development-part-ii-core-gedit-plugins/">Simple Rails Development Part II: Core GEdit Plugins</a>
       </li>
     
   </ul>
@@ -283,25 +298,30 @@
 
 
 <script>
-if(window.attachEvent) {
-  window.attachEvent('onload', render_latex);
-} else {
-  if(window.onload) {
-      var curronload = window.onload;
-      var newonload = function(evt) {
-          curronload(evt);
-          render_latex()
-      };
-      window.onload = newonload;
-  } else {
-      window.onload = render_latex;
+
+var onloadhandler = function(){
+  render_mermaid()
+  render_latex()
+}
+
+var render_mermaid = function(){
+  var elements = document.querySelectorAll(".chart");
+  console.info('elements:', elements)
+  for(i  in elements){
+    var element = elements[i];
+    var insertSvg = function(svgCode, bindFunctions){
+        element.innerHTML = svgCode;
+    };
+
+    var graphDefinition = element.textContent;
+    var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
   }
 }
-function render_latex() {
+
+var render_latex = function() {
   var tex_elements = document.querySelectorAll('.tex')
   for(elem_idx in tex_elements){
     elem = tex_elements[elem_idx]
-    console.log(elem)
     renderMathInElement(
       elem,
       {
@@ -315,6 +335,22 @@ function render_latex() {
     )
   }
 }
+
+if(window.attachEvent) {
+  window.attachEvent('onload', onloadhandler);
+} else {
+  if(window.onload) {
+      var curronload = window.onload;
+      var newonload = function(evt) {
+          curronload(evt);
+          onloadhandler();
+      };
+      window.onload = newonload;
+  } else {
+      window.onload = onloadhandler;
+  }
+}
+
 </script>
 
 
