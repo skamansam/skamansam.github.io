@@ -1,20 +1,16 @@
 ---
 layout: post
-title: "A Few Nice Rails Patterns"
+title: "Data Migrations and You!"
 date: 2016-09-14 10:06:59 -0400
 comments: true
 categories:
   - programming
   - design patterns
-#published: false
+  - Ruby
+  - Ruby on Rails
+  - best practices
+published: true
 ---
-
-<div class='note'>
-  NOTE: This is part one of a series on programming patterns and good practices for Ruby on Rails developers. Start here.
-</div>
-
-## This episode: Data Migrations and You!
-
 
 ## A Little Background
 
@@ -93,22 +89,32 @@ For ease of organization, you can put all your data migrations in `db/migrate/da
 <div class="chart">
 %% Waiting for the following chart to load...
 graph TB;
-  db1{database needs to be changed?}
-  done{Done.}
-  dm1[Run database migration]
-  dm2{data needs to be changed?}
-  dm3[run script to change data]
-  dm4{database needs cleanup?}
-  dm1-->dm2
-  db1 -- yes -->dm1
-  db1-- no -->done
-  dm2 -- no -->done
-  dm2 -- yes --> dm3
-  dm3 --> dm4
-  dm4 -- yes --> dm1
-  dm4 -- no --> done
+  db?{database needs to be changed?}
+  done[Done.]
+  db["Run database migration (rails migration)"]
+  data?{data needs to be changed?}
+  data["run script to change data (one-shot)"]
+  db_cleanup?{database needs cleanup?}
+  db? -- yes --> db
+  db? -- no  --> done
+  db  --> data?
+  data? -- no -->done
+  data? -- yes --> data
+  data --> db_cleanup?
+  db_cleanup? -- yes --> db
+  db_cleanup? -- no --> done
 </div>
 
+
+If you want to run any migration in Rails, just follow these easy steps:
+
+  1. For data migrations, create a one-shot and use `rails runner`. This is a best practice because it allows your team to test and review your changes. **NEVER EVER NEVER RUN A PRODUCTION CONSOLE!**
+  2. Use `rails migrations` **FOR DATABASE MODEL CHANGES ONLY**
+  3. Apply rules _1_ and _2_ as liberally as possible.
+
+If you want to create a data migration, use one-shots. If you want to create a data migration with a database change, separate the two concerns into a Rails migration, then a data migration, then a cleanup migration if needed. Of course, YMMV, as with any best practice, just make sure your team is onboard with it and, above all, rememeber that agreeing on standard practices is the core of a happy team!
+
+<!--
 ## Presenting Presenters
 [About Presenters, decorator pattern]
 
@@ -126,3 +132,4 @@ graph TB;
 
 ## Proper Tooling
 [Use tools! Use gems! Research which ones work for you and your team. Do not reinvent the wheel!]
+-->

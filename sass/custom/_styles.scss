@@ -3,6 +3,11 @@
 body>header {
   background-color: #aaa;
 }
+@media only screen and (min-width: 768px){
+  article ul, ol{
+      margin-left: 3em;
+  }
+}
 
 article ul, ol{
     margin-left: 3em;
