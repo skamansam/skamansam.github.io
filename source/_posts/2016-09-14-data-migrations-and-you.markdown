@@ -18,7 +18,7 @@ The university from which I graduated did not teach any programming patterns, so
 
 ## Migrations Are Only For Modifying The Database
 
-This is a difficult rule to follow for lots of Rails developers, experienced and not so. Since migrations are ususally automated, it is easy to get in the mindset of adding data changes to migrations. This violates the **Single Responsibility Principle**, which states, _a class should have a responsibility over a single feature of your application_.
+This is a difficult rule to follow for lots of Rails developers, experienced and not so. Since migrations are usually automated, it is easy to get in the mindset of adding data changes to migrations. This violates the **Single Responsibility Principle**, which states, _A class should have a responsibility over a single feature of your application_.
 
 <div class='note'>
 Scenario: You have a nice chat app and you want to add the ability for users to 'favorite' certain messages. At first, you have a boolean field in your database, so your original migration looks like this:
@@ -39,8 +39,7 @@ class CreateMessageFavorites < ActiveRecord::Migration
   end
 end
 ```
-After a few months, and many _many_ messages (6 million!), you decide you want the 'favorite' button to handle a few more emotions, such as "makes me happy," "makes me sad," "makes me angry," "makes me crazy," and "meh, just a note." You then decide
-</div>
+After a few months, and many _many_ messages (6 million!), you decide you want the 'favorite' button to handle a few more emotions, such as "makes me happy," "makes me sad," "makes me angry," "makes me crazy," and "meh, just a note."</div>
 
 There are several ways of going about doing this. Once you analyze your requirements, you decide to use the existing `MessageFavorite#favorite` field to store the new information.Your immediate thought is to use a migration as such:
 
@@ -60,7 +59,7 @@ end
 ```
 There are a few problems with this approach, chiefly, running a data migration in the middle of a Rails migration like this is going to grind things to a halt. Your deploy is going to take forever! There is also an issue of what happens when there is an error in your data migration which will prevent everything from happening and could leave you with dangling data that another migration won't be able to fix.
 
-There is also the issue of changes in environemnt. You may have this thoroughly tested while in development or in testing environments, but production is known to throw a wrench in the works. This means you need to baby-sit your data migrations, which you won't be able to do while it's in a deploy migration. You will need to run this separately, in a production console.
+Change in environment is also a big issue. You may have this thoroughly tested while in development or in testing environments, but production is known to throw a wrench into the works. This untested environment means you need to baby-sit your data migration, which you won't be able to do while it's in a deploy migration. You will need to run this separately, in a production console.
 
 Finally, there is the obvious issue of violations to the **SRP**. This migration does three things:
 
@@ -74,13 +73,11 @@ The best way to address all these issues is to just break the migration up into 
 2. run the data migration (in the production console)
 3. create and run a migration to replace the old column with the new one
 
-For many of us, step 2 is a very daunting task. Rails consoles in production are a hairy endeavor and could lead to bad data integrity and other sorts of bad things, including deleting all data! Fortunately for you guys, Rails already has a solution for this.
+For many of us, step 2 is a very daunting task. Rails consoles in production are a hairy endeavor and can lead to bad data integrity and other sorts of bad things, including deleting all data! Fortunately for you guys, Rails already has a solution for this.
 
 ### Introducing Rails Runner
 
-Rails runner is a great tool for running data migrations and other one-shot data changes in your Rails application. You can execute rails runner as `rails runner bin/file.rb` or `rails r bin/file.rb`. While this won't solve data integrity issues, it will allow you to run a script in the current Rails context. This means you can have tested and peer reviewed data migrations! Amazing!
-
-Rails runner runs the specified file in the context of your Rals app. This means you can get all the same benefits as running code from the console, but with the added bonus of
+Rails runner is a great tool for running data migrations and other one-shot data changes in your Rails application. Rails runner runs a given file in the context of your Rails app. You can execute Rails runner as `rails runner bin/file.rb` or `rails r bin/file.rb`. While this won't solve data integrity issues, it will allow you to run a script in the current Rails context. This means you can have tested and peer reviewed data migrations! Amazing!
 
 For ease of organization, you can put all your data migrations in `db/migrate/data/`. Another common place is `bin/one-shot/:year/:month/`. If this is a hotfix for a tech support ticket, it is helpful to put the ticket number in the name of the file, for instance `bin/one-shot/2016/09/TS-432098-update-bad-data.rb`. The point is, your team should agree on a place to put all these tickets so everyone can keep track of the changes. Developers can add a `post_checkout` git hook to automatically run all new scripts in the agreed-upon directory.
 
@@ -92,7 +89,7 @@ graph TB;
   db?{database needs to be changed?}
   done[Done.]
   db["Run database migration (rails migration)"]
-  data?{data needs to be changed?}
+  data?{data need to be changed?}
   data["run script to change data (one-shot)"]
   db_cleanup?{database needs cleanup?}
   db? -- yes --> db
@@ -108,11 +105,11 @@ graph TB;
 
 If you want to run any migration in Rails, just follow these easy steps:
 
-  1. For data migrations, create a one-shot and use `rails runner`. This is a best practice because it allows your team to test and review your changes. **NEVER EVER NEVER RUN A PRODUCTION CONSOLE!**
+  1. For data migrations, create a one-shot and use `rails runner`. This is a best practice because it allows your team to test and review your changes. **NEVER EVER EVER RUN A PRODUCTION CONSOLE!**
   2. Use `rails migrations` **FOR DATABASE MODEL CHANGES ONLY**
   3. Apply rules _1_ and _2_ as liberally as possible.
 
-If you want to create a data migration, use one-shots. If you want to create a data migration with a database change, separate the two concerns into a Rails migration, then a data migration, then a cleanup migration if needed. Of course, YMMV, as with any best practice, just make sure your team is onboard with it and, above all, rememeber that agreeing on standard practices is the core of a happy team!
+If you want to create a data migration, use one-shots. If you want to create a data migration with a database change, separate the two concerns into a Rails migration, then a data migration, then a cleanup migration if needed. Of course, YMMV, as with any best practice, just make sure your team is onboard with it and, above all, remember that agreeing on standard practices is the core of a happy team!
 
 <!--
 ## Presenting Presenters
