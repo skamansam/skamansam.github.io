@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby on Rails | Rude Boy Solutions]]></title>
   <link href="http://skamansam.github.io/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://skamansam.github.io/"/>
-  <updated>2016-09-20T10:27:43-04:00</updated>
+  <updated>2016-09-25T13:41:42-04:00</updated>
   <id>http://skamansam.github.io/</id>
   <author>
     <name><![CDATA["Skaman Sam" Tyler]]></name>
@@ -24,7 +24,7 @@
 
 <h2>Migrations Are Only For Modifying The Database</h2>
 
-<p>This is a difficult rule to follow for lots of Rails developers, experienced and not so. Since migrations are ususally automated, it is easy to get in the mindset of adding data changes to migrations. This violates the <strong>Single Responsibility Principle</strong>, which states, <em>a class should have a responsibility over a single feature of your application</em>.</p>
+<p>This is a difficult rule to follow for lots of Rails developers, experienced and not so. Since migrations are usually automated, it is easy to get in the mindset of adding data changes to migrations. This violates the <strong>Single Responsibility Principle</strong>, which states, <em>A class should have a responsibility over a single feature of your application</em>.</p>
 
 <div class='note'>
 Scenario: You have a nice chat app and you want to add the ability for users to 'favorite' certain messages. At first, you have a boolean field in your database, so your original migration looks like this:
@@ -58,8 +58,7 @@ Scenario: You have a nice chat app and you want to add the ability for users to 
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
-After a few months, and many _many_ messages (6 million!), you decide you want the 'favorite' button to handle a few more emotions, such as "makes me happy," "makes me sad," "makes me angry," "makes me crazy," and "meh, just a note." You then decide
-</div>
+After a few months, and many _many_ messages (6 million!), you decide you want the 'favorite' button to handle a few more emotions, such as "makes me happy," "makes me sad," "makes me angry," "makes me crazy," and "meh, just a note."</div>
 
 
 <p>There are several ways of going about doing this. Once you analyze your requirements, you decide to use the existing <code>MessageFavorite#favorite</code> field to store the new information.Your immediate thought is to use a migration as such:</p>
@@ -80,7 +79,7 @@ end
 
 <p>There are a few problems with this approach, chiefly, running a data migration in the middle of a Rails migration like this is going to grind things to a halt. Your deploy is going to take forever! There is also an issue of what happens when there is an error in your data migration which will prevent everything from happening and could leave you with dangling data that another migration won&rsquo;t be able to fix.</p>
 
-<p>There is also the issue of changes in environemnt. You may have this thoroughly tested while in development or in testing environments, but production is known to throw a wrench in the works. This means you need to baby-sit your data migrations, which you won&rsquo;t be able to do while it&rsquo;s in a deploy migration. You will need to run this separately, in a production console.</p>
+<p>Change in environment is also a big issue. You may have this thoroughly tested while in development or in testing environments, but production is known to throw a wrench into the works. This untested environment means you need to baby-sit your data migration, which you won&rsquo;t be able to do while it&rsquo;s in a deploy migration. You will need to run this separately, in a production console.</p>
 
 <p>Finally, there is the obvious issue of violations to the <strong>SRP</strong>. This migration does three things:</p>
 
@@ -100,13 +99,11 @@ end
 </ol>
 
 
-<p>For many of us, step 2 is a very daunting task. Rails consoles in production are a hairy endeavor and could lead to bad data integrity and other sorts of bad things, including deleting all data! Fortunately for you guys, Rails already has a solution for this.</p>
+<p>For many of us, step 2 is a very daunting task. Rails consoles in production are a hairy endeavor and can lead to bad data integrity and other sorts of bad things, including deleting all data! Fortunately for you guys, Rails already has a solution for this.</p>
 
 <h3>Introducing Rails Runner</h3>
 
-<p>Rails runner is a great tool for running data migrations and other one-shot data changes in your Rails application. You can execute rails runner as <code>rails runner bin/file.rb</code> or <code>rails r bin/file.rb</code>. While this won&rsquo;t solve data integrity issues, it will allow you to run a script in the current Rails context. This means you can have tested and peer reviewed data migrations! Amazing!</p>
-
-<p>Rails runner runs the specified file in the context of your Rals app. This means you can get all the same benefits as running code from the console, but with the added bonus of</p>
+<p>Rails runner is a great tool for running data migrations and other one-shot data changes in your Rails application. Rails runner runs a given file in the context of your Rails app. You can execute Rails runner as <code>rails runner bin/file.rb</code> or <code>rails r bin/file.rb</code>. While this won&rsquo;t solve data integrity issues, it will allow you to run a script in the current Rails context. This means you can have tested and peer reviewed data migrations! Amazing!</p>
 
 <p>For ease of organization, you can put all your data migrations in <code>db/migrate/data/</code>. Another common place is <code>bin/one-shot/:year/:month/</code>. If this is a hotfix for a tech support ticket, it is helpful to put the ticket number in the name of the file, for instance <code>bin/one-shot/2016/09/TS-432098-update-bad-data.rb</code>. The point is, your team should agree on a place to put all these tickets so everyone can keep track of the changes. Developers can add a <code>post_checkout</code> git hook to automatically run all new scripts in the agreed-upon directory.</p>
 
@@ -118,7 +115,7 @@ graph TB;
   db?{database needs to be changed?}
   done[Done.]
   db["Run database migration (rails migration)"]
-  data?{data needs to be changed?}
+  data?{data need to be changed?}
   data["run script to change data (one-shot)"]
   db_cleanup?{database needs cleanup?}
   db? -- yes --> db
@@ -135,13 +132,13 @@ graph TB;
 <p>If you want to run any migration in Rails, just follow these easy steps:</p>
 
 <ol>
-<li>For data migrations, create a one-shot and use <code>rails runner</code>. This is a best practice because it allows your team to test and review your changes. <strong>NEVER EVER NEVER RUN A PRODUCTION CONSOLE!</strong></li>
+<li>For data migrations, create a one-shot and use <code>rails runner</code>. This is a best practice because it allows your team to test and review your changes. <strong>NEVER EVER EVER RUN A PRODUCTION CONSOLE!</strong></li>
 <li>Use <code>rails migrations</code> <strong>FOR DATABASE MODEL CHANGES ONLY</strong></li>
 <li>Apply rules <em>1</em> and <em>2</em> as liberally as possible.</li>
 </ol>
 
 
-<p>If you want to create a data migration, use one-shots. If you want to create a data migration with a database change, separate the two concerns into a Rails migration, then a data migration, then a cleanup migration if needed. Of course, YMMV, as with any best practice, just make sure your team is onboard with it and, above all, rememeber that agreeing on standard practices is the core of a happy team!</p>
+<p>If you want to create a data migration, use one-shots. If you want to create a data migration with a database change, separate the two concerns into a Rails migration, then a data migration, then a cleanup migration if needed. Of course, YMMV, as with any best practice, just make sure your team is onboard with it and, above all, remember that agreeing on standard practices is the core of a happy team!</p>
 
 <!--
 ## Presenting Presenters
