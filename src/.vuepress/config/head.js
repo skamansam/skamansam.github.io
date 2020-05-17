@@ -1,9 +1,9 @@
 
 module.exports = [
   ['meta', { 'http-equiv': 'x-ua-compatible', content: 'ie=edge' }],
-  ['meta', { name: 'apple-mobile-web-app-title', content: `MY APPLE TITLE` }],
+  ['meta', { name: 'apple-mobile-web-app-title', content: `Rude Boy Enterprises` }],
   ['meta', { name: 'theme-color', content: `MY COLOR THEME` }],
-  ['meta', { name: 'msapplication-navbutton-color', content: `MY COLOR THEME` }],
+  ['meta', { name: 'msapplication-navbutton-color', content: `#00ff00` }],
   ['meta', { name: 'mobile-web-app-capable', content: 'yes' }],
   ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }],
   ['meta', { name: 'coverage', content: 'WorldWide' }],
@@ -12,8 +12,8 @@ module.exports = [
   ['meta', { name: 'googlebot', content: 'index,follow' }],
   
   // Microsoft
-  ['meta', { name: 'application-name', content: `MY APP NAME` }],
-  ['meta', { name: 'msapplication-TileColor', content: `MY COLOR THEME` }],
+  ['meta', { name: 'application-name', content: `Rude Boy Enterprises` }],
+  ['meta', { name: 'msapplication-TileColor', content: `#00ff00` }],
   ['meta', { name: 'msapplication-config', content: '/browserconfig.xml' }],
   ['meta', { name: 'msapplication-square70x70logo', content: '/favicon/ms-icon-70x70.png' }],
   ['meta', { name: 'msapplication-TileImage', content: '/favicon/ms-icon-144x144.png' }],
@@ -22,7 +22,7 @@ module.exports = [
   
   // Twitter
   ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-  ['meta', { name: 'twitter:site', content: '@ktquez' }],
+  ['meta', { name: 'twitter:site', content: '@skamansam' }],
 
   // Facebook
   ['meta', { property: 'fb:app_id', content: `MY FACEBOOK APP ID` }],
