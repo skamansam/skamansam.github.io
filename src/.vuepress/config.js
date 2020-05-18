@@ -3,9 +3,8 @@ const path = require('path')
 const head = require('./config/head')
 const themeConfig = require('./config/themeConfig')
 const resolve = pathName => path.join(__dirname, pathName)
-
 module.exports = {
-  theme: 'ktquez',
+  // theme: 'ktquez',
   head,
   themeConfig,
   base: '/',
@@ -28,7 +27,7 @@ module.exports = {
     return {
       resolve: {
         alias: {
-          '@public': resolve('./public')
+          '@public': resolve('./public'),
         }
       }
     }
