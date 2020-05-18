@@ -30,9 +30,9 @@
 
 <script>
   // layouts
-  import LayoutBase from '@theme/layouts/Base'
-  import LayoutPost from '@theme/layouts/Post'
-  import LayoutPage from '@theme/layouts/Page'
+  import LayoutBase from '@theme/layouts/LayoutBase'
+  import LayoutPost from '@theme/layouts/LayoutPost'
+  import LayoutPage from '@theme/layouts/LayoutPage'
 
   // views
   import Home from '@theme/views/Home'
