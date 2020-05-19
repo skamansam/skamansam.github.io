@@ -100,6 +100,7 @@
     computed: {
       getCurrentCategory () {
         return this.$site.pages.filter(page => {
+            debugger;
           return this.item.lang === page.frontmatter.lang && page.frontmatter.slug === this.item.categories[0]
         })[0]
       },

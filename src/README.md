@@ -2,6 +2,7 @@
 view: home
 title: Rude Boy Enterprises
 description: Projects and Articles by Samuel C Tyler
+lang: en
 meta:
   - property: og:image
     content: /images/rbe-banner.png

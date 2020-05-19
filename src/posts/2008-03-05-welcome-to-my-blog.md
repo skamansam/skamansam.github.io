@@ -9,7 +9,7 @@ excerpt: Hello, all! This is the blog for "Skaman Sam" Tyler, founder of Rude Bo
 cover: true
 coverAlt: RBE Logo
 categories:
-  - about
+  - personal
 tags: 
   - welcome
 created_at: 2008-03-05 19:44:00  -0400

@@ -4,6 +4,7 @@ title: About us
 description: Find out more about the articles and video platform on web development and lifestyle, ktquez Play by Alan Ktquez.
 excerpt: Making web development even more interesting
 ctaContact: true
+lang: en
 meta:
   - property: og:image
     content: https://ktquez.com/share/ktquez-play-image-share.png

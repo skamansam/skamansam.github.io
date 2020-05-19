@@ -3,13 +3,13 @@ view: post
 layout: post
 lang: en
 author: skamansam
-title: "Accepted Into Google Summer of Code!"
+title: Accepted Into Google Summer of Code!
 description: A little bit about myself and my blog.
 excerpt: Hello, all! This is the blog for "Skaman Sam" Tyler, founder of Rude Boy Enterprises. 
-cover: true
+cover: false
 coverAlt: RBE Logo
 categories:
-  - about
+  - personal
 tags: 
   - welcome
 created_at: 2008-04-23 15:24:00 -0400
