@@ -1,22 +1,40 @@
 ---
 layout: post
+author: skamansam
 title: "Installing Gentoo 2008 in (qemu) Sun's VirtualBox on Fedora 10"
 date: 2009-02-02 8:31:00 -0400
 comments: true
 categories:
 ---
 
-I am currently taking a class on Operating System design and need to do some kernel hacking for the class. I thought about modifying the Fedora kernel, but decided against it, as I still want a stable system to operate in.So I looked into virtual machines, as Fedora has qemu and a nice graphical virtd client for managing virtual machines. While deciding on my mainstay distro (in 2000), I evaluated the gamut of Linux distros, so I decided to install Gentoo linux on my virtual machine because it rebuilds everyting on the fly.
+I am currently taking a class on Operating System design and need to do some kernel hacking for the class. I thought about 
+modifying the Fedora kernel, but decided against it, as I still want a stable system to operate in. So I looked into 
+virtual machines, as Fedora has qemu and a nice graphical virtd client for managing virtual machines. While deciding 
+on my mainstay distro (in 2000), I evaluated the gamut of Linux distros, so I decided to install Gentoo linux on my 
+virtual machine because it rebuilds everyting on the fly.
+
 I went to the Gentoo site and downloaded the minimal install CD for ia64. No luck here - it won't even boot, just hangs.
-Then I downloaded the minimal install CD for amd64. I got into the boot loader and booted the system, but it hung on the kernel module loading step.
-I finally decided to try a LiveCD. This worked beautifully. However, I couldn't start an X session, as the appropriate driver was not included on the CD. No real need, as I was installing it on my disk image. So I ran /opt/installer/bin/install and now it is installing fine. It is taking quite a while to install, however, and I hope to have it finished by the end of the day. (I have classes all day, and will resume install this evening.)
+
+Then I downloaded the minimal install CD for amd64. I got into the boot loader and booted the system, but it hung on the 
+kernel module loading step.
+
+I finally decided to try a LiveCD. This worked beautifully. However, I couldn't start an X session, as the appropriate 
+driver was not included on the CD. No real need, as I was installing it on my disk image. So I ran `/opt/installer/bin/install` 
+and now it is installing fine. It is taking quite a while to install, however, and I hope to have it finished by the 
+end of the day. (I have classes all day, and will resume install this evening.)
 
 [more to come later...]
 
-So I scrapped the idea of installing Gentoo on qemu. I t was just too slow and too much of a pain. So I decided to try out Sun's VirtualBox for the first time. I really like it! On my machine, it is faster than qemu and VMWare. The reason for testing on VBox is that qemu doesn't really support 64 bit OSs. I also wanted something that could take advantage of my hardware, and VMware does an OK job, but not at the level I want. It seems that VBox is everything I wanted, and i get speeds of almost the same as my host platform. I am running a benchmark program, nbench, and will post the results here when I finish.
+So I scrapped the idea of installing Gentoo on qemu. I t was just too slow and too much of a pain. So I decided to 
+try out Sun's VirtualBox for the first time. I really like it! On my machine, it is faster than qemu and VMWare. The 
+reason for testing on VBox is that qemu doesn't really support 64 bit OSs. I also wanted something that could take 
+advantage of my hardware, and VMware does an OK job, but not at the level I want. It seems that VBox is everything I 
+wanted, and i get speeds of almost the same as my host platform. I am running a benchmark program, nbench, and will 
+post the results here when I finish.
 
-nbench result for host OS (Fedora 10 x86_64 on Intel Core 2 Duo w/ 4Gb RAM):
-<pre>
+#### `nbench` result for host OS (Fedora 10 x86_64 on Intel Core 2 Duo w/ 4Gb RAM):
+
+```
 BYTEmark* Native Mode Benchmark ver. 2 (10/95)
 Index-split by Andrew D. Balsa (11/97)
 Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
@@ -49,10 +67,10 @@ INTEGER INDEX       : 20.615
 FLOATING-POINT INDEX: 32.769
 Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
 * Trademarks are property of their respective holder.
-</pre>
+```
 
-<h4>nbench result for Gentoo 2008 x86_64 on Sun VirtualBox (w/ 768 Mb RAM):</h4>
-<pre>
+#### `nbench` result for Gentoo 2008 x86_64 on Sun VirtualBox (w/ 768 Mb RAM):
+```
 BYTEmark* Native Mode Benchmark ver. 2 (10/95)
 Index-split by Andrew D. Balsa (11/97)
 Linux/Unix* port by Uwe F. Mayer (12/96,11/97)
@@ -85,4 +103,4 @@ INTEGER INDEX       : 14.479
 FLOATING-POINT INDEX: 28.480
 Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
 * Trademarks are property of their respective holder.
-</pre>
+```

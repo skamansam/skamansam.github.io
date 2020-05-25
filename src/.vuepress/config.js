@@ -23,6 +23,7 @@ module.exports = {
     //   lang: 'es'
     // }
   },
+  extraWatchFiles: ['**/*.md', '**/*.vue'],
   configureWebpack () {
     return {
       resolve: {

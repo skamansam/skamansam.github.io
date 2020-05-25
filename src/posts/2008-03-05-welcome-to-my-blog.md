@@ -3,17 +3,20 @@ view: post
 layout: post
 lang: en
 author: skamansam
-title: "Welcome To My Blog!"
+title: Welcome To My Blog!
 description: A little bit about myself and my blog.
 excerpt: Hello, all! This is the blog for "Skaman Sam" Tyler, founder of Rude Boy Enterprises. 
 cover: true
 coverAlt: RBE Logo
+demo: 
+audio: 
 categories:
   - personal
 tags: 
-  - welcome
-created_at: 2008-03-05 19:44:00  -0400
-updated_at: 2008-03-05 19:44:00  -0400
+  - about
+created_at: 2008-03-05 19:44
+updated_at: 2008-03-05 19:44
+
 meta:
   - property: og:image
     content: /images/rbe-banner.png

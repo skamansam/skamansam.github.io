@@ -6,10 +6,12 @@ comments: true
 categories:
 ---
 
-I have been looking for a nifty style-switching script, and have found none. So here is the code for a checkbox-based style switcher. This uses jQuery.
+I have been looking for a nifty style-switching script, and have found none. So here is the code for a checkbox-based 
+style switcher. This uses jQuery.
 
 The Javascript:
-<pre lang="javascript">/*ChangeStyle.js:
+```Javascript
+/*ChangeStyle.js:
 * -by Skaman Sam Tyler - http://rbe.homeip.net
 *
 * This script uses checkboxes to add and remove stylesheets from the page.
@@ -38,12 +40,15 @@ function toggleStyle(href) {
     $('head').append('&lt;link rel="stylesheet" href="'+href+'" type="text/css" media="screen" /&gt;');
   }
 }
-}</pre>
+}
+```
 The HTML file should include something like this:
-<pre lang="html4strict">&lt;form name="styleSwitchForm"&gt;
+```html
+&lt;form name="styleSwitchForm"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type="checkbox" rel="/styles/red.css" class="styleToggle"/&gt; Red Style&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type="checkbox" rel="/styles/blue.css" class="styleToggle"/&gt; Blue Style&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type="checkbox" rel="/styles/green.css" class="styleToggle"/&gt; Green Style&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/form&gt;</pre>
+&lt;/form&gt;
+```

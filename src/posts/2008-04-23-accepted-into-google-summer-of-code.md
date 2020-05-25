@@ -12,8 +12,8 @@ categories:
   - personal
 tags: 
   - welcome
-created_at: 2008-04-23 15:24:00 -0400
-updated_at: 2008-04-23 15:24:00 -0400
+created_at: 2008-04-23 15:24
+updated_at: 2008-04-23 15:24
 meta:
   - property: og:image
     content: /images/rbe-banner.png
@@ -21,4 +21,6 @@ meta:
     content: /images/rbe-banner.png
 ---
 
-I am so excited! After a few month's anticipation, I got accepted into Google's Summer of Code! My project is a GUI for CPAN. You can read more about it here: http://code.google.com/soc/2008/perl/appinfo.html?csaid=CF55D713AEE494A4. Look for more of my summer of code adventures here, under the gSoC tag!
+I am so excited! After a few month's anticipation, I got accepted into Google's Summer of Code! My project is a 
+GUI for CPAN. You can [read more about it here](http://code.google.com/soc/2008/perl/appinfo.html?csaid=CF55D713AEE494A4).
+Look for more of my summer of code adventures here, under the gSoC tag!
