@@ -104,8 +104,11 @@
 .header-top
   position: relative
   padding: 30px 20px 24px
-  background-color: white
-  
+  border-radius-bottom: 20px;
+  background: #afafaf;
+  box-shadow: inset 29px 29px 57px #959595, 
+              inset -29px -29px 57px #c9c9c9;
+
   &__hamburguer
     position: relative
     transform: rotate(90deg)

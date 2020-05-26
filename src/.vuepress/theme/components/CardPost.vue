@@ -21,7 +21,8 @@
             <responsive-picture :coverName="item.coverName">
               <img    
                 class="card-cover__image card-cover__image--top cover"
-                :src="`${item.coverName},w_${lastBreakpoint}.${extension}`" 
+                :src="item['coverImage'] || `${item.coverName},w_${lastBreakpoint}.${extension}`" 
+                :srcset="item['coverImageSet']"
                 :title="item.coverAlt"
                 :alt="item.coverAlt"> 
             </responsive-picture>
@@ -100,7 +101,6 @@
     computed: {
       getCurrentCategory () {
         return this.$site.pages.filter(page => {
-            debugger;
           return this.item.lang === page.frontmatter.lang && page.frontmatter.slug === this.item.categories[0]
         })[0]
       },
@@ -124,6 +124,12 @@
           return `${coverName},w_${this.$themeConfig.responsive.breakpoints[0]}.${this.extension}`
         }
         return `${coverName}.${this.extension}`
+      },
+      getCoverImage(item) {
+          if (item['coverImage']){
+              return item['coverImage']
+          }
+          return `${item.coverName},w_${lastBreakpoint}.${extension}`
       }
     }
   }
