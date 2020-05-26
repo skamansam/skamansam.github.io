@@ -106,8 +106,8 @@
   padding: 30px 20px 24px
   border-radius-bottom: 20px;
   background: #afafaf;
-  box-shadow: inset 29px 29px 57px #959595, 
-              inset -29px -29px 57px #c9c9c9;
+  box-shadow: inset 7px 7px 14px #959595, 
+              inset -7px -7px 14px #c9c9c9;
 
   &__hamburguer
     position: relative
