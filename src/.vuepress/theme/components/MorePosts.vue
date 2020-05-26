@@ -57,14 +57,32 @@
 @import '~@theme/styles/config.styl'
 
 .section-more
-  border-top: 1px solid $borderColor
+  //   border-top: 1px solid $borderColor
+
+.more-posts, .more-sidebar
+  border-radius: 20px;
+  background: #afafaf;
+  box-shadow: inset 7px 7px 14px #959595, 
+                inset -7px -7px 14px #c9c9c9;
+
+@media (min-width: 48rem)
+  .more-sidebar
+    margin-left: 20px
+  .more-posts.column.md-67
+    flex: 0 0 66.66667%
+    max-width: calc(66.667% - 20px)
 
 .more-posts
+  border-radius: 20px
+  background: #afafaf
+  box-shadow: inset 7px 7px 14px #959595, 
+              inset -7px -7px 14px #c9c9c9
   &__list
     margin-top: 30px
   
   &.column
     padding-right: 30px
+
 
 .allposts-button
   margin-top: 50px
@@ -74,8 +92,9 @@
     text-transform: uppercase
 
 .more-sidebar
+
   @media (min-width: $max-tablet)
-    border-left: 1px solid $borderColor
+    // border-left: 1px solid $borderColor
 
   &.column
     padding-left: 30px

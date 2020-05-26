@@ -103,7 +103,7 @@
 
 .header-top
   position: relative
-  padding: 30px 20px 24px
+  padding: 15px
   border-radius-bottom: 20px;
   background: #afafaf;
   box-shadow: inset 7px 7px 14px #959595, 
