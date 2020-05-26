@@ -41,7 +41,7 @@ img.cover
 
   &:after
     content: ""
-    background-image: url('/fallback.png')
+    background-image: url('/rbe_logo.gif')
     background-size: 80px
     background-position: center
     background-repeat: no-repeat
@@ -87,9 +87,13 @@ img.cover
 .box-default
   border-radius: 20px
   padding: 16px 20px
-  box-shadow: 1px 1px 99px #E2E2E2
-  background-color: white
   border: 1px solid @background-color
+  box-shadow: 3px 3px 3px #ddd, -3px -3px 3px #fff
+  background-color: @background-color
+  border-top: 1px solid #ddd
+  border-bottom: 1px solid #fff
+  border-left: 1px solid #ddd
+  border-right: 1px solid #fff
 
 .meta-text
   font-size: $smallText

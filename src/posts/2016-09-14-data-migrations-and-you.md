@@ -28,7 +28,7 @@ This is a difficult rule to follow for lots of Rails developers, experienced and
 automated, it is easy to get in the mindset of adding data changes to migrations. This violates the 
 **Single Responsibility Principle**, which states, _A class should have a responsibility over a single feature of your application_.
 
-<blog-note>
+<blog-note><div class="note">
 
 Scenario: You have a nice chat app and you want to add the ability for users to 'favorite' certain messages. 
 At first, you have a boolean field in your database, so your original migration looks like this:
@@ -54,7 +54,7 @@ After a few months, and many _many_ messages (6 million!), you decide you want t
 a few more emotions, such as "makes me happy," "makes me sad," "makes me angry," "makes me crazy," and "meh, 
 just a note."
 
-</blog-note>
+</div></blog-note>
 
 There are several ways of going about doing this. Once you analyze your requirements, you decide to use the 
 existing `MessageFavorite#favorite` field to store the new information.Your immediate thought is to use a 

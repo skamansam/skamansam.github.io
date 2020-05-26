@@ -4,21 +4,22 @@ layout: post
 lang: en
 author: skamansam
 title: Accepted Into Google Summer of Code!
-description: A little bit about myself and my blog.
-excerpt: Hello, all! This is the blog for "Skaman Sam" Tyler, founder of Rude Boy Enterprises. 
-cover: false
+description: GUI for CPAN
+excerpt:  I got accepted into Google's Summer of Code! My project is a GUI for CPAN.
+cover: true
+coverName: /images/GSoC-logo-horizontal-800.png
 coverAlt: RBE Logo
 categories:
   - personal
 tags: 
-  - welcome
+  - gSoC
 created_at: 2008-04-23 15:24
 updated_at: 2008-04-23 15:24
 meta:
   - property: og:image
-    content: /images/rbe-banner.png
+    content: /images/GSoC-logo-horizontal-800.png
   - name: twitter:image
-    content: /images/rbe-banner.png
+    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 I am so excited! After a few month's anticipation, I got accepted into Google's Summer of Code! My project is a 
