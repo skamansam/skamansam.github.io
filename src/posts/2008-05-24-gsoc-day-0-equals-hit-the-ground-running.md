@@ -27,8 +27,8 @@ It is now day 0 for gSoC - the first day. I have hit the ground running and am o
 start. I have already created the CPANPLUS::Shell integration and the file layout necessary 
 for uploading to CPAN.
 
-Today, I plan on running some tests to gather output from CPANPLUS and posting notes on my 
-project's wiki [http://wxcpanplus.googlecode.com]. I plan on testing searching, listing 
+Today, I plan on running some tests to gather output from CPANPLUS and posting notes on [my 
+project's wiki](http://wxcpanplus.googlecode.com). I plan on testing searching, listing 
 installed modules, listing updated modules and parsing all this output into some form I 
 can really use.
 
