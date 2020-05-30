@@ -29,13 +29,13 @@ module.exports = {
   lazyLoad: {},
   share: {
     facebook: {
-      appId: `MY FACEBOOK APP ID`,
+      appId: `310554869041836`,
       version: 'v3.1'
     }
   },
   elevator: {
     duration: 4000,
-    mainAudio: '/music/elevator.mp3',
+    mainAudio: '/music/goingup.mp3',
     endAudio: '/music/ding.mp3'
   }
 }

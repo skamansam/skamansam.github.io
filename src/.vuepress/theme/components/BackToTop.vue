@@ -5,7 +5,7 @@
       class="elevator__link" 
       ref="arrowTop" 
       :class="{ 'elevator__link--show': show, 'elevator__link--fire': fire }">
-        <span class="icon elevator__icon">greaterthan</span>
+        <span class="icon elevator__icon">greaterthan</span> Top
     </a>
   </div>
 </template>
@@ -82,7 +82,7 @@
   z-index: 99
 
   &__link
-    position: fixed
+    position: absolute
     border-radius: 50%
     padding: 12px 18px
     display: inline-block
@@ -94,12 +94,14 @@
     cursor: pointer
     background-color: $primaryColor
     transition: all .5s
-
+    background: linear-gradient(145deg, #7045e6, #8552ff);
+    box-shadow:  2px 2px 4px #6941d9, 
+                -2px -2px 4px #8f59ff;
     &--fire
       animation: fire 1s linear infinite
     
     &--show
-      bottom: 300px
+      bottom: -150px  // 300px
       opacity: 1
       visibility: visible
 
