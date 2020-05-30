@@ -6,7 +6,7 @@ author: skamansam
 title: Accepted Into Google Summer of Code!
 description: GUI for CPAN
 excerpt:  I got accepted into Google's Summer of Code! My project is a GUI for CPAN.
-cover: true
+cover: false
 coverImage: /images/GSoC-logo-horizontal-800.png
 coverAlt: RBE Logo
 categories:
