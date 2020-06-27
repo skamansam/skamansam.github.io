@@ -1,12 +1,31 @@
 ---
-layout: post
-author: skamansam
-title: "Installing Gentoo 2008 in (qemu) Sun's VirtualBox on Fedora 10"
-date: 2009-02-02 8:31:00 -0400
 comments: true
+view: post
+layout: post
+lang: en
+author: skamansam
+title: Installing Gentoo 2008 in (qemu) Sun's VirtualBox on Fedora 10
+description: Information on virtual OSs and benchmarks
+excerpt: I am currently taking a class on Operating System design and need to do some kernel hacking for the class. 
+cover: false
+coverImage: /images/GSoC-logo-horizontal-800.png
+coverAlt: RBE Logo
 categories:
+  - linux
+tags: 
+  - Fedora
+  - VirtualBox
+  - Gentoo
+created_at: 2009-02-02 08:31
+updated_at: 2009-02-02 08:31
+meta:
+  - property: og:image
+    content: /images/GSoC-logo-horizontal-800.png
+  - name: twitter:image
+    content: /images/GSoC-logo-horizontal-800.png
 ---
 
+# Why I Need A Virtual OS
 I am currently taking a class on Operating System design and need to do some kernel hacking for the class. I thought about 
 modifying the Fedora kernel, but decided against it, as I still want a stable system to operate in. So I looked into 
 virtual machines, as Fedora has qemu and a nice graphical virtd client for managing virtual machines. While deciding 
@@ -32,7 +51,7 @@ advantage of my hardware, and VMware does an OK job, but not at the level I want
 wanted, and i get speeds of almost the same as my host platform. I am running a benchmark program, nbench, and will 
 post the results here when I finish.
 
-#### `nbench` result for host OS (Fedora 10 x86_64 on Intel Core 2 Duo w/ 4Gb RAM):
+## `nbench` result for host OS (Fedora 10 x86_64 on Intel Core 2 Duo w/ 4Gb RAM):
 
 ```
 BYTEmark* Native Mode Benchmark ver. 2 (10/95)
@@ -69,7 +88,7 @@ Baseline (LINUX)    : AMD K6/233*, 512 KB L2-cache, gcc 2.7.2.3, libc-5.4.38
 * Trademarks are property of their respective holder.
 ```
 
-#### `nbench` result for Gentoo 2008 x86_64 on Sun VirtualBox (w/ 768 Mb RAM):
+## `nbench` result for Gentoo 2008 x86_64 on Sun VirtualBox (w/ 768 Mb RAM):
 ```
 BYTEmark* Native Mode Benchmark ver. 2 (10/95)
 Index-split by Andrew D. Balsa (11/97)

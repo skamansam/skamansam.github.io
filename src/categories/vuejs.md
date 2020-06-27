@@ -1,7 +1,7 @@
 ---
 view: category
 lang: en
-order: 1
+order: 3
 top: true
 title: Vue.js
 description: Vue.js is the most successful javascript framework in recent years and certainly has its special space here in Ktquez play.

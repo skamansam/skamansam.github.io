@@ -1,11 +1,29 @@
 ---
-layout: post
-title: "jQuery Style Sheet (CSS) Switcher"
-date: 2009-04-01 18:16:00 -0400
 comments: true
+view: post
+layout: post
+lang: en
+author: skamansam
+title: jQuery Style Sheet (CSS) Switcher
+description: Building a CSS Switcher using jQuery
+excerpt: I try to buy MSI products whenever possible
+cover: false
+coverImage: /images/GSoC-logo-horizontal-800.png
+coverAlt: RBE Logo
 categories:
+  - web-development
+  - javascript
+tags: 
+  - jQuery
+  - CSS
+created_at: 2009-04-01 18:16
+updated_at: 2009-04-01 18:16
+meta:
+  - property: og:image
+    content: /images/GSoC-logo-horizontal-800.png
+  - name: twitter:image
+    content: /images/GSoC-logo-horizontal-800.png
 ---
-
 I have been looking for a nifty style-switching script, and have found none. So here is the code for a checkbox-based 
 style switcher. This uses jQuery.
 
@@ -37,18 +55,18 @@ function toggleStyle(href) {
     $('link[href*='+href+']').remove();
   }else{
     console.log("Adding: "+$('link[href*='+href+']'));
-    $('head').append('&lt;link rel="stylesheet" href="'+href+'" type="text/css" media="screen" /&gt;');
+    $('head').append('<link rel="stylesheet" href="'+href+'" type="text/css" media="screen" />');
   }
 }
 }
 ```
 The HTML file should include something like this:
 ```html
-&lt;form name="styleSwitchForm"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type="checkbox" rel="/styles/red.css" class="styleToggle"/&gt; Red Style&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type="checkbox" rel="/styles/blue.css" class="styleToggle"/&gt; Blue Style&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type="checkbox" rel="/styles/green.css" class="styleToggle"/&gt; Green Style&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/form&gt;
+<form name="styleSwitchForm">
+<ul>
+<li><label><input type="checkbox" rel="/styles/red.css" class="styleToggle"/> Red Style</label></li>
+<li><label><input type="checkbox" rel="/styles/blue.css" class="styleToggle"/> Blue Style</label></li>
+<li><label><input type="checkbox" rel="/styles/green.css" class="styleToggle"/> Green Style</label></li>
+</ul>
+</form>
 ```

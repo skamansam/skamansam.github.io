@@ -1,11 +1,11 @@
 ---
 view: category
 lang: en
-order: 7
-title: Perl
-description: Projects and information on Perl.
-excerpt: Perl projects
-slug: perl
+order: 6
+title: Linux
+description: Information and Tutorials about Linux
+excerpt: Information about Linux
+slug: linux
 meta:
   - property: og:image
     content: https://ktquez.com/share/ktquez-play-image-share.png

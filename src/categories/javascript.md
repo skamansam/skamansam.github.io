@@ -1,7 +1,7 @@
 ---
 view: category
 lang: en
-order: 5
+order: 2
 title: Javascript
 description: Javascript is the languages of this decade, but there is still a lot to learn. What comes out of novelty, we talk here.
 excerpt: Javascript is the languages of this decade.

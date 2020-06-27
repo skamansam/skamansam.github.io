@@ -1,7 +1,7 @@
 ---
 view: category
 lang: en
-order: 2
+order: 6
 top: true
 title: Ruby
 description: Ruby information and projects
