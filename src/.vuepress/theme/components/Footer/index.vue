@@ -127,7 +127,7 @@
     fill: $firstFooterColor
 
 .footer-box2
-  height: 250px
+  height: 125px
   background-color: $firstFooterColor
   bottom: -2px
   .footer-box__shape
@@ -182,12 +182,13 @@
 
 .watermark-logo
   position: absolute
-  top: -150px
-  left: -30px
+  top: -126px
+  left: 10px
   width: 472px
   height: 429px
-  background-image: url('/watermark-logo.png')
-  background-size: cover
+  opacity: .15
+  background-image: url('/rbe_logo.gif')
+  background-size: 400px;
   background-repeat: no-repeat
   z-index: 5
 
@@ -197,6 +198,7 @@
 
   &__box
     text-align: right
+    min-width: 13em
 
   .title
     color: white

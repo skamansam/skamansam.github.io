@@ -145,7 +145,7 @@
     padding-bottom: 0
 
   &--cover-top .card-title
-    height: 84px
+    min-height: 2em
 
   &__box1
     width: 100%
@@ -195,7 +195,8 @@
 
 .card-title
   display: block
-  height: 60px
+  min-height: 1.5em
+  padding-bottom: 10px
 
   &__text
     font-size: $title3

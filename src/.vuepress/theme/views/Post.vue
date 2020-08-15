@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="page page__full row justify-right">
+    <div class="page page__full row justify-center">
       <article 
         class="column xs-100 page__full__box box-default" 
         itemscope

@@ -78,14 +78,17 @@
   box-shadow: inset 7px 7px 14px #959595, 
               inset -7px -7px 14px #c9c9c9
   &__list
-    margin-top: 30px
+    margin-top: 20px
   
   &.column
-    padding-right: 30px
+    padding-right: 20px
+    padding-left: 20px
 
+  article
+    margin-bottom: 20px
 
 .allposts-button
-  margin-top: 50px
+  margin-top: 15px
   text-align: center
 
   .ui-button

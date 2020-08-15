@@ -55,13 +55,13 @@ module.exports = {
     }
   },
   social: [
-    {
-      name: 'twitter',
-      link: `https://www.twitter.com/skamansam`
-    },
-    {
-      name: 'github',
-      link: `https://www.github.com/skamansam`
-    }
+    // {
+    //   name: 'twitter',
+    //   link: `https://www.twitter.com/skamansam`
+    // },
+    // {
+    //   name: 'github',
+    //   link: `https://www.github.com/skamansam`
+    // }
   ]
 }
