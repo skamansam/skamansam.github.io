@@ -77,12 +77,22 @@
   background: #afafaf
   box-shadow: inset 7px 7px 14px #959595, 
               inset -7px -7px 14px #c9c9c9
+  
+  h3
+    @media (max-width: $mobile)
+      padding: 10px 20px !important
+      text-align: center
+
   &__list
     margin-top: 20px
   
   &.column
     padding-right: 20px
     padding-left: 20px
+
+    @media (max-width: $mobile)
+      padding: 10px 20px !important
+
 
   article
     margin-bottom: 20px
@@ -95,12 +105,13 @@
     text-transform: uppercase
 
 .more-sidebar
-
-  @media (min-width: $max-tablet)
-    // border-left: 1px solid $borderColor
+  margin-top: 20px
 
   &.column
     padding-left: 30px
+    @media (max-width: $mobile)
+      padding-top: 10px
+      padding-left: 20px
 
 .more-posts, .more-sidebar
   padding-top: 30px

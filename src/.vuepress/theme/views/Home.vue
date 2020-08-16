@@ -64,6 +64,10 @@
 @import '~@theme/styles/config.styl'
 
 .home
+  &.page
+    @media (max-width: $mobile)
+      margin-top: 20px
+    
   &__first-card
     @media (max-width: $max-tablet)
       margin-bottom: 30px

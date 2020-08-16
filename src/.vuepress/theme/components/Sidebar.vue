@@ -26,6 +26,9 @@
 
 .sidebar
   padding-top: 50px
+  @media (max-width: $mobile)
+      padding-top: 0px
+      padding-left: 20px
 
   &__bizu
     margin-bottom: 40px

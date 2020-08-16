@@ -115,6 +115,10 @@ img.cover
   margin-top: 50px
 
   &__full
+
+    @media (max-width: $mobile)
+      margin-top: 0px
+
     &__box
       width: 95vw
       padding: 0
@@ -122,6 +126,7 @@ img.cover
 
       @media (max-width: $mobile)
         border-radius: 0
+        margin-top: 0px !important
 
       @media (min-width: $mobile)
         max-width: 95vw !important
@@ -135,6 +140,9 @@ img.cover
 .page-header
   .back-button
     left: -25px
+    @media (max-width: $mobile)
+      margin: 0px
+      padding: 0px
 
   &__title
     font-size: $title2
@@ -157,6 +165,9 @@ img.cover
   &__meta
     margin-top: 16px
     margin-bottom: 10px
+
+    @media (max-width: $mobile)
+      margin-top: 0px
 
     .text
       font-size: $mediumText
