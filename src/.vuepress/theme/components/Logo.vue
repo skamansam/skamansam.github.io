@@ -7,7 +7,6 @@
     <img 
       itemprop="logo"
       :src="`/${$themeLocaleConfig.logo.name}.${$themeLocaleConfig.logo.ext}`" 
-      :srcset="`/${$themeLocaleConfig.logo.name}.${$themeLocaleConfig.logo.ext} 1x, /${$themeLocaleConfig.logo.name}@2x.${$themeLocaleConfig.logo.ext} 2x`" 
       :alt="$themeLocaleConfig.logo.alt">
   </router-link>
   <div v-else>
@@ -23,5 +22,9 @@
 
 <style lang="stylus">
 @import '~@theme/styles/config.styl'
-
+@media(max-width: 696px){
+    .header-top-logo__link img {
+        height: 50px;
+    }
+}
 </style>
