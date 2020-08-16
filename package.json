@@ -1,24 +1,24 @@
 {
-  "name": "your-name-app",
+  "name": "rude-boy-enterprises-blog",
   "version": "0.1.0",
-  "description": "Descripton your webapp",
+  "description": "Blog and Home of Rude Boy Enterprises",
   "scripts": {
     "dev": "node_modules/.bin/vuepress dev --debug src",
     "build": "node_modules/.bin/vuepress build --debug src"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ktquez/vuepress-theme-ktquez-starter"
+    "url": "https://github.com/skamansam/skamansam.github.io"
   },
   "keywords": [
     "vuepress",
     "vuepress-theme",
     "site",
     "blog",
-    "theme-ktquez",
     "markdown",
     "static",
-    "vuejs"
+    "vuejs",
+    "skamansam"
   ],
   "author": "Skaman Sam Tyler <skamansam@gmail.com> (https://rudeboy.dev/), based on work by Alan Ktquez <ktquez@gmail.com> (https://ktquez.com/)",
   "license": "MIT",
@@ -27,18 +27,22 @@
   },
   "homepage": "https://rudeboy.dev",
   "devDependencies": {
-    "@vuepress/plugin-search": "^1.5.0",
-    "vuepress": "1.5.0",
+    "@vuepress/plugin-search": "^1.5.3",
     "carbon-grid": "^1.1.2",
     "elevator.js": "^1.0.1",
     "fontfaceobserver": "^2.0.13",
     "get-youtube-id": "^1.0.0",
-    "intersection-observer": "^0.5.0",
+    "intersection-observer": "^0.11.0",
     "mappet": "^4.0.0",
     "nprogress": "^0.2.0",
     "time-ago": "^0.2.1",
     "vue-announcer": "^1.0.2",
-    "vue-disqus": "^3.0.4",
-    "vue-global-events": "^1.0.3"
+    "vue-disqus": "^4.0.1",
+    "vue-global-events": "^1.0.3",
+    "vuepress": "^1.5.3"
+  },
+  "dependencies": {
+    "katex": "^0.12.0",
+    "markdown-it-katex": "^2.0.3"
   }
 }

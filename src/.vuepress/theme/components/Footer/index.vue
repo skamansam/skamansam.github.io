@@ -89,6 +89,7 @@
 </template>
 
 <script>
+  import katex from 'katex';
   export default {
     name: 'Footer',
 
@@ -204,6 +205,7 @@
     color: white
     font-weight: bold
     font-size: $mediumText
+    text-align: right
 
 .footer-nav1, .footer-nav2
   margin-top: 10px
@@ -256,8 +258,8 @@
   .footer-nav__box--2.column
     padding-right: 5vw !important
 
-  .footer-nav1__item a
-    float: left
+  .footer-nav1__item 
+    text-align: right
 
   .footer-social__list
     position: relative

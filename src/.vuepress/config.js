@@ -12,6 +12,13 @@ module.exports = {
   // ga: `MY TRACKING CODE GOOGLE ANALYTICS`,
   evergreen: true,  // For modern browsers
   serviceWorker: true,
+  markdown: {
+    // options for markdown-it-anchor
+    // anchor: { permalink: false },
+    extendMarkdown: md => {
+      md.use(require('markdown-it-katex'));
+    }
+  },
   locales: {
     '/': {
       lang: 'en'

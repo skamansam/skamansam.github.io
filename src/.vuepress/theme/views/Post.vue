@@ -168,7 +168,7 @@
       TableContents: () => import(/* webpackChunkName = TableContents" */ '@theme/components/TableContents'),
       KtButton: () => import(/* webpackChunkName = SharePost" */ '@theme/components/UI/Button'),
       SharePost: () => import(/* webpackChunkName = KtButton" */ '@theme/components/SharePost'),
-      VueDisqus: () => import(/* webpackChunkName = "vue-disqus" */ 'vue-disqus/dist/vue-disqus.vue'),
+      VueDisqus: () => import(/* webpackChunkName = "vue-disqus" */ 'vue-disqus/src/Disqus.vue'),
       BackButton: () => import(/* webpackChunkName = "BackButton" */ '@theme/components/BackButton'),
       Newsletter: () => import(/* webpackChunkName = "Newsletter" */ '@theme/components/Newsletter'),
       LazyLoad: () => import(/* webpackChunkName = "LazyLoad" */ '@theme/components/lazy/load')
