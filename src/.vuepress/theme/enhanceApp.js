@@ -1,6 +1,7 @@
 import { filterPages, sortArrayByProp } from '@theme/services/utils'
 import { post as PostTransformer } from '@theme/transformers/post'
 import Translation from '@theme/plugins/Translation'
+import '@mdi/font/css/materialdesignicons.min.css'
 
 export default ({ Vue, siteData }) => {
   Vue.prototype.$themeConfig = siteData.themeConfig

@@ -19,7 +19,8 @@ const schema = {
   coverAlt: 'frontmatter.coverAlt',
   video: 'frontmatter.video',
   coverName: { path: 'path', modifier: getImagePost },
-  created_time: { path: 'frontmatter.created_at', modifier: getTime }
+  created_time: { path: 'frontmatter.created_at', modifier: getTime },
+  published: 'frontmatter.published',
 }
 
 export function post (data) {

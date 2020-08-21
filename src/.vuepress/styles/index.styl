@@ -13,3 +13,22 @@
 
 .icon.outbound
   color: $primaryColor !important
+
+a[href^="/files/"]
+  color: $primaryColor
+  &:after
+    content: '\F01DA';
+    font-family: "Material Design Icons";
+    font-weight: normal;
+    font-style: normal;
+    margin:0px 0px 0px 2px;
+    text-decoration:none;
+
+article
+  .post-content
+      ul li
+        margin-left: 2em
+        text-indent: -2em
+        &::before
+            font-family: "Material Design Icons";
+            content: "\F0734"

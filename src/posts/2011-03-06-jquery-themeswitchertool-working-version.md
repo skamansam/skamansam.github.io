@@ -1,26 +1,54 @@
 ---
-layout: post
-title: "jQuery ThemeSwitcherTool - Working Version!!!!!"
-date: 2011-03-06 21:20:00 -0400
 comments: true
+view: post
+layout: post
+lang: en
+author: skamansam
+title: jQuery ThemeSwitcherTool - Working Version!!!!!
+description: A working version of my ThemeSwitcherTool
+excerpt: Ever notice how the Tango icons don't have a "Save All" icon? 
+cover: false
+coverImage: false
+coverAlt: RBE Logo
 categories:
+  - web-development
+tags: 
+  - jQuery
+created_at: 2011-03-06 21:20:00
+updated_at: 2011-03-06 21:20:00
+meta:
+  - property: og:image
+    content: /images/GSoC-logo-horizontal-800.png
+  - name: twitter:image
+    content: /images/GSoC-logo-horizontal-800.png
 ---
 
-I recently tried to install the jQuery UI  <a title="Theme Switcher" href="http://docs.jquery.com/UI/Theming/ThemeSwitcher">ThemeSwitcher</a> on a site for a project on which I am working. It failed. Miserably! I scoured the interwebs for a working version, but could not find one anywhere. However, I did find out why the tool was not working. It seems the jQuery team disabled hotlinking to its servers. This was extremely good news, as it meant I could simply recode the widget to point to the new files or download them and point the script to the downloaded files.  I dove right in to the code and made some modifications to the start of the script. Then I optimized some of the rest of the code. Finally, I added a few extra options to cover the changes I made.
-<h3>Download</h3>
+I recently tried to install the jQuery UI
+[ThemeSwitcher](tp://docs.jquery.com/UI/Theming/ThemeSwitcher) on a site for a
+project on which I am working. It failed. Miserably! I scoured the interwebs for
+a working version, but could not find one anywhere. However, I did find out why
+the tool was not working. It seems the jQuery team disabled hotlinking to its
+servers. This was extremely good news, as it meant I could simply recode the
+widget to point to the new files or download them and point the script to the
+downloaded files.  I dove right in to the code and made some modifications to
+the start of the script. Then I optimized some of the rest of the code. Finally,
+I added a few extra options to cover the changes I made.
+
+### Download
 You can click on the following links to download the files.
-<ul>
-	<li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/themeswitchertool.js">themeswitchertool.js</a> - The themeswitcher.</li>
-	<li>The Following files are images used by themeswitcher. To use them, place them in /javascripts/jquery/themeswitcher/ or use the imageLocation option to point to the directory where these are stored.
-<ul>
-	<li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/menuhoverbg.png">menuhoverbg.png</a></li>
-	<li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/icon_color_arrow.gif">icon_color_arrow.gif</a></li>
-	<li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/buttonbg.png">buttonbg.png</a></li>
-	<li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/base.png">base.png</a> This is an icon used for the 'base' theme (no styles), to use this, you need to specify the icon location in the options or put it in with the rest of the images.</li>
-</ul>
-</li>
-</ul>
-<h3>Changes</h3>
+
+* [themeswitchertool.js](http://blog.rbe.homeip.net/wp-content/uploads/2011/03/themeswitchertool.js) - The themeswitcher.
+* The Following files are images used by themeswitcher. To use them, place them
+  in /javascripts/jquery/themeswitcher/ or use the imageLocation option to point
+  to the directory where these are stored.
+  * [menuhoverbg.png](/files/themeswitcher/menuhoverbg.png)
+  * [icon_color_arrow.gif](/files/themeswitcher/icon_color_arrow.gif)
+  * [buttonbg.png](/files/themeswitcher/buttonbg.png)
+  * [base.png](/files/themeswitcher/base.png) This is an icon used for the
+    'base' theme (no styles), to use this, you need to specify the icon location
+    in the options or put it in with the rest of the images.
+
+### Changes
 <ul>
 	<li>The old script appended up to three styles to the document, then removed the first one. It now uses the selector "head link#ui-theme" to change the stylesheet. I changed this so you can set the id of your default custom theme to "ui-theme" and it will change this. If the id isn't found, it creates a new one.</li>
 	<li>Added new options for specifying your own themes to add to the list.</li>

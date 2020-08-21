@@ -7,16 +7,14 @@ lang: en
 author: skamansam
 title: How To Build a Dynamic Web Site With Simple Server Technologies.
 description: Using SSI to build a more dynamic website
-excerpt: I have always had a certain love for math and the neat things you can do with it.
+excerpt: In order to create a page that is easily maintainable, you need to do three
 cover: false
 coverImage: false
 coverAlt: RBE Logo
 categories:
-  - programming
+  - web-development
 tags: 
-  - Math
-  - Pascal's Triangle
-  - Polynomials
+  - SSI
 created_at: 2009-05-29 9:57:57
 updated_at: 2009-05-29 9:57:57
 meta:
@@ -74,17 +72,17 @@ some have two.
 ## The Setup
 In order to create a page that is easily maintainable, you need to do three things:
 
-* <strong>Create a template</strong>. Create a page that will represent the
+* **Create a template**. Create a page that will represent the
   layout of all thpages on your site. I recommend creating several areas: a
   header, a footer, a navigation section, and a toolbar or news section. I will
   be using the areas I defined  for my web site (those listed previously) in
   this tutorial.
-* <strong>"Chunk" the page</strong>. Break up the page into the sections, and
+* **"Chunk" the page**. Break up the page into the sections, and
   put the related html into separate files. For instance, I put all the html
   from `<?xml..?>` to the tag that represents the content area into a file
   called "include/header.html". We will use SSI to reasseble the page
   later.
-* <strong>Create the SSI</strong>. In each of your main content pages, place the
+* **Create the SSI**. In each of your main content pages, place the
   SSI directives into the top of the page, like so: `<!--#include
   virtual="/include/header.html"-->` ...[content goes here]...`<!--#include
   virtual="/include/footer.html"-->`. The include directive includes the page

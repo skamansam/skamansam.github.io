@@ -78,5 +78,6 @@ module.exports = [
   ['link', { rel: 'preconnect', href: 'https://www.google-analytics.com/' }],
   ['link', { rel: 'preconnect', href: 'https://stats.g.doubleclick.net' }],
 
-  ['link', { rel: 'preload', href: 'https://www.google-analytics.com/analytics.js', as: "script" }]
+  ['link', { rel: 'preload', href: 'https://www.google-analytics.com/analytics.js', as: "script" }],
+//   ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.5.55/css/materialdesignicons.min.css', integrity: "sha512-fwJwcnaCDZRE9ZXt3Gevw/0WLt8A4tH+5hb1v5ps08P12o4S4BoV0tqrAa71uyclLRQvg6YMKw2RoeqTqhQBhA==" crossorigin: "anonymous" }]
 ]

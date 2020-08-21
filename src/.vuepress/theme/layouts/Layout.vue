@@ -39,6 +39,7 @@
   import Page from '@theme/views/Page'
   import Post from '@theme/views/Post'
   import Posts from '@theme/views/Posts'
+  import Unpublished from '@theme/views/Unpublished'
   import Category from '@theme/views/Category'
   import Author from '@theme/views/Author'
   import Authors from '@theme/views/Authors'
@@ -66,6 +67,7 @@
       Page,
       Post,
       Posts,
+      Unpublished,
       Author,
       Authors,
       Categories,

@@ -1,13 +1,31 @@
 ---
-layout: post
-title: "How To Repair Images with ImageMagick"
-date:  2009-06-15 11:23:00  -0400
 comments: true
+view: post
+layout: post
+lang: en
+author: skamansam
+title: How To Repair Images with ImageMagick
+description: Using ImageMagick to repair corrupted images
+excerpt: the images [...] were taken with my phone's camera and all had errors
+cover: false
+coverImage: false
+coverAlt: RBE Logo
 categories:
+  - web-development
+tags: 
+  - Coppermine
+  - Image Repair
+created_at: 2009-06-15 11:23:00
+updated_at: 2009-06-15 11:23:00
+meta:
+  - property: og:image
+    content: /images/GSoC-logo-horizontal-800.png
+  - name: twitter:image
+    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 I have been doing a lot of importing of photos on my photo site, and have noticed some images do not display properly. 
-SinceI love ImageMagick so much,  I set up  my gallery to use it. However, there appears to be a check in the Coppermine 
+Since I love ImageMagick so much, I set up  my gallery to use it. However, there appears to be a check in the Coppermine 
 software that aborts reading the file upon errors in the image. So I typed the command "display imagename.jpg" for some 
 of the files that did not import properly, and everything appeared to be fine. But I did notice something peculiar about 
 the images: they were taken with my phone's camera and all had errors printed out when I tried to open them, but seem to 
@@ -29,7 +47,7 @@ processFile("$_") foreach (@ARGV);
 #recursively fix images
 sub processFile {
    my $file=shift;
-   return (-d "$file")?( do{ processFile("$_") foreach (&lt;"$file"/*&gt;) }) : `convert "$file" "$file"`;
+   return (-d "$file")?( do{ processFile("$_") foreach (<"$file"/*>) }) : `convert "$file" "$file"`;
 }
 ```
 
