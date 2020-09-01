@@ -6,7 +6,7 @@ lang: en
 author: skamansam
 title: jQuery ThemeSwitcherTool - Working Version!!!!!
 description: A working version of my ThemeSwitcherTool
-excerpt: Ever notice how the Tango icons don't have a "Save All" icon? 
+excerpt: I added a few extra options to cover the changes I made.
 cover: false
 coverImage: false
 coverAlt: RBE Logo
@@ -49,20 +49,27 @@ You can click on the following links to download the files.
     in the options or put it in with the rest of the images.
 
 ### Changes
-<ul>
-	<li>The old script appended up to three styles to the document, then removed the first one. It now uses the selector "head link#ui-theme" to change the stylesheet. I changed this so you can set the id of your default custom theme to "ui-theme" and it will change this. If the id isn't found, it creates a new one.</li>
-	<li>Added new options for specifying your own themes to add to the list.</li>
-	<li>Added new option, useStandard, for specifying whether to use the themes from the jQuery UI site.</li>
-	<li>Added new options for specifying where to find the UI icons and stylesheets</li>
-	<li>Added new option, imageLocation, for specifying where to find the widget images (found in the downloaded file)</li>
-	<li>Added the widget images to the downloaded file, so you don't have to link to jQuery's servers</li>
-	<li>Added option, useCookie, for whether to use a cookie for saving the theme for later use on the same page.</li>
-</ul>
-<h3>Examples</h3>
-<h4>Basic usage, no custom theme support</h4>
-<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( );</pre>
-<h4>Adding custom themes</h4>
-<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( {
+* The old script appended up to three styles to the document, then removed the
+  first one. It now uses the selector "head link#ui-theme" to change the
+  stylesheet. I changed this so you can set the id of your default custom theme
+  to "ui-theme" and it will change this. If the id isn't found, it creates a new
+  one.
+* Added new options for specifying your own themes to add to the list.
+* Added new option, useStandard, for specifying whether to use the themes from the jQuery UI site.
+* Added new options for specifying where to find the UI icons and stylesheets
+* Added new option, imageLocation, for specifying where to find the widget images (found in the downloaded file)
+* Added the widget images to the downloaded file, so you don't have to link to jQuery's servers
+* Added option, useCookie, for whether to use a cookie for saving the theme for later use on the same page.
+
+### Examples
+#### Basic usage, no custom theme support
+```javascript
+$('<div id="theme-switcher"></div>').prependTo('body').themeswitchertool( );
+```
+
+#### Adding custom themes
+```javascript
+$('<div id="theme-switcher"></div>').prependTo('body').themeswitchertool( {
     themes: {
        'theme1': {
            icon:"/path/to/theme-icon.png",
@@ -73,9 +80,12 @@ You can click on the following links to download the files.
            css:"/path/to/theme2.css"
        }
     }
-});</pre>
-<h4>Using Only Custom Themes</h4>
-<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( {
+});
+```
+
+### Using Only Custom Themes
+```javascript
+$('<div id="theme-switcher"></div>').prependTo('body').themeswitchertool( {
     useStandard: false,
     themes: {
        'theme1': {
@@ -87,13 +97,49 @@ You can click on the following links to download the files.
            css:"/path/to/theme2.css"
        }
     }
-});</pre>
-<h3>New Options</h3>
-<dl> <dt>themes</dt> <dd style="font-size: 80%;">Default: {}</dd> <dd>A hash of themes, where each key is the theme name, and the value is another hash specifying the icon to use and the css file for the theme. Here is an example:
-<pre lang="javascript">{
-  'theme1': {
+});
+```
+
+### New Options
+
+#### themes
+##### Default: {}
+A hash of themes, where each key is the theme name, and the value is another
+hash specifying the icon to use and the css file for the theme. Here is an
+example:
+```javascript
+{
+'theme1': {
     icon:"/path/to/theme-icon.png",
     css:"/path/to/theme.css"
-  }
-}</pre>
-</dd> <dt>useStandard</dt> <dd style="font-size: 80%;">Default: true</dd> <dd>If you don't want the themes from the jQuery UI site to show up in the list, set this to false.</dd> <dt>useCookie</dt> <dd style="font-size: 80%;">Default: true</dd> <dd>The Theme Switcher uses a browser cookie to store and retrieve the theme name for the current site. Set this option to false if you do not want your site to remember the theme.</dd> <dt>imageLocation</dt> <dd style="font-size: 80%;">Default: "/javascripts/jquery/themeswitcher/"</dd> <dd>This is where the images are stored which Theme Switcher uses. The following files must be in the folder: buttonbg.png, icon_color_arrow.gif, menuhoverbg.png . You can get these from the download.</dd> <dt>imgPrefix</dt> <dd style="font-size: 80%;">Default: "http://static.jquery.com/ui/themeroller/images/themeGallery/theme_90_"</dd> <dd>This option specifies the default icon prefix URI. The icons are the previews for each theme. The default option sets the default images to the jquery hotlink site. This may change in the future, so it is specified here as an option.</dd> <dt>imgSuffix</dt> <dd style="font-size: 80%;">Default: ".png"</dd> <dd>This option specifies the rest of the image URI.</dd> <dt>cssPrefix</dt> <dd style="font-size: 80%;">Default: "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/"</dd> <dd>This option specifies the deafault css location prefix.</dd> <dt>cssSuffix</dt> <dd style="font-size: 80%;">Default: "/jquery-ui.css" </dd> <dd> </dd> <dd>This option specifies the deafault css location sufffix.</dd> </dl>
+}
+}
+```
+#### useStandard
+##### Default: true
+If you don't want the themes from the jQuery UI site to show up in the list, set this to false.
+#### useCookie
+##### Default: true
+The Theme Switcher uses a browser cookie to store and retrieve the theme name
+for the current site. Set this option to false if you do not want your site to
+remember the theme.
+#### imageLocation
+##### Default: "/javascripts/jquery/themeswitcher/"
+This is where the images are stored which Theme Switcher uses. The following
+files must be in the folder: buttonbg.png, icon_color_arrow.gif, menuhoverbg.png
+. You can get these from the download.
+#### imgPrefix
+##### Default: "http://static.jquery.com/ui/themeroller/images/themeGallery/theme_90_"
+This option specifies the default icon prefix URI. The icons are the previews
+for each theme. The default option sets the default images to the jquery hotlink
+site. This may change in the future, so it is specified here as an option.
+#### imgSuffix
+##### Default: ".png"
+This option specifies the rest of the image URI.
+#### cssPrefix
+##### Default: "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/"
+This option specifies the deafault css location prefix.
+#### cssSuffix
+##### Default: "/jquery-ui.css"
+This option specifies the deafault css location sufffix.
+
