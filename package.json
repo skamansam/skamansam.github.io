@@ -4,7 +4,7 @@
   "description": "Blog and Home of Rude Boy Enterprises",
   "scripts": {
     "dev": "node_modules/.bin/vuepress dev --debug --no-cache src",
-    "build": "node_modules/.bin/vuepress build --debug -d dist src"
+    "build": "node_modules/.bin/vuepress build --debug -d docs src"
   },
   "repository": {
     "type": "git",
