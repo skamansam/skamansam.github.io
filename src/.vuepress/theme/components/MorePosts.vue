@@ -79,19 +79,27 @@
               inset -7px -7px 14px #c9c9c9
   
   h3
-    @media (max-width: $mobile)
-      padding: 10px 20px !important
-      text-align: center
+    color: $primaryColor
+    font-size: 160%
+    text-shadow: 2px 2px 2px #959595,
+                -2px -2px 2px #c9c9c9
+    // -webkit-text-stroke: 1px #c9c9c9
+    text-align: center
+    padding: 10px 20px
 
   &__list
     margin-top: 20px
+    @media (max-width: $mobile)
+      margin-top: 0px
   
   &.column
-    padding-right: 20px
-    padding-left: 20px
+    padding: 0px 20px 10px 20px !important
 
-    @media (max-width: $mobile)
-      padding: 10px 20px !important
+    // @media (min-width: $mobile)
+    //   padding: 10px 20px !important
+    
+    // &.sm-100
+    //     padding: 10px 20px !important
 
 
   article
@@ -105,7 +113,9 @@
     text-transform: uppercase
 
 .more-sidebar
-  margin-top: 20px
+  margin-top: 0px
+  @media (max-width: $mobile)
+    margin-top: 20px
 
   &.column
     padding-left: 30px

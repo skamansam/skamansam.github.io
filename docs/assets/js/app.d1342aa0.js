@@ -400,62 +400,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   "v-3d75f994": () => __webpack_require__.e(/*! import() */ 27).then(__webpack_require__.bind(null, /*! ./src/README.md */ "./src/README.md")),
   "v-25ed5e18": () => __webpack_require__.e(/*! import() */ 28).then(__webpack_require__.bind(null, /*! ./src/about/README.md */ "./src/about/README.md")),
-  "v-625996b2": () => __webpack_require__.e(/*! import() */ 30).then(__webpack_require__.bind(null, /*! ./src/authors/skamansam.md */ "./src/authors/skamansam.md")),
   "v-06532fa2": () => __webpack_require__.e(/*! import() */ 29).then(__webpack_require__.bind(null, /*! ./src/authors/README.md */ "./src/authors/README.md")),
+  "v-625996b2": () => __webpack_require__.e(/*! import() */ 30).then(__webpack_require__.bind(null, /*! ./src/authors/skamansam.md */ "./src/authors/skamansam.md")),
   "v-595cb904": () => __webpack_require__.e(/*! import() */ 31).then(__webpack_require__.bind(null, /*! ./src/categories/README.md */ "./src/categories/README.md")),
-  "v-dc94ec1e": () => __webpack_require__.e(/*! import() */ 33).then(__webpack_require__.bind(null, /*! ./src/categories/linux.md */ "./src/categories/linux.md")),
   "v-e001bbf2": () => __webpack_require__.e(/*! import() */ 32).then(__webpack_require__.bind(null, /*! ./src/categories/javascript.md */ "./src/categories/javascript.md")),
+  "v-dc94ec1e": () => __webpack_require__.e(/*! import() */ 33).then(__webpack_require__.bind(null, /*! ./src/categories/linux.md */ "./src/categories/linux.md")),
   "v-83a40ec6": () => __webpack_require__.e(/*! import() */ 34).then(__webpack_require__.bind(null, /*! ./src/categories/open-source.md */ "./src/categories/open-source.md")),
+  "v-324b4a72": () => __webpack_require__.e(/*! import() */ 35).then(__webpack_require__.bind(null, /*! ./src/categories/perl.md */ "./src/categories/perl.md")),
   "v-4f2f5032": () => __webpack_require__.e(/*! import() */ 36).then(__webpack_require__.bind(null, /*! ./src/categories/personal.md */ "./src/categories/personal.md")),
   "v-73288cc9": () => __webpack_require__.e(/*! import() */ 37).then(__webpack_require__.bind(null, /*! ./src/categories/portfolio.md */ "./src/categories/portfolio.md")),
   "v-688a7667": () => __webpack_require__.e(/*! import() */ 38).then(__webpack_require__.bind(null, /*! ./src/categories/programming.md */ "./src/categories/programming.md")),
-  "v-324b4a72": () => __webpack_require__.e(/*! import() */ 35).then(__webpack_require__.bind(null, /*! ./src/categories/perl.md */ "./src/categories/perl.md")),
-  "v-64d324a7": () => __webpack_require__.e(/*! import() */ 39).then(__webpack_require__.bind(null, /*! ./src/categories/ruby.md */ "./src/categories/ruby.md")),
   "v-19db9e7b": () => __webpack_require__.e(/*! import() */ 40).then(__webpack_require__.bind(null, /*! ./src/categories/vuejs.md */ "./src/categories/vuejs.md")),
   "v-71fdacd6": () => __webpack_require__.e(/*! import() */ 41).then(__webpack_require__.bind(null, /*! ./src/categories/web-development.md */ "./src/categories/web-development.md")),
   "v-4968f81c": () => __webpack_require__.e(/*! import() */ 42).then(__webpack_require__.bind(null, /*! ./src/contact/README.md */ "./src/contact/README.md")),
-  "v-0ef6a32a": () => __webpack_require__.e(/*! import() */ 44).then(__webpack_require__.bind(null, /*! ./src/posts/2008-04-23-accepted-into-google-summer-of-code.md */ "./src/posts/2008-04-23-accepted-into-google-summer-of-code.md")),
   "v-7caa0a27": () => __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(null, /*! ./src/posts/2008-03-05-welcome-to-my-blog.md */ "./src/posts/2008-03-05-welcome-to-my-blog.md")),
-  "v-ab6f9872": () => __webpack_require__.e(/*! import() */ 45).then(__webpack_require__.bind(null, /*! ./src/posts/2008-05-09-wxcpan-skeleton-code.md */ "./src/posts/2008-05-09-wxcpan-skeleton-code.md")),
+  "v-64d324a7": () => __webpack_require__.e(/*! import() */ 39).then(__webpack_require__.bind(null, /*! ./src/categories/ruby.md */ "./src/categories/ruby.md")),
+  "v-0ef6a32a": () => __webpack_require__.e(/*! import() */ 44).then(__webpack_require__.bind(null, /*! ./src/posts/2008-04-23-accepted-into-google-summer-of-code.md */ "./src/posts/2008-04-23-accepted-into-google-summer-of-code.md")),
   "v-4d6dbde9": () => __webpack_require__.e(/*! import() */ 46).then(__webpack_require__.bind(null, /*! ./src/posts/2008-05-13-wxcpan-going-well.md */ "./src/posts/2008-05-13-wxcpan-going-well.md")),
+  "v-ab6f9872": () => __webpack_require__.e(/*! import() */ 45).then(__webpack_require__.bind(null, /*! ./src/posts/2008-05-09-wxcpan-skeleton-code.md */ "./src/posts/2008-05-09-wxcpan-skeleton-code.md")),
   "v-4418ef07": () => __webpack_require__.e(/*! import() */ 47).then(__webpack_require__.bind(null, /*! ./src/posts/2008-05-24-gsoc-day-0-equals-hit-the-ground-running.md */ "./src/posts/2008-05-24-gsoc-day-0-equals-hit-the-ground-running.md")),
   "v-d77d7ebe": () => __webpack_require__.e(/*! import() */ 48).then(__webpack_require__.bind(null, /*! ./src/posts/2008-08-05-my-baby.md */ "./src/posts/2008-08-05-my-baby.md")),
   "v-09948067": () => __webpack_require__.e(/*! import() */ 49).then(__webpack_require__.bind(null, /*! ./src/posts/2008-08-05-my-baby2.md */ "./src/posts/2008-08-05-my-baby2.md")),
-  "v-6d1ef847": () => __webpack_require__.e(/*! import() */ 51).then(__webpack_require__.bind(null, /*! ./src/posts/2008-08-07-al-at-werk-again.md */ "./src/posts/2008-08-07-al-at-werk-again.md")),
   "v-1a4255b2": () => __webpack_require__.e(/*! import() */ 50).then(__webpack_require__.bind(null, /*! ./src/posts/2008-08-05-my-bartender-mark.md */ "./src/posts/2008-08-05-my-bartender-mark.md")),
+  "v-6d1ef847": () => __webpack_require__.e(/*! import() */ 51).then(__webpack_require__.bind(null, /*! ./src/posts/2008-08-07-al-at-werk-again.md */ "./src/posts/2008-08-07-al-at-werk-again.md")),
   "v-01fdfde7": () => __webpack_require__.e(/*! import() */ 52).then(__webpack_require__.bind(null, /*! ./src/posts/2008-08-07-al-at-werk.md */ "./src/posts/2008-08-07-al-at-werk.md")),
   "v-3cceb24e": () => __webpack_require__.e(/*! import() */ 53).then(__webpack_require__.bind(null, /*! ./src/posts/2009-01-08-webfx-at-uncg.md */ "./src/posts/2009-01-08-webfx-at-uncg.md")),
   "v-91e81f56": () => __webpack_require__.e(/*! import() */ 54).then(__webpack_require__.bind(null, /*! ./src/posts/2009-02-02-installing-gentoo-2008-in-qemu-suns-virtualbox-on-fedora-10.md */ "./src/posts/2009-02-02-installing-gentoo-2008-in-qemu-suns-virtualbox-on-fedora-10.md")),
   "v-42a1e782": () => __webpack_require__.e(/*! import() */ 55).then(__webpack_require__.bind(null, /*! ./src/posts/2009-02-09-drop-down-menu-with-css.md */ "./src/posts/2009-02-09-drop-down-menu-with-css.md")),
   "v-aba30b82": () => __webpack_require__.e(/*! import() */ 56).then(__webpack_require__.bind(null, /*! ./src/posts/2009-02-14-installing-aptana-in-fedora-eclipse.md */ "./src/posts/2009-02-14-installing-aptana-in-fedora-eclipse.md")),
-  "v-2915d3f5": () => __webpack_require__.e(/*! import() */ 58).then(__webpack_require__.bind(null, /*! ./src/posts/2009-03-21-windows-vs-linux-on-msi-gx700.md */ "./src/posts/2009-03-21-windows-vs-linux-on-msi-gx700.md")),
   "v-bf119fe2": () => __webpack_require__.e(/*! import() */ 57).then(__webpack_require__.bind(null, /*! ./src/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.md */ "./src/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.md")),
+  "v-2915d3f5": () => __webpack_require__.e(/*! import() */ 58).then(__webpack_require__.bind(null, /*! ./src/posts/2009-03-21-windows-vs-linux-on-msi-gx700.md */ "./src/posts/2009-03-21-windows-vs-linux-on-msi-gx700.md")),
   "v-0702ed76": () => __webpack_require__.e(/*! import() */ 59).then(__webpack_require__.bind(null, /*! ./src/posts/2009-04-01-jquery-style-sheet-css-switcher.md */ "./src/posts/2009-04-01-jquery-style-sheet-css-switcher.md")),
   "v-4cee78b2": () => __webpack_require__.e(/*! import() */ 60).then(__webpack_require__.bind(null, /*! ./src/posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64.md */ "./src/posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64.md")),
   "v-15e8dc72": () => __webpack_require__.e(/*! import() */ 61).then(__webpack_require__.bind(null, /*! ./src/posts/2009-04-02-google-summer-of-code-2009-project-ideas.md */ "./src/posts/2009-04-02-google-summer-of-code-2009-project-ideas.md")),
   "v-4b934e93": () => __webpack_require__.e(/*! import() */ 62).then(__webpack_require__.bind(null, /*! ./src/posts/2009-05-10-tetex-for-puppy-linux.md */ "./src/posts/2009-05-10-tetex-for-puppy-linux.md")),
   "v-68a02f67": () => __webpack_require__.e(/*! import() */ 63).then(__webpack_require__.bind(null, /*! ./src/posts/2009-05-29-fun-with-numbers.md */ "./src/posts/2009-05-29-fun-with-numbers.md")),
-  "v-01095047": () => __webpack_require__.e(/*! import() */ 65).then(__webpack_require__.bind(null, /*! ./src/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.md */ "./src/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.md")),
   "v-6913dd53": () => __webpack_require__.e(/*! import() */ 64).then(__webpack_require__.bind(null, /*! ./src/posts/2009-06-15-how-to-repair-images-with-imagemagick.md */ "./src/posts/2009-06-15-how-to-repair-images-with-imagemagick.md")),
+  "v-01095047": () => __webpack_require__.e(/*! import() */ 65).then(__webpack_require__.bind(null, /*! ./src/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.md */ "./src/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.md")),
   "v-65bf4247": () => __webpack_require__.e(/*! import() */ 66).then(__webpack_require__.bind(null, /*! ./src/posts/2010-06-02-teaching-computer-science-in-a-web-browser.md */ "./src/posts/2010-06-02-teaching-computer-science-in-a-web-browser.md")),
   "v-33a34607": () => __webpack_require__.e(/*! import() */ 67).then(__webpack_require__.bind(null, /*! ./src/posts/2010-06-15-teaching-computer-science-in-a-web-browser.md */ "./src/posts/2010-06-15-teaching-computer-science-in-a-web-browser.md")),
   "v-d9c5dd32": () => __webpack_require__.e(/*! import() */ 68).then(__webpack_require__.bind(null, /*! ./src/posts/2010-07-28-tango-icons-save-all.md */ "./src/posts/2010-07-28-tango-icons-save-all.md")),
   "v-24cf8bc7": () => __webpack_require__.e(/*! import() */ 69).then(__webpack_require__.bind(null, /*! ./src/posts/2011-03-06-jquery-themeswitchertool-working-version.md */ "./src/posts/2011-03-06-jquery-themeswitchertool-working-version.md")),
   "v-447503a7": () => __webpack_require__.e(/*! import() */ 70).then(__webpack_require__.bind(null, /*! ./src/posts/2012-02-04-how-to-keep-your-linux-always-on-in-a-dual-boot-system.md */ "./src/posts/2012-02-04-how-to-keep-your-linux-always-on-in-a-dual-boot-system.md")),
-  "v-2e4394a7": () => __webpack_require__.e(/*! import() */ 71).then(__webpack_require__.bind(null, /*! ./src/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md */ "./src/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md")),
+  "v-76afa00a": () => __webpack_require__.e(/*! import() */ 74).then(__webpack_require__.bind(null, /*! ./src/posts/2013-04-23-cookie-detection-in-rails-3.md */ "./src/posts/2013-04-23-cookie-detection-in-rails-3.md")),
   "v-2f1e7027": () => __webpack_require__.e(/*! import() */ 75).then(__webpack_require__.bind(null, /*! ./src/posts/2016-08-30-moved-to-octopress.md */ "./src/posts/2016-08-30-moved-to-octopress.md")),
   "v-57771753": () => __webpack_require__.e(/*! import() */ 76).then(__webpack_require__.bind(null, /*! ./src/posts/2016-09-14-data-migrations-and-you.md */ "./src/posts/2016-09-14-data-migrations-and-you.md")),
-  "v-76afa00a": () => __webpack_require__.e(/*! import() */ 74).then(__webpack_require__.bind(null, /*! ./src/posts/2013-04-23-cookie-detection-in-rails-3.md */ "./src/posts/2013-04-23-cookie-detection-in-rails-3.md")),
   "v-5bb6e9e8": () => __webpack_require__.e(/*! import() */ 77).then(__webpack_require__.bind(null, /*! ./src/posts/README.md */ "./src/posts/README.md")),
-  "v-4feec42a": () => __webpack_require__.e(/*! import() */ 79).then(__webpack_require__.bind(null, /*! ./src/unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md */ "./src/unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md")),
   "v-032c5945": () => __webpack_require__.e(/*! import() */ 78).then(__webpack_require__.bind(null, /*! ./src/unpublished/2009-05-29-how-to-build-a-dynamic-web-site-with-simple-server-technologies.md */ "./src/unpublished/2009-05-29-how-to-build-a-dynamic-web-site-with-simple-server-technologies.md")),
+  "v-4feec42a": () => __webpack_require__.e(/*! import() */ 79).then(__webpack_require__.bind(null, /*! ./src/unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md */ "./src/unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md")),
   "v-5d2da6f1": () => __webpack_require__.e(/*! import() */ 80).then(__webpack_require__.bind(null, /*! ./src/unpublished/2016-09-06-dynamic-models-in-rails-3.md */ "./src/unpublished/2016-09-06-dynamic-models-in-rails-3.md")),
   "v-780ca033": () => __webpack_require__.e(/*! import() */ 81).then(__webpack_require__.bind(null, /*! ./src/unpublished/2016-09-06-firefox-add-ons-i-cant-live-without.md */ "./src/unpublished/2016-09-06-firefox-add-ons-i-cant-live-without.md")),
   "v-70a92b5f": () => __webpack_require__.e(/*! import() */ 82).then(__webpack_require__.bind(null, /*! ./src/unpublished/2016-09-06-installing-amaya-on-fedora-10-64bit.md */ "./src/unpublished/2016-09-06-installing-amaya-on-fedora-10-64bit.md")),
   "v-7b888ce7": () => __webpack_require__.e(/*! import() */ 83).then(__webpack_require__.bind(null, /*! ./src/unpublished/2016-09-06-top-linux-apps-i-cant-live-without.md */ "./src/unpublished/2016-09-06-top-linux-apps-i-cant-live-without.md")),
   "v-fd533832": () => __webpack_require__.e(/*! import() */ 84).then(__webpack_require__.bind(null, /*! ./src/unpublished/_README.md */ "./src/unpublished/_README.md")),
+  "v-133acdb2": () => __webpack_require__.e(/*! import() */ 73).then(__webpack_require__.bind(null, /*! ./src/posts/2013-04-10-building-a-unified-time-select-field.md */ "./src/posts/2013-04-10-building-a-unified-time-select-field.md")),
   "v-a7d683b2": () => __webpack_require__.e(/*! import() */ 72).then(__webpack_require__.bind(null, /*! ./src/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config.md */ "./src/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config.md")),
-  "v-133acdb2": () => __webpack_require__.e(/*! import() */ 73).then(__webpack_require__.bind(null, /*! ./src/posts/2013-04-10-building-a-unified-time-select-field.md */ "./src/posts/2013-04-10-building-a-unified-time-select-field.md")) 
+  "v-2e4394a7": () => __webpack_require__.e(/*! import() */ 71).then(__webpack_require__.bind(null, /*! ./src/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md */ "./src/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md")) 
 });
 
 /***/ }),
@@ -535,14 +535,6 @@ const routes = [
     redirect: "/about/"
   },
   {
-    name: "v-625996b2",
-    path: "/authors/skamansam.html",
-    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-625996b2").then(next)
-    },
-  },
-  {
     name: "v-06532fa2",
     path: "/authors/",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -553,6 +545,14 @@ const routes = [
   {
     path: "/authors/index.html",
     redirect: "/authors/"
+  },
+  {
+    name: "v-625996b2",
+    path: "/authors/skamansam.html",
+    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-625996b2").then(next)
+    },
   },
   {
     name: "v-595cb904",
@@ -567,14 +567,6 @@ const routes = [
     redirect: "/categories/"
   },
   {
-    name: "v-dc94ec1e",
-    path: "/categories/linux.html",
-    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-dc94ec1e").then(next)
-    },
-  },
-  {
     name: "v-e001bbf2",
     path: "/categories/javascript.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -583,11 +575,27 @@ const routes = [
     },
   },
   {
+    name: "v-dc94ec1e",
+    path: "/categories/linux.html",
+    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-dc94ec1e").then(next)
+    },
+  },
+  {
     name: "v-83a40ec6",
     path: "/categories/open-source.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
       Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-83a40ec6").then(next)
+    },
+  },
+  {
+    name: "v-324b4a72",
+    path: "/categories/perl.html",
+    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-324b4a72").then(next)
     },
   },
   {
@@ -612,22 +620,6 @@ const routes = [
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
       Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-688a7667").then(next)
-    },
-  },
-  {
-    name: "v-324b4a72",
-    path: "/categories/perl.html",
-    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-324b4a72").then(next)
-    },
-  },
-  {
-    name: "v-64d324a7",
-    path: "/categories/ruby.html",
-    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-64d324a7").then(next)
     },
   },
   {
@@ -659,14 +651,6 @@ const routes = [
     redirect: "/contact/"
   },
   {
-    name: "v-0ef6a32a",
-    path: "/posts/2008-04-23-accepted-into-google-summer-of-code.html",
-    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-0ef6a32a").then(next)
-    },
-  },
-  {
     name: "v-7caa0a27",
     path: "/posts/2008-03-05-welcome-to-my-blog.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -675,11 +659,19 @@ const routes = [
     },
   },
   {
-    name: "v-ab6f9872",
-    path: "/posts/2008-05-09-wxcpan-skeleton-code.html",
+    name: "v-64d324a7",
+    path: "/categories/ruby.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-ab6f9872").then(next)
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("Layout", "v-64d324a7").then(next)
+    },
+  },
+  {
+    name: "v-0ef6a32a",
+    path: "/posts/2008-04-23-accepted-into-google-summer-of-code.html",
+    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-0ef6a32a").then(next)
     },
   },
   {
@@ -688,6 +680,14 @@ const routes = [
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
       Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-4d6dbde9").then(next)
+    },
+  },
+  {
+    name: "v-ab6f9872",
+    path: "/posts/2008-05-09-wxcpan-skeleton-code.html",
+    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-ab6f9872").then(next)
     },
   },
   {
@@ -715,19 +715,19 @@ const routes = [
     },
   },
   {
-    name: "v-6d1ef847",
-    path: "/posts/2008-08-07-al-at-werk-again.html",
-    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-6d1ef847").then(next)
-    },
-  },
-  {
     name: "v-1a4255b2",
     path: "/posts/2008-08-05-my-bartender-mark.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
       Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-1a4255b2").then(next)
+    },
+  },
+  {
+    name: "v-6d1ef847",
+    path: "/posts/2008-08-07-al-at-werk-again.html",
+    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-6d1ef847").then(next)
     },
   },
   {
@@ -771,19 +771,19 @@ const routes = [
     },
   },
   {
-    name: "v-2915d3f5",
-    path: "/posts/2009-03-21-windows-vs-linux-on-msi-gx700.html",
-    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-2915d3f5").then(next)
-    },
-  },
-  {
     name: "v-bf119fe2",
     path: "/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
       Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-bf119fe2").then(next)
+    },
+  },
+  {
+    name: "v-2915d3f5",
+    path: "/posts/2009-03-21-windows-vs-linux-on-msi-gx700.html",
+    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-2915d3f5").then(next)
     },
   },
   {
@@ -827,19 +827,19 @@ const routes = [
     },
   },
   {
-    name: "v-01095047",
-    path: "/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.html",
-    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-01095047").then(next)
-    },
-  },
-  {
     name: "v-6913dd53",
     path: "/posts/2009-06-15-how-to-repair-images-with-imagemagick.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
       Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-6913dd53").then(next)
+    },
+  },
+  {
+    name: "v-01095047",
+    path: "/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.html",
+    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-01095047").then(next)
     },
   },
   {
@@ -883,11 +883,11 @@ const routes = [
     },
   },
   {
-    name: "v-2e4394a7",
-    path: "/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.html",
+    name: "v-76afa00a",
+    path: "/posts/2013-04-23-cookie-detection-in-rails-3.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-2e4394a7").then(next)
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-76afa00a").then(next)
     },
   },
   {
@@ -907,14 +907,6 @@ const routes = [
     },
   },
   {
-    name: "v-76afa00a",
-    path: "/posts/2013-04-23-cookie-detection-in-rails-3.html",
-    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-76afa00a").then(next)
-    },
-  },
-  {
     name: "v-5bb6e9e8",
     path: "/posts/",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -927,19 +919,19 @@ const routes = [
     redirect: "/posts/"
   },
   {
-    name: "v-4feec42a",
-    path: "/unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.html",
-    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-4feec42a").then(next)
-    },
-  },
-  {
     name: "v-032c5945",
     path: "/unpublished/2009-05-29-how-to-build-a-dynamic-web-site-with-simple-server-technologies.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
       Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-032c5945").then(next)
+    },
+  },
+  {
+    name: "v-4feec42a",
+    path: "/unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.html",
+    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-4feec42a").then(next)
     },
   },
   {
@@ -983,6 +975,14 @@ const routes = [
     },
   },
   {
+    name: "v-133acdb2",
+    path: "/posts/2013-04-10-building-a-unified-time-select-field.html",
+    component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    beforeEnter: (to, from, next) => {
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-133acdb2").then(next)
+    },
+  },
+  {
     name: "v-a7d683b2",
     path: "/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -991,11 +991,11 @@ const routes = [
     },
   },
   {
-    name: "v-133acdb2",
-    path: "/posts/2013-04-10-building-a-unified-time-select-field.html",
+    name: "v-2e4394a7",
+    path: "/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.html",
     component: _workspace_skamansam_github_io_node_modules_vuepress_core_lib_client_components_GlobalLayout_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     beforeEnter: (to, from, next) => {
-      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-133acdb2").then(next)
+      Object(_app_util__WEBPACK_IMPORTED_MODULE_0__["ensureAsyncComponentsLoaded"])("post", "v-2e4394a7").then(next)
     },
   },
   {
@@ -1539,6 +1539,29 @@ const siteData = {
       "path": "/about/"
     },
     {
+      "title": "All authors of Ktquez Play",
+      "frontmatter": {
+        "view": "authors",
+        "title": "All authors of Ktquez Play",
+        "description": "Find out who produces content on the articles and video platform on web development and Ktquez Play lifestyle",
+        "lang": "en",
+        "meta": [
+          {
+            "property": "og:image",
+            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
+          },
+          {
+            "name": "twitter:image",
+            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
+          }
+        ]
+      },
+      "regularPath": "/authors/",
+      "relativePath": "authors/README.md",
+      "key": "v-06532fa2",
+      "path": "/authors/"
+    },
+    {
       "title": "Articles by \"Skaman Sam\" Tyler",
       "frontmatter": {
         "view": "author",
@@ -1581,29 +1604,6 @@ const siteData = {
       "path": "/authors/skamansam.html"
     },
     {
-      "title": "All authors of Ktquez Play",
-      "frontmatter": {
-        "view": "authors",
-        "title": "All authors of Ktquez Play",
-        "description": "Find out who produces content on the articles and video platform on web development and Ktquez Play lifestyle",
-        "lang": "en",
-        "meta": [
-          {
-            "property": "og:image",
-            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
-          },
-          {
-            "name": "twitter:image",
-            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
-          }
-        ]
-      },
-      "regularPath": "/authors/",
-      "relativePath": "authors/README.md",
-      "key": "v-06532fa2",
-      "path": "/authors/"
-    },
-    {
       "title": "Search for posts by keywords",
       "frontmatter": {
         "view": "categories",
@@ -1626,32 +1626,6 @@ const siteData = {
       "relativePath": "categories/README.md",
       "key": "v-595cb904",
       "path": "/categories/"
-    },
-    {
-      "title": "Linux",
-      "frontmatter": {
-        "view": "category",
-        "lang": "en",
-        "order": 6,
-        "title": "Linux",
-        "description": "Information and Tutorials about Linux",
-        "excerpt": "Information about Linux",
-        "slug": "linux",
-        "meta": [
-          {
-            "property": "og:image",
-            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
-          },
-          {
-            "name": "twitter:image",
-            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
-          }
-        ]
-      },
-      "regularPath": "/categories/linux.html",
-      "relativePath": "categories/linux.md",
-      "key": "v-dc94ec1e",
-      "path": "/categories/linux.html"
     },
     {
       "title": "Javascript",
@@ -1680,6 +1654,32 @@ const siteData = {
       "path": "/categories/javascript.html"
     },
     {
+      "title": "Linux",
+      "frontmatter": {
+        "view": "category",
+        "lang": "en",
+        "order": 6,
+        "title": "Linux",
+        "description": "Information and Tutorials about Linux",
+        "excerpt": "Information about Linux",
+        "slug": "linux",
+        "meta": [
+          {
+            "property": "og:image",
+            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
+          },
+          {
+            "name": "twitter:image",
+            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
+          }
+        ]
+      },
+      "regularPath": "/categories/linux.html",
+      "relativePath": "categories/linux.md",
+      "key": "v-dc94ec1e",
+      "path": "/categories/linux.html"
+    },
+    {
       "title": "Open Source",
       "frontmatter": {
         "view": "category",
@@ -1704,6 +1704,32 @@ const siteData = {
       "relativePath": "categories/open-source.md",
       "key": "v-83a40ec6",
       "path": "/categories/open-source.html"
+    },
+    {
+      "title": "Perl",
+      "frontmatter": {
+        "view": "category",
+        "lang": "en",
+        "order": 7,
+        "title": "Perl",
+        "description": "Projects and information on Perl.",
+        "excerpt": "Perl projects",
+        "slug": "perl",
+        "meta": [
+          {
+            "property": "og:image",
+            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
+          },
+          {
+            "name": "twitter:image",
+            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
+          }
+        ]
+      },
+      "regularPath": "/categories/perl.html",
+      "relativePath": "categories/perl.md",
+      "key": "v-324b4a72",
+      "path": "/categories/perl.html"
     },
     {
       "title": "Personal",
@@ -1785,59 +1811,6 @@ const siteData = {
       "path": "/categories/programming.html"
     },
     {
-      "title": "Perl",
-      "frontmatter": {
-        "view": "category",
-        "lang": "en",
-        "order": 7,
-        "title": "Perl",
-        "description": "Projects and information on Perl.",
-        "excerpt": "Perl projects",
-        "slug": "perl",
-        "meta": [
-          {
-            "property": "og:image",
-            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
-          },
-          {
-            "name": "twitter:image",
-            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
-          }
-        ]
-      },
-      "regularPath": "/categories/perl.html",
-      "relativePath": "categories/perl.md",
-      "key": "v-324b4a72",
-      "path": "/categories/perl.html"
-    },
-    {
-      "title": "Ruby",
-      "frontmatter": {
-        "view": "category",
-        "lang": "en",
-        "order": 6,
-        "top": true,
-        "title": "Ruby",
-        "description": "Ruby information and projects",
-        "excerpt": "Ruby projects",
-        "slug": "ruby",
-        "meta": [
-          {
-            "property": "og:image",
-            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
-          },
-          {
-            "name": "twitter:image",
-            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
-          }
-        ]
-      },
-      "regularPath": "/categories/ruby.html",
-      "relativePath": "categories/ruby.md",
-      "key": "v-64d324a7",
-      "path": "/categories/ruby.html"
-    },
-    {
       "title": "Vue.js",
       "frontmatter": {
         "view": "category",
@@ -1915,43 +1888,6 @@ const siteData = {
       "path": "/contact/"
     },
     {
-      "title": "Accepted Into Google Summer of Code!",
-      "frontmatter": {
-        "view": "post",
-        "layout": "post",
-        "lang": "en",
-        "author": "skamansam",
-        "title": "Accepted Into Google Summer of Code!",
-        "description": "GUI for CPAN",
-        "excerpt": "I got accepted into Google's Summer of Code! My project is a GUI for CPAN.",
-        "cover": false,
-        "coverImage": "/images/GSoC-logo-horizontal-800.png",
-        "coverAlt": "RBE Logo",
-        "categories": [
-          "personal"
-        ],
-        "tags": [
-          "gSoC"
-        ],
-        "created_at": "2008-04-23 15:24",
-        "updated_at": "2008-04-23 15:24",
-        "meta": [
-          {
-            "property": "og:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          },
-          {
-            "name": "twitter:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          }
-        ]
-      },
-      "regularPath": "/posts/2008-04-23-accepted-into-google-summer-of-code.html",
-      "relativePath": "posts/2008-04-23-accepted-into-google-summer-of-code.md",
-      "key": "v-0ef6a32a",
-      "path": "/posts/2008-04-23-accepted-into-google-summer-of-code.html"
-    },
-    {
       "title": "Welcome To My Blog!",
       "frontmatter": {
         "view": "post",
@@ -1990,27 +1926,53 @@ const siteData = {
       "path": "/posts/2008-03-05-welcome-to-my-blog.html"
     },
     {
-      "title": "wxCPAN Skeleton Code",
+      "title": "Ruby",
       "frontmatter": {
-        "comments": true,
+        "view": "category",
+        "lang": "en",
+        "order": 6,
+        "top": true,
+        "title": "Ruby",
+        "description": "Ruby information and projects",
+        "excerpt": "Ruby projects",
+        "slug": "ruby",
+        "meta": [
+          {
+            "property": "og:image",
+            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
+          },
+          {
+            "name": "twitter:image",
+            "content": "https://ktquez.com/share/ktquez-play-image-share.png"
+          }
+        ]
+      },
+      "regularPath": "/categories/ruby.html",
+      "relativePath": "categories/ruby.md",
+      "key": "v-64d324a7",
+      "path": "/categories/ruby.html"
+    },
+    {
+      "title": "Accepted Into Google Summer of Code!",
+      "frontmatter": {
         "view": "post",
         "layout": "post",
         "lang": "en",
         "author": "skamansam",
-        "title": "wxCPAN Skeleton Code",
-        "description": "wxCPAN is underway!",
-        "excerpt": "I have started doing heavy-duty research into wxPerl",
+        "title": "Accepted Into Google Summer of Code!",
+        "description": "GUI for CPAN",
+        "excerpt": "I got accepted into Google's Summer of Code! My project is a GUI for CPAN.",
         "cover": false,
         "coverImage": "/images/GSoC-logo-horizontal-800.png",
         "coverAlt": "RBE Logo",
         "categories": [
-          "perl"
+          "personal"
         ],
         "tags": [
           "gSoC"
         ],
-        "created_at": "2008-05-09 14:40",
-        "updated_at": "2008-05-09 14:40",
+        "created_at": "2008-04-23 15:24",
+        "updated_at": "2008-04-23 15:24",
         "meta": [
           {
             "property": "og:image",
@@ -2022,10 +1984,10 @@ const siteData = {
           }
         ]
       },
-      "regularPath": "/posts/2008-05-09-wxcpan-skeleton-code.html",
-      "relativePath": "posts/2008-05-09-wxcpan-skeleton-code.md",
-      "key": "v-ab6f9872",
-      "path": "/posts/2008-05-09-wxcpan-skeleton-code.html"
+      "regularPath": "/posts/2008-04-23-accepted-into-google-summer-of-code.html",
+      "relativePath": "posts/2008-04-23-accepted-into-google-summer-of-code.md",
+      "key": "v-0ef6a32a",
+      "path": "/posts/2008-04-23-accepted-into-google-summer-of-code.html"
     },
     {
       "title": "wxCPAN Going Well",
@@ -2064,6 +2026,44 @@ const siteData = {
       "relativePath": "posts/2008-05-13-wxcpan-going-well.md",
       "key": "v-4d6dbde9",
       "path": "/posts/2008-05-13-wxcpan-going-well.html"
+    },
+    {
+      "title": "wxCPAN Skeleton Code",
+      "frontmatter": {
+        "comments": true,
+        "view": "post",
+        "layout": "post",
+        "lang": "en",
+        "author": "skamansam",
+        "title": "wxCPAN Skeleton Code",
+        "description": "wxCPAN is underway!",
+        "excerpt": "I have started doing heavy-duty research into wxPerl",
+        "cover": false,
+        "coverImage": "/images/GSoC-logo-horizontal-800.png",
+        "coverAlt": "RBE Logo",
+        "categories": [
+          "perl"
+        ],
+        "tags": [
+          "gSoC"
+        ],
+        "created_at": "2008-05-09 14:40",
+        "updated_at": "2008-05-09 14:40",
+        "meta": [
+          {
+            "property": "og:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          },
+          {
+            "name": "twitter:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          }
+        ]
+      },
+      "regularPath": "/posts/2008-05-09-wxcpan-skeleton-code.html",
+      "relativePath": "posts/2008-05-09-wxcpan-skeleton-code.md",
+      "key": "v-ab6f9872",
+      "path": "/posts/2008-05-09-wxcpan-skeleton-code.html"
     },
     {
       "title": "gSoC_Day[0]='Hit The Ground Running';",
@@ -2180,44 +2180,6 @@ const siteData = {
       "path": "/posts/2008-08-05-my-baby2.html"
     },
     {
-      "title": "al at werk again",
-      "frontmatter": {
-        "comments": true,
-        "view": "post",
-        "layout": "post",
-        "lang": "en",
-        "author": "skamansam",
-        "title": "al at werk again",
-        "description": "pictures of al at werk again",
-        "excerpt": "auto uploaded pics of al at werk again",
-        "cover": false,
-        "coverImage": "/images/GSoC-logo-horizontal-800.png",
-        "coverAlt": "RBE Logo",
-        "categories": [
-          "personal"
-        ],
-        "tags": [
-          "Photographs"
-        ],
-        "created_at": "2008-08-07 14:36",
-        "updated_at": "2020-06-17 01:34",
-        "meta": [
-          {
-            "property": "og:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          },
-          {
-            "name": "twitter:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          }
-        ]
-      },
-      "regularPath": "/posts/2008-08-07-al-at-werk-again.html",
-      "relativePath": "posts/2008-08-07-al-at-werk-again.md",
-      "key": "v-6d1ef847",
-      "path": "/posts/2008-08-07-al-at-werk-again.html"
-    },
-    {
       "title": "my bartender, mark",
       "frontmatter": {
         "comments": true,
@@ -2254,6 +2216,44 @@ const siteData = {
       "relativePath": "posts/2008-08-05-my-bartender-mark.md",
       "key": "v-1a4255b2",
       "path": "/posts/2008-08-05-my-bartender-mark.html"
+    },
+    {
+      "title": "al at werk again",
+      "frontmatter": {
+        "comments": true,
+        "view": "post",
+        "layout": "post",
+        "lang": "en",
+        "author": "skamansam",
+        "title": "al at werk again",
+        "description": "pictures of al at werk again",
+        "excerpt": "auto uploaded pics of al at werk again",
+        "cover": false,
+        "coverImage": "/images/GSoC-logo-horizontal-800.png",
+        "coverAlt": "RBE Logo",
+        "categories": [
+          "personal"
+        ],
+        "tags": [
+          "Photographs"
+        ],
+        "created_at": "2008-08-07 14:36",
+        "updated_at": "2020-06-17 01:34",
+        "meta": [
+          {
+            "property": "og:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          },
+          {
+            "name": "twitter:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          }
+        ]
+      },
+      "regularPath": "/posts/2008-08-07-al-at-werk-again.html",
+      "relativePath": "posts/2008-08-07-al-at-werk-again.md",
+      "key": "v-6d1ef847",
+      "path": "/posts/2008-08-07-al-at-werk-again.html"
     },
     {
       "title": "al at werk",
@@ -2562,6 +2562,48 @@ const siteData = {
       ]
     },
     {
+      "title": "Building Chromium on Fedora 10 x86_64",
+      "frontmatter": {
+        "comments": true,
+        "view": "post",
+        "layout": "post",
+        "lang": "en",
+        "author": "skamansam",
+        "title": "Building Chromium on Fedora 10 x86_64",
+        "description": "Installing Chromium for Fedora 10 x86_64 bit",
+        "excerpt": "Chromium for Fedora 10 x86_64 bit",
+        "cover": false,
+        "coverImage": "/images/GSoC-logo-horizontal-800.png",
+        "coverAlt": "RBE Logo",
+        "categories": [
+          "web-development",
+          "linux"
+        ],
+        "tags": [
+          "CSS",
+          "Fedora",
+          "IDE",
+          "Editor"
+        ],
+        "created_at": "2009-03-11 7:50",
+        "updated_at": "2009-03-11 7:50",
+        "meta": [
+          {
+            "property": "og:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          },
+          {
+            "name": "twitter:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          }
+        ]
+      },
+      "regularPath": "/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.html",
+      "relativePath": "posts/2009-03-11-building-chromium-on-fedora-10-x86-64.md",
+      "key": "v-bf119fe2",
+      "path": "/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.html"
+    },
+    {
       "title": "Windows vs. Linux on MSI GX700",
       "frontmatter": {
         "comments": true,
@@ -2621,48 +2663,6 @@ const siteData = {
           "slug": "problems-2"
         }
       ]
-    },
-    {
-      "title": "Building Chromium on Fedora 10 x86_64",
-      "frontmatter": {
-        "comments": true,
-        "view": "post",
-        "layout": "post",
-        "lang": "en",
-        "author": "skamansam",
-        "title": "Building Chromium on Fedora 10 x86_64",
-        "description": "Installing Chromium for Fedora 10 x86_64 bit",
-        "excerpt": "Chromium for Fedora 10 x86_64 bit",
-        "cover": false,
-        "coverImage": "/images/GSoC-logo-horizontal-800.png",
-        "coverAlt": "RBE Logo",
-        "categories": [
-          "web-development",
-          "linux"
-        ],
-        "tags": [
-          "CSS",
-          "Fedora",
-          "IDE",
-          "Editor"
-        ],
-        "created_at": "2009-03-11 7:50",
-        "updated_at": "2009-03-11 7:50",
-        "meta": [
-          {
-            "property": "og:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          },
-          {
-            "name": "twitter:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          }
-        ]
-      },
-      "regularPath": "/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.html",
-      "relativePath": "posts/2009-03-11-building-chromium-on-fedora-10-x86-64.md",
-      "key": "v-bf119fe2",
-      "path": "/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.html"
     },
     {
       "title": "jQuery Style Sheet (CSS) Switcher",
@@ -3053,6 +3053,45 @@ const siteData = {
       ]
     },
     {
+      "title": "How To Repair Images with ImageMagick",
+      "frontmatter": {
+        "comments": true,
+        "view": "post",
+        "layout": "post",
+        "lang": "en",
+        "author": "skamansam",
+        "title": "How To Repair Images with ImageMagick",
+        "description": "Using ImageMagick to repair corrupted images",
+        "excerpt": "the images [...] were taken with my phone's camera and all had errors",
+        "cover": false,
+        "coverImage": false,
+        "coverAlt": "RBE Logo",
+        "categories": [
+          "web-development"
+        ],
+        "tags": [
+          "Coppermine",
+          "Image Repair"
+        ],
+        "created_at": "2009-06-15T11:23:00.000Z",
+        "updated_at": "2009-06-15T11:23:00.000Z",
+        "meta": [
+          {
+            "property": "og:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          },
+          {
+            "name": "twitter:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          }
+        ]
+      },
+      "regularPath": "/posts/2009-06-15-how-to-repair-images-with-imagemagick.html",
+      "relativePath": "posts/2009-06-15-how-to-repair-images-with-imagemagick.md",
+      "key": "v-6913dd53",
+      "path": "/posts/2009-06-15-how-to-repair-images-with-imagemagick.html"
+    },
+    {
       "title": "New Theme Under Construction...",
       "frontmatter": {
         "comments": true,
@@ -3096,45 +3135,6 @@ const siteData = {
           "slug": "updated-august-9"
         }
       ]
-    },
-    {
-      "title": "How To Repair Images with ImageMagick",
-      "frontmatter": {
-        "comments": true,
-        "view": "post",
-        "layout": "post",
-        "lang": "en",
-        "author": "skamansam",
-        "title": "How To Repair Images with ImageMagick",
-        "description": "Using ImageMagick to repair corrupted images",
-        "excerpt": "the images [...] were taken with my phone's camera and all had errors",
-        "cover": false,
-        "coverImage": false,
-        "coverAlt": "RBE Logo",
-        "categories": [
-          "web-development"
-        ],
-        "tags": [
-          "Coppermine",
-          "Image Repair"
-        ],
-        "created_at": "2009-06-15T11:23:00.000Z",
-        "updated_at": "2009-06-15T11:23:00.000Z",
-        "meta": [
-          {
-            "property": "og:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          },
-          {
-            "name": "twitter:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          }
-        ]
-      },
-      "regularPath": "/posts/2009-06-15-how-to-repair-images-with-imagemagick.html",
-      "relativePath": "posts/2009-06-15-how-to-repair-images-with-imagemagick.md",
-      "key": "v-6913dd53",
-      "path": "/posts/2009-06-15-how-to-repair-images-with-imagemagick.html"
     },
     {
       "title": "Teaching Computer Science in a Web Browser?",
@@ -3753,27 +3753,27 @@ const siteData = {
       ]
     },
     {
-      "title": "Inline input fields with minimal jQuery",
+      "title": "Cookie Detection in Rails 3",
       "frontmatter": {
         "comments": true,
         "view": "post",
         "layout": "post",
         "lang": "en",
         "author": "skamansam",
-        "title": "Inline input fields with minimal jQuery",
-        "description": "Create an inline edit field with one line of jQuery",
-        "excerpt": "Essentially one line of javascript to accomplish this easy feat",
+        "title": "Cookie Detection in Rails 3",
+        "description": "How to detect cookies in Rails 3",
+        "excerpt": "I believe this may be a bad idea, in general, but here is a cheap way",
         "cover": false,
         "coverImage": false,
         "coverAlt": "RBE Logo",
         "categories": [
-          "web-development"
+          "ruby"
         ],
         "tags": [
-          "jQuery"
+          "Ruby on Rails"
         ],
-        "created_at": "2012-05-25T14:46:00.000Z",
-        "updated_at": "2012-05-25T14:46:00.000Z",
+        "created_at": "2013-04-23T17:14:12.000Z",
+        "updated_at": "2016-08-30T00:00:00.000Z",
         "meta": [
           {
             "property": "og:image",
@@ -3785,10 +3785,10 @@ const siteData = {
           }
         ]
       },
-      "regularPath": "/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.html",
-      "relativePath": "posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md",
-      "key": "v-2e4394a7",
-      "path": "/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.html"
+      "regularPath": "/posts/2013-04-23-cookie-detection-in-rails-3.html",
+      "relativePath": "posts/2013-04-23-cookie-detection-in-rails-3.md",
+      "key": "v-76afa00a",
+      "path": "/posts/2013-04-23-cookie-detection-in-rails-3.html"
     },
     {
       "title": "Moved To Octopress!",
@@ -3899,44 +3899,6 @@ const siteData = {
       ]
     },
     {
-      "title": "Cookie Detection in Rails 3",
-      "frontmatter": {
-        "comments": true,
-        "view": "post",
-        "layout": "post",
-        "lang": "en",
-        "author": "skamansam",
-        "title": "Cookie Detection in Rails 3",
-        "description": "How to detect cookies in Rails 3",
-        "excerpt": "I believe this may be a bad idea, in general, but here is a cheap way",
-        "cover": false,
-        "coverImage": false,
-        "coverAlt": "RBE Logo",
-        "categories": [
-          "ruby"
-        ],
-        "tags": [
-          "Ruby on Rails"
-        ],
-        "created_at": "2013-04-23T17:14:12.000Z",
-        "updated_at": "2016-08-30T00:00:00.000Z",
-        "meta": [
-          {
-            "property": "og:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          },
-          {
-            "name": "twitter:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          }
-        ]
-      },
-      "regularPath": "/posts/2013-04-23-cookie-detection-in-rails-3.html",
-      "relativePath": "posts/2013-04-23-cookie-detection-in-rails-3.md",
-      "key": "v-76afa00a",
-      "path": "/posts/2013-04-23-cookie-detection-in-rails-3.html"
-    },
-    {
       "title": "All posts of Skaman Sam Tyler",
       "frontmatter": {
         "view": "posts",
@@ -3949,45 +3911,6 @@ const siteData = {
       "relativePath": "posts/README.md",
       "key": "v-5bb6e9e8",
       "path": "/posts/"
-    },
-    {
-      "title": "Simple Rails Development Part II: Core GEdit Plugins",
-      "frontmatter": {
-        "published": false,
-        "comments": true,
-        "view": "post",
-        "layout": "post",
-        "lang": "en",
-        "author": "skamansam",
-        "title": "Simple Rails Development Part II: Core GEdit Plugins",
-        "description": "More Awesome GEdit Plugins for Ruby on Rails development",
-        "excerpt": "In fact, there is an entire project devoted to just such a thing",
-        "cover": false,
-        "coverImage": false,
-        "coverAlt": "RBE Logo",
-        "categories": [
-          "web-development"
-        ],
-        "tags": [
-          "SSI"
-        ],
-        "created_at": "2012-08-31T22:44:51.000Z",
-        "updated_at": "2012-08-31T22:44:51.000Z",
-        "meta": [
-          {
-            "property": "og:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          },
-          {
-            "name": "twitter:image",
-            "content": "/images/GSoC-logo-horizontal-800.png"
-          }
-        ]
-      },
-      "regularPath": "/unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.html",
-      "relativePath": "unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md",
-      "key": "v-4feec42a",
-      "path": "/unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.html"
     },
     {
       "title": "How To Build a Dynamic Web Site With Simple Server Technologies.",
@@ -4044,6 +3967,45 @@ const siteData = {
           "slug": "the-setup"
         }
       ]
+    },
+    {
+      "title": "Simple Rails Development Part II: Core GEdit Plugins",
+      "frontmatter": {
+        "published": false,
+        "comments": true,
+        "view": "post",
+        "layout": "post",
+        "lang": "en",
+        "author": "skamansam",
+        "title": "Simple Rails Development Part II: Core GEdit Plugins",
+        "description": "More Awesome GEdit Plugins for Ruby on Rails development",
+        "excerpt": "In fact, there is an entire project devoted to just such a thing",
+        "cover": false,
+        "coverImage": false,
+        "coverAlt": "RBE Logo",
+        "categories": [
+          "web-development"
+        ],
+        "tags": [
+          "SSI"
+        ],
+        "created_at": "2012-08-31T22:44:51.000Z",
+        "updated_at": "2012-08-31T22:44:51.000Z",
+        "meta": [
+          {
+            "property": "og:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          },
+          {
+            "name": "twitter:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          }
+        ]
+      },
+      "regularPath": "/unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.html",
+      "relativePath": "unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md",
+      "key": "v-4feec42a",
+      "path": "/unpublished/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.html"
     },
     {
       "title": "Dynamic Models in Rails 3",
@@ -4212,6 +4174,44 @@ const siteData = {
       "path": "/unpublished/_README.html"
     },
     {
+      "title": "Building a unified time_select field",
+      "frontmatter": {
+        "comments": true,
+        "view": "post",
+        "layout": "post",
+        "lang": "en",
+        "author": "skamansam",
+        "title": "Building a unified `time_select` field",
+        "description": "Build a unified `time_select` field",
+        "excerpt": "I was happy until the Rails upgrade caused my gem to inexplicably stop working.",
+        "cover": false,
+        "coverImage": false,
+        "coverAlt": "RBE Logo",
+        "categories": [
+          "ruby"
+        ],
+        "tags": [
+          "Ruby on Rails"
+        ],
+        "created_at": "2013-04-10T11:10:11.000Z",
+        "updated_at": "2013-04-10T11:10:11.000Z",
+        "meta": [
+          {
+            "property": "og:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          },
+          {
+            "name": "twitter:image",
+            "content": "/images/GSoC-logo-horizontal-800.png"
+          }
+        ]
+      },
+      "regularPath": "/posts/2013-04-10-building-a-unified-time-select-field.html",
+      "relativePath": "posts/2013-04-10-building-a-unified-time-select-field.md",
+      "key": "v-133acdb2",
+      "path": "/posts/2013-04-10-building-a-unified-time-select-field.html"
+    },
+    {
       "title": "Simple Rails Development Part I: Gedit Click Config",
       "frontmatter": {
         "comments": true,
@@ -4268,27 +4268,27 @@ const siteData = {
       ]
     },
     {
-      "title": "Building a unified time_select field",
+      "title": "Inline input fields with minimal jQuery",
       "frontmatter": {
         "comments": true,
         "view": "post",
         "layout": "post",
         "lang": "en",
         "author": "skamansam",
-        "title": "Building a unified `time_select` field",
-        "description": "Build a unified `time_select` field",
-        "excerpt": "I was happy until the Rails upgrade caused my gem to inexplicably stop working.",
+        "title": "Inline input fields with minimal jQuery",
+        "description": "Create an inline edit field with one line of jQuery",
+        "excerpt": "Essentially one line of javascript to accomplish this easy feat",
         "cover": false,
         "coverImage": false,
         "coverAlt": "RBE Logo",
         "categories": [
-          "ruby"
+          "web-development"
         ],
         "tags": [
-          "Ruby on Rails"
+          "jQuery"
         ],
-        "created_at": "2013-04-10T11:10:11.000Z",
-        "updated_at": "2013-04-10T11:10:11.000Z",
+        "created_at": "2012-05-25T14:46:00.000Z",
+        "updated_at": "2012-05-25T14:46:00.000Z",
         "meta": [
           {
             "property": "og:image",
@@ -4300,10 +4300,10 @@ const siteData = {
           }
         ]
       },
-      "regularPath": "/posts/2013-04-10-building-a-unified-time-select-field.html",
-      "relativePath": "posts/2013-04-10-building-a-unified-time-select-field.md",
-      "key": "v-133acdb2",
-      "path": "/posts/2013-04-10-building-a-unified-time-select-field.html"
+      "regularPath": "/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.html",
+      "relativePath": "posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md",
+      "key": "v-2e4394a7",
+      "path": "/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.html"
     }
   ],
   "themeConfig": {
@@ -4698,7 +4698,7 @@ __webpack_require__.r(__webpack_exports__);
 
 window.__VUEPRESS__ = {
   version: "1.5.4",
-  hash: "fd38ed6"
+  hash: "0078561"
 }
 
 Object(_app__WEBPACK_IMPORTED_MODULE_0__["createApp"])(false /* isServer */).then(({ app, router }) => {
@@ -41894,4 +41894,4 @@ module.exports = __webpack_require__(/*! /workspace/skamansam.github.io/node_mod
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.0a7c7450.js.map
+//# sourceMappingURL=app.d1342aa0.js.map
