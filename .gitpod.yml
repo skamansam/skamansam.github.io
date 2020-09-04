@@ -1,0 +1,9 @@
+tasks:
+  - init: yarn install && yarn run build
+    command: yarn run dev
+image:
+  file: .gitpod.Dockerfile
+
+vscode:
+  extensions:
+    - Alan.stylus@0.0.4:ztc+jjGN1luRE0WM5Gt8JQ==

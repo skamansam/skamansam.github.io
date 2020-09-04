@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: 
-
-Sitemap: http://skamansam.github.io/sitemap.xml 
