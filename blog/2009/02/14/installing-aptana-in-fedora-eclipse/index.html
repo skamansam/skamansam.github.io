@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Installing Aptana in Fedora Eclipse - Rude Boy Solutions</title>
+  <meta name="author" content=""Skaman Sam" Tyler">
+
+  
+  <meta name="description" content="Aptana is a wonderful tool for web design. I have been using it for years for my personal web sites and my professional ones. I have been trying to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://skamansam.github.io/blog/2009/02/14/installing-aptana-in-fedora-eclipse/">
+  <link href="/images/favicons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/images/favicons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/images/favicons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/images/favicons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/images/favicons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/images/favicons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/images/favicons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/images/favicons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/images/favicons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/favicons/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/images/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/images/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/images/favicons/manifest.json" rel="manifest"/>
+<meta content="#da532c" name="msapplication-TileColor"/>
+<meta content="/images/favicons/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+
+  <link href="/atom.xml" rel="alternate" title="Rude Boy Solutions" type="application/atom+xml">
+
+  <!-- include modernizr and jquery -->
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <!--<script src="/javascripts/libs/jquery.min.js"></script>-->
+
+  <!-- include jquery if it isn't already -->
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+
+  <!-- includes for octopress -->
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<!-- For latex rendering with katex -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/contrib/auto-render.min.js"></script>
+
+<!-- For chart rendering with mermaid 6.0.0 -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.css">
+<script src="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.min.js"></script>
+<!-- <script src="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaidAPI.min.js"></script> -->
+<script>mermaid.initialize({startOnLoad:false, cloneCssStyles: false});</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4371156-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><img src="/images/logo.gif" id="logo_header_image"/>
+<hgroup>
+  <h1><a href="/">Rude Boy Solutions</a></h1>
+  
+    <h2>Solutions. For Life.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="skamansam@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="skamansam.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/music.html">Music</a></li>
+  <li><a href="https://plus.google.com/collection/8RHyXB">Photos</a></li>
+  <li><a href="/about.html">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Installing Aptana in Fedora Eclipse</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-02-14T11:09:00-05:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>11:09 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://skamansam.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Aptana is a wonderful tool for web design. I have been using it for years for my personal web sites and my professional ones. I have been trying to get more people turned on to it, as well. When I installed Fedora 10 recently, I didn&rsquo;t want to install Aptana, as it has, in the past, FooBar&rsquo;d my Eclipse installation. However, I am learning Ruby (on rails), and want to install RadRails, which means I need Aptana. I thought about installing Aptana standalone, but don&rsquo;t want to start up a new Eclipse platform just for my rails development. So -</p>
+
+<p>First, I tried to install Aptana normally, as an eclipse plugin, several times. However, some parts of it refused to work and the &ldquo;My Aptana&rdquo; page never showed up. After assessing this problem, I thought there may be conflicts with some of the plugins Fedora installs through yum. Ihad  installed all the Eclipse plugins that my yum repositories offered.</p>
+
+<p>So I removed all the plugins using yum. Since I needed those plugins, I had to get the update sites to install in Eclipse. Here are the update sites for the rpms, for convenience. You can get the same information by checking the Fedora Eclipse project wiki at <a href="http://fedoraproject.org/wiki/Eclipse.">http://fedoraproject.org/wiki/Eclipse.</a></p>
+
+<h3>Keep Installed:</h3>
+
+
+<p>eclipse-ecj.x86_64
+eclipse-demos.noarch
+eclipse-platform.x86_64
+eclipse-rcp.x86_64
+eclipse-setools.x86_64
+eclipse-shelled.noarch
+eclipse-slide.noarch
+eclipse-swt.x86_64
+icu4j-eclipse.x86_64
+tomcat5-jasper-eclipse.noarch</p>
+
+<h3>Install Using Aptana:</h3>
+
+
+<p><strong>Subclipse (SVN Integration):
+<a href="http://subclipse.tigris.org/update_1.4.x">http://subclipse.tigris.org/update_1.4.x</a> :</strong>
+eclipse-subclipse*
+<strong>Eclipse Git:
+<a href="http://www.jgit.org/update-site/">http://www.jgit.org/update-site/</a> :</strong>
+eclipse-egit.noarch</p>
+
+<h3>Install Using The Update Manager:</h3>
+
+
+<p><strong>Ganymede:
+<a href="http://download.eclipse.org/releases/ganymede">http://download.eclipse.org/releases/ganymede</a> :</strong>
+eclipse-cdt<em> (C and C++ Development)
+eclipse-emf</em>  (Model and Model Development)
+eclipse-gef<em> (Graphical editors and frameworks)
+eclipse-jdt</em> (Java development)
+eclipse-mylyn* (Collaboration Tools)
+eclipse-pde.x86_64 (Java Development/Eclipse plug-in development environment)</p>
+
+<p><strong>Maven Integration for Eclipse:
+<a href="http://m2eclipse.sonatype.org/update-dev/">http://m2eclipse.sonatype.org/update-dev/</a></strong> (stable development)
+<strong>or <a href="http://m2eclipse.sonatype.org/update/">http://m2eclipse.sonatype.org/update/</a></strong> (stable)
+maven2-plugin-eclipse.x86_64</p>
+
+<p><strong>Linux Tools for Eclipse:
+<a href="http://download.eclipse.org/technology/linuxtools/update/">http://download.eclipse.org/technology/linuxtools/update/</a> :</strong>
+eclipse-changelog.x86_64
+eclipse-rpm-editor.x86_64</p>
+
+<p><strong>Checkstyle Plugin:
+<a href="http://eclipse-cs.sourceforge.net/update:">http://eclipse-cs.sourceforge.net/update:</a></strong>
+eclipse-checkstyle.x86_64</p>
+
+<p><strong>Eclipse Perl Integration:
+<a href="http://e-p-i-c.sourceforge.net/updates/testing">http://e-p-i-c.sourceforge.net/updates/testing</a> :</strong>
+eclipse-epic.x86_64</p>
+
+<p><strong>Babel (milti-lingual support):
+<a href="http://download.eclipse.org/technology/babel/update-site/ganymede">http://download.eclipse.org/technology/babel/update-site/ganymede</a> :</strong>
+eclipse-nls-*.noarch</p>
+
+<p><strong>Photran (fortran support):
+<a href="http://download.eclipse.org/technology/photran/updates/eclipse3.4cdt5.0">http://download.eclipse.org/technology/photran/updates/eclipse3.4cdt5.0</a>  :</strong>
+eclipse-photran*  (requires cdt plugin)</p>
+
+<p><strong>PHPEclipse (php):
+<a href="http://phpeclipse.sourceforge.net/update/stable/1.2.x/">http://phpeclipse.sourceforge.net/update/stable/1.2.x/</a> :</strong>
+eclipse-phpeclipse.x86_64</p>
+
+<p><strong>Pydev (python):
+<a href="http://pydev.sourceforge.net/updates/">http://pydev.sourceforge.net/updates/</a> :</strong>
+eclipse-pydev*</p>
+
+<p><strong>QuickRex (regular expression editor):
+<a href="http://www.bastian-bergerhoff.com/eclipse/features">http://www.bastian-bergerhoff.com/eclipse/features</a> :</strong>
+eclipse-quickrex.noarch</p>
+
+<p>Now you are ready to install the Aptana plugin, using this update site: <a href="http://update.aptana.com/install/studio/3.2/.">http://update.aptana.com/install/studio/3.2/.</a> I recommend installing Aptan before installing any of the previously mentioned plugins, for best compatability.</p>
+
+<p>That&rsquo;s it and good luck!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">"Skaman Sam" Tyler</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2009-02-14T11:09:00-05:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>11:09 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://skamansam.github.io/blog/2009/02/14/installing-aptana-in-fedora-eclipse/" data-via="skamansam" data-counturl="http://skamansam.github.io/blog/2009/02/14/installing-aptana-in-fedora-eclipse/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/02/09/drop-down-menu-with-css/" title="Previous Post: Drop-Down Menu with CSS">&laquo; Drop-Down Menu with CSS</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/03/11/building-chromium-on-fedora-10-x86-64/" title="Next Post: Building Chromium on Fedora 10 x86_64">Building Chromium on Fedora 10 x86_64 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/09/14/data-migrations-and-you/">Data Migrations and You!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/09/14/fun-with-numbers/">Fun With Numbers! (Revised)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/30/moved-to-octopress/">Moved to Octopress!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/23/cookie-detection-in-rails-3/">Cookie Detection in Rails 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/building-a-unified-time-select-field/">Building a Unified Time_select Field</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/skamansam">@skamansam</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'skamansam',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/skamansam?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - "Skaman Sam" Tyler -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'rudeboysolutions';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://skamansam.github.io/blog/2009/02/14/installing-aptana-in-fedora-eclipse/';
+        var disqus_url = 'http://skamansam.github.io/blog/2009/02/14/installing-aptana-in-fedora-eclipse/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+<script>
+
+var onloadhandler = function(){
+  render_mermaid()
+  render_latex()
+}
+
+var render_mermaid = function(){
+  var elements = document.querySelectorAll(".chart");
+  console.info('elements:', elements)
+  for(i  in elements){
+    var element = elements[i];
+    var insertSvg = function(svgCode, bindFunctions){
+        element.innerHTML = svgCode;
+    };
+
+    var graphDefinition = element.textContent;
+    var graph = mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
+  }
+}
+
+var render_latex = function() {
+  var tex_elements = document.querySelectorAll('.tex')
+  for(elem_idx in tex_elements){
+    elem = tex_elements[elem_idx]
+    renderMathInElement(
+      elem,
+      {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+      }
+    )
+  }
+}
+
+if(window.attachEvent) {
+  window.attachEvent('onload', onloadhandler);
+} else {
+  if(window.onload) {
+      var curronload = window.onload;
+      var newonload = function(evt) {
+          curronload(evt);
+          onloadhandler();
+      };
+      window.onload = newonload;
+  } else {
+      window.onload = onloadhandler;
+  }
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Rude Boy Solutions]]></title>
+  <link href="http://skamansam.github.io/atom.xml" rel="self"/>
+  <link href="http://skamansam.github.io/"/>
+  <updated>2016-09-25T13:41:42-04:00</updated>
+  <id>http://skamansam.github.io/</id>
+  <author>
+    <name><![CDATA["Skaman Sam" Tyler]]></name>
+    <email><![CDATA[skamansam@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Data Migrations and You!]]></title>
+    <link href="http://skamansam.github.io/blog/2016/09/14/data-migrations-and-you/"/>
+    <updated>2016-09-14T10:06:59-04:00</updated>
+    <id>http://skamansam.github.io/blog/2016/09/14/data-migrations-and-you</id>
+    <content type="html"><![CDATA[<h2>A Little Background</h2>
+
+<p>The university from which I graduated did not teach any programming patterns, so when I entered the job market, I was not sure what <em>programming patterns</em> (a.k.a. &ldquo;<em>design patterns</em>&rdquo;) even were. My first job was definitely a learning experience, but since I was on a small team with other newbies, I didn&rsquo;t have many opportunities to grow well as a developer. So when I got my second job, with developers of all walks and experiences, I was thrown into many, many discussions about what pattern to apply to what idea. It was a little confusing at first, but very exhilarating! Here was the chance to lose some old, bad habits, and replace them with new <em>Patterns</em>! This post is about some patterns I really really like. I will add references and information about each pattern so you can learn as much about them them as you want!</p>
+
+<h2>Migrations Are Only For Modifying The Database</h2>
+
+<p>This is a difficult rule to follow for lots of Rails developers, experienced and not so. Since migrations are usually automated, it is easy to get in the mindset of adding data changes to migrations. This violates the <strong>Single Responsibility Principle</strong>, which states, <em>A class should have a responsibility over a single feature of your application</em>.</p>
+
+<div class='note'>
+Scenario: You have a nice chat app and you want to add the ability for users to 'favorite' certain messages. At first, you have a boolean field in your database, so your original migration looks like this:
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">CreateMessageFavorites</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">up</span>
+</span><span class='line'>    <span class="n">create_table</span> <span class="ss">:message_favorites</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">t</span><span class="o">.</span><span class="n">references</span> <span class="ss">:message</span>
+</span><span class='line'>      <span class="n">t</span><span class="o">.</span><span class="n">references</span> <span class="ss">:user</span>
+</span><span class='line'>      <span class="n">t</span><span class="o">.</span><span class="n">boolean</span>    <span class="ss">:favorite</span>
+</span><span class='line'>      <span class="n">t</span><span class="o">.</span><span class="n">timestamps</span>  <span class="ss">null</span><span class="p">:</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">down</span>
+</span><span class='line'>    <span class="n">drop_table</span> <span class="ss">:message_favorites</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+After a few months, and many _many_ messages (6 million!), you decide you want the 'favorite' button to handle a few more emotions, such as "makes me happy," "makes me sad," "makes me angry," "makes me crazy," and "meh, just a note."</div>
+
+
+<p>There are several ways of going about doing this. Once you analyze your requirements, you decide to use the existing <code>MessageFavorite#favorite</code> field to store the new information.Your immediate thought is to use a migration as such:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">UpdateMessageFavoritesToHandleMoreEmotions</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">change</span>
+</span><span class='line'>    <span class="n">add_column</span> <span class="ss">:message_favorites</span><span class="p">,</span> <span class="ss">:favorite_int</span><span class="p">,</span> <span class="ss">:int</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="no">MessageFavorite</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">mf</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">mf</span><span class="o">.</span><span class="n">update_attributes</span><span class="p">(</span><span class="ss">favorite_int</span><span class="p">:</span> <span class="no">MessageFavorite</span><span class="o">::</span><span class="no">EMOTIONS</span><span class="o">[</span><span class="n">mf</span><span class="o">.</span><span class="n">favorite</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">remove_column</span> <span class="ss">:message_favorites</span><span class="p">,</span> <span class="ss">:favorite</span>
+</span><span class='line'>    <span class="n">rename_column</span> <span class="ss">:message_favorites</span><span class="p">,</span> <span class="ss">:favorite_int</span><span class="p">,</span> <span class="ss">:favorite</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are a few problems with this approach, chiefly, running a data migration in the middle of a Rails migration like this is going to grind things to a halt. Your deploy is going to take forever! There is also an issue of what happens when there is an error in your data migration which will prevent everything from happening and could leave you with dangling data that another migration won&rsquo;t be able to fix.</p>
+
+<p>Change in environment is also a big issue. You may have this thoroughly tested while in development or in testing environments, but production is known to throw a wrench into the works. This untested environment means you need to baby-sit your data migration, which you won&rsquo;t be able to do while it&rsquo;s in a deploy migration. You will need to run this separately, in a production console.</p>
+
+<p>Finally, there is the obvious issue of violations to the <strong>SRP</strong>. This migration does three things:</p>
+
+<ol>
+<li>creates a new temporary column</li>
+<li>creates the new data based on the existing data</li>
+<li>replaces the original column with the new column</li>
+</ol>
+
+
+<p>The best way to address all these issues is to just break the migration up into its distinct pieces, by doing the following:</p>
+
+<ol>
+<li>create and run a migration to create a new column in the Db</li>
+<li>run the data migration (in the production console)</li>
+<li>create and run a migration to replace the old column with the new one</li>
+</ol>
+
+
+<p>For many of us, step 2 is a very daunting task. Rails consoles in production are a hairy endeavor and can lead to bad data integrity and other sorts of bad things, including deleting all data! Fortunately for you guys, Rails already has a solution for this.</p>
+
+<h3>Introducing Rails Runner</h3>
+
+<p>Rails runner is a great tool for running data migrations and other one-shot data changes in your Rails application. Rails runner runs a given file in the context of your Rails app. You can execute Rails runner as <code>rails runner bin/file.rb</code> or <code>rails r bin/file.rb</code>. While this won&rsquo;t solve data integrity issues, it will allow you to run a script in the current Rails context. This means you can have tested and peer reviewed data migrations! Amazing!</p>
+
+<p>For ease of organization, you can put all your data migrations in <code>db/migrate/data/</code>. Another common place is <code>bin/one-shot/:year/:month/</code>. If this is a hotfix for a tech support ticket, it is helpful to put the ticket number in the name of the file, for instance <code>bin/one-shot/2016/09/TS-432098-update-bad-data.rb</code>. The point is, your team should agree on a place to put all these tickets so everyone can keep track of the changes. Developers can add a <code>post_checkout</code> git hook to automatically run all new scripts in the agreed-upon directory.</p>
+
+<h3>Flow for Data Migrations</h3>
+
+<div class="chart">
+%% Waiting for the following chart to load...
+graph TB;
+  db?{database needs to be changed?}
+  done[Done.]
+  db["Run database migration (rails migration)"]
+  data?{data need to be changed?}
+  data["run script to change data (one-shot)"]
+  db_cleanup?{database needs cleanup?}
+  db? -- yes --> db
+  db? -- no  --> done
+  db  --> data?
+  data? -- no -->done
+  data? -- yes --> data
+  data --> db_cleanup?
+  db_cleanup? -- yes --> db
+  db_cleanup? -- no --> done
+</div>
+
+
+<p>If you want to run any migration in Rails, just follow these easy steps:</p>
+
+<ol>
+<li>For data migrations, create a one-shot and use <code>rails runner</code>. This is a best practice because it allows your team to test and review your changes. <strong>NEVER EVER EVER RUN A PRODUCTION CONSOLE!</strong></li>
+<li>Use <code>rails migrations</code> <strong>FOR DATABASE MODEL CHANGES ONLY</strong></li>
+<li>Apply rules <em>1</em> and <em>2</em> as liberally as possible.</li>
+</ol>
+
+
+<p>If you want to create a data migration, use one-shots. If you want to create a data migration with a database change, separate the two concerns into a Rails migration, then a data migration, then a cleanup migration if needed. Of course, YMMV, as with any best practice, just make sure your team is onboard with it and, above all, remember that agreeing on standard practices is the core of a happy team!</p>
+
+<!--
+## Presenting Presenters
+[About Presenters, decorator pattern]
+
+## Interacting With Objects
+[about interactors, service object patters]
+
+## Keeping Controllers Under Control
+[about controllers as parameter fetchers for other objects that actuall do the work]
+
+## ActiveRecord Is For Recording
+[AR models should be only datastore - allows for switching DBs out - SQL should all be here - when switching Dbs, you only need to edit the models]
+
+## Views: A New View
+[use jbuilder/jb, separate views for each format, instead of `render :json...`]
+
+## Proper Tooling
+[Use tools! Use gems! Research which ones work for you and your team. Do not reinvent the wheel!]
+-->
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fun With Numbers! (Revised)]]></title>
+    <link href="http://skamansam.github.io/blog/2016/09/14/fun-with-numbers/"/>
+    <updated>2016-09-14T07:56:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2016/09/14/fun-with-numbers</id>
+    <content type="html"><![CDATA[<div class='notice'>
+  This post is heavy with math formualae, so may take a few seconds to format correctly.
+</div>
+
+
+
+
+<div class='notice'>
+  This post was originally written 2009/05/29, but was never finished. I just
+  finished the revisions on 2016/09/14 and it is now complete.
+</div>
+
+
+<p>I have always had a certain love for math and the neat things you can do with it. Here is a bit of information and shortcuts I have picked up in a few of my math classes.</p>
+
+<h2>Pascal&rsquo;s Triangle</h2>
+
+<p>Pascal&rsquo;s Triangle is a pretty neat thing. It is very simple to construct and can be used to understand a lot of different ideas. It follows a very simple form: start with a &lsquo;1&rsquo; and add the two digits above  to get the next number. The first few line look like this:</p>
+
+<div class='center'>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='text'><span class='line'>1
+</span><span class='line'>1  1
+</span><span class='line'>1  2  1
+</span><span class='line'>1  3  3  1
+</span><span class='line'>1  4  6  4  1
+</span><span class='line'>1  5 10 10  5  1
+</span><span class='line'>1  6 15 20 15  6  1
+</span><span class='line'>...
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<p>The line numbers start at 0, and continue on ad infinitum. In order to generate this triangle, programmatically, you would use something like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pascal</span><span class="p">(</span>
+</span><span class='line'><span class="err">      </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">prev</span><span class="p">,</span> <span class="c1">//the current (old) row data</span>
+</span><span class='line'><span class="err">      </span><span class="kt">int</span> <span class="o">*</span><span class="n">len</span><span class="p">,</span>       <span class="c1">//the length of the data</span>
+</span><span class='line'><span class="err">      </span><span class="kt">int</span> <span class="n">end</span><span class="p">,</span>           <span class="c1">//the row to retrieve</span>
+</span><span class='line'><span class="err">      </span><span class="kt">int</span> <span class="n">cur</span><span class="o">=</span><span class="mi">0</span>      <span class="c1">//the current row we are on</span>
+</span><span class='line'><span class="err">      </span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pascal</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">prev</span><span class="p">,</span><span class="kt">int</span> <span class="o">*</span><span class="n">len</span><span class="p">,</span><span class="kt">int</span> <span class="n">end</span><span class="p">,</span><span class="kt">int</span> <span class="n">cur</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'>       <span class="c1">//return immediately if we are at the last row</span>
+</span><span class='line'><span class="err">      </span><span class="k">if</span> <span class="p">(</span><span class="n">cur</span><span class="o">==</span><span class="n">end</span><span class="p">)</span> <span class="k">return</span> <span class="n">prev</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">     </span>   <span class="c1">//if the current vector length is 0, then set it to 1</span>
+</span><span class='line'><span class="err">      </span> <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">len</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span><span class="n">len</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">      </span> <span class="c1">//create a temp vector (all 1&#39;s) to store the new row data</span>
+</span><span class='line'><span class="err">      </span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">t</span><span class="p">((</span><span class="o">*</span><span class="n">len</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">      </span> <span class="c1">//sum the two rows</span>
+</span><span class='line'><span class="err">      </span> <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="o">*</span><span class="n">len</span><span class="p">);</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span class='line'><span class="err">            </span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">prev</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">prev</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">      </span> <span class="c1">//increase the length by 1</span>
+</span><span class='line'><span class="err">      </span> <span class="o">*</span><span class="n">len</span><span class="o">=</span><span class="p">(</span><span class="o">*</span><span class="n">len</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">      </span> <span class="c1">//return the new row data</span>
+</span><span class='line'><span class="err">      </span> <span class="k">return</span> <span class="n">pascal</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">len</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="n">cur</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Binomial Expansion</h2></h2>
+
+<p>Remember binomials from algebra? They were the pair of numbers used to create or simplify polynomial expressions, something like:</p>
+
+<div class="tex">
+$$ ( x + 3 )^3 = x^3 + 9x^2 + 27x + 27 $$
+</div>
+
+
+<p>You can use Pascal&rsquo;s triangle to find the coefficients of the polynomials. Let&rsquo;s begin by solving for the generic  case:</p>
+
+<div class="tex">
+$(a+b)^n = $
+$(a+b)^{n-1}(a+b) = $
+$(a+b)^{n-2}(a+b)^2 = $
+$(a+b)^{n-2}((a+b)(a+b)) = $
+$( (a*a) + (a*b) + (b*a) + (b*b) )(a+b)^{n-1} = $
+$(a^2+2ab+b^2)(a+b)^{n-1} = $
+</div>
+
+
+<p>See the coefficients so far, with n=2 ? They are [1 2 1], which corresponds to the second row in Pascal&rsquo;s triangle. But this could be a fluke, right, so let&rsquo;s jump ahead to n=5 to see if that works as well.</p>
+
+<div class="tex">
+$(a+b)^n = $
+$(a+b)^{n-6}(a+b)^5 = $
+$(a+b)^{n-6}( (a+b) (a+b) (a+b) (a+b) (a+b) ) = $
+$(a+b)^{n-6}( ( (a+b)(a+b) )( (a+b)(a+b) ) (a+b) ) = $
+<br/>
+[we know what $(a+b)^2$ is, so: ]
+$(( a^2+2ab+b^2 )( a^2+2ab+b^2 )(a+b) )(a+b)^{n-6} = $
+$( ( (a^2*a^2)+(a^2*2ab) + (a^2*b^2) + ( 2ab*a^2) + (2ab*2ab) + $
+$(2ab*b^2) + (b^2*a^2)+(b^2*2ab) + (b^2*b^2) ) (a+b) )(a+b)^{n-6} = $
+$( ( a^4 + 2a^3b+ a^2b^2 + 2a^3b + 4a^2b^2 + 2ab^3 + b^2a^2 + 2ab^3+ b^4) (a+b) )(a+b)^{n-6} = $
+$( ( a^4 + 4a^3b + 6a2b^2 + 4ab^3+b^4) (a+b) )(a+b)^{n-6} = $
+<br/>
+[note: notice that the coefficients of $(a+b)^4$ are (1 4 6 4 1) ! ]
+$( ( a^4*a + a^4*b + 4a^3b*a + 4a^3b*b + 6a^2b^2*a + $ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;$6a^2b^2*b + 4ab^3*a + 4ab^3*b + b^4*a+b^4*b))(a+b)^{n-6} =$
+$( ( a^5 + a^4b + 4a^4b + 4a^3b^2 + 6a^3b^2 + 6a^2b^3 + 4a^2b^3 + 4ab^4 + ab^4+b^5))(a+b)^{n-6}=$
+$( ( a^5 +5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5)(a+b)^{n-6}$
+</div>
+
+
+<p>There it is! The coefficients correspond to the rows on Pascal&rsquo;s Triangle!</p>
+
+<h3>Features</h3>
+
+<p>Now, to make things a little simpler, I will note some interesting &ldquo;features&rdquo; about what we just did.</p>
+
+<h4>General Formula for Binomial Expansion</h4>
+
+<p>The general formula for binomial expansion is:</p>
+
+<div class="tex">
+$$(a+b)^n = \sum_{i=0}^{n}(P_{ni}a^{n-i}b^i)$$
+</div>
+
+
+<div class="tex">
+Where $P_{ni}$ is the coefficient at row $n$ (starting from 0) and column $i$ in Pascal's Triangle. The formula means to add from $i=0$ to $n$ all the terms $(P_{ni}a^{n-i}b^i)$ , replacing $i$ with the number you are at. For example, supposing $i=3$, you would get:
+</div>
+
+
+<div class="tex">
+$$\sum_{i=0}^{3}(P_{3i}a^{3-i}b^i) = $$
+$$(P_{(3,0)}a^{3-0}b^0) + (P_{(3,1)}a^{3-1}b^1) + (P_{(3,2)}a^{3-2}b^2) + (P_{(3,3)}a^{3-3}b^3) = $$
+since $P_3 = [1 3 3 1]$ , we finally get:
+$$((1)a^{3-0}b^0) + ((3)a^{3-1}b^1) + ((3)a^{3-2}b^2) + ((1)a^{3-3}b^3) $$
+cleaning up a bit :
+$$a^3 + 3a^2b + 3ab^2 + b^3$$
+</div>
+
+
+<h4>Exponents</h4>
+
+<p>Note in all the expansions, the first variable counts down from n to 0, while the second variable counts up from 0 to n.</p>
+
+<h3>Does your binomial already have coefficients?</h3>
+
+<p>If your binomial already has coefficients, simply put them with their terms like so:</p>
+
+<div class="tex">
+$$\sum_{i=0}^{n}(P_{ni}(xa)^{n-i}(yb)^i)$$
+Using the commutative property, it can be rewritten as such:
+$$\sum_{i=0}^{n}(P_{3i}(x^{n-i}y^{i})a^{n-i}b^i) $$
+
+Let's try an example!<br/>
+$(3a+2b)^3 = $<br/>
+$(1)(3a)^{3}(2b)^0 + (3)(3a)^{2}(2b) + (3)(3a)(2b)^2 + (1)(2b)^3 = $<br/>
+$(1)(3^3)a^3 + (3)(3^2*2)a^{2}b + (3)(3*2^2)ab^2 + (1)(2^3)b^3 = $<br/>
+$(1)(27)a^3 + (3)(18)a^{2}b + (3)(12)ab^2 + (1)(8)b^3 = $<br/>
+$27a^3 + 54a^{2}b + 36ab^2 + 8b^3$
+</div>
+
+
+<h1>Conclusion</h1>
+
+<p>As you can see, it is fairly easy to use Pascal&rsquo;s Triagel as a lookup table for
+binomial exapnsion&rsquo;s coefficients. I hope you have much more fun in your maths!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Moved to Octopress!]]></title>
+    <link href="http://skamansam.github.io/blog/2016/08/30/moved-to-octopress/"/>
+    <updated>2016-08-30T20:21:48-04:00</updated>
+    <id>http://skamansam.github.io/blog/2016/08/30/moved-to-octopress</id>
+    <content type="html"><![CDATA[<h3>Rude Boy Solutions has Moved To Octopress!</h3>
+
+<p>Rude Boy Solutions is now moving to Octopress for blogging! Wordpress was great fun while it lasted, but I rarely use it anymore, as I am creating my own blogging platform, pSaMS (padrino Sams Management System), so this is an intermediate step. Also, the first item before pSaMS is production-ready, is the ability to import and export posts from/to github. I chose markdown as that format, so I am trying to create a plugin for pSaMS for Octopress import/export.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cookie Detection in Rails 3]]></title>
+    <link href="http://skamansam.github.io/blog/2013/04/23/cookie-detection-in-rails-3/"/>
+    <updated>2013-04-23T17:14:12-04:00</updated>
+    <id>http://skamansam.github.io/blog/2013/04/23/cookie-detection-in-rails-3</id>
+    <content type="html"><![CDATA[<p>I have seen a lot of posts on cookie detection in Rails. I believe this may be a bad idea, in general, but here is a cheap way to detect whether or not cookies are enabled in the browser. Just add a before_filter that checks for the presence of the application&rsquo;s cookie.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">before_filter</span> <span class="ss">:check_cookie</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">check_cookie</span>
+</span><span class='line'>    <span class="n">cookie_name</span> <span class="o">=</span> <span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">session_options</span><span class="o">[</span><span class="ss">:key</span><span class="o">]</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="o">[</span><span class="n">cookie_name</span><span class="o">].</span><span class="n">to_s</span><span class="o">.</span><span class="n">blank?</span>
+</span><span class='line'>      <span class="n">flash</span><span class="o">[</span><span class="ss">:error</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;To use this site, you must enable cookies in your browser&#39;s settings.&quot;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>..And Voila! Now if your users try to view any page, they will see a nice Flash message about their cookies!</p>
+
+<p>UPDATE 8-30-2016: Rails apps should use cookies. If users don&rsquo;t have cookies enabled, they should not be using your app. Plan for the future and leave behind older browsers. You are not expected to support everyone!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Building a Unified Time_select Field]]></title>
+    <link href="http://skamansam.github.io/blog/2013/04/10/building-a-unified-time-select-field/"/>
+    <updated>2013-04-10T11:10:11-04:00</updated>
+    <id>http://skamansam.github.io/blog/2013/04/10/building-a-unified-time-select-field</id>
+    <content type="html"><![CDATA[<p>Before I migrated to Rails 3.2, I used a plugin to provide a unified input field for time_select with either the standard Rails ActionView or the SimpleForm gem (SimpleForm uses ActionView under the hood). I was happy until the Rails upgrade caused my gem to inexplicably stop working. I had a deadline to meet and could not be bothered with complicated solutions. I searched and searched for alternatives to this fine gem, but none were found. Then it hit me: why not just write my own code and replace the inputs with my own code? Surely it can&rsquo;t take too long to build a time input based on the simple_time_select gem! So here it is: my simple version of the gem, with only a few modifications from the simple_time_select gem.</p>
+
+<p>Here is my old code, utilizing simple_time_select. The gem is used only if :simple_time_select is true, and it uses the :minute_interval, :time_separator, :start_hour, :end_hour, and a host of other options for setting the times. I wish it had a way for specifying just a start_time and end_time.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="sx">%= f.input :start_time,</span>
+</span><span class='line'><span class="sx">              :label=</span><span class="o">&gt;</span><span class="s2">&quot;Start Time:&quot;</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:default</span><span class="o">=&gt;</span><span class="n">appt</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:wrapper</span><span class="o">=&gt;</span><span class="kp">false</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:simple_time_select</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:label_html</span><span class="o">=&gt;</span><span class="p">{</span><span class="ss">:class</span><span class="o">=&gt;</span><span class="s2">&quot;head&quot;</span><span class="p">},</span>
+</span><span class='line'>              <span class="ss">:minute_interval</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:time_separator</span> <span class="o">=&gt;</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:start_hour</span> <span class="o">=&gt;</span> <span class="mo">06</span><span class="p">,</span>
+</span><span class='line'>              <span class="ss">:end_hour</span> <span class="o">=&gt;</span> <span class="mi">17</span>
+</span><span class='line'>   <span class="sx">%&gt;</span>
+</span><span class='line'><span class="sx">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I had to search for an algorithm to use for the periodicity, and settled on the algorithm discussed in <a href="http://stackoverflow.com/questions/6783589/display-15-minute-steps-between-two-given-times">this discussion on Stack Overflow</a>, and is inlined as the :collection option. Since the :default option removes the inital blank I wanted as the first item in the list, I has to add a blank :include_blank option.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;field&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="sx">%- time_start = Time.now.change(:hour=&gt;6,:minute=&gt;0) %&gt;</span>
+</span><span class='line'><span class="sx">  &lt;%-</span> <span class="n">time_end</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="ss">:hour</span><span class="o">=&gt;</span><span class="mi">17</span><span class="p">,</span><span class="ss">:minute</span><span class="o">=&gt;</span><span class="mi">55</span><span class="p">)</span> <span class="sx">%&gt;</span>
+</span><span class='line'><span class="sx">  &lt;%- period = 5.minutes %&gt;</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="sx">%= f.input :start_time,</span>
+</span><span class='line'><span class="sx">           :as=</span><span class="o">&gt;</span><span class="ss">:collection_select</span><span class="p">,</span>
+</span><span class='line'>           <span class="ss">:required</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span>
+</span><span class='line'>           <span class="ss">:include_blank</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span class='line'>           <span class="ss">:selected</span><span class="o">=&gt;</span><span class="p">(</span>
+</span><span class='line'>             <span class="n">f</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">start_time</span><span class="o">.</span><span class="n">blank?</span> <span class="p">?</span>
+</span><span class='line'>               <span class="s2">&quot;&quot;</span> <span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">start_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">)</span>
+</span><span class='line'>           <span class="p">),</span>
+</span><span class='line'>           <span class="ss">:input_html</span><span class="o">=&gt;</span><span class="p">{</span>
+</span><span class='line'>             <span class="ss">:name</span><span class="o">=&gt;</span><span class="s2">&quot;appt[start_time(5i)]&quot;</span><span class="p">,</span>
+</span><span class='line'>             <span class="ss">:id</span><span class="o">=&gt;</span><span class="s2">&quot;appt_start_time_5i&quot;</span><span class="p">},</span>
+</span><span class='line'>           <span class="ss">:collection</span><span class="o">=&gt;</span> <span class="p">(</span>
+</span><span class='line'>             <span class="o">[</span><span class="n">time_start</span><span class="o">].</span><span class="n">tap</span><span class="p">{</span>
+</span><span class='line'>               <span class="o">|</span><span class="n">array</span><span class="o">|</span> <span class="n">array</span> <span class="o">&lt;&lt;</span> <span class="n">array</span><span class="o">.</span><span class="n">last</span> <span class="o">+</span> <span class="n">period</span>
+</span><span class='line'>                 <span class="k">while</span> <span class="n">array</span><span class="o">.</span><span class="n">last</span> <span class="o">&lt;</span> <span class="n">time_end</span>
+</span><span class='line'>             <span class="p">})</span><span class="o">.</span><span class="n">map</span><span class="p">{</span>
+</span><span class='line'>               <span class="o">|</span><span class="n">t</span><span class="o">|</span> <span class="o">[</span><span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%l:%M %p&quot;</span><span class="p">),</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%H:%M&quot;</span><span class="p">)</span><span class="o">]</span>
+</span><span class='line'>             <span class="p">}</span>
+</span><span class='line'>   <span class="sx">%&gt;</span>
+</span><span class='line'><span class="sx">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I am sure you can wrap this in a Helper class somewhere, and it should be easy to monkeypatch ActiveView or SimpleForm to display this instead of the default.</p>
+
+<p>References:</p>
+
+<ul>
+    <li><span style="line-height: 13px;"><a href="http://stackoverflow.com/questions/6783589/display-15-minute-steps-between-two-given-times" target="_blank">Stack Overflow discussion on time periodicity in Rails</a> (used for periodicity algorithm)</span></li>
+    <li><a href="http://www.tonyamoyal.com/2009/04/21/simple-time-select-the-most-compact-time_select-for-ruby-on-rails/" target="_blank">Tutorial on using simple_time_select</a></li>
+    <li><a href="https://github.com/plataformatec/simple_form" target="_blank">SimpleForm gem</a></li>
+    <li><a href="https://github.com/tamoyal/simple_time_select" target="_blank">simple_time_select gem</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Simple Rails Development Part II: Core GEdit Plugins]]></title>
+    <link href="http://skamansam.github.io/blog/2012/08/31/simple-rails-development-part-ii-core-gedit-plugins/"/>
+    <updated>2012-08-31T22:44:51-04:00</updated>
+    <id>http://skamansam.github.io/blog/2012/08/31/simple-rails-development-part-ii-core-gedit-plugins</id>
+    <content type="html"><![CDATA[<p>This entry continues the Simple Rails Development Series with a discussion of what I consider to be the core GEdit plugins for Rails development. By &ldquo;core,&rdquo; I mean all the plugins which make Rails development a little easier.</p>
+
+<p>More Plugins</p>
+
+<p>In my last Simple Rails Development article, I discussed Click Config, which is an amazing tool for specifying how the mouse-click highlighting should behave. There are many more GEdit plugins which can be used to mkae Rails development easier. In fact, there is an entire project devoted to just such a thing:</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Simple Rails Development Part I: Gedit Click Config]]></title>
+    <link href="http://skamansam.github.io/blog/2012/08/30/simple-rails-development-part-i-gedit-click-config/"/>
+    <updated>2012-08-30T23:29:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2012/08/30/simple-rails-development-part-i-gedit-click-config</id>
+    <content type="html"><![CDATA[<p>After evaluating all editors and IDEs I could ahold of for Ruby On Rails development in Linux, I decided none were really up to my expectations. I was really looking for something as powerful for Rails development as Eclipse is for Java development. Unfortunately, there were not any. Most of them were close, but all lacked some key ingredient necessary to make my life a little easier. However, I did find a great solution which required learning a little more about an undiscovered basic text editor in Fedora: GEdit. In order to make my rails development a little easier, I installed a few plugins, but only one of them took me by surprise: Click Config.</p>
+
+<p><strong>NOTE: This article is written for GEdit 3+. A simple Google search will yield many articles for Gedit 2.</strong></p>
+
+<p>Most IDEs and editors have different functions when multi-clicking in an editor pane. Most of them have the following selection actions:</p>
+
+<ul>
+    <li><strong>Single-Click</strong>: Move the editing cursor to the mouse cursor's location</li>
+    <li><strong>Double-Click</strong>: Select the word that is under the mouse cursor</li>
+    <li><strong>Triple-Click</strong> : Select the entire line that is under the mouse cursor</li>
+</ul>
+
+
+<p>Only a few editors have a quad-click option for selecting an entire paragraph. GEdit Click Config not only has a quad-click option, but has a quit-click (five clicks in quick succession) option as well. Amazing! Not only can you configure what click-types are available in GEdit, but you can configure the click parameters based on a given regular expression (&ldquo;regex&rdquo; for short). And to top it all off, you can configure which click options are activated based on what language GEdit is set to.</p>
+
+<h2>I Gotta Have It!</h2>
+
+
+<p>I have not found a distro yet which ships with GNOME and does not have GEdit as well, so it should be in your local *nix distro&rsquo;s repository or already installed it.  If you don&rsquo;t have it already, you can pick it up at <a href="http://code.google.com/p/gedit-click-config/,">http://code.google.com/p/gedit-click-config/,</a> and it doesn&rsquo;t require root access, so setup should be really simple, just follow the directions.</p>
+
+<h2>You mentioned Ruby on Rails?</h2>
+
+
+<p>Yes&hellip; yes I did.  You can find out more about Ruby words, constants, and other things <a href="http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Variables_and_Constants" target="_blank">here</a>. Ruby words are pretty simple: they:</p>
+
+<ol>
+    <li><strong>can begin with a single $ sign </strong></li>
+    <li><strong>can begin with a single or double @ sign, a</strong></li>
+    <li><strong>can contain any letter a-z, case insensitive</strong></li>
+</ol>
+
+
+<p>I like to add a fourth rule, just for constants, because when i select a part of a constant, i want the whole thing: <strong>can contain two colons in a row</strong>.</p>
+
+<p>To put all that in simple regular expressions: <strong><code>((\$?)|(@?@?))([_a-zA-Z]+(::)?)+</code></strong>. I am sure you can write that in a thousand different ways, but that is the one I like best, because it is really clear what is going on. Also - the matches almost line up at \2,\3,\4.\5 This regex should be newly defined in the Click Config settings. You can get there by menu, at Edit-&gt;Click Config-&gt;Configure. You can create a new selection rule by adding it in the only editable inoput field at the bottom, clicking the &ldquo;Add&rdquo; button and entering a name for it. I suggest using &ldquo;Ruby Word&rdquo; for the name.</p>
+
+<p>I also find myself moving ruby strings around a lot. Wouldn&rsquo;t it be great if you could just triple-click and select the entire string? With GEdit Click Config, you can! All you have to do is create a new selection rule, with the following regular expression: <strong><code>([&lsquo;&ldquo;]).<em>?\1</code></strong>. Make sure to check the &rsquo;M&rsquo; flag to the right of the input field, in prder to make it multi-line, if you wish. To break down the pattern, the first paren matches either single- or double-quotes. Then match anything until you get to the next single- or double-quote. The &lsquo;\1&rsquo; means to match the value from the first parenthetical match, so the quotes will line up properly. The &lsquo;.</em>?&rsquo; means to match anything, but only until the next regex portion matches. If we leave out the question mark, we will match anything until the last next-character match, This is called a non-greedy search, and is necessary for this type of pattern-matching.</p>
+
+<h2>Come Together</h2>
+
+
+<p>I hope you learn to enjoy some of the basics as I have. To close this entry out, I will list all the Click Configs I have for all my Languages:</p>
+
+<h4>Selection Rules</h4>
+
+
+<ul>
+    <li>Ruby Word: ((\$?)|(@?@?))([_a-zA-Z]+(::)?)+    (Flags: None)</li>
+    <li>Full Quote: (['"]).*?\1   (Flags: M)</li>
+    <li>Single-Line Quote  (Flags: None)</li>
+    <li>Haml Word: (\.|\#|\$?|(@?@?))([_a-zA-Z]+(::)?)+</li>
+</ul>
+
+
+<h4></h4>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Inline Input Fields With Mnimal jQuery]]></title>
+    <link href="http://skamansam.github.io/blog/2012/05/25/inline-input-fields-with-mnimal-jquery/"/>
+    <updated>2012-05-25T14:46:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2012/05/25/inline-input-fields-with-mnimal-jquery</id>
+    <content type="html"><![CDATA[<p>For one of my projects, i needed to put a text field inside a header element. When I did so, the input field ruined my layout and good looks! So I went the jQuery way and devised a method for hiding inputs when not in use, but when clicking on it, turns into a normal input field. So in my CSS, I add:</p>
+
+<pre lang="css">
+input.hidden{
+    color: inherit;
+    padding: inherit;
+    margin: inherit;
+    border: none;
+    background: transparent;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+
+}
+h2 {
+    color: #648dd7;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 16px;
+    margin-left: 2px;
+}​
+</pre>
+
+
+<p>and in my html, I have:</p>
+
+<pre lang="HTML">
+&lt;h2&gt;Header<input name="myInput" value="[Header Input]" class="hidden"/&gt;&lt;/h2&gt;
+​</pre>
+
+
+<p>And here is the fun part. Essentially one line of javascript to accomplish this easy feat:</p>
+
+<pre lang="javascript">
+$('input.hidden').live('focus',function(){
+    $(this).removeClass('hidden').live('blur',
+                                       function(){$(this).addClass('hidden                                                                                              ')})})​;
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Keep Your Linux Always-On in a Dual-Boot System]]></title>
+    <link href="http://skamansam.github.io/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system/"/>
+    <updated>2012-02-04T07:10:00-05:00</updated>
+    <id>http://skamansam.github.io/blog/2012/02/04/how-to-keep-your-linux-always-on-in-a-dual-boot-system</id>
+    <content type="html"><![CDATA[<p>During my move from Greensboro, NC to Baltimore, MD, I accidentally threw away my home server (case of mistaken identity), so I needed to build a new one. This was more fortuitous than not, as it gave me the opportunity to build a system which I could use for another decade. I always insist on older hardware, with the most options for upgrade. So I bought a pretty sweet setup that I can upgrade a little at a time until socket LGA1155 goes out of style. As of now, that means a quad-core i7 will run on my machine - not too bad for the next decade! Here are the complete specs for my machine:</p>
+
+<ul>
+    <li>Motherboard: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16813135283&amp;Tpk=p67h2-a2">ECS P67H2-A2 Motherboard</a></li>
+    <li>CPU: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16819116399">Intel G620 2.6GHz</a></li>
+    <li>Memory:<a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16820231311"> 8Gb G.Skill Ripjaw</a></li>
+    <li>Graphics: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16814162054">2x nVidia 9500 1Gb PCIe</a>, in a (software) SLI configuration</li>
+    <li>Power Supply: <a href="http://www.newegg.com/Product/Product.aspx?Item=N82E16817148041">Apevia Java 650W</a></li>
+    <li>Hard Drive: <a href="Seagate Barracuda Green 2TB SATA 6Gb/s 64MB Cache 3.5-Inch Internal">Seagate Barracuda 2Tb SATA 6Gb/s</a></li>
+    <li>Display: <a href="http://www.amazon.com/gp/product/B004KCPH84/ref=oh_o01_s00_i00_details">ViewSonic 24" Widescreen LCD</a></li>
+    <li>Total Cost to Me: ~650.00usd</li>
+    <li>Total Cost Premade: ~1,400</li>
+    <li>Savings: ~ 100%</li>
+</ul>
+
+
+<p>So my next task, once getting all the required parts and assembling them, was to create a dual-boot system with Fedora 16 and Windows 7. I wanted to use my new graphics goodness for CUDA application design and, of course, games. I installed Windows 7, then Fedora 16 for a normal dual-boot configuration. Then came the hard part: how to make Fedora switch video drivers based on whther it boots in VirtualBox or not.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery ThemeSwitcherTool - Working Version!!!!!]]></title>
+    <link href="http://skamansam.github.io/blog/2011/03/06/jquery-themeswitchertool-working-version/"/>
+    <updated>2011-03-06T20:20:00-05:00</updated>
+    <id>http://skamansam.github.io/blog/2011/03/06/jquery-themeswitchertool-working-version</id>
+    <content type="html"><![CDATA[<p>I recently tried to install the jQuery UI  <a title="Theme Switcher" href="http://docs.jquery.com/UI/Theming/ThemeSwitcher">ThemeSwitcher</a> on a site for a project on which I am working. It failed. Miserably! I scoured the interwebs for a working version, but could not find one anywhere. However, I did find out why the tool was not working. It seems the jQuery team disabled hotlinking to its servers. This was extremely good news, as it meant I could simply recode the widget to point to the new files or download them and point the script to the downloaded files.  I dove right in to the code and made some modifications to the start of the script. Then I optimized some of the rest of the code. Finally, I added a few extra options to cover the changes I made.</p>
+
+<h3>Download</h3>
+
+
+<p>You can click on the following links to download the files.</p>
+
+<ul>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/themeswitchertool.js">themeswitchertool.js</a> - The themeswitcher.</li>
+    <li>The Following files are images used by themeswitcher. To use them, place them in /javascripts/jquery/themeswitcher/ or use the imageLocation option to point to the directory where these are stored.
+<ul>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/menuhoverbg.png">menuhoverbg.png</a></li>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/icon_color_arrow.gif">icon_color_arrow.gif</a></li>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/buttonbg.png">buttonbg.png</a></li>
+    <li><a href="http://blog.rbe.homeip.net/wp-content/uploads/2011/03/base.png">base.png</a> This is an icon used for the 'base' theme (no styles), to use this, you need to specify the icon location in the options or put it in with the rest of the images.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Changes</h3>
+
+
+<ul>
+    <li>The old script appended up to three styles to the document, then removed the first one. It now uses the selector "head link#ui-theme" to change the stylesheet. I changed this so you can set the id of your default custom theme to "ui-theme" and it will change this. If the id isn't found, it creates a new one.</li>
+    <li>Added new options for specifying your own themes to add to the list.</li>
+    <li>Added new option, useStandard, for specifying whether to use the themes from the jQuery UI site.</li>
+    <li>Added new options for specifying where to find the UI icons and stylesheets</li>
+    <li>Added new option, imageLocation, for specifying where to find the widget images (found in the downloaded file)</li>
+    <li>Added the widget images to the downloaded file, so you don't have to link to jQuery's servers</li>
+    <li>Added option, useCookie, for whether to use a cookie for saving the theme for later use on the same page.</li>
+</ul>
+
+
+<h3>Examples</h3>
+
+
+<h4>Basic usage, no custom theme support</h4>
+
+
+<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( );</pre>
+
+
+<h4>Adding custom themes</h4>
+
+
+<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( {
+    themes: {
+       'theme1': {
+           icon:"/path/to/theme-icon.png",
+           css:"/path/to/theme.css"
+       },
+       'theme2': {
+           icon:"/path/to/theme2-icon.png",
+           css:"/path/to/theme2.css"
+       }
+    }
+});</pre>
+
+
+<h4>Using Only Custom Themes</h4>
+
+
+<pre lang="javascript">$('&lt;div id="theme-switcher"&gt;&lt;/div&gt;').prependTo('body').themeswitchertool( {
+    useStandard: false,
+    themes: {
+       'theme1': {
+           icon:"/path/to/theme-icon.png",
+           css:"/path/to/theme.css"
+       },
+       'theme2': {
+           icon:"/path/to/theme2-icon.png",
+           css:"/path/to/theme2.css"
+       }
+    }
+});</pre>
+
+
+<h3>New Options</h3>
+
+
+<dl> <dt>themes</dt> <dd style="font-size: 80%;">Default: {}</dd> <dd>A hash of themes, where each key is the theme name, and the value is another hash specifying the icon to use and the css file for the theme. Here is an example:
+<pre lang="javascript">{
+  'theme1': {
+    icon:"/path/to/theme-icon.png",
+    css:"/path/to/theme.css"
+  }
+}</pre>
+</dd> <dt>useStandard</dt> <dd style="font-size: 80%;">Default: true</dd> <dd>If you don't want the themes from the jQuery UI site to show up in the list, set this to false.</dd> <dt>useCookie</dt> <dd style="font-size: 80%;">Default: true</dd> <dd>The Theme Switcher uses a browser cookie to store and retrieve the theme name for the current site. Set this option to false if you do not want your site to remember the theme.</dd> <dt>imageLocation</dt> <dd style="font-size: 80%;">Default: "/javascripts/jquery/themeswitcher/"</dd> <dd>This is where the images are stored which Theme Switcher uses. The following files must be in the folder: buttonbg.png, icon_color_arrow.gif, menuhoverbg.png . You can get these from the download.</dd> <dt>imgPrefix</dt> <dd style="font-size: 80%;">Default: "http://static.jquery.com/ui/themeroller/images/themeGallery/theme_90_"</dd> <dd>This option specifies the default icon prefix URI. The icons are the previews for each theme. The default option sets the default images to the jquery hotlink site. This may change in the future, so it is specified here as an option.</dd> <dt>imgSuffix</dt> <dd style="font-size: 80%;">Default: ".png"</dd> <dd>This option specifies the rest of the image URI.</dd> <dt>cssPrefix</dt> <dd style="font-size: 80%;">Default: "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/"</dd> <dd>This option specifies the deafault css location prefix.</dd> <dt>cssSuffix</dt> <dd style="font-size: 80%;">Default: "/jquery-ui.css" </dd> <dd> </dd> <dd>This option specifies the deafault css location sufffix.</dd> </dl>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tango Icons: Save All]]></title>
+    <link href="http://skamansam.github.io/blog/2010/07/28/tango-icons-save-all/"/>
+    <updated>2010-07-28T14:35:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2010/07/28/tango-icons-save-all</id>
+    <content type="html"><![CDATA[<p>Ever notice how the  <a title="Tango Desktop Project" href="http://tango.freedesktop.org/Tango_Desktop_Project">Tango icons</a> don&rsquo;t have a &ldquo;Save All&rdquo; icon? Well - look no further! I have created a usable set, using the existing icons as a template, all in about 15 minutes. So - without further ado - here they are:</p>
+
+<p>[caption id=&ldquo;attachment_215&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;16&rdquo; caption=&ldquo;16x16&rdquo;]<a href="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all.png"><img class="size-full wp-image-215" title="document-save-all-16x16" src="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all.png" alt="16x16 Tango Save All icon" width="16" height="16" /></a>[/caption]</p>
+
+<p>[caption id=&ldquo;attachment_216&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;22&rdquo; caption=&ldquo;22x22&rdquo;]<a href="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all1.png"><img class="size-full wp-image-216" title="document-save-all-22x22" src="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all1.png" alt="Tango Save All icon - 22x22" width="22" height="22" /></a>[/caption]</p>
+
+<p>[caption id=&ldquo;attachment_217&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;32&rdquo; caption=&ldquo;32x32&rdquo;]<a href="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all2.png"><img class="size-full wp-image-217" title="document-save-all-32x32" src="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/document-save-all2.png" alt="Tango Save All icon - 32x32" width="32" height="32" /></a>[/caption]</p>
+
+<p>I did not create these for real polish - I just needed something on-the-fly, but if you have any suggestions on making them better, please let me know!</p>
+
+<p>Also - if you would like a zip archive so you can just unzip them into the existing tango folder - here it is: <a href="http://blog.rbe.homeip.net/wp-content/uploads/2010/07/tango-icon-save-all.zip">tango-icon-save-all</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Teaching Computer Science in a Web Browser?]]></title>
+    <link href="http://skamansam.github.io/blog/2010/06/02/teaching-computer-science-in-a-web-browser/"/>
+    <updated>2010-06-02T21:48:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2010/06/02/teaching-computer-science-in-a-web-browser</id>
+    <content type="html"><![CDATA[<p>With the web becoming more pervasive and HTML5 threatening to annihilate Flash, is JavaScript becoming a viable language for teaching advanced topics in computer science? Here is a run-down of topics and projects that could be used to teach the courses. The following course listing is taken from my university, the University of North Carolina at Greensboro. I have organized them by course content, as some courses use similar tools/methods. Also note that some courses are designed to teach specific software, outside of the browser, so I have placed them under the topic &ldquo;Outside the Browser&rdquo;</p>
+
+<h2>General Programming Courses</h2>
+
+
+<h2><strong>Graphics</strong></h2>
+
+
+<h2>Algorithms</h2>
+
+
+<p><strong>230 Elementary Data Structures and Algorithm</strong>s
+Advanced syntax of high level language taught in CSC 130. Emphasis on modularization and abstraction. Big-O analysis of algorithms. Design and use of abstract data types with various implementations.</p>
+
+<h2>Networking</h2>
+
+
+<h2>Math-Based Courses</h2>
+
+
+<p><strong>250 Foundations of Computer Science I
+</strong>An introduction to the fundamental ideas underlying contemporary computer science with a focus on the computation and construction of objects.</p>
+
+<h2>Hardware
+<span style="font-weight: normal; font-size: 13px;">These classes are designed to teach specific hardware concepts</span></h2>
+
+
+<p><strong>261 Computer Organization and Assembly Language
+</strong><em>CPU, memory, I/O devices, digital logic design, psw. Number representations and machine language. Assembly language instruction types, registers, addressing, arithmetic, instruction format, opcodes, pseudo-opcodes, assembler directives, system calls, and macros.</em></p>
+
+<p><em><span style="font-style: normal;">Many would think this class would be difficult to do in the browser, but there are many assembly interpreters written in JavaScript.  Here are a few online interpreters of interest for this classJS:</span></em></p>
+
+<ul>
+    <li><a href="http://http://timhatch.com/projects/jsassembly/">JSAssembly </a>- an interpeter for x86 assembly codes</li>
+    <li><a href="http://benfirshman.com/projects/jsnes/">JSNES</a> - Great working interpreter for SNES ROM images</li>
+    <li><a href="http://6502asm.com/">6502asm</a> - 6502 assembly code interpreter</li>
+</ul>
+
+
+<p>I did not find any online SPARC interpreters, as UNCG teaches this course in SPARC assembly, but it would be trivial to modify one of the above to suit. As for the Hardware design portion of this course, it is taught from a G/8llllllllllllllltextbook on SPARC assembly.</p>
+
+<h2>Outside the Browser</h2>
+
+
+<p>These courses are designed to teach specific software, and</p>
+
+<p><strong>330 Advanced Data Structures
+</strong> Static and dynamic data structures emphasizing binary trees and graphs. Advanced programming techniques. Advanced sorting and searching algorithms. Hashing techniques. Performance analysis. Methods of developing large applications programs.</p>
+
+<p><strong>339 Concepts of Programming Languages</strong>
+Concepts of block-structured, object-oriented, functional, logic, and concurrent programming languages. Comparative study of syntactic and semantic features of these languages and writing programs using them.</p>
+
+<p><strong>340 Software Engineering</strong>
+Practical and theoretical concepts of software engineering.</p>
+
+<p><strong>350 Foundations of Computer Science II</strong>
+High level concepts in the theoretical foundations of computer science.</p>
+
+<p><strong>463 Basic Systems Administration Laborator</strong>y
+Installing operating systems, peripherals, hardware, and software. Backups, recompiling the kernel (loading/unloading modules), providing Web services, and user administration. (Formerly CSC 563)</p>
+
+<p><strong>464 Intermediate Systems Administration Laboratory</strong>
+Topics selected from routing, firewall, Primary Domain Controller, Backup Domain Controller, Domain Controller trust, SAMBA, DNS round robin, and PPP connectivity setup. (Formerly CSC 564)</p>
+
+<p><strong>465 Advanced Systems Administration Laboratory</strong>
+Automated installation, software installation, systems programming, system administration in a large organization. Projects will include departmental or university computer system work. (Formerly CSC 565)</p>
+
+<p><strong>471 Principles of Database Systems</strong>
+Contemporary database systems. Emphasis on query processing, design, and implementation of applications in relational (SQL) databases. Introduction to other database models such as XML, object-oriented, and deductive.</p>
+
+<p><strong>490 Senior Project</strong>
+Application of classroom knowledge and skills in computer science to solve real-world problems and to develop research and development skills.</p>
+
+<p><strong>493 Honors Work in Computer Science</strong>
+Research in a topic of special interest at the Honors level.</p>
+
+<p><strong>495 Selected Topics in Computer Science</strong>
+May be repeated for credit for a total of 6 s.h. when topic of study changes.
+A topic of special interest is studied in depth.</p>
+
+<p><strong>521 Computer Graphics</strong>
+Survey of graphics algorithms, data structures, and techniques.</p>
+
+<p><strong>522 Digital Image Processing</strong>
+Image representation, enhancement, compression, coding, restoration, and wavelet transforms.</p>
+
+<p><strong>523 Numerical Analysis and Computing</strong>
+Number systems and errors, solutions of non-linear and linear systems, eigenvalue problems, interpolation and approximation, numerical differentiation and integration, solution of differential equations.</p>
+
+<p><strong>524 Numerical Analysis and Computing</strong>
+Continuation of 523 with special topics in numerical analysis, emphasis on applied mathematics.</p>
+
+<p><strong>526 Bioinformatics</strong>
+Introduction to the problems and methods in Bioinformatics. Problem areas include restriction mapping, map assembly, sequencing, DNA arrays, and sequence comparison.</p>
+
+<p><strong>529 Artificial Intelligence</strong>
+Logical foundations, knowledge representation and reasoning, search, and selected topics such as natural language processing and reasoning under uncertainty.</p>
+
+<p><strong>539 Introduction to Compiler Design</strong>
+Basic techniques of compiler design and implementation: lexical analysis, parsing, code generation. Sizable programming project implementing a compiler for a block-structured language with strong typing.</p>
+
+<p><strong>540 Human-Computer Interface Development</strong>
+Survey of concepts and techniques for human-computer interface development. Topics include user-centered design, user interface programming, and usability evaluation.</p>
+
+<p><strong>550 Combinatorics on Words</strong>
+Introduction to the problems and methods in algorithmic combinatorics on words. Problem areas include periodicity, primitivity, and borderedness.</p>
+
+<p><strong>553 Theory of Computation</strong>
+Finite state automata and regular expressions, context-free grammars, push-down automata and their use in parsing, overview of language translation systems, models for programming language semantics, computability and undecidability.</p>
+
+<p><strong>555 Algorithm Analysis and Design</strong>
+Sequential algorithm design and complexity analysis. Dynamic programming. Greedy algorithms. Graph algorithms. Selected advanced topics from NP-completeness; approximation, randomized, parallel, number-theoretic algorithms; Fast Fourier Transform; computational geometry; string matching.</p>
+
+<p><strong>561 Principles of Computer Architecture</strong>
+Hardware and software components of computer systems, their organization and operations. Topics: comparative instruction set architectures, microprogramming, memory management, processor management, I/O, interrupts, and emulation of processors.</p>
+
+<p><strong>562 Principles of Operating Systems</strong>
+Techniques and strategies used in operating system design and implementation: managing processes, input/output, memory, scheduling, file systems, and protection.</p>
+
+<p><strong>567 Principles of Computer Networks</strong>
+Hardware and software components of computer networks, their organization and operations. Topics: open system interconnection; local area networks; TCP/IP internetworking, routing, and packet switching; network programming.</p>
+
+<p><strong>568 Principles of Wireless Networks</strong>
+Digitial communications, Communication networks, wireless communication technology, wireless networking, wireless LANs and wireless network programming.</p>
+
+<p><strong>580 Cryptography and Security in Computing</strong>
+Modern development of cryptography and secure encryption protocols. Program security and viruses. Operating system protection. Network and distributed system security. Database security. Administering security.</p>
+
+<p><strong>583 Firewall Architecture and Computer Security</strong>
+Firewall hardware and software technologies. Architectures, protocols and their applications.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New Theme Under Construction...]]></title>
+    <link href="http://skamansam.github.io/blog/2009/07/31/new-theme-under-construction-dot-dot-dot/"/>
+    <updated>2009-07-31T09:25:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2009/07/31/new-theme-under-construction-dot-dot-dot</id>
+    <content type="html"><![CDATA[<p>Hello, all RBS followers! I am creating a new theme for WordPress called Bubbly Blue, which is part of my Bubbly Blue theme series. So far I have only one other - an Ampache theme. I am using this blog as a testing area for this theme, so please be patient if something goes horribly awry!</p>
+
+<p>Thank you all!</p>
+
+<h3>Updated August 9:</h3>
+
+
+<p>Here are some features of my theme so far:</p>
+
+<ul>
+    <li>Three-Layer Header for more customization! = The background layer is for gradients, etc. The Logo layer is for your logo. The FX layer is for added graphics to enhance the other layers.</li>
+    <li>A top menu, which can show all pages as tabs. Also doubles as a sidebar.</li>
+    <li>Three sidebars: one dropdown menu and two sidebars on either side of main content area. These can be turned on/off in the options panel.</li>
+    <li>W3C standards-compliance. A graphic link has been added to the footer so you can just click to test
+the validity of each page.</li>
+</ul>
+
+
+<p>My theme is almost complete! Still left to do:</p>
+
+<ul>
+    <li>Move header text over when logo is enabled/disabled</li>
+    <li>Fix Comments/Respond tabs on posts</li>
+    <li>Create Default sidebar widgets if dynamic widgets are not available</li>
+    <li>Add login form to header/sidebar and add option for which to use.</li>
+    <li style="text-decoration: line-through;">Resize content area when sidebars are turned off.</li>
+    <li style="text-decoration: line-through;">Curve corners of header, footer and sidebars</li>
+    <li>Sort Through and optimize Stylesheet</li>
+    <li>Ajax-ify Comments</li>
+    <li>Three-Layer header options panel.</li>
+    <li>Remove unused php files / consolidate php files</li>
+    <li>Cleanup code!</li>
+    <li>More Testing!</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Repair Images With ImageMagick]]></title>
+    <link href="http://skamansam.github.io/blog/2009/06/15/how-to-repair-images-with-imagemagick/"/>
+    <updated>2009-06-15T11:23:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2009/06/15/how-to-repair-images-with-imagemagick</id>
+    <content type="html"><![CDATA[<p>I have been doing a lot of importing of photos on my photo site, and have noticed some images do not display properly. SinceI love ImageMagick so much,  I set up  my gallery to use it. However, there appears to be a check in the Coppermine software that aborts reading the file upon errors in the image. So I typed the command &ldquo;display imagename.jpg&rdquo; for some of the files that did not import properly, and everything appeared to be fine. But I did notice something peculiar about the images: they were taken with my phone&rsquo;s camera and all had errors printed out when I tried to open them, but seem to display correctly.</p>
+
+<p>Since these files could be opened by ImageMagick, I figured if I saved them again, I would be able to fix the errors. I ran &ldquo;convert image1.jpg image1.jpg&rdquo;, got the familiar errors printed and opened the file again. This time, no errors! But since I have a  lot of files I want to import, I needed a way to convert a bunch at once.</p>
+
+<p>I created a neat little Perl script to do just that. All you need is ImageMagick and perl installed. This script does not rely on PerlMagick, as it runs the convert command. So here it is:</p>
+
+<pre lang="perl">#!/usr/bin/perl
+
+processFile("$_") foreach (@ARGV);
+
+#recursively fix images
+sub processFile {
+   my $file=shift;
+   return (-d "$file")?( do{ processFile("$_") foreach (&lt;"$file"/*&gt;) }) : `convert "$file" "$file"`;
+}</pre>
+
+
+<p>I saved this file as $HOME/bin/fiximage. All you need to do to run it is type &ldquo;fiximage file1 file2 directory1 directory2 &hellip;&rdquo;. One other thing to note is that this script has been purposefully shortened. I like to use the ternary operator whenever possible in my scripts for just this reason. As such, it does not print anything to the command line itself, but if the convert command encounters an error, that will be printed.</p>
+
+<p>I hope you have found this article useful!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TeTex for Puppy Linux]]></title>
+    <link href="http://skamansam.github.io/blog/2009/05/10/tetex-for-puppy-linux/"/>
+    <updated>2009-05-10T17:02:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2009/05/10/tetex-for-puppy-linux</id>
+    <content type="html"><![CDATA[<p>SORRY!: The current sfs file is broken. I am working as fast as I can to fix this, so check back for more!</p>
+
+<p>I have recently had to send my new laptop back for a power board replacement, so I have resurrected my old laptop. It is a HP Pavilion ze4900 that my coworker gave me 2 years ago. (It was an old one he didn&rsquo;t want.) This laptop was pretty old when I got it, and a series of unfortunate events occured.</p>
+
+<p>First, the power cord got fragged. Then the battery died. Lastly, the hard drive failed. With all these problems, there was only one solution: a small, lightweight linux distro to use as a dumb terminal for my server. So I installed Puppy Linux on a CD, ran it with a USB drive and worked on my Summer of Code project with it. I loved Puppy Linux!</p>
+
+<p>Since I am now in that same position, I have decided to update my version of Puppy from 4.00 to 4.20. I also found out that without a hard drive even attached, this laptop will boot from a USB drive. Since I now have a 8 Gb drive and plenty of space, I decided to install a few extra programs, including the development .sfs file, which allows me to build software for this excellent distro!</p>
+
+<p>I really wanted tetex and a good editor, but don&rsquo;t really like installing pups/pets. I prefer sfs files, so I can have better control over what is installed and how it is installed. So I got down to it!</p>
+
+<p>I went over to the the Puppy Linux forum to find out how to make sfs files, and found a great tool <a title="Edit-SFS" href="http://www.murga-linux.com/puppy/viewtopic.php?t=12112">here</a>. Then I downloaded tetex and texmf, compiled it in /usr/local/tetex, and created <a title="tetex/texmf file" href="http://rbe.homeip.net/content/downloads/files/texmf_420.sfs">this sfs file</a>. To use it, just put it in the same location as your pup_save.2fs file and reboot. If you want to use it with other versions of Puppy Linux, change the 420 in the filename to 400 or 300 or whatever the standard is for your version.</p>
+
+<p>I am also working on incorporating several tex editors with it, so keep checking back for more!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Building Enlightenment E17 on Fedora 10 X86_64]]></title>
+    <link href="http://skamansam.github.io/blog/2009/04/02/building-enlightenment-e17-on-fedora-10-x86-64/"/>
+    <updated>2009-04-02T21:34:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2009/04/02/building-enlightenment-e17-on-fedora-10-x86-64</id>
+    <content type="html"><![CDATA[<p>DISCLAIMER: The following did NOT work correctly for me. The applications worked correctly, but the desktop fails. When I find out what went wrong, I will modify this post to suit.</p>
+
+<p>Today i have begun to build and install Enlightenment e17 on my Fedora 10 x86_64 laptop. I have Googled for a few sites to help me get started, only to discover their directions are very lacking. VERY lacking. So to compensate, i am writing this article on the things you need to get started with Enlightenment e17.
+If you would like to try out e17, you can use yum to install some of the base componenets, but remember to erase them with <code>yum -e enlightenment</code> before you start building e17 or some severe nastiness could occur. The packages I have installed for my evaluation are: bitmap_fonts, e_dbus, edje, efreet, embryo, enlightenment, eterm, and libast.
+The reason I didn&rsquo;t just use the yum packages is that I know e17 has a lot of dependencies and a lot of hidden features. I like to have a lot of features! Read on to find out about some of those features.</p>
+
+<h2>Step 1: Preparations</h2>
+
+
+<p>You are going to need a few dependencies for this. Some you can get via yum, and others you need to get from a version control repository. Here are the command you need to execute:
+sudo yum install libjpeg-devel libtiff-devel libpng-devel giflib-devel freetype-devel libXext-devel libid3tag-devel subversion imlib2-devel libxcb libxcb-devel libxcb-util libxcb-util libxcb-util-devel glew-devel libXrender-devel directfb-devel xine-lib-devel gstreamer-devel gstreamer-plugins-base-devel vlc-devel
+mkdir ~/Download/e17
+cd ~/Download/e17
+svn co <a href="http://svn.enlightenment.org/svn/e">http://svn.enlightenment.org/svn/e</a>
+svn co <a href="http://ememoa.googlecode.com/svn/trunk/">http://ememoa.googlecode.com/svn/trunk/</a> ememoa-read-only</p>
+
+<h2>Step 2: The long drive home</h2>
+
+
+<p>Ok. Now that we have our tools, we can start the dirty work: building e17. I am listing this in the order you should build. Just follow along and shout, &ldquo;Hoo-Raaahhhh!!!&rdquo; at the appropriate times. For brevity, I will be listing the package names in bold font, then the directory in which it can be found in brackets. Then I will give a hort description of the file, and any options to be passed to ./configure. You should run three commands with each step:
+1. <code>cd</code> to change into that directory. All directory names will be relative to ~/Download/e17/e/trunk/, except the ememoa package, which should be ~/Download/e17/ememoa-read-only/
+2. &lsquo;./configure &ndash;libdir=/usr/lib64 &ndash;prefix=/usr&rsquo; with the config options appended to the end, seperated by spaces. See the first two examples to see what I mean. (NOTE: If you are missing the ./configure script for any of the following steps, run ./autogen.sh first.)
+3. <code>&lt;code&gt;gmake &amp;amp;&amp;amp; sudo gmake install&lt;/code&gt;</code> This command builds the package, prompts for your password, if you are in the sudoers file, and installs it. This step may take some time before prompting for your password.</p>
+
+<dl> <dt><strong>Ememoa</strong> [ ememoa-read-only/ ]  --enable-pthread --enable-use64</dt> <dd> We are going to build ememoa first. From the ememoa website, it is a "memory pool allocator that helps to improve memory allocation speed and memory usage by improving memory locality during data manipulation." What this means is that ememoa helps speed up memory access, which will make e17 faster.
+So if you're following along, you should execute the following:
+cd ~/Download/e17/ememoa/
+./configure --libdir=/usr/lib64 --prefix=/usr --enable-pthread --enable-use64
+make &amp;&amp; sudo make install
+This package may not install a file in the correct place, so we need to make sure it is. Run ` ls /usr/lib64/pkgconfig/ememoa.pc`. If it says there is no file, then issue:`mv /usr/lib/pkgconfig/ememoa* /usr/lib64/pkgconfig/` </dd> <dt><strong>Imlib2</strong> [ imlib2/ ]</dt> <dd> This is a tricky one. So much software depends on imlib that is will be nearly impossible to uninstall. You can, however, build imlib and simply install it over existing files. If you want to do this, just run `cd ~ &amp;&amp; yumdownloader imlib2 imlib2-devel`. If you have problems after building imlib2, simply login in a terminal and issue `sudo rpm -ivh --force ~/imlib2*.rpm` (replace 'user' with your username) to restore the old files. OK - now that the disclaimer is over with, on to the next commands:
+cd ../e/trunk/imlib2
+./configure --prefix=/usr --libdir=/usr/lib64
+The end of the output of this last command will give you a asummary of what is going to be included in the build. You should see a list of "Image Loaders" with all yes's. If you don't, then issue `yum install libXXX-devel` for each one. For instance, if you see that TIFF and ID3 are "no," then run `sudo yum install libtiff-devel libid3-devel`. "Use AMD64 for speed" should be yes and "use MMX..." should be no. I am not sure what "visibility hiding" is, so leave it as-is. Now issue:
+make
+sudo make install </dd> <dt><strong>eina</strong> [ eina/ ] --enable-ememoa</dt> <dd> From the web site: "Eina is a multi-platform library that provides optimized data types and a few tools that could be used for projects." To build: </dd> <dt><strong>Eet</strong> [ eet/ ] </dt> <dd> Eet is a cool little library used for data input/output that is written very little and read very much. </dd> <dt><strong>Edb</strong> [ OLD/edb/ ]</dt> <dd> The edb library is in the OLD directory, but some packages look for it and may use it. If you want to use this library, charge on! </dd> <dt><strong>Imlib2 Extras</strong> [ imlib2_loaders/ ]</dt> <dd> Now that we have some libs installed, we can build some more imlib2 image loaders. </dd> <dt><strong>Imlib2 Extras</strong> [ imlib2_tools/ ]</dt> <dd> This package contains some extra tools for developing with Imlib. </dd> <dt><strong>Evas</strong> [ evas/ ] --enable-gl-x11 --enable-gl-glew --enable-software-xcb --enable-buffer --enable-xrender-x11 --enable-software-sdl --enable-directfb --enable-fb</dt> <dd> From the wiki: "Evas is a hardware-accelerated canvas API for X-Windows that can draw anti-aliased text, smooth super and sub-sampled images, alpha-blend, as well as drop down to using normal X11 primitives such as pixmaps, lines and rectangles for speed if your CPU or graphics hardware are too slow. " This is how e17 gets its speed for its cool effects. The following lines are for installing it with all the backends enabled. There is one problem in the current SVN: glew support is not working. If you try the following ./configure line and make gives you an error, remove the "--enable-gl-glew" from the ./configure command and run it again. If you get errors while building, it means that the correct devel packages aren't installed, and you should check Step 1 for the correct packages to install. </dd> <dt><strong>Ecore</strong> [ ecore/ ]</dt> <dd> This is the core library for Enlightenment. It handles events, draws the GUI, and does a lot of graphic stuff.  Just a simple few commands should pick up all the previous configuration information: </dd> <dt><strong>Efreet</strong> [ efreet/ ]</dt> <dd> Efreet implements a bunch of protocols set by freedesktop.org. This includes icon themes, .desktop file support, and menus. </dd> <dt><strong>Embryo</strong> [ embryo/ ] --enable-doc</dt> <dd> Embryo is a C-like scripting language used by enlightenment. Add '--enable-doc' to the ./configure line if you want to install documentation for this. </dd> <dt><strong>Edje</strong> [edje/] --enable-doc --enable-edje-program-cache</dt> <dd> From the wiki: "Edje is an attempt to find a middleground between theming and programming without turning the theme itself into just yet another program." It is the awesome theming engine for enlightenment. </dd> <dt><strong>E_DBus</strong> [ e_dbus/ ]</dt> <dd> This is the D-Bus connection for e17. It is used to get and set system information, using an interface common to a lot of applications. </dd> <dt><strong>ETK</strong> [ etk/ ]</dt> <dd> Etk is the enlightenment toolit, which is based on EFL. If you managed to enable framebuffer support in ecore, this will automatically enable framebuffer support in etk. </dd> <dt><strong>EXML</strong> [ exml/ ]</dt> <dd> A neat library for dealing with XML files. </dd> <dt><strong>Epsilon</strong> [ epsilon/ ] --enable-thumbnailer-xine</dt> <dd> A library for creating quick thumbnails. </dd> <dt><strong>Emotion</strong> [ epsilon/ ]</dt> <dd> A library for videos. </dd> <dt><strong>Enity</strong> [ enity/ ]</dt> <dd> A library for creating dialogs, much like xdialog. </dd> <dt><strong>Etk Extras</strong> [ etk_extra/ ]</dt> <dd> Extra libs for etk. </dd> <dt><strong>Evolve</strong> [ evolve/ ]</dt> <dd> Allows you to theme your windows using an edje-like syntax.. </dd> <dt><strong>Enlightenment Widget Library</strong> [ ewl/ ]</dt> <dd> A toolkit for creating EFL-based GUIs. </dd> <dt><strong>Expedite</strong> [ expedite/ ]</dt> <dd> Benchmarking suite for e17. </dd> <dt><strong>Enhance</strong> [ enhance/ ]</dt> <dd> Allows you to use glade files with e17 libs for easier UI development! </dd> <dt><strong>Exchange</strong> [ PROTO/exchange/ ]</dt> <dd> Enlightenment looks for this lib and uses it if it is installed. The README says "The enlightened way to exchange stuffs!" I'm not sure what this is, but we're going to use it anyway! NOTE: this is a prototype library, and may not function when you download it. If the build fails with an odd error, it may be fixed by the following day. </dd> <dt><strong>Esmart</strong> [ esmart/ ]</dt> <dd> A collection of smarter evas objects. </dd> <dt><strong>Enlightenment</strong> [ e/ ]</dt> <dd> The actual enlightenment desktop environment. </dd> <dt><strong>Entrance</strong> [ entrance/ ]</dt> <dd> An enlightenment login manager, to replace gdm, kdm, or xdm. In order to be able to run entrance as your display manager, you must edit a few files as root. In /etc/X11/xdm/Xsession, find the area that looks like: 
+
+<code>failsafe)
+...code here....
+gnome|gnome-session)
+...code here....</code>
+
+and add the following lines before "failsafe)":
+<code> enlightenment)
+exec $SSH_AGENT /bin/sh -c "exec -l $SHELL -c \"enlightenment\""
+;;
+</code>
+Then open /etc/sysconfig/desktop and make sure it says DISPLAYMANAGER=enlightenment
+
+</dd> </dl>
+
+
+<h2>Step 3: EApps</h2>
+
+
+<p>Now that we&rsquo;ve built our main libraries and software - on to the fun stuff! We are now going to build more apps for use with enlightenment.</p>
+
+<dl> <dt><strong>Edje Editor</strong> [ edje_editor/ ]</dt> <dd> This is an editor for theme files. Really awesome! </dd> <dt><strong>Edje Viewer</strong> [ edje_editor/ ]</dt> <dd> This is an editor for theme files. Really awesome! </dd> <dt><strong>Elicit</strong> [ elicit/ ]</dt> <dd> A screen zoomer.and color picker. </dd> <dt><strong>Elitaire</strong> [ elitaire/ ]</dt> <dd> Solitaire game for e17.</dd></dl>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google Summer of Code 2009 Project Ideas]]></title>
+    <link href="http://skamansam.github.io/blog/2009/04/02/google-summer-of-code-2009-project-ideas/"/>
+    <updated>2009-04-02T21:31:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2009/04/02/google-summer-of-code-2009-project-ideas</id>
+    <content type="html"><![CDATA[<p>Google has announced a another <a href="http://code.google.com/soc/">Summer of Code for 2009</a> (<a href="http://www.youtube.com/watch?v=vBRRR0BQyz0&amp;feature=channel_page">video</a>)! Here is a list of some project idea pages for this year.</p>
+
+<ul>
+    <li><a href="http://wiki.gimp.org/gimp/SummerOfCode2009ideas">GIMP</a></li>
+    <li><a href="http://live.gnome.org/SummerOfCode2009/Ideas">GNOME</a></li>
+    <li><a href="http://wiki.python.org/moin/SummerOfCode">Python</a></li>
+    <li><a href="https://wiki.mozilla.org/Community:SummerOfCode09:Brainstorming">Mozilla</a></li>
+    <li><a href="http://docs.codehaus.org/display/RVM/Project+Proposals+2009">Jikes</a></li>
+    <li><a href="http://code.zikula.org/core/ticket/333">Zikula</a></li>
+    <li><a href="http://www.olat.org/website/en/html/about_participating.html">OLAT</a></li>
+    <li><a href="http://wiki.maemo.org/GSoC_2009/Project_ideas">Maemo</a></li>
+    <li><a href="http://www.netbsd.org/contrib/soc-projects.html">NetBSD</a></li>
+    <li><a href="http://wiki.tcl.tk/22182">Tcl/Tk</a></li>
+    <li><a href="http://wiki.apache.org/general/SummerOfCode2009">Apache Software Foundation</a></li>
+    <li><a href="https://www.linuxfoundation.org/en/Google_Summer_of_Code_2009">The Linux Foundation</a></li>
+    <li><a href="http://groups.drupal.org/soc-2009">Drupal</a></li>
+    <li><a href="http://techbase.kde.org/Projects/Summer_of_Code/2009/Ideas">KDE</a></li>
+    <li><a href="http://wiki.eclipse.org/Google_Summer_of_Code_2009_Ideas">Eclipse Foundation</a></li>
+    <li><a href="http://www.nabble.com/Google-Summer-of-Code-2009-td22090319.html">The R Foundation</a></li>
+    <li><a href="http://openacs.org/forums/message-view?message_id=2564672">Open ACS</a></li>
+    <li><a href="http://bbs.archlinux.org/viewtopic.php?id=65052">Arch Linux</a></li>
+    <li><a href="http://www.wesnoth.org/">Battle for Wesnoth</a></li>
+</ul>
+
+
+<p><a href="http://www.google.com/search?hl=en&amp;client=firefox-a&amp;rls=org.mozilla:en-US:official&amp;q=summer+of+code+2009&amp;start=20&amp;sa=N">Here&lt;&lt;&lt;</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery Style Sheet (CSS) Switcher]]></title>
+    <link href="http://skamansam.github.io/blog/2009/04/01/jquery-style-sheet-css-switcher/"/>
+    <updated>2009-04-01T18:16:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2009/04/01/jquery-style-sheet-css-switcher</id>
+    <content type="html"><![CDATA[<p>I have been looking for a nifty style-switching script, and have found none. So here is the code for a checkbox-based style switcher. This uses jQuery.</p>
+
+<p>The Javascript:</p>
+
+<pre lang="javascript">/*ChangeStyle.js:
+* -by Skaman Sam Tyler - http://rbe.homeip.net
+*
+* This script uses checkboxes to add and remove stylesheets from the page.
+* It takes the value of the 'rel' attribute from the checkbox and creates a stylesheet link with it.
+* */
+
+if ($) {    //check for jQuery
+
+  //on document load, uncheck all checked boxes and add function handler for
+  $(document).ready( function() {
+    $('.styleToggle').removeAttr("checked");    //uncheck all checked
+    $('.styleToggle').click( function() {        //add handler for clicking
+      toggleStyle(this.getAttribute("rel"));
+      return true;
+    });
+});
+
+//the toggling of the style. it takes a single parameter: the href of the stylesheet to toggle
+function toggleStyle(href) {
+
+  //check for presence of link, if it exists, delete it, else, add it.
+  if($('link[href*='+href+']').size()!=0){
+    $('link[href*='+href+']').remove();
+  }else{
+    console.log("Adding: "+$('link[href*='+href+']'));
+    $('head').append('&lt;link rel="stylesheet" href="'+href+'" type="text/css" media="screen" /&gt;');
+  }
+}
+}</pre>
+
+
+<p>The HTML file should include something like this:</p>
+
+<pre lang="html4strict">&lt;form name="styleSwitchForm"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type="checkbox" rel="/styles/red.css" class="styleToggle"/&gt; Red Style&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type="checkbox" rel="/styles/blue.css" class="styleToggle"/&gt; Blue Style&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type="checkbox" rel="/styles/green.css" class="styleToggle"/&gt; Green Style&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/form&gt;</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Windows vs. Linux on MSI GX700]]></title>
+    <link href="http://skamansam.github.io/blog/2009/03/21/windows-vs-linux-on-msi-gx700/"/>
+    <updated>2009-03-21T09:32:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2009/03/21/windows-vs-linux-on-msi-gx700</id>
+    <content type="html"><![CDATA[<p>When I built my desktop/server in 2005, I used as many MSI (Micro-Satr International) parts as I could find. They were a little more expensive, but some trusted friends told me MSI was the way to go. I have been overly impressed with the hardware, especially after an uptime of 500+ days. The systemwas extremely stable. Now I try to buy MSI products whenever possible.</p>
+
+<p>So - Last summer I knew I would have enough money to finally buy a laptop of my own. I was looking for a Desktop replacement for school.  So naturally, I went in search of an MSI laptop. Since you can&rsquo;t buy from the MSI web site, I had to go to a reseller, and RK Computers was MSI&rsquo;s suggested reseller. For months, I looked at all the models and researched their specifications, as it had to run Linux <strong>and</strong> Windows. After my thorough evaluation, i decided to purchase a MSI GX700. Here are the specs:</p>
+
+<p><span style="text-decoration: underline;">MSI MS-1719 (GX700).</span>
+<strong>Display</strong>: WUXGA 1920 x 1200 Non-Glare-9 Cell Main Battery
+<strong>MXM II Graphics Module</strong>: NVIDIA® GeForce® 8600M-GT 512MB VRAM + Turbo Cache-DX 10
+<strong>Optical-DVD Or Blu-ray</strong>: Integrated Super-Multi Drive-Dual Layer
+<strong>Core 2 Duo Processor</strong>: Intel Core™2 45nm T8300 2.40Ghz 3MB 800MHz
+<strong>Compound-Heat Sink</strong>: Wet Arctic Silver 5 High-Density CPU Thermal Compound
+<strong>2.5 Hard Drive</strong>: 320GB WD SATA II 5400 RPM 3Gbs 8MB Cache
+<strong>Turbo Memory</strong>: No Turbo Memory-Windows Vista Support Only
+<strong>Memory-DDR2 667</strong>: 4GB OCZ DDR2 667 PC2-5400 CL5 Dual Channel Kit
+<strong>Wireless</strong>: Intel PRO Wireless 3945 802.11 a/b/g 11/54Mbps
+<strong>Bluetooth</strong>: Integrated MS-6837D Bluetooth 2.0 + EDR USB Module
+<strong>ExpressCard Remote</strong>: No Media Remote
+<strong>NoteBook Cooler</strong>: Cooler Master Notebook Cooler Widscreen-USB Powered-Black
+<strong>Operating System</strong>: No Operating System
+<strong>Microsoft Office MLK</strong>: No Software
+<strong>Warranty Options</strong>: 3 Year Parts-Lifetime Labor Warranty<em>-Lifetime Tech Support</em>
+<strong><em>Total:</em></strong> $1878.04</p>
+
+<h2>Windows Vista 64bit</h2>
+
+
+<p>Since I was a student when I purchased this fine machine, I could get Windows Vista through the MSDNAA (Microsoft Develepers Network Academic Alliance). So I got down to it and installed Vista 32bit, because I thought programs would be more compatable. This turned out to be a mistake. Even though all of the software and drivers seemed to work fine, after only a few short days, I ran into problems (including a BSOD). I can&rsquo;t remember exactly what those problems were, but I decided to switch to 64bit Vista. Now that I have experienced it, Vista seems to have been made for 64bit architectures. Everything ran so much faster and much more stable than its 32bit counterpart.</p>
+
+<h3>Problems</h3>
+
+
+<p>The only problem I encountered is that the software for the special buttons (MSVCtrl) won&rsquo;t work under 64bit, even though they are 64bit versions. One other mention is that you have to use the nVidia graphics drivers from MSI&rsquo;s web site, as nVidia&rsquo;s version won&rsquo;t work properly.</p>
+
+<h2>Fedora 10 x86_64</h2>
+
+
+<p>After installing Vista, I moved on to Linux. My first Linux distribution (&ldquo;distro&rdquo; for short) was RedHat 5, and I have been using RedHat or Fedora ever since. Fedora 9 installed and worked fine, but I will only be covering Fedora 10 here, as it is the current release and is a LOT more stable. Fedora 10 is a great distro, with a lot of features and software for just about anything. All of the laptop&rsquo;s hardware works great in Fedora.</p>
+
+<p>After installing Fedora, I went straight to the nVidia web site to get drivers for the graphics card. Since I am interested in programming, I downloaded the CUDA-enabled drivers. (Note: you do not need any special nVidia drivers like with Vista - just use the standard Linux drivers.) <a href="http://www.nvidia.com/object/cuda_home.html">CUDA </a>is a technology, created by nVidia, which allows programs to use the graphics card processor (GPU) as if it were another CPU. These drivers were extremely stable, even though they were a beta release. As of now, CUDA support is enabled, by default, for all of nVidia&rsquo;s stable drivers (greater than version 1.80).</p>
+
+<p>I was expecting to have a few problems with the wireless card, as Linux support for wireless cards is a little limited, but it works great with the default drivers. The integrated bluetooth works, as well.</p>
+
+<h3>Problems</h3>
+
+
+<p>There are a few problems with Linux in general on this Laptop. The on-board sound chip is an Intel High-Definition audio chip, and Linux doesn&rsquo;t have the proper drivers for this yet. The sound works, but when you plug in headphones, the laptop&rsquo;s speakers do not mute as expected. (I am currently pouring over Intel&rsquo;s driver guide for this chip, and may end up hacking the current driver to fix this problem.) There are also no working drivers available for the integrated webcam.</p>
+
+<p>So that&rsquo;s it! This laptop is a great buy for anyone - whether you want to play games or just want a nice big screen to type up your latest best-selling novel.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Building Chromium on Fedora 10 X86_64]]></title>
+    <link href="http://skamansam.github.io/blog/2009/03/11/building-chromium-on-fedora-10-x86-64/"/>
+    <updated>2009-03-11T07:50:00-04:00</updated>
+    <id>http://skamansam.github.io/blog/2009/03/11/building-chromium-on-fedora-10-x86-64</id>
+    <content type="html"><![CDATA[<p>I am working on installing Chromium for Fedora 10 x86_64 bit. Here&rsquo;s how you do it:</p>
+
+<p>make sure a bunch of i386 libs are installed, by running the command:</p>
+
+<p>yum install cairo.i386 cairo-devel.i386 cairomm.i386 cairomm-devel.i386 pango-devel.i386 atk-devel.i386 gperf freetype-devel.i386 glib2-devel.i386 glibc-devel.i386 dwdiff gtk-devel.i386 gtk2-devel.i386 fontconfig-devel.i386 libX11-devel.i386 libXrender-devel.i386 libXext-devel.i386</p>
+
+<p>Then follow the same instructions listed on the <a href="http://code.google.com/p/chromium/wiki/LinuxBuildInstructions">Chromium Linux Build Page</a></p>
+]]></content>
+  </entry>
+  
+</feed>
