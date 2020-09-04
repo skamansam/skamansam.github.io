@@ -42,6 +42,6 @@
     "vue-global-events": "^1.0.3"
   },
   "devDependencies": {
-    "standard-version": "^4.4.0"
+    "standard-version": "^9.0.0"
   }
 }
