@@ -28,10 +28,10 @@
     <section class="footer-box3">
       <div class="row">
         <div class="column sm-50 footer-card">
-          <lazy-load v-if="getAuthor.length">
+          <div v-if="getAuthor.length">
             <card-author class="footer__card-author" :shadow="false" :author="getAuthor[0]" />
             <div class="watermark-logo"></div>
-          </lazy-load>
+          </div>
         </div>
         <div class="column sm-50 footer-nav">
           <div class="row justify-right">
