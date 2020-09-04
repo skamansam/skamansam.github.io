@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Blog and Home of Rude Boy Enterprises",
   "scripts": {
-    "dev": "node_modules/.bin/vuepress dev --debug src",
+    "dev": "node_modules/.bin/vuepress dev --debug --no-cache src",
     "build": "node_modules/.bin/vuepress build --debug src"
   },
   "repository": {
@@ -39,7 +39,7 @@
     "vue-announcer": "^1.0.2",
     "vue-disqus": "^4.0.1",
     "vue-global-events": "^1.0.3",
-    "vuepress": "^1.5.3"
+    "vuepress": "^1.5.4"
   },
   "dependencies": {
     "@mdi/font": "^5.5.55",

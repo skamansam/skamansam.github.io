@@ -1,19 +1,33 @@
 ---
-layout: post
-title: "Dynamic Models in Rails 3"
-date: 2016-09-06 09:45:57 -0400
 comments: true
+view: post
+layout: post
+lang: en
+author: skamansam
+title: Dynamic Models in Rails 3
+description: How to create dynamic Models in Rails 3
+excerpt: Rails 3 has a lot of nifty new features.
+cover: false
+coverImage: false
+coverAlt: RBE Logo
 categories:
-published: false
+  - ruby
+tags:
+  - Ruby on Rails
+created_at: 2016-09-06 09:45:57
+updated_at: 2016-09-06 09:45:57
+meta:
+  - property: og:image
+    content: /images/GSoC-logo-horizontal-800.png
+  - name: twitter:image
+    content: /images/GSoC-logo-horizontal-800.png
 ---
 
-Rails 3 has a lot of nifty new features. However, this is not about those features. This article is a short description on how to create dynamic models in any version of Rails.
+Rails 3 has a lot of nifty new features. However, this is not about those
+features. This article is a short description on how to create dynamic models in
+any version of Rails.
 
-&nbsp;
-
-&nbsp;
-
-<pre lang="ruby">
+```ruby
 class CreateMyDynamicModel < ActiveRecord::Migration
   def change
     create_table :dynamic_models do |t|
@@ -57,5 +71,4 @@ class MyDynamicModel < ActiveRecord::Base
   end #/method_missing()
 
 end #/end class
-
-</pre>
+```

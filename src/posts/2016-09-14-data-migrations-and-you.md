@@ -1,15 +1,29 @@
 ---
-layout: post
-title: "Data Migrations and You!"
-date: 2016-09-14 10:06:59 -0400
 comments: true
+view: post
+layout: post
+lang: en
+author: skamansam
+title: "Data Migrations and You!"
+description: Best Practices for Data Migrations
+excerpt: "Here was the chance to lose some old, bad habits, and replace them with new _Patterns_!"
+cover: false
+coverImage: false
+coverAlt: RBE Logo
 categories:
   - programming
-  - design patterns
   - Ruby
-  - Ruby on Rails
+tags:
   - best practices
-published: true
+  - design patterns
+  - Rude Boy Solutions
+created_at: 2016-09-14 10:06:59
+updated_at: 2016-09-14 10:06:59
+meta:
+  - property: og:image
+    content: /images/GSoC-logo-horizontal-800.png
+  - name: twitter:image
+    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 ## A Little Background

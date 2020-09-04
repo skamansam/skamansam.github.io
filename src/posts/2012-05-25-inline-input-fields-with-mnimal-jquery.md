@@ -1,14 +1,33 @@
 ---
-layout: post
-title: "Inline input fields with mnimal jQuery"
-date: 2012-05-25 14:46:00 -0400
 comments: true
+view: post
+layout: post
+lang: en
+author: skamansam
+title: Inline input fields with minimal jQuery
+description: Create an inline edit field with one line of jQuery
+excerpt:  Essentially one line of javascript to accomplish this easy feat
+cover: false
+coverImage: false
+coverAlt: RBE Logo
 categories:
+  - web-development
+tags: 
+  - jQuery
+created_at: 2012-05-25 14:46:00
+updated_at: 2012-05-25 14:46:00
+meta:
+  - property: og:image
+    content: /images/GSoC-logo-horizontal-800.png
+  - name: twitter:image
+    content: /images/GSoC-logo-horizontal-800.png
 ---
+For one of my projects, i needed to put a text field inside a header element.
+When I did so, the input field ruined my layout and good looks! So I went the
+jQuery way and devised a method for hiding inputs when not in use, but when
+clicking on it, turns into a normal input field. So in my CSS, I add:
 
-For one of my projects, i needed to put a text field inside a header element. When I did so, the input field ruined my layout and good looks! So I went the jQuery way and devised a method for hiding inputs when not in use, but when clicking on it, turns into a normal input field. So in my CSS, I add:
-
-<pre lang="css">
+```css
 input.hidden{
     color: inherit;
     padding: inherit;
@@ -27,18 +46,26 @@ h2 {
     margin-top: 16px;
     margin-left: 2px;
 }​
-</pre>
+```
 
 and in my html, I have:
 
-<pre lang="HTML">
-&lt;h2&gt;Header<input name="myInput" value="[Header Input]" class="hidden"/&gt;&lt;/h2&gt;
-​</pre>
+```html
+<h2>Header<input name="myInput" value="[Header Input]" class="hidden"/></h2>
+```
 
 And here is the fun part. Essentially one line of javascript to accomplish this easy feat:
 
-<pre lang="javascript">
-$('input.hidden').live('focus',function(){
-    $(this).removeClass('hidden').live('blur',
-                                       function(){$(this).addClass('hidden                                                                                              ')})})​;
-</pre>
+```javascript
+$('input.hidden')
+  .live('focus',function(){
+                  $(this)
+                  .removeClass('hidden')
+                  .live(
+                      'blur',
+                      function(){ $(this).addClass('hidden') }
+                  )
+                }
+  )​;
+```
+
