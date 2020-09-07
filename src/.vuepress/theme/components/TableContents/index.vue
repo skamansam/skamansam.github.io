@@ -9,7 +9,7 @@
           :key="header.slug"
           v-if="header.level < 3">
           <a 
-            class="table-contents__link" 
+            class="table-contents__link link" 
             :href="`#${header.slug}`" 
             @click.prevent="scrollToHeader(`${header.slug}`)" 
             :title="header.title">
@@ -84,8 +84,15 @@
     font-size: $mediumText
     font-weight: bold
     padding: 10px
-
+    padding-left: 0px
+    margin-left: 10px
     &:hover
-      text-decoration: underline
+      text-decoration: none
+      color: white
+    &:before
+      background-color: $primaryColor
+      height: 100%
+      margin-left: 0px
+      border-radius: 5px
 
 </style>

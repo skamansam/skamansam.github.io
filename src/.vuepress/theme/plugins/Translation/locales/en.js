@@ -27,8 +27,8 @@ module.exports = {
   title_contact: 'Want to partner? Let\'s have a chat, have coffee.',
   refresh: 'Refresh',
   has_loaded: 'has loaded',
-  turnon_night_mode: 'Turn on night mode',
-  turnoff_night_mode: 'Turn off night mode',
+  turnon_night_mode: 'Enter The Matrix',
+  turnoff_night_mode: 'Return to the World of the Neu',
   skip_to_main_content: 'Skip to main content',
   // No posts
   no_more_posts: 'Soon we\'ll have more articles',

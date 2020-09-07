@@ -1,5 +1,5 @@
 <template>
-  <div class="switch-bw">
+  <div class="switch-bw" :class="{negative: toggle}">
     <span 
       class="switch-bw__text" 
       :class="{ 'switch-bw__text--turnon': toggle }">
@@ -62,6 +62,11 @@
 .switch-bw
   display: flex
 
+  &.negative
+    .switch-bw__label
+        background-color: #000
+        border: 1px solid #00ff00
+
   &__text
     font-size: 8px
     color: black
@@ -71,7 +76,7 @@
     letter-spacing: .5px
 
     &--turnon
-      color: white
+      color: #00ff00
 
   &__label
     position: relative
@@ -98,6 +103,6 @@
   &__input:checked
     + .switch-bw__ball
       left: 20px 
-      background-color: #999
-
+      background-color: #00ff00
+      margin-top: -1px
 </style>

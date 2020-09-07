@@ -36,13 +36,13 @@
     "mappet": "^4.0.0",
     "nprogress": "^0.2.0",
     "time-ago": "^0.2.1",
-    "vue-announcer": "^1.0.2",
     "vue-disqus": "^4.0.1",
     "vue-global-events": "^1.0.3",
     "vuepress": "^1.5.4"
   },
   "dependencies": {
     "@mdi/font": "^5.5.55",
+    "@vue-a11y/announcer": "^2.1.0",
     "katex": "^0.12.0",
     "markdown-it-katex": "^2.0.3"
   }

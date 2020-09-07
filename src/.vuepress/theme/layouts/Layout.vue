@@ -23,7 +23,6 @@
       </component>
     </transition>
 
-    <vue-announcer v-if="announcerHasLoaded" />
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
   </div>
 </template>
@@ -53,14 +52,13 @@
 
   // Mixins
   import NProgressMixin from '@theme/mixins/NProgress'
-  import AnnouncerMixin from '@theme/mixins/Announcer'
 
   import FontFaceObserver from 'fontfaceobserver'
   
   export default {
     name: 'MainLayout',
 
-    mixins: [NProgressMixin, AnnouncerMixin],
+    mixins: [NProgressMixin],
 
     components: { 
       Home,
