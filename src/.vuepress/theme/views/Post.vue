@@ -33,7 +33,7 @@
             <nav class="page-header-cat__nav">
               <ul class="page-header-cat__list">
                 <li class="page-header-cat__item" v-for="category in getCategories" :key="category.key">
-                  <router-link class="page-header-cat__link meta-text" itemprop="keywords" :to="category.path">
+                  <router-link class="page-header-cat__link meta-text link link--filler-primary" itemprop="keywords" :to="category.path">
                     {{ category.frontmatter.title }}
                   </router-link>
                 </li>
@@ -90,7 +90,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="column no-pad-l md-75 xl-67 post-content">
+            <div class="no-pad-l post-content">
               <div class="post-content__box-player">
                 <div 
                   v-if="currentPost.audio" 
@@ -108,7 +108,7 @@
                 <table-contents :headers="$page.headers" />
               </div>
               <div ref="content" itemprop="articleBody">
-                <Content></Content>
+                <Content class="line-numbers"></Content>
               </div>       
             </div>
             <div class="column no-pad-r sm-25 xl-33 xsNone smNone post-sidebar">
@@ -153,6 +153,13 @@
   import MorePosts from '@theme/components/MorePosts'
   import Sidebar from '@theme/components/Sidebar'
   import ResponsivePicture from '@theme/components/ResponsivePicture'
+
+  import 'prismjs/prism';
+//   import 'prismjs/themes/prism.css';
+  import 'prism-themes/themes/prism-synthwave84.css';
+  import 'prismjs/plugins/autoloader/prism-autoloader';
+  import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+  import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
   export default {
     name: 'Post',
@@ -325,6 +332,9 @@
   &__excerpt > .page-header__subtitle
     font-size: 21px
     line-height: 1.58em
+  p
+    margin-top: 0.5em
+    margin-bottom: 0.5em
 
 .post-sidebar
   &__bizu

@@ -135,7 +135,7 @@ img.cover
         max-width: 95vw !important
 
     &-header, &-content
-      padding: 40px 60px
+      padding: 10px 60px 0px 60px
 
       @media (max-width: $mobile)
         padding: 10px 20px
@@ -325,8 +325,11 @@ img.cover
     transition width .5s cubic-bezier(0.93, 0.01, 0, 0.98)
 
   &--filler-primary, &--filler-s-primary
+    &:hover
+      color: #ffffff
     &:before
       background-color $primaryColor
+      color: #ffffff
 
   &--filler-accent
     &:before

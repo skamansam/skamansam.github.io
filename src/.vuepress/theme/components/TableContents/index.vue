@@ -7,7 +7,7 @@
           class="table-contents__item" 
           v-for="header in headers" 
           :key="header.slug"
-          v-if="header.level < 3">
+          v-if="header.level < 6">
           <a 
             class="table-contents__link link" 
             :href="`#${header.slug}`" 
@@ -31,7 +31,6 @@
         required: true
       }
     },
-
     methods: {
       scrollToHeader (selector) {
         const el = document.getElementById(selector)
@@ -83,8 +82,8 @@
     text-transform: uppercase
     font-size: $mediumText
     font-weight: bold
-    padding: 10px
-    padding-left: 0px
+    padding: 5px
+    padding-left: 5px
     margin-left: 10px
     &:hover
       text-decoration: none
