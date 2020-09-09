@@ -154,12 +154,17 @@
   import Sidebar from '@theme/components/Sidebar'
   import ResponsivePicture from '@theme/components/ResponsivePicture'
 
-  import 'prismjs/prism';
+  import Prism from 'prismjs';
+  import loadLanguages from 'prismjs/components/index';
 //   import 'prismjs/themes/prism.css';
+  import 'prismjs/components/prism-c';
+  import 'prismjs/components/prism-ruby';
+//   import 'prismjs/components/prism-html';
+  import 'prismjs/components/prism-cpp';
   import 'prism-themes/themes/prism-synthwave84.css';
-  import 'prismjs/plugins/autoloader/prism-autoloader';
-  import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
   import 'prismjs/plugins/line-numbers/prism-line-numbers';
+  import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+//   import 'prismjs/plugins/autoloader/prism-autoloader';
 
   export default {
     name: 'Post',
@@ -206,7 +211,7 @@
       },
 
       relatedPosts () {
-        // return [...this.postsByLang].splice(3, 9)
+        return [...this.postsByLang].splice(3, 9)
       },
 
       getPlayer () {
@@ -228,6 +233,12 @@
       }
     },
 
+    mounted(){
+        this.$nextTick(()=>{
+            loadLanguages(['cpp', 'haml', 'js', 'ruby', 'html']);
+            window.Prism.highlightAll(false);
+        })
+    },
     methods: {
       getUrl () {
         return this.$el.baseURI
@@ -299,16 +310,6 @@
     top: -1px
     margin-left: 6px
 
-@media (max-width: $mobile)
-  .post-share
-    order: 2
-
-  .post-demo-button
-    order: 1
-    margin-bottom: 30px
-
-  .post-share, .post-demo-button
-    text-align: center
 
 .post-content
   width: calc(100% - 100px)
@@ -345,5 +346,35 @@
 
     @media (max-width: $min-large)
       word-break: break-all
+
+.center pre[class*="language-"] > code
+  text-align: center
+  display: block
+
+@media (max-width: $mobile)
+  .post-share
+    order: 2
+
+  .post-demo-button
+    order: 1
+    margin-bottom: 30px
+
+  .post-share, .post-demo-button
+    text-align: center
+
+  .post-content
+    width: calc(100% - 10px)
+
+.custom-block.tip
+  margin: 1em
+  padding: 1em
+  border: 2px dashed $primaryColor
+  .custom-block-title
+    margin-top: -1.9em
+    color: $primaryColor
+    background: $bgColor
+    display: block
+    width: fit-content
+    padding: 0px 0.25em
 
 </style>

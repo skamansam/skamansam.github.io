@@ -72,18 +72,18 @@
         <div class="column sm-100 footer-copy" v-html="$themeLocaleConfig.copy"></div>        
       </div>
 
-      <span class="shapes shapes--circle" style="left: 3%; top: -20%"></span>
-      <span class="shapes shapes--primary shapes--color3" style="left: 30%; top: -15%"></span>
-      <span class="shapes shapes--primary" style="left: 13%; top: -80%; transform: rotate(45deg)"></span>
-      <span class="shapes shapes--circle shapes--color4" style="left: 40%; top: 200px"></span>
-      <span class="shapes shapes--primary" style="left: 15%; bottom: 10%; transform: rotate(75deg)"></span>
-      <span class="shapes shapes--circle shapes--color3" style="right: 50%; top: 30%"></span>
-      <span class="shapes shapes--primary" style="right: 20%; top: -100%"></span>
-      <span class="shapes shapes--circle" style="right: 10%; top: -20%"></span>
-      <span class="shapes shapes--color4" style="right: 35%; top: -20%; transform: rotate(45deg)"></span>
-      <span class="shapes shapes--circle" style="left: 40%; top: -50%"></span>
-      <span class="shapes shapes--color3" style="right: 30%; top: 20%"></span>
-      <span class="shapes shapes--circle shapes--primary" style="right: 30%; bottom: 20%"></span>
+      <span class="shapes shapes--circle" :style="`left: 3%; top: -20%; animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--primary shapes--color3" :style="`left: 30%; top: -15%; animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--primary" :style="`left: 13%; top: -80%; transform: rotate(45deg); animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--circle shapes--color4" :style="`left: 40%; top: 200px; animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--primary" :style="`left: 15%; bottom: 10%; transform: rotate(75deg); animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--circle shapes--color3" :style="`right: 50%; top: 30%; animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--primary" :style="`right: 20%; top: -100%; animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--circle" :style="`right: 10%; top: -20%; animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--color4" :style="`right: 35%; top: -20%; transform: rotate(45deg); animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--circle" :style="`left: 40%; top: -50%; animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--color3" :style="`right: 30%; top: 20%; animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
+      <span class="shapes shapes--circle shapes--primary" :style="`right: 30%; bottom: 20%; animation-duration: ${Math.floor((Math.random() * 10) + 3)}s`"></span>
     </section>    
   </footer>
 </template>
@@ -112,8 +112,21 @@
 <style lang="stylus">
 @import '~@theme/styles/config.styl'
 
+@-webkit-keyframes twinkle
+  from { transform: rotate3d(0,0,0, 0deg) translateY(0px); }
+  50%   { transform: rotate3d(0,1,1, 360deg) translateY(10px);}
+  to   { transform: rotate3d(1,1,1, 360deg) translateY(0px);}
+
+.shapes
+  animation-name: twinkle;
+  animation-delay: 5s;
+  animation-state: running;
+  animation-iteration-count: infinite
+  animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0)
+
 .footer
   position: relative
+  
   overflow: hidden
 
 .footer-box__shape

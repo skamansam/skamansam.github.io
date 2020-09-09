@@ -9,7 +9,7 @@ module.exports = {
   themeConfig,
   base: '/',
   title: `Rude Boy Enterprises`,  
-  // ga: `MY TRACKING CODE GOOGLE ANALYTICS`,
+  ga: `UA-5427013-3`,
   evergreen: true,  // For modern browsers
   serviceWorker: true,
   markdown: {
@@ -30,7 +30,7 @@ module.exports = {
     //   lang: 'es'
     // }
   },
-  extraWatchFiles: ['**/*.md', '**/*.vue'],
+//   extraWatchFiles: ['**/*.md', '**/*.vue'],
   configureWebpack () {
     return {
       resolve: {

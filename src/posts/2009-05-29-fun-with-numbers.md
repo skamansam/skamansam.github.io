@@ -114,22 +114,35 @@ to the second row in Pascal's triangle. But this could be a fluke, right, so
 let's jump ahead to $n = 5$ to see if that works as well.
 
 $$(a+b)^n = $$
+
 $$(a+b)^{n-6}(a+b)^5 = $$
+
 $$(a+b)^{n-6}( (a+b) (a+b) (a+b) (a+b) (a+b) ) = $$
+
 $$(a+b)^{n-6}( ( (a+b)(a+b) )( (a+b)(a+b) ) (a+b) ) = $$
 
 [we know what $(a+b)^2$ is, so: ]
 
 $$(( a^2+2ab+b^2 )( a^2+2ab+b^2 )(a+b) )(a+b)^{n-6} = $$
+
 $$( ( (a^2*a^2)+(a^2*2ab) + (a^2*b^2) + ( 2ab*a^2) + (2ab*2ab) + $$
+
 $$(2ab*b^2) + (b^2*a^2)+(b^2*2ab) + (b^2*b^2) ) (a+b) )(a+b)^{n-6} = $$
+
 $$( ( a^4 + 2a^3b+ a^2b^2 + 2a^3b + 4a^2b^2 + 2ab^3 + b^2a^2 + 2ab^3+ b^4) (a+b) )(a+b)^{n-6} = $$
+
 $$( ( a^4 + 4a^3b + 6a2b^2 + 4ab^3+b^4) (a+b) )(a+b)^{n-6} = $$
 
-[note: notice that the coefficients of $(a+b)^4$ are (1 4 6 4 1) ! ]
+::: tip Note
+notice that the coefficients of $(a+b)^4$ are (1 4 6 4 1) !
+:::
+
 $$( ( a^4*a + a^4*b + 4a^3b*a + 4a^3b*b + 6a^2b^2*a + $$
+
 &nbsp;&nbsp;&nbsp;&nbsp;$6a^2b^2*b + 4ab^3*a + 4ab^3*b + b^4*a+b^4*b))(a+b)^{n-6} =$$
+
 $$( ( a^5 + a^4b + 4a^4b + 4a^3b^2 + 6a^3b^2 + 6a^2b^3 + 4a^2b^3 + 4ab^4 + ab^4+b^5))(a+b)^{n-6}=$$
+
 $$( ( a^5 +5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5)(a+b)^{n-6}$$
 
 
@@ -163,7 +176,9 @@ $$a^3 + 3a^2b + 3ab^2 + b^3$$
 
 
 #### Exponents
-Note in all the expansions, the first variable counts down from $n$ to $0$, while the second variable counts up from $0$ to $n$.
+::: tip Note
+In all the expansions, the first variable counts down from $n$ to $0$, while the second variable counts up from $0$ to $n$.
+:::
 
 ### Does your binomial already have coefficients?
 If your binomial already has coefficients, simply put them with their terms like so:

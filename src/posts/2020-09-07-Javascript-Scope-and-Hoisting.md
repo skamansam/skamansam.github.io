@@ -24,8 +24,9 @@ meta:
     content: /images/GSoC-logo-horizontal-800.png
 ---
 
-<note> This article is still in development. Please be patient.</note>
+> This article is still in development. Please be patient.
 
+# Introduction
 A friend recently asked me to explain why the following code did not work as expected:
 
 ```javascript
@@ -41,3 +42,6 @@ console.log(x); //expected output: 1
 I knew immediately that it had to do with the way javascript handles the `var` keyword and hoists
 the declaration. I wanted to explain a little better, so I referred to the docs at Mozilla Developer Network
 and found a few more interesting things to look out for.
+
+# What is Hoisting?
+

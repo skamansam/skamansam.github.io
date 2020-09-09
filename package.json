@@ -27,7 +27,7 @@
   },
   "homepage": "https://rudeboy.dev",
   "devDependencies": {
-    "@vuepress/plugin-search": "^1.5.3",
+    "@vuepress/plugin-search": "^1.5.4",
     "carbon-grid": "^1.1.2",
     "elevator.js": "^1.0.1",
     "fontfaceobserver": "^2.0.13",
@@ -37,7 +37,7 @@
     "nprogress": "^0.2.0",
     "time-ago": "^0.2.1",
     "vue-disqus": "^4.0.1",
-    "vue-global-events": "^1.0.3",
+    "vue-global-events": "^1.2.0",
     "vuepress": "^1.5.4"
   },
   "dependencies": {

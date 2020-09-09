@@ -505,7 +505,9 @@ themeConfig: {
 }
 ```
 
-**Note, avoid placing words that indicate that it is an ad, to avoid blocking Adblock**
+::: tip Note
+avoid placing words that indicate that it is an ad, to avoid blocking Adblock
+:::
 
 ## Tools
 Tools that can help you:
