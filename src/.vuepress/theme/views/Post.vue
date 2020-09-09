@@ -155,7 +155,7 @@
   import ResponsivePicture from '@theme/components/ResponsivePicture'
 
   import Prism from 'prismjs';
-  import loadLanguages from 'prismjs/components/index';
+  import { loadLanguages } from 'prismjs/components/index.js';
 //   import 'prismjs/themes/prism.css';
   import 'prismjs/components/prism-c';
   import 'prismjs/components/prism-ruby';
