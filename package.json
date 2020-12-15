@@ -28,7 +28,7 @@
   },
   "homepage": "https://rudeboy.dev",
   "devDependencies": {
-    "@vuepress/plugin-search": "^1.5.3",
+    "@vuepress/plugin-search": "^1.7.1",
     "carbon-grid": "^1.1.2",
     "elevator.js": "^1.0.1",
     "fontfaceobserver": "^2.0.13",
@@ -39,11 +39,11 @@
     "time-ago": "^0.2.1",
     "vue-announcer": "^1.0.2",
     "vue-disqus": "^4.0.1",
-    "vue-global-events": "^1.0.3",
-    "vuepress": "^1.5.4"
+    "vue-global-events": "^1.2.1",
+    "vuepress": "^1.7.1"
   },
   "dependencies": {
-    "@mdi/font": "^5.5.55",
+    "@mdi/font": "^5.8.55",
     "katex": "^0.12.0",
     "markdown-it-katex": "^2.0.3"
   }

@@ -10,8 +10,10 @@ other computer-related issues. I hope this will be as educational for you as for
 me!
 
 
-## Source Branch
-The main branch is used for serving up the site. The source branch is `source-new`.
+## Deploy Chain
+The main branch is used for serving up the site. The source branch is `source-new`. I am 
+using pipedream.com to send out notifications of new deploys to twitter. This is not an endorsement,
+merely a reminder to myself that I am using it. (Although it _was_ super easy to setup.)
 
 ## vuepress-ktquez-theme-starter
 This Vuepress theme is based on the 
