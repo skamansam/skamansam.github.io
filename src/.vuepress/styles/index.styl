@@ -1,34 +1,8 @@
-@import '~@theme/styles/config.styl'
-// YOUR STYLES
+/**
+ * Custom Styles here.
+ *
+ * ref：https://v1.vuepress.vuejs.org/config/#index-styl
+ */
 
-.bullet
-  background-color: $primaryColor !important
-
-.header-top-logo__link img
-  height: 90px
-  border-radius: 7px;
-  background: linear-gradient(145deg, #bbbbbb, #9e9e9e);
-  box-shadow:  7px 7px 14px #959595, 
-              -7px -7px 14px #c9c9c9;
-
-.icon.outbound
-  color: $primaryColor !important
-
-a[href^="/files/"]
-  color: $primaryColor
-  &:after
-    content: '\F01DA';
-    font-family: "Material Design Icons";
-    font-weight: normal;
-    font-style: normal;
-    margin:0px 0px 0px 2px;
-    text-decoration:none;
-
-article
-  .post-content
-      ul li
-        margin-left: 2em
-        text-indent: -2em
-        &::before
-            font-family: "Material Design Icons";
-            content: "\F0734"
+.home .hero img
+  max-width 450px!important
