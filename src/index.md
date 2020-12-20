@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: https://v1.vuepress.vuejs.org/hero.png
-tagline: Blog for Rude Boy Enterprises and Skaman Sam Tyler
+tagline: Skaman Sam&#39;s Blog for Rude Boy Enterprises
 actionText: Quick Start →
 actionLink: /guide/
 features:
