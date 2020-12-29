@@ -9,11 +9,33 @@
   },
   "repository": "https://github.com/skamansam/skamansam.github.io/skamansam.github.io",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "dev": "vuepress dev ./",
+    "build": "vuepress build ./"
   },
   "license": "MIT",
   "devDependencies": {
-    "vuepress": "^1.5.3"
+    "babel-eslint": "^10.0.3",
+    "conventional-changelog-cli": "^2.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-sherry": "0.0.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-vue": "^6.0.1",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "sort-package-json": "^1.31.0",
+    "vuepress": "^1.7.1"
+  },
+  "dependencies": {
+    "@vuepress/plugin-blog": "^1.9.3",
+    "@vuepress/plugin-medium-zoom": "^1.7.1",
+    "@vuepress/plugin-nprogress": "^1.7.1",
+    "@vuepress/plugin-pwa": "^1.7.1",
+    "@vuepress/plugin-search": "^1.7.1",
+    "dayjs": "^1.9.7",
+    "remove-markdown": "^0.3.0",
+    "vue-feather-icons": "^5.1.0",
+    "vuepress-plugin-smooth-scroll": "^0.0.10"
   }
 }
