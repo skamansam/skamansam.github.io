@@ -1,0 +1,11 @@
+{
+  "name": "vuepress-theme-rbe",
+  "version": "1.0.0",
+  "keywords": [
+    "vuepress-theme"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ]
+}

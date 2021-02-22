@@ -1,6 +1,7 @@
 ---
-view: home
 title: Rude Boy Enterprises
+tagline: Solutions for a problmed world.
+home: true
 description: Projects and Articles by Samuel C Tyler
 lang: en
 meta:

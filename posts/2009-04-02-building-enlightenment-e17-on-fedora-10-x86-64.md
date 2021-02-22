@@ -55,7 +55,7 @@ Ok. Now that we have our tools, we can start the dirty work: building e17. I am 
 1. `./configure --libdir=/usr/lib64 --prefix=/usr` with the config options appended to the end, seperated by spaces. See the first two examples to see what I mean. (NOTE: If you are missing the ./configure script for any of the following steps, run ./autogen.sh first.)
 1. `<code>gmake &amp;&amp; sudo gmake install</code>` This command builds the package, prompts for your password, if you are in the sudoers file, and installs it. This step may take some time before prompting for your password.
 
-### Ememoa [ ememoa-read-only/ ]  `--enable-pthread --enable-use64`</dt> 
+### Ememoa [ ememoa-read-only/ ]  `--enable-pthread --enable-use64`
 > We are going to build ememoa first. From the ememoa website, it is a "memory pool 
 > allocator that helps to improve memory allocation speed and memory usage by improving
 > memory locality during data manipulation." What this means is that ememoa helps speed 
@@ -134,7 +134,7 @@ Ok. Now that we have our tools, we can start the dirty work: building e17. I am 
 ### Embryo [ embryo/ ] `--enable-doc`
 > Embryo is a
 > C-like scripting language used by enlightenment. Add `--enable-doc` to the
-> `./configure` line if you want to install documentation for this. </dd>
+> `./configure` line if you want to install documentation for this.
 ### Edje [edje/] `--enable-doc --enable-edje-program-cache`
 > From the wiki: "Edje is an attempt to
 > find a middleground between theming and programming without turning the theme
@@ -177,7 +177,7 @@ Ok. Now that we have our tools, we can start the dirty work: building e17. I am 
 > A collection of smarter evas objects.
 ### Enlightenment [ e/ ]
 > The actual enlightenment desktop environment.
-### Entrance</strong> [ entrance/ ]
+### Entrance [ entrance/ ]
 > An enlightenment login manager, to replace gdm, kdm, or xdm. In order to
 > be able to run entrance as your display manager, you must edit a few files as
 > root. In `/etc/X11/xdm/Xsession`, find the area that looks like: 
