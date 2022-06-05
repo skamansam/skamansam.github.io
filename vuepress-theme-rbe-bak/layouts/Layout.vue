@@ -37,10 +37,6 @@
         </template>
       </Page>
     </Transition>
-    <div style="color: #000;">
-      Pagination:
-      {{}}
-    </div>
   </div>
 </template>
 
@@ -119,7 +115,6 @@ export default defineComponent({
       unregisterRouterHook = router.afterEach(() => {
         toggleSidebar(false)
       })
-      console.info("Layout:", this);
     })
     onUnmounted(() => {
       unregisterRouterHook()

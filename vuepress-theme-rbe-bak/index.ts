@@ -23,7 +23,7 @@ export const defaultTheme: Theme<DefaultThemeOptions> = ({
   assignDefaultLocaleOptions(localeOptions)
 
   return {
-    name: 'vuepress-theme-rbe',
+    name: '@vuepress/theme-default',
 
     layouts: path.resolve(__dirname, './layouts'),
 
