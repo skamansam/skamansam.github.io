@@ -1,0 +1,23 @@
+{
+  "frontMatter.content.defaultFileType": "mds",
+  "frontMatter.content.supportedFileTypes": [
+    "md",
+    "mdx",
+    "markdown",
+    "mds"
+  ],
+  "frontMatter.dashboard.openOnStart": true,
+  "frontMatter.site.baseURL": "https://rudeboy.dev",
+  "frontMatter.taxonomy.alignFilename": true,
+  "frontMatter.content.pageFolders": [{
+    "title": "Pages",
+    "path": "[[workspace]]/src/routes/posts",
+    "excludeSubdir": true
+  },
+  ],
+  "frontMatter.content.autoUpdateDate": true,
+  "cSpell.words": [
+    "mdsvex",
+    "sveltejs"
+  ]
+}
