@@ -47,7 +47,7 @@
 	detectBrightness();
 </script>
 
-<div class="theme-wrapper {brightness} theme-{theme} h-screen w-screen">
+<div class="theme-wrapper {brightness} theme-{theme} h-screen w-screen p-0 m-0 flex flex-col items-stretch">
 	<Header
 		class="bg-primaryBg"
 		{theme}
@@ -56,9 +56,9 @@
 		on:brightnessChange={(evt) => setBrightness(evt.detail)}
 		on:themeChange={(evt) => setTheme(evt.detail)}
 	/>
-	<div class="container flex pt-2 h-full pt-0 absolute bg-slate-100 dark:bg-slate-800">
-		<Sidebar class="w-1/3 pl-2 h-full" />
-		<main class="pl-2 grow">
+	<div class="container flex flex-row flex-1 items-stretch bg-slate-100 dark:bg-slate-800">
+		<Sidebar class="w-11 pl-2" />
+		<main class="pl-2  flex-1">
 			<slot />
 		</main>
 	</div>
