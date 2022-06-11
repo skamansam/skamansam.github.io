@@ -18,6 +18,10 @@
   "frontMatter.content.autoUpdateDate": true,
   "cSpell.words": [
     "mdsvex",
-    "sveltejs"
-  ]
+    "oembed",
+    "sveltejs",
+    "vcarl"
+  ],
+  "frontMatter.preview.host": "http://192.168.0.196:3000/",
+  "frontMatter.framework.startCommand": "pnpm dev"
 }

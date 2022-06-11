@@ -45,21 +45,23 @@
 	};
 
 	detectBrightness();
+  // console.log('layout data:', $$props);
 </script>
 
 <div class="theme-wrapper {brightness} theme-{theme} h-screen w-screen p-0 m-0 flex flex-col items-stretch">
 	<Header
-		class="bg-primaryBg"
 		{theme}
 		{themes}
 		{brightness}
 		on:brightnessChange={(evt) => setBrightness(evt.detail)}
 		on:themeChange={(evt) => setTheme(evt.detail)}
 	/>
-	<div class="container flex flex-row flex-1 items-stretch bg-slate-100 dark:bg-slate-800">
-		<Sidebar class="w-11 pl-2" />
-		<main class="pl-2  flex-1">
+	<div class="container flex flex-row flex-1 items-stretch">
+    <div class="left">
+		  <Sidebar class="rounded border border-primaryBorder mr-3 ml-3 mt-3" />
+    </div>
+		<div class="pl-2  pt-2">
 			<slot />
-		</main>
+		</div>
 	</div>
 </div>

@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       colors: {
         primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        secondarySoft: 'var(--color-secondarySoft)',
+        primaryBorder: 'var(--color-primaryBorder)',
         primarySoft: 'var(--color-primarySoft)',
         primaryBold: 'var(--color-primaryBold)',
         primaryBg: 'var(--color-primaryBg)',
@@ -13,7 +16,8 @@ module.exports = {
         onPrimaryBg: 'var(--color-onPrimaryBg)',
         onPrimaryBgSoft: 'var(--color-onPrimaryBgSoft)',
         onPrimaryBgSofter: 'var(--color-onPrimaryBgSofter)',
-
+        onSecondaryBg: 'var(--color-onSecondaryBg)',
+        linkColor: 'var(--color-linkColor)',
         neutralBg: 'var(--color-neutralBg)',
         neutralBgSoft: 'var(--color-neutralBgSoft)',
         neutralBgSofter: 'var(--color-neutralBgSofter)',

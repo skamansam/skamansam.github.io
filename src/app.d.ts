@@ -8,3 +8,7 @@ declare namespace App {
 	// interface Session {}
 	// interface Stuff {}
 }
+type remarkHeadingPlugin = {
+  depth: number,
+  value: string    
+}

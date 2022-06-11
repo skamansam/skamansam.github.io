@@ -2,8 +2,12 @@
   let clazz = "";
 	export { clazz as class };
 </script>
-<nav class="bg-slate-400 dark:bg-slate-800 {clazz}">
-  <ul>
+
+<nav class="sidebar {clazz} px-7 py-3">
+  <ul class="">
+    <li>
+      <a href="/portfolio">Portfolio</a>
+    </li>
     <li>
       <a href="/posts">Blog</a>
     </li>
@@ -12,6 +16,9 @@
     </li>
     <li>
       <a href="/contact">Contact</a>
+    </li>
+    <li>
+      <a href="/demo">MD Demo</a>
     </li>
   </ul>
 </nav>
