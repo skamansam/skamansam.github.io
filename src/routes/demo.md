@@ -1,11 +1,13 @@
 ---
 title: Markdown Style Demo and Reference
-lastmod: 2022-06-11T04:46:39.037Z
+lastmod: 2022-06-11T20:39:59.561Z
 author: Samuel C Tyler
 description: A demonstration of the custom stylesd for markdown, as applied by tailwind.
 ---
 
-# Headings
+{description}
+
+# ✅ Headings
 
 # h1 Heading 8-)
 ## h2 Heading
@@ -22,7 +24,8 @@ description: A demonstration of the custom stylesd for markdown, as applied by t
 ##### h5 Heading
 ###### h6 Heading
 ```
-# Horizontal Rules
+
+# ✅ Horizontal Rules
 
 ___
 
@@ -38,7 +41,7 @@ ___
 ***
 ```
 
-# Typographic replacements
+# ✅ Typographic replacements
 
 
 (c) (C) (r) (R) (tm) (TM) (p) (P) +-
@@ -60,7 +63,7 @@ test.. test... test..... test?..... test!....
 
 "Smartypants, double quotes" and 'single quotes'
 ```
-# Emphasis
+# ✅ Emphasis
 
 **This is bold text**
 
@@ -87,7 +90,7 @@ _This is italic text_
 
 
 
-# Blockquotes
+# ✅ Blockquotes
 
 > Blockquotes can also be nested...
 >> ...by using additional greater-than signs right next to each other...
@@ -100,9 +103,9 @@ _This is italic text_
 ```
 
 
-# Lists
+# ✅ Lists
 
-## Unordered
+## ✅ Unordered
 
 + Create a list by starting a line with `+`, `-`, or `*`
 + Sub-lists are made by indenting 2 spaces:
@@ -122,7 +125,7 @@ _This is italic text_
 + Very easy!
 ```
 
-## Ordered
+## ✅ Ordered
 
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
@@ -152,11 +155,11 @@ Start numbering with offset:
 1. bar
 ```
 
-# Code
+# :last_quarter_moon: Code
 
-Inline `code`
+Inline `code` ✅
 
-Indented code
+Indented code ❌ [doesn't work. use fenced code blocks]
 
     // Some comments
     line 1 of code
@@ -164,13 +167,13 @@ Indented code
     line 3 of code
 
 
-Block code "fences"
+Block code "fences" ✅
 
 ```
 Sample text here...
 ```
 
-Syntax highlighting
+Syntax highlighting ✅
 
 ``` js
 var foo = function (bar) {
@@ -209,7 +212,7 @@ console.log(foo(5));
 
 ```
 
-# Tables
+# ✅ Tables
 
 | Option | Description |
 | ------ | ----------- |
@@ -240,7 +243,7 @@ Right aligned columns
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
 ```
-# Links
+# ✅ Links
 
 [link text](http://dev.nodeca.com)
 
@@ -255,7 +258,7 @@ Autoconverted link https://github.com/nodeca/pica
 
 Autoconverted link https://github.com/nodeca/pica
 ```
-# Images
+# 🌗 Images [needs reference/footnote support]
 
 ![Minion](https://octodex.github.com/images/minion.png)
 ![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
@@ -268,38 +271,53 @@ With a reference later in the document defining the URL location:
 
 [id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
 
+```markdown
+![Minion](https://octodex.github.com/images/minion.png)
+![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
+Like links, Images also have a footnote style syntax
+
+![Alt text][id]
+
+With a reference later in the document defining the URL location:
+
+[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+```
 # Plugins
 
 The killer feature of `markdown-it` is very effective support of
 [syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
 
 
-## [Emojies](https://github.com/markdown-it/markdown-it-emoji)
+## ✅ [Emojies](https://github.com/markdown-it/markdown-it-emoji)
 
 > Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
 >
 > Shortcuts (emoticons): :-) :-( 8-) ;)
 
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
 
+```markdown
+> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
+>
+> Shortcuts (emoticons): :-) :-( 8-) ;)
+```
 
-## [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
+## ✅ [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
 
 - 19^th^
 - H~2~O
 
 
-## [\<ins>](https://github.com/markdown-it/markdown-it-ins)
+## ✅ [_ins_](https://github.com/markdown-it/markdown-it-ins)
 
 ++Inserted text++
 
 
-## [\<mark>](https://github.com/markdown-it/markdown-it-mark)
+## ✅ [_mark_](https://github.com/markdown-it/markdown-it-mark)
 
 ==Marked text==
 
-## Autolinks
+## ✅ Autolinks
 
 Automatically generate links.
 
@@ -310,7 +328,7 @@ www.example.com, https://example.com, and contact@example.com
 www.example.com, https://example.com, and contact@example.com
 ```
 
-## Task Lists
+## ✅ Task Lists
 
 * [ ] Task 1
 * [x] Task 2
@@ -322,7 +340,37 @@ www.example.com, https://example.com, and contact@example.com
   * [X] Subtask 2.1
 ```
 
-## [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
+## 🌗 Checkboxes [indeterminate not working]
+
+Here is a checkbox: :::check:::
+
+:::check disabled::: Not Done
+
+:::check disabled checked::: Done 
+
+:::check disabled indeterminate::: Done partially done
+
+:::check::: Not Done
+
+:::check checked::: Done 
+
+:::check indeterminate::: Done partially done
+
+```markdown
+:::check disabled::: Not Done
+
+:::check disabled checked::: Done 
+
+:::check disabled indeterminate::: Done partially done
+
+:::check::: Not Done
+
+:::check checked::: Done 
+
+:::check indeterminate::: Done partially done
+```
+
+## ❌ [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
 
 Footnote 1 link[^first].
 
@@ -339,7 +387,7 @@ Duplicated footnote reference[^second].
 [^second]: Footnote text.
 
 
-## [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
+## ❌ [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
 
 Term 1
 :   Definition 1 with lazy continuation.
@@ -361,7 +409,7 @@ Term 2
   ~ Definition 2b
 
 
-## [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
+## ❌ [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
 
 This is HTML abbreviation example.
 
@@ -369,18 +417,18 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 
 *[HTML]: Hyper Text Markup Language
 
-## [Custom containers](https://github.com/markdown-it/markdown-it-container)
+## ❌ [Custom containers](https://github.com/markdown-it/markdown-it-container)
 
 ::: warning
 *here be dragons*
 :::
 
-## Emoji Support
+## ✅ Emoji Support
 
 Github-style emojis are supported via [node-emoji](https://github.com/omnidan/node-emoji). [List of emojis](https://www.webfx.com/tools/emoji-cheat-sheet/).
 Emoticons are supported via [emoticons](https://github.com/wooorm/emoticon/blob/HEAD/support.md).
 
-## Latex Support
+## ✅ Latex Support
 You can write html, that contains expressions like this:  $x ^ 2 + 5$ inside them. As you probably know. You also can write expressions in display mode as follows: 
 $$ 
 \sum_{i=1}^n(x_i^2 - \overline{x}^2)
@@ -402,7 +450,7 @@ MUST begin with \$\$ and end with \$\$.
 
 ```
 
-## Embedding
+## 🌗 Embedding
 
 This is a tweet:
 
