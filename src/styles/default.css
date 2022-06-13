@@ -197,3 +197,7 @@ code {
 .card .card-metadata a {
   @apply decoration-transparent ml-2;
 }
+
+.sidebar {
+
+}

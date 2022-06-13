@@ -3,7 +3,7 @@
 	export { clazz as class };
 </script>
 
-<nav class="sidebar {clazz} px-7 py-3">
+<nav class="sidebar {clazz}">
   <ul class="">
     <li>
       <a href="/portfolio">Portfolio</a>

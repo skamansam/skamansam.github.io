@@ -56,12 +56,8 @@
 		on:brightnessChange={(evt) => setBrightness(evt.detail)}
 		on:themeChange={(evt) => setTheme(evt.detail)}
 	/>
-	<div class="container flex flex-row flex-1 items-stretch">
-    <div class="left">
-		  <Sidebar class="rounded border border-primaryBorder mr-3 ml-3 mt-3" />
-    </div>
-		<div class="pl-2  pt-2">
-			<slot />
-		</div>
-	</div>
+  <Sidebar />
+  <div class="pl-2  pt-2">
+    <slot />
+  </div>
 </div>

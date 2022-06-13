@@ -29,15 +29,23 @@
   @apply text-onPrimaryBg bg-primaryBg;
 }
 
+header.site-head {
+  @apply ml-5
+}
+header.site-head {}
+
+.sidebar {
+  @apply border mx-3 rounded-xl pt-2 pb-1
+}
 .sidebar ul{
-  @apply w-full block list-none p-0 m-0;
+  @apply w-full block list-none p-0 m-0 flex justify-center ;
 }
 
 .sidebar li{
-  @apply w-full block;
+  @apply inline-block ml-5;
 }
 .sidebar li a {
-  @apply w-full inline-block;
+  @apply w-full inline-block px-2 rounded-xl;
 }
 
 .toc {

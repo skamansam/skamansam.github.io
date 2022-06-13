@@ -1,6 +1,6 @@
 ---
 title: Markdown Style Demo and Reference
-lastmod: 2022-06-12T18:20:50.728Z
+lastmod: 2022-06-13T03:40:26.872Z
 author: Samuel C Tyler
 description: A demonstration of the custom stylesd for markdown, as applied by tailwind.
 ---
@@ -518,4 +518,15 @@ graph TB;
   db_cleanup? -- yes --> db
   db_cleanup? -- no --> done
 \```
+```
+
+# ❌ Return to Top w/Sound
+
+Adding a button to return to the top of the page. Optionally plays a sound. The `nosound` attribute
+is ideally set via a switch somewhere on the page.
+
+[Not started yet!]
+
+```markdown
+<ToTop sound="/music/goingup.mp3" nosound/>
 ```

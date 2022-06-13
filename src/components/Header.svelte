@@ -14,7 +14,7 @@
 	$: dispatch('themeChange', theme);
 </script>
 
-<header class={`flex ${clazz || ''}`}>
+<header class={`site-head flex ${clazz || ''}`}>
 	<div class="flex flex-col grow">
 		<div class="text-4xl text-onPrimaryBg">Rude Boy Enterprises</div>
 		<div class=" indent-5">The Adventures of Samuel "Skaman Sam" Tyler</div>
