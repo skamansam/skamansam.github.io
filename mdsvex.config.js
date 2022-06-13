@@ -11,6 +11,8 @@ import remarkGfm from 'remark-gfm';
 import remarkTypographer from './src/util/remarkTypographer.js';
 import remarkReferenceLinks from 'remark-reference-links';
 import remarkInlineLinks from 'remark-inline-links';
+import remarkMermaid from 'remark-mermaid';
+
 // XXX: NOT WORKING!
 // import remarkHeadings from '@vcarl/remark-headings'; // adds to teh processing data. no way to get data out
 
@@ -54,6 +56,7 @@ const config = defineConfig({
 	},
 
 	remarkPlugins: [
+    remarkMermaid,
     remarkGfm,
 		[oembed, { syncWidget: true }],
 		remarkMath,

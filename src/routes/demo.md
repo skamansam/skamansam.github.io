@@ -1,6 +1,6 @@
 ---
 title: Markdown Style Demo and Reference
-lastmod: 2022-06-11T20:39:59.561Z
+lastmod: 2022-06-12T18:20:50.728Z
 author: Samuel C Tyler
 description: A demonstration of the custom stylesd for markdown, as applied by tailwind.
 ---
@@ -477,3 +477,45 @@ This another photo, from 23hq:
 http://www.23hq.com/mprove/photo/66422006
 
 Check it out 👆
+
+# ❌ Flowcharts (with mermaid.js)
+
+```mermaid
+%% Waiting for the following chart to load...
+graph TB;
+  db?{database needs to be changed?}
+  done[Done.]
+  db["Run database migration (rails migration)"]
+  data?{data need to be changed?}
+  data["run script to change data (one-shot)"]
+  db_cleanup?{database needs cleanup?}
+  db? -- yes --> db
+  db? -- no  --> done
+  db  --> data?
+  data? -- no -->done
+  data? -- yes --> data
+  data --> db_cleanup?
+  db_cleanup? -- yes --> db
+  db_cleanup? -- no --> done
+```
+
+```markdown
+\```mermaid
+%% Waiting for the following chart to load...
+graph TB;
+  db?{database needs to be changed?}
+  done[Done.]
+  db["Run database migration (rails migration)"]
+  data?{data need to be changed?}
+  data["run script to change data (one-shot)"]
+  db_cleanup?{database needs cleanup?}
+  db? -- yes --> db
+  db? -- no  --> done
+  db  --> data?
+  data? -- no -->done
+  data? -- yes --> data
+  data --> db_cleanup?
+  db_cleanup? -- yes --> db
+  db_cleanup? -- no --> done
+\```
+```

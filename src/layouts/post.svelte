@@ -3,14 +3,37 @@
 	export let author = '';
 	export let lastmod = '';
 	export let description = '';
-  export let metadata = {};
-  export let data = {};
+  export let meta = [];  
+	export let updated_at = '';
+	export let created_at = '';
+	export let tags = [];
+	export let categories = [];
+	export let coverAlt = '';
+	export let coverImage = '';
+  export let excerpt = '';
+  export let comments = '';
+  export let view = '';
+  export let layout = '';
+  export let lang = '';
+  export let cover = '';
+
   /** @type {remarkHeadingPlugin[]} */
 	export let headings = [];
   // console.log('post data:', $$props);
 </script>
 
-<svelte:head><title>{title} | RBE</title></svelte:head>
+<svelte:head>
+  <!-- TODO: add OpenGraph stuff here to fill in more metadata for each og:* entry. https://css-tricks.com/essential-meta-tags-social-media/ -->
+  {#each meta as prop}
+    <meta property="{prop.property}" content="{prop.content}" />
+  {/each}
+  <!-- <meta property="og:title" content="{title}" />
+  <meta property="og:type" content="video.movie" />
+  <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
+  <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" /> -->
+
+  <title>{title} | RBE</title>
+</svelte:head>
 <main>
   <h1>Post: {title}</h1>
   <p class="date">on: {lastmod}</p>

@@ -180,3 +180,20 @@ p > img {
 code {
   @apply bg-violet-200 px-2 text-violet-700;
 }
+
+.card {
+}
+
+.card-badges {
+  margin-top: -22px;
+  margin-bottom: -5px;
+  float: right;
+}
+.card-badges .badge {
+  background-color: #333;
+  color: #ccc;
+  @apply ml-2 rounded px-1 font-bold py-0.5 text-xs bg-secondary text-onSecondaryBg;
+}
+.card .card-metadata a {
+  @apply decoration-transparent ml-2;
+}
