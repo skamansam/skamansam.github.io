@@ -19,7 +19,6 @@
 
   /** @type {remarkHeadingPlugin[]} */
 	export let headings = [];
-  // console.log('post data:', $$props);
 </script>
 
 <svelte:head>

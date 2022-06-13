@@ -46,7 +46,6 @@
 	};
 
 	detectBrightness();
-  // console.log('layout data:', $$props);
 </script>
 
 <div class="theme-wrapper {brightness} theme-{theme} h-screen w-screen p-0 m-0 flex flex-col items-stretch">
