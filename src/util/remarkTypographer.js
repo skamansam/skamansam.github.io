@@ -25,8 +25,6 @@ function transformer(ast) {
 
   function visitor(node) {
     if (!node.value) return;
-    // if (node.value.includes('c[ ]')) 
-    console.warn(node.value);
     Object.entries(REPLACEMENTS).forEach(([to, from]) => {
       node.value = node.value.replaceAll(from, to)
     });

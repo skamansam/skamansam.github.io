@@ -1,4 +1,5 @@
 ---
+draft: true
 comments: true
 view: post
 layout: post
@@ -21,6 +22,7 @@ meta:
     content: /images/GSoC-logo-horizontal-800.png
   - name: twitter:image
     content: /images/GSoC-logo-horizontal-800.png
+lastmod: 2022-06-13T01:52:55.151Z
 ---
 
 Since I am a web developer, I prefer to test my web sites on as many browsers as

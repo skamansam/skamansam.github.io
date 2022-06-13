@@ -4,9 +4,10 @@ view: post
 layout: post
 lang: en
 author: skamansam
-title: "Data Migrations and You!"
+title: Data Migrations and You!
 description: Best Practices for Data Migrations
-excerpt: "Here was the chance to lose some old, bad habits, and replace them with new _Patterns_!"
+excerpt: Here was the chance to lose some old, bad habits, and replace them with new
+  _Patterns_!
 cover: false
 coverImage: false
 coverAlt: RBE Logo
@@ -24,6 +25,7 @@ meta:
     content: /images/GSoC-logo-horizontal-800.png
   - name: twitter:image
     content: /images/GSoC-logo-horizontal-800.png
+lastmod: 2022-06-12T18:17:01.184Z
 ---
 
 ## A Little Background
@@ -42,7 +44,8 @@ This is a difficult rule to follow for lots of Rails developers, experienced and
 automated, it is easy to get in the mindset of adding data changes to migrations. This violates the 
 **Single Responsibility Principle**, which states, _A class should have a responsibility over a single feature of your application_.
 
-<blog-note><div class="note">
+<blog-note>
+<div class="note">
 
 Scenario: You have a nice chat app and you want to add the ability for users to 'favorite' certain messages. 
 At first, you have a boolean field in your database, so your original migration looks like this:
@@ -68,7 +71,8 @@ After a few months, and many _many_ messages (6 million!), you decide you want t
 a few more emotions, such as "makes me happy," "makes me sad," "makes me angry," "makes me crazy," and "meh, 
 just a note."
 
-</div></blog-note>
+</div>
+</blog-note>
 
 There are several ways of going about doing this. Once you analyze your requirements, you decide to use the 
 existing `MessageFavorite#favorite` field to store the new information.Your immediate thought is to use a 
@@ -130,7 +134,8 @@ should agree on a place to put all these tickets so everyone can keep track of t
 
 ### Flow for Data Migrations
 
-<div class="chart">
+
+```mermaid
 %% Waiting for the following chart to load...
 graph TB;
   db?{database needs to be changed?}
@@ -147,8 +152,10 @@ graph TB;
   data --> db_cleanup?
   db_cleanup? -- yes --> db
   db_cleanup? -- no --> done
-</div>
+```
 
+<div class="mermaid">
+</div>
 
 If you want to run any migration in Rails, just follow these easy steps:
 

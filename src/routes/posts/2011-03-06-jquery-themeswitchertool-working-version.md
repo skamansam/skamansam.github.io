@@ -12,7 +12,7 @@ coverImage: false
 coverAlt: RBE Logo
 categories:
   - web-development
-tags: 
+tags:
   - jQuery
 created_at: 2011-03-06 21:20:00
 updated_at: 2011-03-06 21:20:00
@@ -21,6 +21,7 @@ meta:
     content: /images/GSoC-logo-horizontal-800.png
   - name: twitter:image
     content: /images/GSoC-logo-horizontal-800.png
+lastmod: 2022-06-11T21:01:45.827Z
 ---
 
 I recently tried to install the jQuery UI
@@ -103,7 +104,7 @@ $('<div id="theme-switcher"></div>').prependTo('body').themeswitchertool( {
 ### New Options
 
 #### themes
-##### Default: {}
+##### Default: `{}`
 A hash of themes, where each key is the theme name, and the value is another
 hash specifying the icon to use and the css file for the theme. Here is an
 example:

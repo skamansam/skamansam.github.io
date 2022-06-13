@@ -1,12 +1,14 @@
 ---
+draft: true
 comments: true
 view: post
 layout: post
 lang: en
 author: skamansam
-title: "Firefox Add-Ons I can't Live Without"
-description: "Firefox Add-Ons I can't Live Without"
-excerpt: "Since Firefox is the best browser so far (Google's Chrome a close second), here is a list of the best Firefox add-ons."
+title: Firefox Add-Ons I can't Live Without
+description: Firefox Add-Ons I can't Live Without
+excerpt: Since Firefox is the best browser so far (Google's Chrome a close second),
+  here is a list of the best Firefox add-ons.
 cover: false
 coverImage: false
 coverAlt: RBE Logo
@@ -21,6 +23,7 @@ meta:
     content: /images/GSoC-logo-horizontal-800.png
   - name: twitter:image
     content: /images/GSoC-logo-horizontal-800.png
+lastmod: 2022-06-13T01:54:28.448Z
 ---
 
 I have been a web developer since 1996, and have seen many things come and go in

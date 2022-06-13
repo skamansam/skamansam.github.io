@@ -1,4 +1,5 @@
 ---
+draft: true
 comments: true
 view: post
 layout: post
@@ -21,6 +22,7 @@ meta:
     content: /images/GSoC-logo-horizontal-800.png
   - name: twitter:image
     content: /images/GSoC-logo-horizontal-800.png
+lastmod: 2022-06-13T01:54:22.847Z
 ---
 
 Rails 3 has a lot of nifty new features. However, this is not about those

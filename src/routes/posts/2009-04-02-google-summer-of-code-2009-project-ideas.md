@@ -12,7 +12,7 @@ coverImage: /images/GSoC-logo-horizontal-800.png
 coverAlt: RBE Logo
 categories:
   - open-source
-tags: 
+tags:
   - Google Summer of Code
 created_at: 2009-04-02 21:31:00
 updated_at: 2009-04-02 21:31:00
@@ -21,6 +21,7 @@ meta:
     content: /images/GSoC-logo-horizontal-800.png
   - name: twitter:image
     content: /images/GSoC-logo-horizontal-800.png
+lastmod: 2022-06-11T20:54:51.895Z
 ---
 
 Google has announced a another [Summer of Code for 2009](http://code.google.com/soc/) ([video](http://www.youtube.com/watch?v=vBRRR0BQyz0&amp;feature=channel_page))! Here is a list of some project idea pages for this year.
@@ -44,4 +45,4 @@ Google has announced a another [Summer of Code for 2009](http://code.google.com/
 * [Arch Linux](http://bbs.archlinux.org/viewtopic.php?id=65052)
 * [Battle for Wesnoth](http://www.wesnoth.org/)
 
-[Search More Here&lt;&lt;&lt;](http://www.google.com/search?hl=en&amp;client=firefox-a&amp;rls=org.mozilla:en-US:official&amp;q=summer+of+code+2009&amp;start=20&amp;sa=N)
+[Search More Here:](http://www.google.com/search?hl=en&amp;client=firefox-a&amp;rls=org.mozilla:en-US:official&amp;q=summer+of+code+2009&amp;start=20&amp;sa=N)
