@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#999999">
+    <meta name="msapplication-TileColor" content="#cccccc">
+    <meta name="theme-color" content="#eeeeee">
+		<meta http-equiv="content-security-policy" content=""><title>Markdown Style Demo and Reference | RBE</title><meta property="og:site_name" content="Rude Boy Solutions" data-svelte="svelte-bulw11"><meta property="article:published_time" content="" data-svelte="svelte-bulw11"><meta property="article:author" content="Samuel C Tyler" data-svelte="svelte-bulw11"><meta property="og:url" content="" data-svelte="svelte-bulw11"><meta property="og:type" content="article" data-svelte="svelte-bulw11"><meta property="og:title" content="Markdown Style Demo and Reference - RBE" data-svelte="svelte-bulw11"><meta property="og:image" data-svelte="svelte-bulw11"><meta property="og:description" content="A demonstration of the markdown rendering of this blog. Used for theming and a TODO list of features. Most of this is from the markdown-it demo, with which I am trying to get 100% compatibility." data-svelte="svelte-bulw11"><meta name="twitter:card" content="summary" data-svelte="svelte-bulw11"><meta property="twitter:site" content="@skamansam" data-svelte="svelte-bulw11"><meta name="twitter:creator" content="@Samuel C Tyler" data-svelte="svelte-bulw11"><meta name="twitter:image" data-svelte="svelte-bulw11"><meta name="description" content="A demonstration of the markdown rendering of this blog. Used for theming and a TODO list of features. Most of this is from the markdown-it demo, with which I am trying to get 100% compatibility." data-svelte="svelte-bulw11">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-ce32b6e5.css">
+	<link rel="modulepreload" href="/_app/immutable/start-a34ce81f.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-e257a78e.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-8f61db49.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/demo.md-446d8773.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/post-11de8cff.js">
+			<script>
+		if ('serviceWorker' in navigator) {
+			addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CV0J6F3VM"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G3FBL50ZMF');
+    </script>
+  </head>
+	<body>
+		
+
+
+<div class="theme-wrapper light theme- h-screen w-screen p-0 m-0 flex flex-col items-stretch"><header class="site-head flex  svelte-1b8k5if"><div class="flex flex-col grow"><div class="text-4xl text-onPrimaryBg">Rude Boy Solutions</div>
+		<div class="indent-5">Solutions. For Life.</div></div>
+	<div class="mt-2 mr-2 text-sm"><label for="themeSelector">Theme: </label>
+		<select id="themeSelector"><option value="">plain</option><option value="neumorphic">neumorphic</option><option value="glassmorphic">glassmorphic</option><option value="brutal">brutal</option></select>
+
+		<label for="toggle-dark" class="flex items-center cursor-pointer relative mb-4"><span class="mr-3 text-gray-900 text-sm font-medium flex-grow">Dark Mode</span>
+			<input type="checkbox" id="toggle-dark" class="sr-only svelte-1b8k5if">
+			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 mr-5 w-11 rounded-full self-end svelte-1b8k5if"></div></label></div>
+</header>
+  <nav class="sidebar "><ul class=""><li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/posts">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/demo">MD Demo</a></li></ul></nav>
+  <div class="pl-2 pt-2">
+
+
+
+<main><h1>Markdown Style Demo and Reference</h1>
+  <p class="date created_at">posted on: 12/31/1969, 7:00:00 PM</p>
+  
+  <p class="author">by: Samuel C Tyler</p>
+  <div class="description hidden">A demonstration of the markdown rendering of this blog. Used for theming and a TODO list of features. Most of this is from the markdown-it demo, with which I am trying to get 100% compatibility.</div>
+  <p>A demonstration of the markdown rendering of this blog. Used for theming and a TODO list of features. Most of this is from the markdown-it demo, with which I am trying to get 100% compatibility.</p>
+<h5 id="on-this-page">On This Page</h5>
+<ul><li><a href="#-headings">✅ Headings</a></li>
+<li><a href="#h1-heading-">h1 Heading 😎</a><ul><li><a href="#h2-heading">h2 Heading</a><ul><li><a href="#h3-heading">h3 Heading</a><ul><li><a href="#h4-heading">h4 Heading</a><ul><li><a href="#h5-heading">h5 Heading</a><ul><li><a href="#h6-heading">h6 Heading</a></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+<li><a href="#-table-of-contents">✅ Table of Contents</a></li>
+<li><a href="#-horizontal-rules">✅ Horizontal Rules</a></li>
+<li><a href="#-typographic-replacements">✅ Typographic replacements</a></li>
+<li><a href="#-emphasis">✅ Emphasis</a></li>
+<li><a href="#-blockquotes">✅ Blockquotes</a></li>
+<li><a href="#-lists">✅ Lists</a><ul><li><a href="#-unordered">✅ Unordered</a></li>
+<li><a href="#-ordered">✅ Ordered</a></li></ul></li>
+<li><a href="#-code">🌗 Code</a></li>
+<li><a href="#-tables">✅ Tables</a></li>
+<li><a href="#-links">✅ Links</a></li>
+<li><a href="#-images-needs-referencefootnote-support">🌗 Images needs reference/footnote support</a></li>
+<li><a href="#plugins">Plugins</a><ul><li><a href="#-emojies">✅ Emojies</a></li>
+<li><a href="#-subscript--superscript">✅ Subscript / Superscript</a></li>
+<li><a href="#-ins">✅ <em>ins</em></a></li>
+<li><a href="#-mark">✅ <em>mark</em></a></li>
+<li><a href="#-autolinks">✅ Autolinks</a></li>
+<li><a href="#-task-lists">✅ Task Lists</a></li>
+<li><a href="#-checkboxes-indeterminate-not-working">🌗 Checkboxes indeterminate not working</a></li>
+<li><a href="#-footnotes">❌ Footnotes</a></li>
+<li><a href="#-definition-lists">❌ Definition lists</a></li>
+<li><a href="#-abbreviations">❌ Abbreviations</a></li>
+<li><a href="#-custom-containers">❌ Custom containers</a></li>
+<li><a href="#-emoji-support">✅ Emoji Support</a></li>
+<li><a href="#-latex-support">✅ Latex Support</a></li>
+<li><a href="#-embedding">🌗 Embedding</a></li></ul></li>
+<li><a href="#-flowcharts-with-mermaidjs">❌ Flowcharts (with mermaid.js)</a></li>
+<li><a href="#-return-to-top-with-optional-sound">❌ Return to Top with Optional Sound</a></li>
+<li><a href="#-right-panel">❌ Right Panel</a><ul><li><a href="#-tag-cloud">❌ Tag Cloud</a></li></ul></li>
+<li><a href="#-mobile-first-page-navigation-in-the-left-column">❌ Mobile-first Page Navigation in the Left column</a></li></ul>
+<h1 id="-headings">✅ Headings</h1>
+<h1 id="h1-heading-">h1 Heading 😎</h1>
+<h2 id="h2-heading">h2 Heading</h2>
+<h3 id="h3-heading">h3 Heading</h3>
+<h4 id="h4-heading">h4 Heading</h4>
+<h5 id="h5-heading">h5 Heading</h5>
+<h6 id="h6-heading">h6 Heading</h6>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> h1 Heading 8-)</span>
+<span class="token title important"><span class="token punctuation">##</span> h2 Heading</span>
+<span class="token title important"><span class="token punctuation">###</span> h3 Heading</span>
+<span class="token title important"><span class="token punctuation">####</span> h4 Heading</span>
+<span class="token title important"><span class="token punctuation">#####</span> h5 Heading</span>
+<span class="token title important"><span class="token punctuation">######</span> h6 Heading</span></code><!-- HTML_TAG_END --></pre>
+<h1 id="-table-of-contents">✅ Table of Contents</h1>
+<p>You can add a table of contents to each page by adding a header with the following names:</p>
+<ul><li>TOC</li>
+<li>Table of Contents</li>
+<li>Contents</li>
+<li>On This Page</li></ul>
+<p>Only the first one will become the header for the page.</p>
+<h1 id="-horizontal-rules">✅ Horizontal Rules</h1>
+<hr>
+<hr>
+<hr>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown">___
+
+<span class="token hr punctuation">---</span>
+
+<span class="token hr punctuation">***</span></code><!-- HTML_TAG_END --></pre>
+<h1 id="-typographic-replacements">✅ Typographic replacements</h1>
+<p>© © ® ® ™ ™ ℗ ℗ ±</p>
+<p>test.. test… test… test?… test!…</p>
+<p>!!! ??? ,  – —</p>
+<p>“Smartypants, double quotes” and ‘single quotes’</p>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown">Enable typographer option to see result.
+
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+
+test.. test... test..... test?..... test!....
+
+!!!!!! ???? ,,  -- ---
+
+"Smartypants, double quotes" and 'single quotes'</code><!-- HTML_TAG_END --></pre>
+<h1 id="-emphasis">✅ Emphasis</h1>
+<p><strong>This is bold text</strong></p>
+<p><strong>This is bold text</strong></p>
+<p><em>This is italic text</em></p>
+<p><em>This is italic text</em></p>
+<p><del>Strikethrough</del></p>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token bold"><span class="token punctuation">**</span><span class="token content">This is bold text</span><span class="token punctuation">**</span></span>
+
+<span class="token bold"><span class="token punctuation">__</span><span class="token content">This is bold text</span><span class="token punctuation">__</span></span>
+
+<span class="token italic"><span class="token punctuation">*</span><span class="token content">This is italic text</span><span class="token punctuation">*</span></span>
+
+<span class="token italic"><span class="token punctuation">_</span><span class="token content">This is italic text</span><span class="token punctuation">_</span></span>
+
+<span class="token strike"><span class="token punctuation">~~</span><span class="token content">Strikethrough</span><span class="token punctuation">~~</span></span>
+</code><!-- HTML_TAG_END --></pre>
+<h1 id="-blockquotes">✅ Blockquotes</h1>
+<blockquote><p>Blockquotes can also be nested…</p>
+<blockquote><p>…by using additional greater-than signs right next to each other…</p>
+<blockquote><p>…or with spaces between arrows.</p></blockquote></blockquote></blockquote>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token blockquote punctuation">></span> Blockquotes can also be nested...
+<span class="token blockquote punctuation">>></span> ...by using additional greater-than signs right next to each other...
+<span class="token blockquote punctuation">> > ></span> ...or with spaces between arrows.</code><!-- HTML_TAG_END --></pre>
+<h1 id="-lists">✅ Lists</h1>
+<h2 id="-unordered">✅ Unordered</h2>
+<ul><li>Create a list by starting a line with <code>+</code>, <code>-</code>, or <code>*</code></li>
+<li>Sub-lists are made by indenting 2 spaces:<ul><li>Marker character change forces new list start:<ul><li>Ac tristique libero volutpat at</li>
+</ul><ul><li>Facilisis in pretium nisl aliquet</li>
+</ul><ul><li>Nulla volutpat aliquam velit</li></ul></li></ul></li>
+<li>Very easy!</li></ul>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token list punctuation">+</span> Create a list by starting a line with <span class="token code-snippet code keyword">&#96;+&#96;</span>, <span class="token code-snippet code keyword">&#96;-&#96;</span>, or <span class="token code-snippet code keyword">&#96;*&#96;</span>
+<span class="token list punctuation">+</span> Sub-lists are made by indenting 2 spaces:
+  <span class="token list punctuation">-</span> Marker character change forces new list start:
+    <span class="token list punctuation">*</span> Ac tristique libero volutpat at
+    <span class="token list punctuation">+</span> Facilisis in pretium nisl aliquet
+    <span class="token list punctuation">-</span> Nulla volutpat aliquam velit
+<span class="token list punctuation">+</span> Very easy!</code><!-- HTML_TAG_END --></pre>
+<h2 id="-ordered">✅ Ordered</h2>
+<ol><li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li></ol>
+<ol><li>You can use sequential numbers…</li>
+<li>…or keep all the numbers as <code>1.</code></li></ol>
+<p>Start numbering with offset:</p>
+<ol start="57"><li>foo</li>
+<li>bar</li></ol>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token list punctuation">1.</span> Lorem ipsum dolor sit amet
+<span class="token list punctuation">2.</span> Consectetur adipiscing elit
+<span class="token list punctuation">3.</span> Integer molestie lorem at massa
+
+
+<span class="token list punctuation">1.</span> You can use sequential numbers...
+<span class="token list punctuation">1.</span> ...or keep all the numbers as <span class="token code-snippet code keyword">&#96;1.&#96;</span>
+
+Start numbering with offset:
+
+<span class="token list punctuation">57.</span> foo
+<span class="token list punctuation">1.</span> bar</code><!-- HTML_TAG_END --></pre>
+<h1 id="-code">🌗 Code</h1>
+<p>Inline <code>code</code> ✅</p>
+<p>Indented code ❌ [doesn’t work. use fenced code blocks]</p>
+<p>// Some comments
+line 1 of code
+line 2 of code
+line 3 of code</p>
+<p>Block code “fences” ✅</p>
+<pre class="language-undefined"><!-- HTML_TAG_START --><code class="language-undefined">Sample text here...</code><!-- HTML_TAG_END --></pre>
+<p>Syntax highlighting ✅</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">bar</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> bar<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown">Inline <span class="token code-snippet code keyword">&#96;code&#96;</span>
+
+Indented code
+
+<span class="token code keyword">    // Some comments
+    line 1 of code
+    line 2 of code
+    line 3 of code</span>
+
+
+Block code "fences"
+
+&#96;&#96;&#96;
+Sample text here...
+&#96;&#96;&#96;
+
+Syntax highlighting
+
+&#96;&#96;&#96; js
+var foo = function (bar) &#123;
+  return bar++;
+&#125;;
+
+console.log(foo(5));
+&#96;&#96;&#96;
+</code><!-- HTML_TAG_END --></pre>
+<h1 id="-tables">✅ Tables</h1>
+<table><thead><tr><th>Option</th>
+<th>Description</th></tr></thead>
+<tbody><tr><td>data</td>
+<td>path to data files to supply the data that will be passed into templates.</td></tr>
+<tr><td>engine</td>
+<td>engine to be used for processing templates. Handlebars is the default.</td></tr>
+<tr><td>ext</td>
+<td>extension to be used for dest files.</td></tr></tbody></table>
+<p>Right aligned columns</p>
+<table><thead><tr><th align="right">Option</th>
+<th align="right">Description</th></tr></thead>
+<tbody><tr><td align="right">data</td>
+<td align="right">path to data files to supply the data that will be passed into templates.</td></tr>
+<tr><td align="right">engine</td>
+<td align="right">engine to be used for processing templates. Handlebars is the default.</td></tr>
+<tr><td align="right">ext</td>
+<td align="right">extension to be used for dest files.</td></tr></tbody></table>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> Option </span><span class="token punctuation">|</span><span class="token table-header important"> Description </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">------</span> <span class="token punctuation">|</span> <span class="token punctuation">-----------</span> <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> data   </span><span class="token punctuation">|</span><span class="token table-data"> path to data files to supply the data that will be passed into templates. </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> engine </span><span class="token punctuation">|</span><span class="token table-data"> engine to be used for processing templates. Handlebars is the default. </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> ext    </span><span class="token punctuation">|</span><span class="token table-data"> extension to be used for dest files. </span><span class="token punctuation">|</span>
+</span></span>
+Right aligned columns
+
+<span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> Option </span><span class="token punctuation">|</span><span class="token table-header important"> Description </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">------:</span><span class="token punctuation">|</span> <span class="token punctuation">-----------:</span><span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> data   </span><span class="token punctuation">|</span><span class="token table-data"> path to data files to supply the data that will be passed into templates. </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> engine </span><span class="token punctuation">|</span><span class="token table-data"> engine to be used for processing templates. Handlebars is the default. </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> ext    </span><span class="token punctuation">|</span><span class="token table-data"> extension to be used for dest files. </span><span class="token punctuation">|</span></span></span></code><!-- HTML_TAG_END --></pre>
+<h1 id="-links">✅ Links</h1>
+<p><a href="http://dev.nodeca.com" rel="nofollow">link text</a></p>
+<p><a href="http://nodeca.github.io/pica/demo/" title="title text!" rel="nofollow">link with title</a></p>
+<p>Autoconverted link <a href="https://github.com/nodeca/pica" rel="nofollow">https://github.com/nodeca/pica</a></p>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token url">[<span class="token content">link text</span>](<span class="token url">http://dev.nodeca.com</span>)</span>
+
+<span class="token url">[<span class="token content">link with title</span>](<span class="token url">http://nodeca.github.io/pica/demo/</span> <span class="token string">"title text!"</span>)</span>
+
+Autoconverted link https://github.com/nodeca/pica</code><!-- HTML_TAG_END --></pre>
+<h1 id="-images-needs-referencefootnote-support">🌗 Images [needs reference/footnote support]</h1>
+<p><img src="https://octodex.github.com/images/minion.png" alt="Minion">
+<img src="https://octodex.github.com/images/stormtroopocat.jpg" alt="Stormtroopocat" title="The Stormtroopocat"></p>
+<p>Like links, Images also have a footnote style syntax</p>
+<p><img src="https://octodex.github.com/images/dojocat.jpg" alt="Alt text" title="The Dojocat"></p>
+<p>With a reference later in the document defining the URL location:</p>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">Minion</span>](<span class="token url">https://octodex.github.com/images/minion.png</span>)</span>
+<span class="token url"><span class="token operator">!</span>[<span class="token content">Stormtroopocat</span>](<span class="token url">https://octodex.github.com/images/stormtroopocat.jpg</span> <span class="token string">"The Stormtroopocat"</span>)</span>
+
+Like links, Images also have a footnote style syntax
+
+<span class="token url"><span class="token operator">!</span>[<span class="token content">Alt text</span>][<span class="token variable">id</span>]</span>
+
+With a reference later in the document defining the URL location:
+
+<span class="token url-reference url"><span class="token punctuation">[</span><span class="token variable">id</span><span class="token punctuation">]</span><span class="token punctuation">:</span> https://octodex.github.com/images/dojocat.jpg  <span class="token string">"The Dojocat"</span></span></code><!-- HTML_TAG_END --></pre>
+<h1 id="plugins">Plugins</h1>
+<p>The killer feature of <code>markdown-it</code> is very effective support of
+<a href="https://www.npmjs.org/browse/keyword/markdown-it-plugin" rel="nofollow">syntax plugins</a>.</p>
+<h2 id="-emojies">✅ <a href="https://github.com/markdown-it/markdown-it-emoji" rel="nofollow">Emojies</a></h2>
+<blockquote><p>Classic markup: 😉 :crush: 😢 :tear: 😆 😋</p>
+<p>Shortcuts (emoticons): 😃 😦 😎 😉</p></blockquote>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token blockquote punctuation">></span> Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
+<span class="token blockquote punctuation">></span>
+<span class="token blockquote punctuation">></span> Shortcuts (emoticons): :-) :-( 8-) ;)</code><!-- HTML_TAG_END --></pre>
+<h2 id="-subscript--superscript">✅ <a href="https://github.com/markdown-it/markdown-it-sub" rel="nofollow">Subscript</a> / <a href="https://github.com/markdown-it/markdown-it-sup" rel="nofollow">Superscript</a></h2>
+<ul><li>19<sup>th</sup></li>
+<li>H<sub>2</sub>O</li></ul>
+<h2 id="-ins">✅ <a href="https://github.com/markdown-it/markdown-it-ins" rel="nofollow"><em>ins</em></a></h2>
+<p><ins>Inserted text</ins></p>
+<h2 id="-mark">✅ <a href="https://github.com/markdown-it/markdown-it-mark" rel="nofollow"><em>mark</em></a></h2>
+<p><mark>Marked text</mark></p>
+<h2 id="-autolinks">✅ Autolinks</h2>
+<p>Automatically generate links.</p>
+<p><a href="http://www.example.com" rel="nofollow">www.example.com</a>, <a href="https://example.com" rel="nofollow">https://example.com</a>, and <a href="mailto:contact@example.com">contact@example.com</a></p>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown">www.example.com, https://example.com, and contact@example.com</code><!-- HTML_TAG_END --></pre>
+<h2 id="-task-lists">✅ Task Lists</h2>
+<ul class="contains-task-list"><li class="task-list-item"><input type="checkbox" disabled> Task 1</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Task 2<ul class="contains-task-list"><li class="task-list-item"><input type="checkbox" checked disabled> Subtask 2.1</li></ul></li></ul>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token list punctuation">*</span> [ ] Task 1
+<span class="token list punctuation">*</span> [x] Task 2
+  <span class="token list punctuation">*</span> [X] Subtask 2.1</code><!-- HTML_TAG_END --></pre>
+<h2 id="-checkboxes-indeterminate-not-working">🌗 Checkboxes [indeterminate not working]</h2>
+<p>Here is a checkbox: <input type="checkbox"></p>
+<p><input type="checkbox" disabled> Not Done</p>
+<p><input type="checkbox" disabled checked> Done </p>
+<p><input type="checkbox" disabled indeterminate> Done partially done</p>
+<p><input type="checkbox"> Not Done</p>
+<p><input type="checkbox" checked> Done </p>
+<p><input type="checkbox" indeterminate> Done partially done</p>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown">:::check disabled::: Not Done
+
+:::check disabled checked::: Done 
+
+:::check disabled indeterminate::: Done partially done
+
+:::check::: Not Done
+
+:::check checked::: Done 
+
+:::check indeterminate::: Done partially done</code><!-- HTML_TAG_END --></pre>
+<h2 id="-footnotes">❌ <a href="https://github.com/markdown-it/markdown-it-footnote" rel="nofollow">Footnotes</a></h2>
+<p>Footnote 1 link[^first].</p>
+<p>Footnote 2 link[^second].</p>
+<p>Inline footnote^[Text of inline footnote] definition.</p>
+<p>Duplicated footnote reference[^second].</p>
+<p>[^first]: Footnote <strong>can have markup</strong></p>
+<p>and multiple paragraphs.</p>
+<p>[^second]: Footnote text.</p>
+<h2 id="-definition-lists">❌ <a href="https://github.com/markdown-it/markdown-it-deflist" rel="nofollow">Definition lists</a></h2>
+<p>Term 1
+:   Definition 1 with lazy continuation.</p>
+<p>Term 2 with <em>inline markup</em>
+:   Definition 2</p>
+    
+<p>Third paragraph of definition 2.</p>
+<p><em>Compact style:</em></p>
+<p>Term 1
+~ Definition 1</p>
+<p>Term 2
+~ Definition 2a
+~ Definition 2b</p>
+<h2 id="-abbreviations">❌ <a href="https://github.com/markdown-it/markdown-it-abbr" rel="nofollow">Abbreviations</a></h2>
+<p>This is HTML abbreviation example.</p>
+<p>It converts “HTML”, but keep intact partial entries like “xxxHTMLyyy” and so on.</p>
+<p>*[HTML]: Hyper Text Markup Language</p>
+<h2 id="-custom-containers">❌ <a href="https://github.com/markdown-it/markdown-it-container" rel="nofollow">Custom containers</a></h2>
+<p>::: warning
+<em>here be dragons</em>
+:::</p>
+<h2 id="-emoji-support">✅ Emoji Support</h2>
+<p>Github-style emojis are supported via <a href="https://github.com/omnidan/node-emoji" rel="nofollow">node-emoji</a>. <a href="https://www.webfx.com/tools/emoji-cheat-sheet/" rel="nofollow">List of emojis</a>.
+Emoticons are supported via <a href="https://github.com/wooorm/emoticon/blob/HEAD/support.md" rel="nofollow">emoticons</a>.</p>
+<h2 id="-latex-support">✅ Latex Support</h2>
+<p>You can write html, that contains expressions like this:  <span class="math math-inline"><!-- HTML_TAG_START --><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">x ^ 2 + 5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span><!-- HTML_TAG_END --></span> inside them. As you probably know. You also can write expressions in display mode as follows: </p>
+<div class="math math-display"><!-- HTML_TAG_START --><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false">(</mo><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup><mo>−</mo><msup><mover accent="true"><mi>x</mi><mo stretchy="true">‾</mo></mover><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n(x_i^2 - \overline{x}^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.9291em;vertical-align:-1.2777em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6514em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2777em;"><span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-2.453em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6306em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">x</span></span></span><span style="top:-3.5506em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span><!-- HTML_TAG_END --></div>
+<p>In first case you will need to use $expression$ and in the second one $$expression$$. To escape the $ symbol it’s mandatory to write as follows: \$. To use <code>display</code> mode, the block
+MUST begin with $$ and end with $$.</p>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown">You can write html, that contains expressions like this: 
+$x ^ 2 + 5$ inside them. As you probably know. You also can write 
+expressions in display mode as follows: 
+$$
+sum_&#123;i=1&#125;^n(x_i^2 - overline&#123;x&#125;^2)
+$$
+In first case you will need to use $expression$ and in the 
+second one $$expression$$. To escape the $ symbol it's
+mandatory to write as follows: \$. To use <span class="token code-snippet code keyword">&#96;display&#96;</span> mode, the block 
+MUST begin with $$ and end with $$.
+</code><!-- HTML_TAG_END --></pre>
+<h2 id="-embedding">🌗 Embedding</h2>
+<p>This is a tweet:</p>
+<div class="remark-oembed-inline remark-oembed-twitter" data-oembed><blockquote class="twitter-tweet"><p lang="en" dir="ltr">«Be the Elle Woods of your industry and own who you are (down to the fluffy pink pen you may choose to take notes with).» <br><br>Loving this <a href="https://twitter.com/ChloeCondon?ref_src=twsrc%5Etfw">@ChloeCondon</a>!<br>cc: <a href="https://twitter.com/rwitherspoon?ref_src=twsrc%5Etfw">@RWitherspoon</a> <a href="https://t.co/kYyRqrkUEy">https://t.co/kYyRqrkUEy</a></p>— Benedicte Raae 👑 (@raae) <a href="https://twitter.com/raae/status/1045394833001652225?ref_src=twsrc%5Etfw">September 27, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<p>This is a vimeo video:</p>
+<p></p>
+<p>This is an instagram post:</p>
+<p></p>
+<p>This is a youtube video:</p>
+<div class="remark-oembed-inline remark-oembed-you-tube" data-oembed><iframe width="200" height="113" src="https://www.youtube.com/embed/aoLhACqJCUg?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p>This is a photo from flickr:</p>
+<div class="remark-oembed-inline remark-oembed-flickr" data-oembed><a data-flickr-embed="true" href="https://www.flickr.com/photos/pedrocaetano/27432477888/" title="Leiria by night by Pedro Nuno Caetano, on Flickr"><img src="https://live.staticflickr.com/872/27432477888_8236c59e1d_b.jpg" width="1024" height="678" alt="Leiria by night"></a><script async src="https://embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></div>
+<p>This another photo, from 23hq:</p>
+<a href="http://www.23hq.com/mprove/photo/66422006" class="remark-oembed-anchor" data-oembed rel="noopener noreferrer nofollow" target="_blank"><img src="https://www.23hq.com/9484736/66422006_0e82f5775b3b15207f50f5af5a625652_large.jpg" data-src="https://www.23hq.com/9484736/66422006_0e82f5775b3b15207f50f5af5a625652_large.jpg" title="Hamburg. Uhlenhorst. Das F&auml;hrhaus (33) https://mprove.de/chrono?q=53.57435,10.00635&z=16.56&m=HH1885&t=60" width="756" height="495" class="remark-oembed-photo" data-oembed></a>
+<p>Check it out 👆</p>
+<h1 id="-flowcharts-with-mermaidjs">❌ Flowcharts (with mermaid.js)</h1>
+<pre class="language-mermaid"><!-- HTML_TAG_START --><code class="language-mermaid"><span class="token comment">%% Waiting for the following chart to load...</span>
+<span class="token keyword">graph</span> TB<span class="token punctuation">;</span>
+  db?<span class="token text string">&#123;database needs to be changed?&#125;</span>
+  done<span class="token text string">[Done.]</span>
+  db<span class="token text string">["Run database migration (rails migration)"]</span>
+  data?<span class="token text string">&#123;data need to be changed?&#125;</span>
+  data<span class="token text string">["run script to change data (one-shot)"]</span>
+  db_cleanup?<span class="token text string">&#123;database needs cleanup?&#125;</span>
+  db? <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">yes</span> <span class="token arrow operator">--></span></span> db
+  db? <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">no</span>  <span class="token arrow operator">--></span></span> done
+  db  <span class="token arrow operator">--></span> data?
+  data? <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">no</span> <span class="token arrow operator">--></span></span>done
+  data? <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">yes</span> <span class="token arrow operator">--></span></span> data
+  data <span class="token arrow operator">--></span> db_cleanup?
+  db_cleanup? <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">yes</span> <span class="token arrow operator">--></span></span> db
+  db_cleanup? <span class="token inter-arrow-label"><span class="token arrow-head arrow operator">--</span> <span class="token label property">no</span> <span class="token arrow operator">--></span></span> done</code><!-- HTML_TAG_END --></pre>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown">&#96;&#96;&#96;mermaid
+%% Waiting for the following chart to load...
+graph TB;
+  db?&#123;database needs to be changed?&#125;
+  done[Done.]
+  db["Run database migration (rails migration)"]
+  data?&#123;data need to be changed?&#125;
+  data["run script to change data (one-shot)"]
+  db_cleanup?&#123;database needs cleanup?&#125;
+  db? -- yes --> db
+  db? -- no  --> done
+  db  --> data?
+  data? -- no -->done
+  data? -- yes --> data
+  data --> db_cleanup?
+  db_cleanup? -- yes --> db
+  db_cleanup? -- no --> done
+&#96;&#96;&#96;</code><!-- HTML_TAG_END --></pre>
+<h1 id="-return-to-top-with-optional-sound">❌ Return to Top with Optional Sound</h1>
+<p>Adding a button to return to the top of the page. Optionally plays a sound. The <code>nosound</code> attribute
+is ideally set via a switch somewhere on the page.</p>
+<p>[Not started yet!]</p>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ToTop</span> <span class="token attr-name">sound</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/music/goingup.mp3<span class="token punctuation">"</span></span> <span class="token attr-name">nosound</span><span class="token punctuation">/></span></span></code><!-- HTML_TAG_END --></pre>
+<h1 id="-right-panel">❌ Right Panel</h1>
+<h2 id="-tag-cloud">❌ Tag Cloud</h2>
+<p>Add a tag cloud component, mainly for the right column. Sort by most popular first. Use slot props so we
+have can use slots to render it.</p>
+<p>[Not started yet!]</p>
+<pre class="language-markdown"><!-- HTML_TAG_START --><code class="language-markdown"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TagCloud</span> <span class="token attr-name"><span class="token namespace">let:</span>tags</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>&#123;tags&#125;</span><span class="token punctuation">></span></span>
+  &#123;#each tags as tag&#125;
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bg-secondary text-onSecondaryBg px-2<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/tags/&#123;tag&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;tag&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  &#123;/each&#125;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>TagCloud</span><span class="token punctuation">></span></span></code><!-- HTML_TAG_END --></pre>
+<h1 id="-mobile-first-page-navigation-in-the-left-column">❌ Mobile-first Page Navigation in the Left column</h1></main></div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="19hsqkj">
+		import { start } from "/_app/immutable/start-a34ce81f.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="19hsqkj"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 5],
+				params: {},
+				routeId: "demo"
+			}
+		});
+	</script>
+	</body>
+</html>
