@@ -20,13 +20,15 @@ tags:
   - Rude Boy Solutions
 created_at: 2016-09-14 10:06:59
 updated_at: 2016-09-14 10:06:59
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
-lastmod: 2022-06-12T18:17:01.184Z
+opengraphImage: /images/GSoC-logo-horizontal-800.png
+twitterImage: null
 ---
+
+<div class="toc">
+
+###### On This Page
+
+</div>
 
 ## A Little Background
 

@@ -16,8 +16,8 @@
 
 <header class={`site-head flex ${clazz || ''}`}>
 	<div class="flex flex-col grow">
-		<div class="text-4xl text-onPrimaryBg">Rude Boy Enterprises</div>
-		<div class=" indent-5">The Adventures of Samuel "Skaman Sam" Tyler</div>
+		<div class="text-4xl text-onPrimaryBg">Rude Boy Solutions</div>
+		<div class=" indent-5">Solutions. For Life.</div>
 	</div>
 	<div class="mt-2 mr-2 text-sm">
 		<label for="themeSelector">Theme: </label>
