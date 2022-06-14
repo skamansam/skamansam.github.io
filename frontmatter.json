@@ -1,10 +1,76 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.framework.id": "other",
-  "frontMatter.content.publicFolder": "",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Pages",
+      "path": "[[workspace]]/src/routes/posts",
+      "excludeSubdir": true
+    },
+    {
+      "title": "Portfolio",
+      "path": "[[workspace]]/src/routes/portfolio",
+      "excludeSubdir": true
+    }
+  ],
+  "frontMatter.content.defaultFileType": "md",
+  "frontMatter.content.supportedFileTypes": [
+    "md",
+    "mdx",
+    "markdown",
+    "mds"
+  ],
+  "frontMatter.dashboard.openOnStart": true,
+  "frontMatter.site.baseURL": "https://rudeboy.dev",
+  "frontMatter.taxonomy.alignFilename": true,
+  "frontMatter.content.autoUpdateDate": true,
+  "frontMatter.preview.host": "http://192.168.0.196:3000/",
+  "frontMatter.framework.startCommand": "pnpm dev",
+  "frontMatter.content.draftField": {
+    "name": "draft",
+    "type": "boolean"
+  },
+  "frontMatter.media.supportedMimeTypes": [
+    "image/*",
+    "video/*",
+    "audio/*"
+  ],
+  "frontMatter.content.publicFolder": "[[workspace]]/static",
+  "frontMatter.taxonomy.fieldGroups": [
+    {
+      "id": "opengraph",
+      "fields": [
+        {
+          "title": "OpenGraph Image Property",
+          "name": "property",
+          "type": "choice",
+          "choices": [
+            "og:image"
+          ],
+          "single": true
+        },
+        {
+          "title": "Twitter Image Property",
+          "name": "name",
+          "type": "choice",
+          "choices": [
+            "twitter:image"
+          ],
+          "single": true
+        },
+        {
+          "title": "Image",
+          "name": "content",
+          "type": "image",
+          "single": true
+        }
+      ]
+    }
+  ],
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
+      "previewPath": null,
       "pageBundle": false,
       "fields": [
         {
@@ -18,21 +84,37 @@
           "type": "string"
         },
         {
-          "title": "Publishing date",
-          "name": "date",
+          "title": "Excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "Date Created",
+          "name": "created_at",
+          "type": "datetime",
+          "default": "{{now}}",
+        },
+        {
+          "title": "Last Updated",
+          "name": "updated_at",
           "type": "datetime",
           "default": "{{now}}",
           "isPublishDate": true
         },
         {
-          "title": "Content preview",
-          "name": "preview",
+          "title": "Cover Image",
+          "name": "coverImage",
           "type": "image"
+        },
+        {
+          "title": "Cover Image Description",
+          "name": "coverImageAlt",
+          "type": "string"
         },
         {
           "title": "Is in draft",
           "name": "draft",
-          "type": "boolean"
+          "type": "draft"
         },
         {
           "title": "Tags",
@@ -45,44 +127,24 @@
           "type": "categories"
         },
         {
-          "title": "lastmod",
-          "name": "lastmod",
-          "type": "datetime"
+          "title": "Twitter Iamge",
+          "name": "twitterImage",
+          "type": "image",
         },
         {
-          "title": "layout",
-          "name": "layout",
-          "type": "string"
+          "title": "OpenGraph Image",
+          "name": "opengraphImage",
+          "type": "image",
         },
         {
-          "title": "keywords",
-          "name": "keywords",
-          "type": "choice",
-          "choices": [
-            "about"
+          "title": "Metadata",
+          "name": "meta",
+          "type": "block",
+          "fieldGroup": [
+            "opengraph"
           ]
-        },
-        {
-          "title": "author",
-          "name": "author",
-          "type": "string"
         }
       ]
-    }
-  ],
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "Pages",
-      "path": "[[workspace]]/src/routes/posts",
-      "excludeSubdir": true
-    },
-    {
-      "title": "Portfolio",
-      "path": "[[workspace]]/src/routes/portfolio",
-      "excludeSubdir": true
-    },
-    {
-      "path": "[[workspace]]/static"
     }
   ]
 }
