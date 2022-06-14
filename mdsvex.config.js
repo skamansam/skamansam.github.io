@@ -8,10 +8,12 @@ import remarkMath from 'remark-math';
 // import oembed from '@agentofuser/remark-oembed';
 import oembed from 'remark-oembed';
 import remarkGfm from 'remark-gfm';
-import remarkTypographer from './src/util/remarkTypographer.js';
 import remarkReferenceLinks from 'remark-reference-links';
 import remarkInlineLinks from 'remark-inline-links';
 import remarkMermaid from 'remark-mermaid';
+import remarkTOC from 'remark-toc';
+
+import remarkTypographer from './src/util/remarkTypographer.js';
 
 // XXX: NOT WORKING!
 // import remarkHeadings from '@vcarl/remark-headings'; // adds to teh processing data. no way to get data out
@@ -67,8 +69,12 @@ const config = defineConfig({
     remarkTypographer,
     // remarkReferenceLinks,
     remarkInlineLinks,
+    [remarkTOC, {
+      heading: 'toc|(table[ -]of[ -])?contents|on this page',
+      tight: true,
+    }],
 	],
-	rehypePlugins: [rehypeKatexSvelte, rehypeSlug, rehypeTOC, defListHastHandlers]
+	rehypePlugins: [rehypeKatexSvelte, rehypeSlug, defListHastHandlers]
 });
 
 export default config;

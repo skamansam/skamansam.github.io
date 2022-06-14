@@ -69,5 +69,20 @@
         }
       ]
     }
+  ],
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Pages",
+      "path": "[[workspace]]/src/routes/posts",
+      "excludeSubdir": true
+    },
+    {
+      "title": "Portfolio",
+      "path": "[[workspace]]/src/routes/portfolio",
+      "excludeSubdir": true
+    },
+    {
+      "path": "[[workspace]]/static"
+    }
   ]
 }

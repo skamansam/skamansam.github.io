@@ -9,18 +9,6 @@
   "frontMatter.dashboard.openOnStart": true,
   "frontMatter.site.baseURL": "https://rudeboy.dev",
   "frontMatter.taxonomy.alignFilename": true,
-  "frontMatter.content.pageFolders": [
-  {
-    "title": "Pages",
-    "path": "[[workspace]]/src/routes/posts",
-    "excludeSubdir": true
-  },
-  {
-    "title": "Portfolio",
-    "path": "[[workspace]]/src/routes/portfolio",
-    "excludeSubdir": true
-  },
-  ],
   "frontMatter.content.autoUpdateDate": true,
   "cSpell.words": [
     "mdsvex",
@@ -34,5 +22,117 @@
     "name": "draft",
     "type": "boolean"
   },
-  "frontMatter.content.publicFolder": "[[workspace]]/static"
+  "frontMatter.media.supportedMimeTypes": [
+    "image/*",
+    "video/*",
+    "audio/*"
+  ],  
+  "frontMatter.content.publicFolder": "[[workspace]]/static",
+  "[markdown]": {
+  },
+  "frontMatter.taxonomy.fieldGroups": [
+    {
+      "id": "opengraph",
+      "fields": [
+        {
+          "title": "OpenGraph Image Property",
+          "name": "property",
+          "type": "choice",
+          "choices": ["og:image"],
+          "single": true
+        },
+        {
+          "title": "Twitter Image Property",
+          "name": "name",
+          "type": "choice",
+          "choices": ["twitter:image"],
+          "single": true
+        },
+        {
+          "title": "Image",
+          "name": "content",
+          "type": "image",
+          "single": true
+        }
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "previewPath": null,
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "Date Created",
+          "name": "created_at",
+          "type": "datetime",
+          "default": "{{now}}",
+        },
+        {
+          "title": "Last Updated",
+          "name": "updated_at",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Cover Image",
+          "name": "coverImage",
+          "type": "image"
+        },
+        {
+          "title": "Cover Image Description",
+          "name": "coverImageAlt",
+          "type": "string"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "Twitter Iamge",
+          "name": "twitterImage",
+          "type": "image",
+        },
+        {
+          "title": "OpenGraph Image",
+          "name": "opengraphImage",
+          "type": "image",
+        },
+        {
+          "title": "Metadata",
+          "name": "meta",
+          "type": "block",
+          "fieldGroup": ["opengraph"]
+        }
+      ]
+    }
+  ]
 }

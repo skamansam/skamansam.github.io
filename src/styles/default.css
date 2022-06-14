@@ -178,7 +178,7 @@ p > img {
 }
 
 code {
-  @apply bg-violet-200 px-2 text-violet-700;
+  @apply bg-violet-200 pl-0 px-2 text-violet-700;
 }
 
 .card {

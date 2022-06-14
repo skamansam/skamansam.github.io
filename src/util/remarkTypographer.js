@@ -20,8 +20,9 @@ const REPLACEMENTS = {
   '<input type="checkbox" $1 $2 $3>': /:::\s*checkb?o?x?( disabled)?( checked)?( indeterminate)?\s*:::/ig,
 }
 
-function transformer(ast) {
+function transformer(ast, file) {
   visit(ast, 'text', visitor)
+  console.log(file)
 
   function visitor(node) {
     if (!node.value) return;

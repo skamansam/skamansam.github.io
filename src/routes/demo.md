@@ -1,11 +1,15 @@
 ---
 title: Markdown Style Demo and Reference
-lastmod: 2022-06-13T03:40:26.872Z
+lastmod: 2022-06-13T20:24:59.519Z
 author: Samuel C Tyler
-description: A demonstration of the custom stylesd for markdown, as applied by tailwind.
+description: A demonstration of the markdown rendering of this blog. Used for theming and a
+  TODO list of features. Most of this is from the markdown-it demo, with which I
+  am trying to get 100% compatibility.
 ---
 
 {description}
+
+##### On This Page
 
 # ✅ Headings
 
@@ -24,6 +28,17 @@ description: A demonstration of the custom stylesd for markdown, as applied by t
 ##### h5 Heading
 ###### h6 Heading
 ```
+
+# ✅ Table of Contents
+
+You can add a table of contents to each page by adding a header with the following names:
+
+* TOC
+* Table of Contents
+* Contents
+* On This Page
+
+Only the first one will become the header for the page.
 
 # ✅ Horizontal Rules
 
@@ -480,6 +495,7 @@ Check it out 👆
 
 # ❌ Flowcharts (with mermaid.js)
 
+
 ```mermaid
 %% Waiting for the following chart to load...
 graph TB;
@@ -520,7 +536,7 @@ graph TB;
 \```
 ```
 
-# ❌ Return to Top w/Sound
+# ❌ Return to Top with Optional Sound
 
 Adding a button to return to the top of the page. Optionally plays a sound. The `nosound` attribute
 is ideally set via a switch somewhere on the page.
@@ -530,3 +546,22 @@ is ideally set via a switch somewhere on the page.
 ```markdown
 <ToTop sound="/music/goingup.mp3" nosound/>
 ```
+
+# ❌ Right Panel
+
+## ❌ Tag Cloud
+Add a tag cloud component, mainly for the right column. Sort by most popular first. Use slot props so we 
+have can use slots to render it.
+
+[Not started yet!]
+
+
+```markdown
+<TagCloud let:tags={tags}>
+  {#each tags as tag}
+    <a class="bg-secondary text-onSecondaryBg px-2" href="/tags/{tag}">{tag}</a>
+  {/each}
+</TagCloud>
+```
+
+# ❌ Mobile-first Page Navigation in the Left column

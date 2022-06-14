@@ -13,7 +13,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
-    "deploy": "sh ./deploy.sh"
+		"deploy": "sh ./deploy.sh"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.21.0",
@@ -62,6 +62,7 @@
 		"remark-mermaid": "^0.2.0",
 		"remark-oembed": "^1.2.2",
 		"remark-reference-links": "^6.0.1",
+		"remark-toc": "^8.0.1",
 		"remark-twemoji": "^0.1.1",
 		"twemoji": "^14.0.2",
 		"unist-util-visit": "^4.1.0"

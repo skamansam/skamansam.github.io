@@ -35,8 +35,8 @@
 </svelte:head>
 <main>
   <h1>Post: {title}</h1>
-  <p class="date">on: {lastmod}</p>
-  <p class="date">by: {author}</p>
+  <p class="date">on: {new Date(created_at || null).toLocaleString()}</p>
+  <p class="author">by: {author}</p>
   <div class="description hidden">{description}</div>
   {#each headings as heading}
     <div>{heading.value} ({heading.depth})</div>
