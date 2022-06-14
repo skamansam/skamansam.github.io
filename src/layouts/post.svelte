@@ -1,5 +1,8 @@
 <script>
-	export let title = '';
+  import { page } from '$app/stores';
+  import { onMount } from 'svelte';
+	
+  export let title = '';
 	export let author = '';
 	export let lastmod = '';
 	export let description = '';
@@ -16,7 +19,12 @@
   export let layout = '';
   export let lang = '';
   export let cover = '';
+  export let opengraphImage = '';
+  export let twitterImage = '';
+  let siteUrl = '';
 
+  onMount(() => siteUrl = window.location.href);
+  
   /** @type {remarkHeadingPlugin[]} */
 	export let headings = [];
 </script>
@@ -26,12 +34,22 @@
   {#each meta as prop}
     <meta property="{prop.property}" content="{prop.content}" />
   {/each}
-  <!-- <meta property="og:title" content="{title}" />
-  <meta property="og:type" content="video.movie" />
-  <meta property="og:url" content="https://www.imdb.com/title/tt0117500/" />
-  <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" /> -->
+  
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="{siteUrl}{page.path}" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="{title}" />
+  <meta property="og:image" content="{opengraphImage || twitterImage || cover}" />
+  <meta property="og:description" content="{description}"/>
+
+  <!-- Twitter Meta Tags (twitter also uses og tags) -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta property="twitter:site" content="@skamansam"/>
+  <meta name="twitter:creator" content="@{author}"/>
+  <meta name="twitter:image" content="{twitterImage || opengraphImage || cover}"/>
 
   <title>{title} | RBE</title>
+  <meta name="description" content="{description}"/>
 </svelte:head>
 <main>
   <h1>Post: {title}</h1>
