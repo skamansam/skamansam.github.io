@@ -22,7 +22,6 @@ const REPLACEMENTS = {
 
 function transformer(ast, file) {
   visit(ast, 'text', visitor)
-  console.log(file)
 
   function visitor(node) {
     if (!node.value) return;

@@ -68,7 +68,7 @@
   <meta name="description" content="{description}"/>
 </svelte:head>
 
-<meta property="og:site_name" content="Rude Boy Solutions" />
+<!-- <meta property="og:site_name" content="Rude Boy Solutions" />
 <div itemscope itemtype="http://schema.org/Article" class="hidden">
     <meta itemprop="url" content="{pageUrl}" />
     <span itemprop="name" content="{title} - RBE" />
@@ -83,8 +83,8 @@
     <div itemprop="realatedItem" itemscope itemtype="http://schema.org/Article">
         <a itemprop="url" href="{siteUrl}/categories/{categories[0]}">
     </div>
-    <span itemprop="datePublished" content="{new Date(updated_at).toISOString()}"></span>
-</div>
+    <span itemprop="datePublished" content="{new Date(updated_at).toString()}"></span>
+</div> -->
 
 <main>
   <h1>{title}</h1>
