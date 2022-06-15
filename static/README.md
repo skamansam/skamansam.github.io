@@ -9,7 +9,6 @@ solutions to problems relating to Linux, Windows (probably not much there), and
 other computer-related issues. I hope this will be as educational for you as for
 me!
 
-
 ## Source Branch
 The `main` branch is used for serving up the site. The source branch is `svelte`.
 
