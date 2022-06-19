@@ -28,6 +28,8 @@ jobs:
       - name: Deploy
         run: |
           git config --global init.defaultBranch main
+          mkdir -p build
+          cd build
           git init 
           git config --global user.email "skamansam@users.noreply.github.com"
           git config --global user.name "Github Deploy Action"
