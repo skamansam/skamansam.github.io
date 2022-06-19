@@ -1,40 +1,49 @@
 <script>
-  let clazz = '';
+	let clazz = '';
 	export { clazz as class };
-  import Badge from './Badge.svelte';
-
-  export let title = 'Test Title', 
-             subtitle ='Subtitle goes here',
-             metadata = 'published on Tuesday',
-             badges = ['cat1', 'cat2'],
-             to = null;
-
+	import Badge from './Badge.svelte';
+	/** @type string|null */
+	export let title = 'Test Title',
+		/** @type string|null */
+		subtitle = null,
+		/** @type string|null */
+		metadata = null,
+		/** @type string[]|null */
+		badges = [],
+		/** @type string|null */
+		to = null;
 </script>
 
 <div class="card mx-2 my-3 rounded-xl border p-2 {clazz}">
-  <div class="card-head">
-    <div class="card-badges">
+  <section>
+    <div class="card-head">
+      <div class="card-badges">
         <slot name="badges">
           {#each badges as badge}
-            <Badge text={badge}/>
+            <Badge text={badge} />
           {/each}
         </slot>
       </div>
-    <div class="card-title text-xl font-bold">
-      {#if to}
-        <a href={to} class="decoration-transparent">{title}</a>
-      {:else}
-        {title}
+      <div class="card-title text-xl font-bold">
+        {#if to}
+          <a href={to} class="decoration-transparent">{title}</a>
+        {:else}
+          {title}
+        {/if}
+      </div>
+      {#if subtitle}
+      <div class="card-subtitle text-xs">
+        <slot name="subtitle">{subtitle}</slot>
+      </div>
+      {/if}
+      {#if metadata}
+      <div class="card-metadata text-xs ">
+        <slot name="metadata">{metadata}</slot>
+      </div>
       {/if}
     </div>
-    <div class="card-subtitle text-xs">
-      <slot name="subtitle">{subtitle}</slot>
+    <div class="card-body">
+      <slot />
     </div>
-    <div class="card-metadata text-xs ">
-      <slot name="metadata">{metadata}</slot>
-    </div>
-  </div>
-  <div class="card-body">
-    <slot></slot>
-  </div>
+  </section>
 </div>
