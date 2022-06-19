@@ -1,10 +1,6 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Deploy to `main`
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "svelte" ]
   pull_request:
@@ -17,20 +13,17 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # Runs a set of commands using the runners shell
-      - name: Deploy
+      - name: Install Dependencies
         run: |
-          git config --global init.defaultBranch main
-          git config --local user.email "skamansam@users.noreply.github.com"
-          git config --local user.name "Github Deploy Action"
           npm i -g pnpm
           pnpm i
+      - name: Deploy
+        run: |
+          git config init.defaultBranch main
+          git config user.email "skamansam@users.noreply.github.com"
+          git config user.name "Github Deploy Action"
           pnpm deploy
