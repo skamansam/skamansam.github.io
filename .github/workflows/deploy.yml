@@ -17,7 +17,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: fregante/setup-git-user@v1
       - name: Install Dependencies
         run: |
           npm i -g pnpm
@@ -32,8 +31,8 @@ jobs:
           mkdir -p build
           cd build
           git init 
-          # git config --global user.email "skamansam@users.noreply.github.com"
-          # git config --global user.name "Github Deploy Action"
+          git config --global user.email github-actions@github.com
+          git config --global user.name github-actions
           git add -A 
           git commit -m "deploy"
           git push -f https://github.com/skamansam/skamansam.github.io.git main
