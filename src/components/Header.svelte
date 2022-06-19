@@ -15,7 +15,10 @@
 </script>
 
 <header class={`site-head flex ${clazz || ''}`}>
-	<div class="flex flex-col grow">
+  <div class="header-logo inline-block">
+    <img src="/rbe_logo.gif" alt="Rude Boy Enterprises Logo" width="100">
+  </div>
+	<div class="flex flex-col grow justify-center ml-3">
 		<div class="text-4xl text-onPrimaryBg">Rude Boy Solutions</div>
 		<div class=" indent-5">Solutions. For Life.</div>
 	</div>
