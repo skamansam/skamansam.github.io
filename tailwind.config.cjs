@@ -29,6 +29,9 @@ module.exports = {
         onNeutralBgSofter: 'var(--color-onNeutralBgSofter)',
       },
     },
+    fontFamily: {
+      logoFont: 'var(--font-logoFont)',
+    },
   },
   plugins: [],
 }

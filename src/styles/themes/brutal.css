@@ -1,5 +1,6 @@
 
 .theme-brutal {
+  --font-logoFont: "Oswald", sans-serif;
   --color-primary-100: theme('colors.red.100');
   --color-primary-200: theme('colors.red.200');
   --color-primary-300: theme('colors.red.300');

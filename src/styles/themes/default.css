@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Goldman&family=Mukta&family=Fugaz+One&family=Playball&family=Oswald&display=swap');
 
 :root {
   --color-neutral-100: theme('colors.gray.100');
@@ -17,6 +18,7 @@
   --color-onSecondaryBg: theme('colors.gray.100');
   --color-primarySoft: theme('colors.slate.300');
   --linkDecoration: underline overline theme('colors.violet.300');
+  --font-logoFont: "Goldman", cursive;
 }
 
 .dark {
@@ -30,12 +32,12 @@
 }
 
 header.site-head {
-  @apply ml-5
+  @apply ml-0 font-logoFont;
 }
 header.site-head {}
 
 .sidebar {
-  @apply border mx-3 rounded-xl pt-2 pb-1
+  @apply border mx-3 rounded-xl pt-2 pb-1 font-logoFont;
 }
 .sidebar ul{
   @apply w-full block list-none p-0 m-0 flex justify-center ;

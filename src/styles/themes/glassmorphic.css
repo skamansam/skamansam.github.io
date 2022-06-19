@@ -10,4 +10,5 @@
   --color-primary-700: theme('colors.green.700');
   --color-primary-800: theme('colors.green.800');
   --color-primary-900: theme('colors.green.900');
+  --font-logoFont: "Playball", cursive;
 }

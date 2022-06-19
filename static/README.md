@@ -44,11 +44,12 @@ I rolled this site in about a day, using Svelte, MDSvex, and Tailwind. It has th
 * [ ] 📑 definition list support
 * [ ] 📈 figures and charts with mermaid (initial tests failed. needs more work/debugging)
 * [ ] 🖌️ Theme implementation:
-  * [ ] 🆕 [Neumorphic](https://www.justinmind.com/ui-design/neumorphism)
-  * [ ] 🆖 [Glassmorphic](https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9)
+  * [ ] 🆕 [Neumorphic](https://www.justinmind.com/ui-design/neumorphism) ([How To](https://dev.to/jackdomleo7/learning-neumorphic-design-3dj8))
+  * [ ] 🆖 [Glassmorphic](https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9) ([more...](https://hype4.academy/tools/glassmorphism-generator))
   * [ ] ⏹️ [Brutalistic](https://brutalistwebsites.com/)
   * [ ] 🔌 [More Krazy design elements i might throw together](https://99designs.com/blog/trends/web-design-trends/)
   * [ ] 🧰 [Techniques I may implement, some of which I already have](https://www.theedigital.com/blog/web-design-trends)
 * [ ] Deployments to Netlify
 * [ ] Deployments to Firebase
 * [ ] Comments from Firebase
+* [ ] Show Bookmarks/Highlights/etc from Raindrop.io using api.raindrop.io
