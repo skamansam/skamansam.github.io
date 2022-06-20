@@ -27,12 +27,14 @@ jobs:
           pnpm build
       - name: Deploy
         run: |
-          git config --global init.defaultBranch main
-          mkdir -p build
-          cd build
-          git init 
+          # git config --global init.defaultBranch main
+          # mkdir -p build
+          # cd build
+          # git init 
           git config --global user.email github-actions@github.com
           git config --global user.name github-actions
-          git add -A 
+          pnpm build
+          git add build/*
           git commit -m "deploy"
-          git push -f https://github.com/skamansam/skamansam.github.io.git main
+          git push 
+          # -f https://github.com/skamansam/skamansam.github.io.git main
