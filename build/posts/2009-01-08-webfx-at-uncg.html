@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#999999">
+    <meta name="msapplication-TileColor" content="#cccccc">
+    <meta name="theme-color" content="#eeeeee">
+		<meta http-equiv="content-security-policy" content=""><title>WebFX at UNCG | RBE</title><meta property="og:image" content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta property="og:site_name" content="Rude Boy Solutions" data-svelte="svelte-gwb5t8"><meta property="article:published_time" content="2009-01-08 10:49" data-svelte="svelte-gwb5t8"><meta property="article:author" content="skamansam" data-svelte="svelte-gwb5t8"><meta property="og:url" content="" data-svelte="svelte-gwb5t8"><meta property="og:type" content="article" data-svelte="svelte-gwb5t8"><meta property="og:title" content="WebFX at UNCG - RBE" data-svelte="svelte-gwb5t8"><meta property="og:image" content="false" data-svelte="svelte-gwb5t8"><meta property="og:description" content="Framework of js effects" data-svelte="svelte-gwb5t8"><meta name="twitter:card" content="summary" data-svelte="svelte-gwb5t8"><meta property="twitter:site" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:creator" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:image" content="false" data-svelte="svelte-gwb5t8"><meta name="description" content="Framework of js effects" data-svelte="svelte-gwb5t8">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-4739f310.css">
+	<link rel="modulepreload" href="/_app/immutable/start-6cf47892.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-f095e7d9.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-d2dbcbfa.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/posts/2009-01-08-webfx-at-uncg.md-44429121.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/post-34b2f3fb.js">
+			<script>
+		if ('serviceWorker' in navigator) {
+			addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CV0J6F3VM"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G3FBL50ZMF');
+    </script>
+  </head>
+	<body>
+		
+
+
+<div class="theme-wrapper light theme- h-screen w-screen p-0 m-0 flex flex-col items-stretch"><header class="site-head flex  svelte-1b8k5if"><div class="header-logo inline-block"><img src="/rbe_logo.gif" alt="Rude Boy Enterprises Logo" width="100"></div>
+	<div class="flex flex-col grow justify-center ml-3"><div class="text-4xl text-onPrimaryBg">Rude Boy Solutions</div>
+		<div class="indent-5">Solutions. For Life.</div></div>
+	<div class="mt-2 mr-2 text-sm"><label for="themeSelector">Theme: </label>
+		<select id="themeSelector"><option value="">plain</option><option value="neumorphic">neumorphic</option><option value="glassmorphic">glassmorphic</option><option value="brutal">brutal</option></select>
+
+		<label for="toggle-dark" class="flex items-center cursor-pointer relative mb-4"><span class="mr-3 text-gray-900 text-sm font-medium flex-grow">Dark Mode</span>
+			<input type="checkbox" id="toggle-dark" class="sr-only svelte-1b8k5if">
+			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 mr-5 w-11 rounded-full self-end svelte-1b8k5if"></div></label></div>
+</header>
+  <nav class="sidebar "><ul class=""><li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/posts">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/demo">MD Demo</a></li></ul></nav>
+  <div class="pl-2 pt-2">
+
+
+
+<main><article><hgroup><h1>WebFX at UNCG</h1>
+			<p class="date created_at">posted on: 1/8/2009, 10:49:00 AM</p>
+			
+			<p class="author">by: skamansam</p></hgroup>
+		<div class="description hidden">Framework of js effects</div>
+		<p>Last semester, I started a project to ease my work quite a bit. I noticed that a
+lot of departments at UNCG want to add effects to their sites. In the past, I
+have hand-coded all the effects myself, on an as-needed basis. I have grown a
+little weary of doing this, as it may lead to sloppiness and errors in my code.
+So I started work on a project I call WebFX! WebFX is a mixture of javascript
+and CSS which adds effects and styles to elements based on the element’s class.
+All the class names begin with ‘webFX_’ and are usually suffixed with the name
+of the effect. Since WebFX uses the amazing jQuery library, all the effects
+should work across all browsers! Just in case, I have tested them in Opera 9.5,
+Firefox 3.1, Internet Explorer 5, 5.5, 6, and 7, Konqueror 4.1.3, Lynx 2.8.6,
+W3M 0.5.2, Amaya 11,</p>
+<h2 id="effects">Effects</h2>
+<p>The following FX are “Special FX” designed to do add ‘flash’ to the user experience, without using Flash (the Macromedia kind). Javascript must be enabled.</p>
+<h3 id="always-visible-classwebfx_alwaysvisible"><strong>Always-Visible</strong> (class=“webFX_alwaysVisible”)</h3>
+<p>The element will scroll down with the page, so it is always visible. The main use is to keep the navigation panel always visible to the user.</p>
+<h3 id="image-rotation-classwebfx_rotate"><strong>Image Rotation</strong> (class=“webFX_rotate”)</h3>
+<p>This is called Image Rotation, because most people will use it for such, but really, it will work on any element. It simply rotates all the child elements in order.<strong></strong></p>
+<h3 id="slideshow-classwebfx_slideshow"><strong>Slideshow</strong> (class=“webFX_slideshow”)</h3>
+<p>This is the same as Image Rotation, but with controls added to start, stop, and pause the rotation.</p>
+<h3 id="gallery-classwebfx_gallery"><strong>Gallery</strong> (class=“webFX_gallery”)</h3>
+<p>This is an extension of Slideshow, with an extra section for thumbnails.</p>
+<h2 id="user-interface">User Interface</h2>
+<p>The following FX use the jQuery UI library, with a custom theme designed for UNCG. Javascript must be enabled.</p>
+<h3 id="accordion-classwebfx_accordion"><strong>Accordion</strong> (class=“webFX_accordion”)</h3>
+<p>This is a simple “Accordion” like interface for displaying data. It displays headers, and when the headers are clicked, the content is shown.</p>
+<h3 id="tabbed-navigation-classwebfx_tabs"><strong>Tabbed Navigation</strong> (class=“webFX_tabs”)</h3>
+<p>This turns any list into a series of tabs, with a sub-navigation bar underneath.<strong></strong></p>
+<h3 id="datepicker-classwebfx_datepicker"><strong>DatePicker</strong> (class=“webFX_datePicker”)</h3>
+<p>This allows the user to select a date from a DatePicker, and change the value of the element. Mostly useful for text input fields in forms.</p>
+<h3 id="dialog-classwebfx_dialog"><strong>Dialog</strong> (class=“webFX_dialog”)</h3>
+<p>This displays a dialog (aka ‘message box’) with the first child’s content when the element is clicked. Probably not very useful at UNCG, without some extra scripting.</p>
+<h3 id="slider-classwebfx_dialog"><strong>Slider</strong> (class=“webFX_dialog”)</h3>
+<p>This displays a slider that someone can manipulate. Not very useful at UNCG without some extra scripting.</p>
+<h2 id="styles">Styles</h2>
+<p>The following are UNCG-themed styles meant to be applied to certain elements. No Javascript is required.</p>
+<h3 id="news-classwebfx_news"><strong>News</strong> (class=“webFX_news”)</h3>
+<p>This is the same as Accordion, but with no animation, just the style.</p></article></main></div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="1fh6nas">
+		import { start } from "/_app/immutable/start-6cf47892.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="1fh6nas"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 19],
+				params: {},
+				routeId: "posts/2009-01-08-webfx-at-uncg"
+			}
+		});
+	</script>
+	</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#999999">
+    <meta name="msapplication-TileColor" content="#cccccc">
+    <meta name="theme-color" content="#eeeeee">
+		<meta http-equiv="content-security-policy" content=""><title>Teaching Computer Science in a Web Browser? | RBE</title><meta property="og:image" content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta property="og:site_name" content="Rude Boy Solutions" data-svelte="svelte-gwb5t8"><meta property="article:published_time" content="2010-06-02T21:48:00.000Z" data-svelte="svelte-gwb5t8"><meta property="article:author" content="skamansam" data-svelte="svelte-gwb5t8"><meta property="og:url" content="" data-svelte="svelte-gwb5t8"><meta property="og:type" content="article" data-svelte="svelte-gwb5t8"><meta property="og:title" content="Teaching Computer Science in a Web Browser? - RBE" data-svelte="svelte-gwb5t8"><meta property="og:image" content="false" data-svelte="svelte-gwb5t8"><meta property="og:description" content="Ideas on how to teach CSC courses using only a web browser" data-svelte="svelte-gwb5t8"><meta name="twitter:card" content="summary" data-svelte="svelte-gwb5t8"><meta property="twitter:site" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:creator" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:image" content="false" data-svelte="svelte-gwb5t8"><meta name="description" content="Ideas on how to teach CSC courses using only a web browser" data-svelte="svelte-gwb5t8">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-4739f310.css">
+	<link rel="modulepreload" href="/_app/immutable/start-6cf47892.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-f095e7d9.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-d2dbcbfa.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/posts/2010-06-02-teaching-computer-science-in-a-web-browser.md-208f21d3.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/post-34b2f3fb.js">
+			<script>
+		if ('serviceWorker' in navigator) {
+			addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CV0J6F3VM"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G3FBL50ZMF');
+    </script>
+  </head>
+	<body>
+		
+
+
+<div class="theme-wrapper light theme- h-screen w-screen p-0 m-0 flex flex-col items-stretch"><header class="site-head flex  svelte-1b8k5if"><div class="header-logo inline-block"><img src="/rbe_logo.gif" alt="Rude Boy Enterprises Logo" width="100"></div>
+	<div class="flex flex-col grow justify-center ml-3"><div class="text-4xl text-onPrimaryBg">Rude Boy Solutions</div>
+		<div class="indent-5">Solutions. For Life.</div></div>
+	<div class="mt-2 mr-2 text-sm"><label for="themeSelector">Theme: </label>
+		<select id="themeSelector"><option value="">plain</option><option value="neumorphic">neumorphic</option><option value="glassmorphic">glassmorphic</option><option value="brutal">brutal</option></select>
+
+		<label for="toggle-dark" class="flex items-center cursor-pointer relative mb-4"><span class="mr-3 text-gray-900 text-sm font-medium flex-grow">Dark Mode</span>
+			<input type="checkbox" id="toggle-dark" class="sr-only svelte-1b8k5if">
+			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 mr-5 w-11 rounded-full self-end svelte-1b8k5if"></div></label></div>
+</header>
+  <nav class="sidebar "><ul class=""><li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/posts">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/demo">MD Demo</a></li></ul></nav>
+  <div class="pl-2 pt-2">
+
+
+
+<main><article><hgroup><h1>Teaching Computer Science in a Web Browser?</h1>
+			<p class="date created_at">posted on: 6/2/2010, 9:48:00 PM</p>
+			
+			<p class="author">by: skamansam</p></hgroup>
+		<div class="description hidden">Ideas on how to teach CSC courses using only a web browser</div>
+		<p>With the web becoming more pervasive and HTML5 threatening to annihilate Flash,
+is JavaScript becoming a viable language for teaching advanced topics in
+computer science? Here is a run-down of topics and projects that could be used
+to teach the courses. The following course listing is taken from my university,
+the University of North Carolina at Greensboro. I have organized them by course
+content, as some courses use similar tools/methods. Also note that some courses
+are designed to teach specific software, outside of the browser, so I have
+placed them under the topic “Outside the Browser”</p>
+<h2 id="general-programming-courses">General Programming Courses</h2>
+<h2 id="graphics">Graphics</h2>
+<h2 id="algorithms">Algorithms</h2>
+<h3 id="230-elementary-data-structures-and-algorithms">230 Elementary Data Structures and Algorithms</h3>
+<p>Advanced syntax of high level language taught in CSC 130. Emphasis on
+modularization and abstraction. Big-O analysis of algorithms. Design and use of
+abstract data types with various implementations.</p>
+<h2 id="networking">Networking</h2>
+<h2 id="math-based-courses">Math-Based Courses</h2>
+<h3 id="250-foundations-of-computer-science-i">250 Foundations of Computer Science I</h3>
+<p>An introduction to the fundamental ideas underlying contemporary computer
+science with a focus on the computation and construction of objects.</p>
+<h2 id="hardware">Hardware</h2>
+<p>These classes are designed to teach specific hardware concepts</p>
+<h3 id="261-computer-organization-and-assembly-language">261 Computer Organization and Assembly Language</h3>
+<p>CPU, memory, I/O devices, digital logic design, psw. Number representations
+and machine language. Assembly language instruction types, registers,
+addressing, arithmetic, instruction format, opcodes, pseudo-opcodes, assembler
+directives, system calls, and macros.</p>
+<p>Many would think this class would be difficult to do in the browser, but there
+are many assembly interpreters written in JavaScript.  Here are a few online
+interpreters of interest for this classJS:</p>
+<ul><li><a href="http://http://timhatch.com/projects/jsassembly/" rel="nofollow">JSAssembly</a> - an interpeter for x86 assembly codes</li>
+<li><a href="http://benfirshman.com/projects/jsnes/" rel="nofollow">JSNES</a> - Great working interpreter for SNES ROM images</li>
+<li><a href="http://6502asm.com/" rel="nofollow">6502asm</a> - 6502 assembly code interpreter</li></ul>
+<p>I did not find any online SPARC interpreters, as UNCG teaches this course in
+SPARC assembly, but it would be trivial to modify one of the above to suit. </p>
+<h2 id="outside-the-browser">Outside the Browser</h2>
+<p>These courses are designed to teach specific software, and</p>
+<h3 id="330-advanced-data-structures">330 Advanced Data Structures</h3>
+<p>Static and dynamic data structures emphasizing binary trees and graphs. Advanced programming techniques. Advanced sorting and searching algorithms. Hashing techniques. Performance analysis. Methods of developing large applications programs.</p>
+<h3 id="339-concepts-of-programming-languages">339 Concepts of Programming Languages</h3>
+<p>Concepts of block-structured, object-oriented, functional, logic, and concurrent programming languages. Comparative study of syntactic and semantic features of these languages and writing programs using them.</p>
+<h3 id="340-software-engineering">340 Software Engineering</h3>
+<p>Practical and theoretical concepts of software engineering.</p>
+<h3 id="350-foundations-of-computer-science-ii">350 Foundations of Computer Science II</h3>
+<p>High level concepts in the theoretical foundations of computer science.</p>
+<h3 id="463-basic-systems-administration-laboratory">463 Basic Systems Administration Laboratory</h3>
+<p>Installing operating systems, peripherals, hardware, and software. Backups, recompiling the kernel (loading/unloading modules), providing Web services, and user administration. (Formerly CSC 563)</p>
+<h3 id="464-intermediate-systems-administration-laboratory">464 Intermediate Systems Administration Laboratory</h3>
+<p>Topics selected from routing, firewall, Primary Domain Controller, Backup Domain Controller, Domain Controller trust, SAMBA, DNS round robin, and PPP connectivity setup. (Formerly CSC 564)</p>
+<h3 id="465-advanced-systems-administration-laboratory">465 Advanced Systems Administration Laboratory</h3>
+<p>Automated installation, software installation, systems programming, system administration in a large organization. Projects will include departmental or university computer system work. (Formerly CSC 565)</p>
+<h3 id="471-principles-of-database-systems">471 Principles of Database Systems</h3>
+<p>Contemporary database systems. Emphasis on query processing, design, and implementation of applications in relational (SQL) databases. Introduction to other database models such as XML, object-oriented, and deductive.</p>
+<h3 id="490-senior-project">490 Senior Project</h3>
+<p>Application of classroom knowledge and skills in computer science to solve real-world problems and to develop research and development skills.</p>
+<h3 id="493-honors-work-in-computer-science">493 Honors Work in Computer Science</h3>
+<p>Research in a topic of special interest at the Honors level.</p>
+<h3 id="495-selected-topics-in-computer-science">495 Selected Topics in Computer Science</h3>
+<p>May be repeated for credit for a total of 6 s.h. when topic of study changes.
+A topic of special interest is studied in depth.</p>
+<h3 id="521-computer-graphics">521 Computer Graphics</h3>
+<p>Survey of graphics algorithms, data structures, and techniques.</p>
+<h3 id="522-digital-image-processing">522 Digital Image Processing</h3>
+<p>Image representation, enhancement, compression, coding, restoration, and wavelet transforms.</p>
+<h3 id="523-numerical-analysis-and-computing">523 Numerical Analysis and Computing</h3>
+<p>Number systems and errors, solutions of non-linear and linear systems, eigenvalue problems, interpolation and approximation, numerical differentiation and integration, solution of differential equations.</p>
+<h3 id="524-numerical-analysis-and-computing">524 Numerical Analysis and Computing</h3>
+<p>Continuation of 523 with special topics in numerical analysis, emphasis on applied mathematics.</p>
+<h3 id="526-bioinformatics">526 Bioinformatics</h3>
+<p>Introduction to the problems and methods in Bioinformatics. Problem areas include restriction mapping, map assembly, sequencing, DNA arrays, and sequence comparison.</p>
+<h3 id="529-artificial-intelligence">529 Artificial Intelligence</h3>
+<p>Logical foundations, knowledge representation and reasoning, search, and selected topics such as natural language processing and reasoning under uncertainty.</p>
+<h3 id="539-introduction-to-compiler-design">539 Introduction to Compiler Design</h3>
+<p>Basic techniques of compiler design and implementation: lexical analysis, parsing, code generation. Sizable programming project implementing a compiler for a block-structured language with strong typing.</p>
+<h3 id="540-human-computer-interface-development">540 Human-Computer Interface Development</h3>
+<p>Survey of concepts and techniques for human-computer interface development. Topics include user-centered design, user interface programming, and usability evaluation.</p>
+<h3 id="550-combinatorics-on-words">550 Combinatorics on Words</h3>
+<p>Introduction to the problems and methods in algorithmic combinatorics on words. Problem areas include periodicity, primitivity, and borderedness.</p>
+<h3 id="553-theory-of-computation">553 Theory of Computation</h3>
+<p>Finite state automata and regular expressions, context-free grammars, push-down automata and their use in parsing, overview of language translation systems, models for programming language semantics, computability and undecidability.</p>
+<h3 id="555-algorithm-analysis-and-design">555 Algorithm Analysis and Design</h3>
+<p>Sequential algorithm design and complexity analysis. Dynamic programming. Greedy algorithms. Graph algorithms. Selected advanced topics from NP-completeness; approximation, randomized, parallel, number-theoretic algorithms; Fast Fourier Transform; computational geometry; string matching.</p>
+<h3 id="561-principles-of-computer-architecture">561 Principles of Computer Architecture</h3>
+<p>Hardware and software components of computer systems, their organization and operations. Topics: comparative instruction set architectures, microprogramming, memory management, processor management, I/O, interrupts, and emulation of processors.</p>
+<h3 id="562-principles-of-operating-systems">562 Principles of Operating Systems</h3>
+<p>Techniques and strategies used in operating system design and implementation: managing processes, input/output, memory, scheduling, file systems, and protection.</p>
+<h3 id="567-principles-of-computer-networks">567 Principles of Computer Networks</h3>
+<p>Hardware and software components of computer networks, their organization and operations. Topics: open system interconnection; local area networks; TCP/IP internetworking, routing, and packet switching; network programming.</p>
+<h3 id="568-principles-of-wireless-networks">568 Principles of Wireless Networks</h3>
+<p>Digitial communications, Communication networks, wireless communication technology, wireless networking, wireless LANs and wireless network programming.</p>
+<h3 id="580-cryptography-and-security-in-computing">580 Cryptography and Security in Computing</h3>
+<p>Modern development of cryptography and secure encryption protocols. Program security and viruses. Operating system protection. Network and distributed system security. Database security. Administering security.</p>
+<h3 id="583-firewall-architecture-and-computer-security">583 Firewall Architecture and Computer Security</h3>
+<p>Firewall hardware and software technologies. Architectures, protocols and their applications.</p></article></main></div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="1068m6x">
+		import { start } from "/_app/immutable/start-6cf47892.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="1068m6x"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 33],
+				params: {},
+				routeId: "posts/2010-06-02-teaching-computer-science-in-a-web-browser"
+			}
+		});
+	</script>
+	</body>
+</html>
