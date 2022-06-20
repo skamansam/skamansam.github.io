@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#999999">
+    <meta name="msapplication-TileColor" content="#cccccc">
+    <meta name="theme-color" content="#eeeeee">
+		<meta http-equiv="content-security-policy" content=""><title>Dynamic Models in Rails 3 | RBE</title><meta property="og:image" content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta property="og:site_name" content="Rude Boy Solutions" data-svelte="svelte-gwb5t8"><meta property="article:published_time" content="2016-09-06T09:45:57.000Z" data-svelte="svelte-gwb5t8"><meta property="article:author" content="skamansam" data-svelte="svelte-gwb5t8"><meta property="og:url" content="" data-svelte="svelte-gwb5t8"><meta property="og:type" content="article" data-svelte="svelte-gwb5t8"><meta property="og:title" content="Dynamic Models in Rails 3 - RBE" data-svelte="svelte-gwb5t8"><meta property="og:image" content="false" data-svelte="svelte-gwb5t8"><meta property="og:description" content="How to create dynamic Models in Rails 3" data-svelte="svelte-gwb5t8"><meta name="twitter:card" content="summary" data-svelte="svelte-gwb5t8"><meta property="twitter:site" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:creator" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:image" content="false" data-svelte="svelte-gwb5t8"><meta name="description" content="How to create dynamic Models in Rails 3" data-svelte="svelte-gwb5t8">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-4739f310.css">
+	<link rel="modulepreload" href="/_app/immutable/start-c2778e00.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-f095e7d9.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-d2dbcbfa.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/posts/2016-09-06-dynamic-models-in-rails-3.md-26af135c.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/post-34b2f3fb.js">
+			<script>
+		if ('serviceWorker' in navigator) {
+			addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CV0J6F3VM"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G3FBL50ZMF');
+    </script>
+  </head>
+	<body>
+		
+
+
+<div class="theme-wrapper light theme- h-screen w-screen p-0 m-0 flex flex-col items-stretch"><header class="site-head flex  svelte-1b8k5if"><div class="header-logo inline-block"><img src="/rbe_logo.gif" alt="Rude Boy Enterprises Logo" width="100"></div>
+	<div class="flex flex-col grow justify-center ml-3"><div class="text-4xl text-onPrimaryBg">Rude Boy Solutions</div>
+		<div class="indent-5">Solutions. For Life.</div></div>
+	<div class="mt-2 mr-2 text-sm"><label for="themeSelector">Theme: </label>
+		<select id="themeSelector"><option value="">plain</option><option value="neumorphic">neumorphic</option><option value="glassmorphic">glassmorphic</option><option value="brutal">brutal</option></select>
+
+		<label for="toggle-dark" class="flex items-center cursor-pointer relative mb-4"><span class="mr-3 text-gray-900 text-sm font-medium flex-grow">Dark Mode</span>
+			<input type="checkbox" id="toggle-dark" class="sr-only svelte-1b8k5if">
+			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 mr-5 w-11 rounded-full self-end svelte-1b8k5if"></div></label></div>
+</header>
+  <nav class="sidebar "><ul class=""><li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/posts">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/demo">MD Demo</a></li></ul></nav>
+  <div class="pl-2 pt-2">
+
+
+
+<main><article><hgroup><h1>Dynamic Models in Rails 3</h1>
+			<p class="date created_at">posted on: 9/6/2016, 9:45:57 AM</p>
+			
+			<p class="author">by: skamansam</p></hgroup>
+		<div class="description hidden">How to create dynamic Models in Rails 3</div>
+		<p>Rails 3 has a lot of nifty new features. However, this is not about those
+features. This article is a short description on how to create dynamic models in
+any version of Rails.</p>
+<pre class="language-ruby"><!-- HTML_TAG_START --><code class="language-ruby"><span class="token keyword">class</span> <span class="token class-name">CreateMyDynamicModel</span> <span class="token operator">&lt;</span> ActiveRecord<span class="token double-colon punctuation">::</span>Migration
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">change</span></span>
+    create_table <span class="token symbol">:dynamic_models</span> <span class="token keyword">do</span> <span class="token operator">|</span>t<span class="token operator">|</span>
+      t<span class="token punctuation">.</span>string <span class="token symbol">:name</span><span class="token punctuation">,</span> <span class="token symbol">:null</span><span class="token operator">=></span><span class="token boolean">false</span>
+      t<span class="token punctuation">.</span>string <span class="token symbol">:description</span>
+      t<span class="token punctuation">.</span>text <span class="token symbol">:dynamic_methods</span>
+
+      t<span class="token punctuation">.</span>timestamps
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyDynamicModel</span> <span class="token operator">&lt;</span> ActiveRecord<span class="token double-colon punctuation">::</span>Base
+
+  serialize <span class="token symbol">:dynamic_methods</span><span class="token punctuation">,</span> <span class="token builtin">Hash</span>
+
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">method_missing</span></span><span class="token punctuation">(</span>sym<span class="token punctuation">,</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">&amp;</span>block<span class="token punctuation">)</span>
+    <span class="token comment">#call the super so we can have access to all normal methods/fields/etc.</span>
+    <span class="token keyword">unless</span> <span class="token variable">@meth_miss</span>
+      <span class="token variable">@meth_miss</span><span class="token operator">=</span><span class="token boolean">true</span>   <span class="token comment">#prevent an infinite call chain. only run once</span>
+      super_method_missing<span class="token punctuation">(</span>sym<span class="token punctuation">,</span>args<span class="token punctuation">,</span>block<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+
+    <span class="token comment">#if we already havde this method, return. This should never happen, but just in case...</span>
+    <span class="token keyword">return</span> <span class="token keyword">if</span> <span class="token keyword">defined</span><span class="token operator">?</span><span class="token punctuation">(</span>sym<span class="token punctuation">.</span>to_sym<span class="token punctuation">)</span>
+
+    <span class="token comment">#if the method passed in is an assignment, create the method and assign a value to it</span>
+    <span class="token keyword">if</span> sym <span class="token operator">=~</span> <span class="token regex-literal"><span class="token regex">/^(w+)=$/</span></span>
+      <span class="token keyword">self</span><span class="token punctuation">.</span>dynamic_methods<span class="token punctuation">[</span>$<span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>args<span class="token punctuation">.</span>to_s
+
+    <span class="token comment">#if the method is already assigned something, return it</span>
+    <span class="token keyword">elsif</span> actions<span class="token punctuation">.</span>keys<span class="token punctuation">.</span><span class="token keyword">include</span><span class="token operator">?</span> sym
+      <span class="token keyword">return</span> <span class="token keyword">self</span><span class="token punctuation">.</span>dynamic_methods<span class="token punctuation">[</span>sym<span class="token punctuation">.</span>to_s<span class="token punctuation">]</span>
+
+    <span class="token comment">#If the method has not been assigned anything, we officially have a NoMethodError!</span>
+    <span class="token keyword">else</span>
+      <span class="token keyword">raise</span> NoMethodError
+
+    <span class="token keyword">end</span> <span class="token comment">#/if</span>
+
+  <span class="token keyword">end</span> <span class="token comment">#/method_missing()</span>
+
+<span class="token keyword">end</span> <span class="token comment">#/end class</span></code><!-- HTML_TAG_END --></pre></article></main></div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="kzymr5">
+		import { start } from "/_app/immutable/start-c2778e00.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="kzymr5"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 44],
+				params: {},
+				routeId: "posts/2016-09-06-dynamic-models-in-rails-3"
+			}
+		});
+	</script>
+	</body>
+</html>
