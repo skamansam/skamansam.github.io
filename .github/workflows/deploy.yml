@@ -25,7 +25,6 @@ jobs:
         run: | 
           rm -rf build/*
           pnpm build
-          git mv build docs
       - name: Deploy
         run: |
           # git config --global init.defaultBranch main
@@ -35,6 +34,7 @@ jobs:
           git config --global user.email github-actions@github.com
           git config --global user.name github-actions
           # pnpm build
+          mv build docs
           git add -f docs/*
           git commit -m "deploy"
           git push 
