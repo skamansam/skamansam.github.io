@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#999999">
+    <meta name="msapplication-TileColor" content="#cccccc">
+    <meta name="theme-color" content="#eeeeee">
+		<meta http-equiv="content-security-policy" content=""><title>Building Enlightenment e17 on Fedora 10 x86_64 | RBE</title><meta property="og:image" content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta property="og:site_name" content="Rude Boy Solutions" data-svelte="svelte-gwb5t8"><meta property="article:published_time" content="2009-04-02 21:34" data-svelte="svelte-gwb5t8"><meta property="article:author" content="skamansam" data-svelte="svelte-gwb5t8"><meta property="og:url" content="" data-svelte="svelte-gwb5t8"><meta property="og:type" content="article" data-svelte="svelte-gwb5t8"><meta property="og:title" content="Building Enlightenment e17 on Fedora 10 x86_64 - RBE" data-svelte="svelte-gwb5t8"><meta property="og:image" content="false" data-svelte="svelte-gwb5t8"><meta property="og:description" content="How to Build Enlightenment Desktop on Fedora 10" data-svelte="svelte-gwb5t8"><meta name="twitter:card" content="summary" data-svelte="svelte-gwb5t8"><meta property="twitter:site" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:creator" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:image" content="false" data-svelte="svelte-gwb5t8"><meta name="description" content="How to Build Enlightenment Desktop on Fedora 10" data-svelte="svelte-gwb5t8">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-4739f310.css">
+	<link rel="modulepreload" href="/_app/immutable/start-e30deeea.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-f095e7d9.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-d2dbcbfa.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64.md-8c76fc1d.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/post-34b2f3fb.js">
+			<script>
+		if ('serviceWorker' in navigator) {
+			addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CV0J6F3VM"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G3FBL50ZMF');
+    </script>
+  </head>
+	<body>
+		
+
+
+<div class="theme-wrapper light theme- h-screen w-screen p-0 m-0 flex flex-col items-stretch"><header class="site-head flex  svelte-1b8k5if"><div class="header-logo inline-block"><img src="/rbe_logo.gif" alt="Rude Boy Enterprises Logo" width="100"></div>
+	<div class="flex flex-col grow justify-center ml-3"><div class="text-4xl text-onPrimaryBg">Rude Boy Solutions</div>
+		<div class="indent-5">Solutions. For Life.</div></div>
+	<div class="mt-2 mr-2 text-sm"><label for="themeSelector">Theme: </label>
+		<select id="themeSelector"><option value="">plain</option><option value="neumorphic">neumorphic</option><option value="glassmorphic">glassmorphic</option><option value="brutal">brutal</option></select>
+
+		<label for="toggle-dark" class="flex items-center cursor-pointer relative mb-4"><span class="mr-3 text-gray-900 text-sm font-medium flex-grow">Dark Mode</span>
+			<input type="checkbox" id="toggle-dark" class="sr-only svelte-1b8k5if">
+			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 mr-5 w-11 rounded-full self-end svelte-1b8k5if"></div></label></div>
+</header>
+  <nav class="sidebar "><ul class=""><li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/posts">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/demo">MD Demo</a></li></ul></nav>
+  <div class="pl-2 pt-2">
+
+
+
+<main><article><hgroup><h1>Building Enlightenment e17 on Fedora 10 x86_64</h1>
+			<p class="date created_at">posted on: 4/2/2009, 9:34:00 PM</p>
+			
+			<p class="author">by: skamansam</p></hgroup>
+		<div class="description hidden">How to Build Enlightenment Desktop on Fedora 10</div>
+		<p>DISCLAIMER: The following did NOT work correctly for me. The applications worked
+correctly, but the desktop fails. When I find out what went wrong, I will modify
+this post to suit.</p>
+<p>Today i have begun to build and install Enlightenment e17 on my Fedora 10 x86_64
+laptop. I have Googled for a few sites to help me get started, only to discover
+their directions are very lacking. VERY lacking. So to compensate, i am writing
+this article on the things you need to get started with Enlightenment e17. If
+you would like to try out e17, you can use yum to install some of the base
+componenets, but remember to erase them with <code>yum -e enlightenment</code> before you
+start building e17 or some severe nastiness could occur. The packages I have
+installed for my evaluation are: bitmap_fonts, e_dbus, edje, efreet, embryo,
+enlightenment, eterm, and libast. The reason I didn’t just use the yum packages
+is that I know e17 has a lot of dependencies and a lot of hidden features. I
+like to have a lot of features! Read on to find out about some of those
+features.</p>
+<h2 id="step-1-preparations">Step 1: Preparations</h2>
+<p>You are going to need a few dependencies for this. Some you can get via yum, and others you need to get from a version control repository. Here are the command you need to execute:
+sudo yum install libjpeg-devel libtiff-devel libpng-devel giflib-devel freetype-devel libXext-devel libid3tag-devel subversion imlib2-devel libxcb libxcb-devel libxcb-util libxcb-util libxcb-util-devel glew-devel libXrender-devel directfb-devel xine-lib-devel gstreamer-devel gstreamer-plugins-base-devel vlc-devel
+mkdir ~/Download/e17
+cd ~/Download/e17
+svn co <a href="http://svn.enlightenment.org/svn/e" rel="nofollow">http://svn.enlightenment.org/svn/e</a>
+svn co <a href="http://ememoa.googlecode.com/svn/trunk/" rel="nofollow">http://ememoa.googlecode.com/svn/trunk/</a> ememoa-read-only</p>
+<h2 id="step-2-the-long-drive-home">Step 2: The long drive home</h2>
+<p>Ok. Now that we have our tools, we can start the dirty work: building e17. I am listing this in the order you should build. Just follow along and shout, “Hoo-Raaahhhh!!!” at the appropriate times. For brevity, I will be listing the package names in bold font, then the directory in which it can be found in brackets. Then I will give a hort description of the file, and any options to be passed to ./configure. You should run three commands with each step:</p>
+<ol><li><code>cd</code> to change into that directory. All directory names will be relative to <sub>/Download/e17/e/trunk/, except the ememoa package, which should be </sub>/Download/e17/ememoa-read-only/</li>
+<li><code>./configure --libdir=/usr/lib64 --prefix=/usr</code> with the config options appended to the end, seperated by spaces. See the first two examples to see what I mean. (NOTE: If you are missing the ./configure script for any of the following steps, run ./autogen.sh first.)</li>
+<li><code>&lt;code&gt;gmake &amp;&amp; sudo gmake install&lt;/code&gt;</code> This command builds the package, prompts for your password, if you are in the sudoers file, and installs it. This step may take some time before prompting for your password.</li></ol>
+<h3 id="ememoa--ememoa-read-only-----enable-pthread---enable-use64">Ememoa [ ememoa-read-only/ ]  <code>--enable-pthread --enable-use64</code></h3>
+<blockquote><p>We are going to build ememoa first. From the ememoa website, it is a “memory pool
+allocator that helps to improve memory allocation speed and memory usage by improving
+memory locality during data manipulation.” What this means is that ememoa helps speed
+up memory access, which will make e17 faster.
+So if you’re following along, you should execute the following:</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token builtin class-name">cd</span> ~/Download/e17/ememoa/
+./configure --libdir<span class="token operator">=</span>/usr/lib64 --prefix<span class="token operator">=</span>/usr --enable-pthread --enable-use64
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span></code><!-- HTML_TAG_END --></pre>
+<p>This package may not install a file in the correct place, so we need to make sure
+it is. Run <code>ls /usr/lib64/pkgconfig/ememoa.pc</code>. If it says there is no file,
+then issue: <code>mv /usr/lib/pkgconfig/ememoa* /usr/lib64/pkgconfig/</code></p></blockquote>
+<h3 id="imlib2--imlib2-">Imlib2 [ imlib2/ ]</h3>
+<blockquote><p>This is a tricky one. So much software depends on imlib that is will be nearly
+impossible to uninstall. You can, however, build imlib and simply install it over
+existing files. If you want to do this, just run
+<code>cd ~ &amp;&amp; yumdownloader imlib2 imlib2-devel</code>. If you have problems after
+building imlib2, simply login in a terminal and issue
+<code>sudo rpm -ivh --force ~/imlib2*.rpm</code> (replace ‘user’ with your username) to
+restore the old files. OK - now that the disclaimer is over with, on to the
+next commands:</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>/e/trunk/imlib2
+./configure --prefix<span class="token operator">=</span>/usr --libdir<span class="token operator">=</span>/usr/lib64</code><!-- HTML_TAG_END --></pre>
+<p>The end of the output of this last command will give you a asummary of what
+is going to be included in the build. You should see a list of “Image Loaders”
+with all yes’s. If you don’t, then issue <code>yum install libXXX-devel</code> for each
+one. For instance, if you see that TIFF and ID3 are “no,” then run
+<code>sudo yum install libtiff-devel libid3-devel</code>. “Use AMD64 for speed”
+should be yes and “use MMX…” should be no. I am not sure what “visibility hiding”
+is, so leave it as-is. Now issue:</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash"><span class="token function">make</span>
+<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span></code><!-- HTML_TAG_END --></pre></blockquote>
+<h3 id="eina--eina----enable-ememoa">eina [ eina/ ] <code>--enable-ememoa</code></h3>
+<blockquote><p>From the web site: “Eina is a multi-platform library that provides optimized
+data types and a few tools that could be used for projects.” To build:</p></blockquote>
+<h3 id="eet--eet-">Eet [ eet/ ]</h3>
+<blockquote><p>Eet is a cool little library used
+for data input/output that is written very little and read very much.</p>
+<h3 id="edb--oldedb-">Edb [ OLD/edb/ ]</h3>
+<p>The edb library is in the OLD
+directory, but some packages look for it and may use it. If you want to use
+this library, charge on!</p>
+<h3 id="imlib2-extras--imlib2_loaders-">Imlib2 Extras [ imlib2_loaders/ ]</h3>
+<p>Now that we have some libs installed, we can build
+some more imlib2 image loaders.</p>
+<h3 id="imlib2-extras--imlib2_tools-">Imlib2 Extras [ imlib2_tools/ ]</h3>
+<p>This package contains some extra tools for developing with Imlib. </p>
+<h3 id="evas--evas----enable-gl-x11---enable-gl-glew---enable-software-xcb---enable-buffer---enable-xrender-x11---enable-software-sdl---enable-directfb---enable-fb">Evas [ evas/ ] <code>--enable-gl-x11 --enable-gl-glew --enable-software-xcb --enable-buffer --enable-xrender-x11 --enable-software-sdl --enable-directfb --enable-fb</code></h3>
+<p>From the wiki: “Evas is a hardware-accelerated canvas API for X-Windows
+that can draw anti-aliased text, smooth super and sub-sampled images,
+alpha-blend, as well as drop down to using normal X11 primitives such as
+pixmaps, lines and rectangles for speed if your CPU or graphics hardware are
+too slow. ” This is how e17 gets its speed for its cool effects. The following
+lines are for installing it with all the backends enabled. There is one
+problem in the current SVN: glew support is not working. If you try the
+following <code>./configure</code> line and make gives you an error, remove the
+<code>--enable-gl-glew</code> from the <code>./configure</code> command and run it again. If you get
+errors while building, it means that the correct devel packages aren’t
+installed, and you should check Step 1 for the correct packages to install.</p>
+<h3 id="ecore--ecore-">Ecore [ ecore/ ]</h3>
+<p>This is the core library
+for Enlightenment. It handles events, draws the GUI, and does a lot of graphic
+stuff.  Just a simple few commands should pick up all the previous
+configuration information: </p>
+<h3 id="efreet--efreet-">Efreet [ efreet/ ]</h3>
+<p>Efreet implements a bunch of protocols set by freedesktop.org. This
+includes icon themes, .desktop file support, and menus.</p>
+<h3 id="embryo--embryo----enable-doc">Embryo [ embryo/ ] <code>--enable-doc</code></h3>
+<p>Embryo is a
+C-like scripting language used by enlightenment. Add <code>--enable-doc</code> to the
+<code>./configure</code> line if you want to install documentation for this.</p>
+<h3 id="edje-edje---enable-doc---enable-edje-program-cache">Edje [edje/] <code>--enable-doc --enable-edje-program-cache</code></h3>
+<p>From the wiki: “Edje is an attempt to
+find a middleground between theming and programming without turning the theme
+itself into just yet another program.” It is the awesome theming engine for
+enlightenment. </p>
+<h3 id="e_dbus--e_dbus-">E_DBus [ e_dbus/ ]</h3>
+<p>This is
+the D-Bus connection for e17. It is used to get and set system information,
+using an interface common to a lot of applications.</p>
+<h3 id="etk--etk-">ETK [ etk/ ]</h3>
+<p>Etk is the enlightenment toolit,
+which is based on EFL. If you managed to enable framebuffer support in ecore,
+this will automatically enable framebuffer support in etk.</p>
+<h3 id="exml--exml-">EXML [ exml/ ]</h3>
+<p>A neat library for dealing with XML files. </p>
+<h3 id="epsilon--epsilon----enable-thumbnailer-xine">Epsilon [ epsilon/ ] <code>--enable-thumbnailer-xine</code></h3>
+<p>A library for creating quick thumbnails.</p>
+<h3 id="emotion--epsilon-">Emotion [ epsilon/ ]</h3>
+<p>A library for videos. </p>
+<h3 id="enity--enity-">Enity [ enity/ ]</h3>
+<p>A library for creating dialogs, much like xdialog.</p>
+<h3 id="etk-extras--etk_extra-">Etk Extras [ etk_extra/ ]</h3>
+<p>Extra libs for etk. </p>
+<h3 id="evolve--evolve-">Evolve [ evolve/ ]</h3>
+<p>Allows you to theme your windows using an edje-like syntax.</p>
+<h3 id="enlightenment-widget-library--ewl-">Enlightenment Widget Library [ ewl/ ]</h3>
+<p>A toolkit for creating EFL-based GUIs.</p>
+<h3 id="expedite--expedite-">Expedite [ expedite/ ]</h3>
+<p>Benchmarking suite for e17. </p>
+<h3 id="enhance--enhance-">Enhance [ enhance/ ]</h3>
+<p>Allows you to use glade files with e17 libs for easier UI development!</p></blockquote>
+<h3 id="exchange--protoexchange-">Exchange [ PROTO/exchange/ ]</h3>
+<blockquote><p>Enlightenment looks for this lib and uses it if it is installed. The README says “The
+enlightened way to exchange stuffs!” I’m not sure what this is, but we’re
+going to use it anyway! NOTE: this is a prototype library, and may not
+function when you download it. If the build fails with an odd error, it may be
+fixed by the following day. </p>
+<h3 id="esmart--esmart-">Esmart [ esmart/ ]</h3>
+<p>A collection of smarter evas objects.</p>
+<h3 id="enlightenment--e-">Enlightenment [ e/ ]</h3>
+<p>The actual enlightenment desktop environment.</p>
+<h3 id="entrance--entrance-">Entrance [ entrance/ ]</h3>
+<p>An enlightenment login manager, to replace gdm, kdm, or xdm. In order to
+be able to run entrance as your display manager, you must edit a few files as
+root. In <code>/etc/X11/xdm/Xsession</code>, find the area that looks like: </p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">failsafe<span class="token punctuation">)</span>
+<span class="token punctuation">..</span>.code here<span class="token punctuation">..</span><span class="token punctuation">..</span>
+gnome<span class="token operator">|</span>gnome-session<span class="token punctuation">)</span>
+<span class="token punctuation">..</span>.code here<span class="token punctuation">..</span><span class="token punctuation">..</span></code><!-- HTML_TAG_END --></pre>
+<p>and add the following lines before “failsafe)“:</p>
+<pre class="language-bash"><!-- HTML_TAG_START --><code class="language-bash">enlightenment<span class="token punctuation">)</span>
+<span class="token builtin class-name">exec</span> <span class="token variable">$SSH_AGENT</span> /bin/sh -c <span class="token string">"exec -l <span class="token environment constant">$SHELL</span> -c <span class="token entity" title="&quot;">"</span>enlightenment<span class="token entity" title="&quot;">"</span>"</span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p>Then open <code>/etc/sysconfig/desktop</code> and make sure it says <code>DISPLAYMANAGER=enlightenment</code></p></blockquote>
+<h2 id="step-3-eapps">Step 3: EApps</h2>
+<p>Now that we’ve built our main libraries and software - on to the fun stuff! We
+are now going to build more apps for use with enlightenment.</p>
+<h3 id="edje-editor--edje_editor-">Edje Editor [ edje_editor/ ]</h3>
+<blockquote><p>This is an editor for theme files. Really awesome!</p>
+<h3 id="edje-viewer--edje_editor-">Edje Viewer [ edje_editor/ ]</h3>
+<p>This is an editor for theme files. Really awesome!</p>
+<h3 id="elicit--elicit-">Elicit [ elicit/ ]</h3>
+<p>A screen zoomer. and color picker. </p>
+<h3 id="elitaire--elitaire-">Elitaire [ elitaire/ ]</h3>
+<p>Solitaire game for e17.</p></blockquote></article></main></div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="1m84xsd">
+		import { start } from "/_app/immutable/start-e30deeea.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="1m84xsd"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 26],
+				params: {},
+				routeId: "posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64"
+			}
+		});
+	</script>
+	</body>
+</html>

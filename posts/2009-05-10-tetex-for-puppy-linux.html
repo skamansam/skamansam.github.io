@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#999999">
+    <meta name="msapplication-TileColor" content="#cccccc">
+    <meta name="theme-color" content="#eeeeee">
+		<meta http-equiv="content-security-policy" content=""><title>TeTex for Puppy Linux | RBE</title><meta property="og:image" content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta property="og:site_name" content="Rude Boy Solutions" data-svelte="svelte-gwb5t8"><meta property="article:published_time" content="2009-05-10T17:02:00.000Z" data-svelte="svelte-gwb5t8"><meta property="article:author" content="skamansam" data-svelte="svelte-gwb5t8"><meta property="og:url" content="" data-svelte="svelte-gwb5t8"><meta property="og:type" content="article" data-svelte="svelte-gwb5t8"><meta property="og:title" content="TeTex for Puppy Linux - RBE" data-svelte="svelte-gwb5t8"><meta property="og:image" content="false" data-svelte="svelte-gwb5t8"><meta property="og:description" content="Creating a TeTex .pup for Puppy Linux 4.20" data-svelte="svelte-gwb5t8"><meta name="twitter:card" content="summary" data-svelte="svelte-gwb5t8"><meta property="twitter:site" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:creator" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:image" content="false" data-svelte="svelte-gwb5t8"><meta name="description" content="Creating a TeTex .pup for Puppy Linux 4.20" data-svelte="svelte-gwb5t8">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-4739f310.css">
+	<link rel="modulepreload" href="/_app/immutable/start-e30deeea.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-f095e7d9.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-d2dbcbfa.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/posts/2009-05-10-tetex-for-puppy-linux.md-73d17533.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/post-34b2f3fb.js">
+			<script>
+		if ('serviceWorker' in navigator) {
+			addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CV0J6F3VM"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G3FBL50ZMF');
+    </script>
+  </head>
+	<body>
+		
+
+
+<div class="theme-wrapper light theme- h-screen w-screen p-0 m-0 flex flex-col items-stretch"><header class="site-head flex  svelte-1b8k5if"><div class="header-logo inline-block"><img src="/rbe_logo.gif" alt="Rude Boy Enterprises Logo" width="100"></div>
+	<div class="flex flex-col grow justify-center ml-3"><div class="text-4xl text-onPrimaryBg">Rude Boy Solutions</div>
+		<div class="indent-5">Solutions. For Life.</div></div>
+	<div class="mt-2 mr-2 text-sm"><label for="themeSelector">Theme: </label>
+		<select id="themeSelector"><option value="">plain</option><option value="neumorphic">neumorphic</option><option value="glassmorphic">glassmorphic</option><option value="brutal">brutal</option></select>
+
+		<label for="toggle-dark" class="flex items-center cursor-pointer relative mb-4"><span class="mr-3 text-gray-900 text-sm font-medium flex-grow">Dark Mode</span>
+			<input type="checkbox" id="toggle-dark" class="sr-only svelte-1b8k5if">
+			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 mr-5 w-11 rounded-full self-end svelte-1b8k5if"></div></label></div>
+</header>
+  <nav class="sidebar "><ul class=""><li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/posts">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/demo">MD Demo</a></li></ul></nav>
+  <div class="pl-2 pt-2">
+
+
+
+<main><article><hgroup><h1>TeTex for Puppy Linux</h1>
+			<p class="date created_at">posted on: 5/10/2009, 5:02:00 PM</p>
+			
+			<p class="author">by: skamansam</p></hgroup>
+		<div class="description hidden">Creating a TeTex .pup for Puppy Linux 4.20</div>
+		<p>SORRY!: The current sfs file is broken. I am working as fast as I can to fix this, so check back for more!</p>
+<p>I have recently had to send my new laptop back for a power board replacement, so
+I have resurrected my old laptop. It is a HP Pavilion ze4900 that my coworker
+gave me 2 years ago. (It was an old one he didn’t want.) This laptop was pretty
+old when I got it, and a series of unfortunate events occured.</p>
+<p>First, the power cord got fragged. Then the battery died. Lastly, the hard drive
+failed. With all these problems, there was only one solution: a small,
+lightweight linux distro to use as a dumb terminal for my server. So I installed
+Puppy Linux on a CD, ran it with a USB drive and worked on my Summer of Code
+project with it. I loved Puppy Linux!</p>
+<p>Since I am now in that same position, I have decided to update my version of
+Puppy from 4.00 to 4.20. I also found out that without a hard drive even
+attached, this laptop will boot from a USB drive. Since I now have a 8 Gb drive
+and plenty of space, I decided to install a few extra programs, including the
+development .sfs file, which allows me to build software for this excellent
+distro!</p>
+<p>I really wanted tetex and a good editor, but don’t really like installing
+pups/pets. I prefer sfs files, so I can have better control over what is
+installed and how it is installed. So I got down to it!</p>
+<p>I went over to the the Puppy Linux forum to find out how to make sfs files, and
+found a great tool <a title="Edit-SFS" href="http://www.murga-linux.com/puppy/viewtopic.php?t=12112">here</a>. Then I
+downloaded tetex and texmf, compiled it in /usr/local/tetex, and created <a title="tetex/texmf file" href="http://rbe.homeip.net/content/downloads/files/texmf_420.sfs">this sfs
+file</a>. To use it, just put it in the same location as your pup_save.2fs file
+and reboot. If you want to use it with other versions of Puppy Linux, change the
+420 in the filename to 400 or 300 or whatever the standard is for your version.</p>
+<p>I am also working on incorporating several tex editors with it, so keep checking
+back for more!</p></article></main></div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="1clycz1">
+		import { start } from "/_app/immutable/start-e30deeea.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="1clycz1"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 28],
+				params: {},
+				routeId: "posts/2009-05-10-tetex-for-puppy-linux"
+			}
+		});
+	</script>
+	</body>
+</html>
