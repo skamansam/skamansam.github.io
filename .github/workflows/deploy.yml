@@ -24,20 +24,24 @@ jobs:
       - name: Build
         run: | 
           rm -rf build
-          rm -rf docs
           pnpm build
       - name: Deploy
-        run: |
-          # git config --global init.defaultBranch main
-          # mkdir -p build
-          # cd build
-          # git init 
-          git config --global user.email github-actions@github.com
-          git config --global user.name github-actions
-          # pnpm build
-          mv build docs
-          touch docs/.nojekyll
-          git add -f docs/*
-          git commit -m "deploy"
-          git push 
-          # -f https://github.com/skamansam/skamansam.github.io.git main
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+#       - name: Deploy
+#         run: |
+#           # git config --global init.defaultBranch main
+#           # mkdir -p build
+#           # cd build
+#           # git init 
+#           git config --global user.email github-actions@github.com
+#           git config --global user.name github-actions
+#           # pnpm build
+#           mv build docs
+#           touch docs/.nojekyll
+#           git add -f docs/*
+#           git commit -m "deploy"
+#           git push 
+#           # -f https://github.com/skamansam/skamansam.github.io.git main
