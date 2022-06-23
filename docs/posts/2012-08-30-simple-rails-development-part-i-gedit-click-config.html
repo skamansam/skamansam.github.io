@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#999999">
+    <meta name="msapplication-TileColor" content="#cccccc">
+    <meta name="theme-color" content="#eeeeee">
+		<meta http-equiv="content-security-policy" content=""><title>Simple Rails Development Part I: Gedit Click Config | RBE</title><meta property="og:image" content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta content="/images/GSoC-logo-horizontal-800.png" data-svelte="svelte-gwb5t8"><meta property="og:site_name" content="Rude Boy Solutions" data-svelte="svelte-gwb5t8"><meta property="article:published_time" content="2012-08-30T23:29:00.000Z" data-svelte="svelte-gwb5t8"><meta property="article:author" content="skamansam" data-svelte="svelte-gwb5t8"><meta property="og:url" content="" data-svelte="svelte-gwb5t8"><meta property="og:type" content="article" data-svelte="svelte-gwb5t8"><meta property="og:title" content="Simple Rails Development Part I: Gedit Click Config - RBE" data-svelte="svelte-gwb5t8"><meta property="og:image" content="false" data-svelte="svelte-gwb5t8"><meta property="og:description" content="Configuring GEdit Click Config Plugin" data-svelte="svelte-gwb5t8"><meta name="twitter:card" content="summary" data-svelte="svelte-gwb5t8"><meta property="twitter:site" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:creator" content="@skamansam" data-svelte="svelte-gwb5t8"><meta name="twitter:image" content="false" data-svelte="svelte-gwb5t8"><meta name="description" content="Configuring GEdit Click Config Plugin" data-svelte="svelte-gwb5t8">
+	<link rel="stylesheet" href="/_app/immutable/assets/pages/__layout.svelte-4739f310.css">
+	<link rel="modulepreload" href="/_app/immutable/start-c2778e00.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-f095e7d9.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/__layout.svelte-d2dbcbfa.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config.md-23c27ade.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/post-34b2f3fb.js">
+			<script>
+		if ('serviceWorker' in navigator) {
+			addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CV0J6F3VM"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G3FBL50ZMF');
+    </script>
+  </head>
+	<body>
+		
+
+
+<div class="theme-wrapper light theme- h-screen w-screen p-0 m-0 flex flex-col items-stretch"><header class="site-head flex  svelte-1b8k5if"><div class="header-logo inline-block"><img src="/rbe_logo.gif" alt="Rude Boy Enterprises Logo" width="100"></div>
+	<div class="flex flex-col grow justify-center ml-3"><div class="text-4xl text-onPrimaryBg">Rude Boy Solutions</div>
+		<div class="indent-5">Solutions. For Life.</div></div>
+	<div class="mt-2 mr-2 text-sm"><label for="themeSelector">Theme: </label>
+		<select id="themeSelector"><option value="">plain</option><option value="neumorphic">neumorphic</option><option value="glassmorphic">glassmorphic</option><option value="brutal">brutal</option></select>
+
+		<label for="toggle-dark" class="flex items-center cursor-pointer relative mb-4"><span class="mr-3 text-gray-900 text-sm font-medium flex-grow">Dark Mode</span>
+			<input type="checkbox" id="toggle-dark" class="sr-only svelte-1b8k5if">
+			<div class="toggle-bg bg-gray-200 border-2 border-gray-200 h-6 mr-5 w-11 rounded-full self-end svelte-1b8k5if"></div></label></div>
+</header>
+  <nav class="sidebar "><ul class=""><li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/posts">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/demo">MD Demo</a></li></ul></nav>
+  <div class="pl-2 pt-2">
+
+
+
+<main><article><hgroup><h1>Simple Rails Development Part I: Gedit Click Config</h1>
+			<p class="date created_at">posted on: 8/30/2012, 11:29:00 PM</p>
+			
+			<p class="author">by: skamansam</p></hgroup>
+		<div class="description hidden">Configuring GEdit Click Config Plugin</div>
+		<p>After evaluating all editors and IDEs I could ahold of for Ruby On Rails
+development in Linux, I decided none were really up to my expectations. I was
+really looking for something as powerful for Rails development as Eclipse is for
+Java development. Unfortunately, there were not any. Most of them were close,
+but all lacked some key ingredient necessary to make my life a little easier.
+However, I did find a great solution which required learning a little more about
+an undiscovered basic text editor in Fedora: GEdit. In order to make my rails
+development a little easier, I installed a few plugins, but only one of them
+took me by surprise: Click Config.</p>
+<p><strong>NOTE: This article is written for GEdit 3+. A simple Google search will yield many articles for Gedit 2.</strong></p>
+<p>Most IDEs and editors have different functions when multi-clicking in an editor pane. Most of them have the following selection actions:</p>
+<ul><li><strong>Single-Click</strong>: Move the editing cursor to the mouse cursor’s location</li>
+<li><strong>Double-Click</strong>: Select the word that is under the mouse cursor</li>
+<li><strong>Triple-Click</strong>: Select the entire line that is under the mouse cursor</li></ul>
+<p>Only a few editors have a quad-click option for selecting an entire paragraph.
+GEdit Click Config not only has a quad-click option, but has a quit-click (five
+clicks in quick succession) option as well. Amazing! Not only can you configure
+what click-types are available in GEdit, but you can configure the click
+parameters based on a given regular expression (“regex” for short). And to top
+it all off, you can configure which click options are activated based on what
+language GEdit is set to.</p>
+<h2 id="i-gotta-have-it">I Gotta Have It!</h2>
+<p>I have not found a distro yet which ships with GNOME and does not have GEdit as
+well, so it should be in your local *nix distro’s repository or already
+installed it.  If you don’t have it already, you can pick it up from
+<a href="http://code.google.com/p/gedit-click-config/" rel="nofollow">the google code repo</a>, and it doesn’t require root
+access, so setup should be really simple, just follow the directions.</p>
+<h2 id="you-mentioned-ruby-on-rails">You mentioned Ruby on Rails?</h2>
+<p>Yes… yes I did.  You can find out more about Ruby words, constants, and other
+things
+<a href="http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Variables_and_Constants" rel="nofollow">here</a>.
+Ruby words are pretty simple: they:</p>
+<ol><li><strong>can begin with a single $ sign</strong></li>
+<li><strong>can begin with a single or double @ sign, a</strong></li>
+<li><strong>can contain any letter a-z, case insensitive</strong></li></ol>
+<p>I like to add a fourth rule, just for constants, because when i select a part of
+a constant, i want the whole thing: <strong>can contain two colons in a row</strong>.</p>
+<p>To put all that in simple regular
+expressions: <code>((\$?)|(@?@?))([_a-zA-Z]+(::)?)+</code>. I am sure you can write that in
+a thousand different ways, but that is the one I like best, because it is really
+clear what is going on. Also - the matches almost line up at \2,\3,\4.\5 This
+regex should be newly defined in the Click Config settings. You can get there by
+menu, at Edit-&gt;Click Config-&gt;Configure. You can create a new selection
+rule by adding it in the only editable inoput field at the bottom, clicking the
+“Add” button and entering a name for it. I suggest using “Ruby Word” for the
+name.</p>
+<p>I also find myself moving ruby strings around a lot. Wouldn’t it be great if you
+could just triple-click and select the entire string? With GEdit Click Config,
+you can! All you have to do is create a new selection rule, with the following
+regular expression: <code>([&#39;&quot;]).*?\1</code>. Make sure to check the ‘M’ flag to the right
+of the input field, in prder to make it multi-line, if you wish. To break down
+the pattern, the first paren matches either single- or double-quotes. Then match
+anything until you get to the next single- or double-quote. The ‘\1’ means to
+match the value from the first parenthetical match, so the quotes will line up
+properly. The ’.*?’ means to match anything, but only until the next regex
+portion matches. If we leave out the question mark, we will match anything until
+the last next-character match, This is called a non-greedy search, and is
+necessary for this type of pattern-matching.</p>
+<h2 id="come-together">Come Together</h2>
+<p>I hope you learn to enjoy some of the basics as I have. To close this entry out,
+I will list all the Click Configs I have for all my Languages:</p>
+<h4 id="selection-rules">Selection Rules</h4>
+<ul><li>Ruby Word: <code>((\$?)|(@?@?))([_a-zA-Z]+(::)?)+</code>    (Flags: None)</li>
+<li>Full Quote: <code>([&#39;&quot;]).*?\1 (Flags: M)</code></li>
+<li>Single-Line Quote  (Flags: None)</li>
+<li>Haml Word: <code>(\.|\#|\$?|(@?@?))([_a-zA-Z]+(::)?)+</code></li></ul></article></main></div></div>
+
+
+		<script type="module" data-sveltekit-hydrate="1x6kjug">
+		import { start } from "/_app/immutable/start-c2778e00.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="1x6kjug"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 39],
+				params: {},
+				routeId: "posts/2012-08-30-simple-rails-development-part-i-gedit-click-config"
+			}
+		});
+	</script>
+	</body>
+</html>
