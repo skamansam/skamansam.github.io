@@ -23,7 +23,8 @@ jobs:
           pnpm i
       - name: Build
         run: | 
-          rm -rf build/*
+          rm -rf build
+          rm -rf docs
           pnpm build
       - name: Deploy
         run: |
@@ -35,6 +36,7 @@ jobs:
           git config --global user.name github-actions
           # pnpm build
           mv build docs
+          touch docs/.nojekyll
           git add -f docs/*
           git commit -m "deploy"
           git push 
