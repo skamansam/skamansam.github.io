@@ -1,5 +1,5 @@
 const build = [
-  "/_app/immutable/start-c2778e00.js",
+  "/_app/immutable/start-62d4190a.js",
   "/_app/immutable/pages/__layout.svelte-d2dbcbfa.js",
   "/_app/immutable/assets/pages/__layout.svelte-4739f310.css",
   "/_app/immutable/assets/KaTeX_AMS-Regular-0cdd387c.woff2",
@@ -188,7 +188,7 @@ const files = [
   "/sitemaps/sitemap_pt-br.xml",
   "/watermark-logo.png"
 ];
-const version = "1655731436274";
+const version = "1655999073740";
 const worker = self;
 const FILES = `cache${version}`;
 const to_cache = build.concat(files);
