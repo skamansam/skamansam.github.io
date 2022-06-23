@@ -23,7 +23,8 @@ jobs:
           pnpm i
       - name: Build
         run: | 
-          rm -rf build/*
+          rm -rf build
+          rm -rf docs
           pnpm build
       - name: Deploy
         run: |
