@@ -4,13 +4,11 @@
 # Rudeboy.dev
 
 Hello, all! This is the blog for "Skaman Sam" Tyler, founder of Rude Boy
-Enterprises. I love to code and fix problems. This blog is all about my code and
-solutions to problems relating to Linux, Windows (probably not much there), and
-other computer-related issues. I hope this will be as educational for you as for
-me!
+Enterprises. I love to code and fix problems. This blog is all about 
+my code and solutions to problems relating to Linux, Windows (probably not much there), and other computer-related issues. I hope this will be as educational for you as for me!
 
 ## Source Branch
-The `main` branch is used for serving up the site. The source branch is `svelte`.
+The `svelte` branch is the main git branch and is used for the development of this project. The deployed code is on the `gh-pages`` branch.
 
 ## Roll Your Own with Svelte
 
@@ -31,9 +29,10 @@ I rolled this site in about a day, using Svelte, MDSvex, and Tailwind. It has th
 * [X] 🧑‍🤝‍🧑 OpenGraph support (including images form articles)
 * [X] 🆚 Good integration with VSCode / FrontMatter
 * [X] 😹 deploy to github pages
-
 ## Still TODO:
 
+* [ ] 👨‍🦱 Auto Generated [humans.txt](https://humanstxt.org) support
+* [ ] 🗺️ Auto Generated sitemap
 * [ ] 🚀 Automatic deployment when pushing to `svelte` branch
 * [ ] 🔍Algolia search integration
 * [ ] 💬 Comments using Github Discussions!
