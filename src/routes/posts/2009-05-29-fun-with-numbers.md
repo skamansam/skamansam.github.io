@@ -103,21 +103,38 @@ You can use Pascal's triangle to find the coefficients of the polynomials. Let's
 
 $$
 (a+b)^n = 
+$$
+$$
 (a+b)^{n-1}(a+b) = 
+$$
+$$
 (a+b)^{n-2}(a+b)^2 = 
+$$
+$$
 (a+b)^{n-2}((a+b)(a+b)) = 
+$$
+$$
 ( (a*a) + (a*b) + (b*a) + (b*b) )(a+b)^{n-1} = 
+$$
+$$
 (a^2+2ab+b^2)(a+b)^{n-1} = 
 $$
 
-See the coefficients so far, with $n = 2$ ? They are [1 2 1], which corresponds
+See the coefficients so far, with $n = 2$ ? They are $[1 2 1]$, which corresponds
 to the second row in Pascal's triangle. But this could be a fluke, right, so
 let's jump ahead to $n = 5$ to see if that works as well.
 
+
 $$
 (a+b)^n = 
+$$
+$$
 (a+b)^{n-6}(a+b)^5 = 
+$$
+$$
 (a+b)^{n-6}( (a+b) (a+b) (a+b) (a+b) (a+b) ) = 
+$$
+$$
 (a+b)^{n-6}( ( (a+b)(a+b) )( (a+b)(a+b) ) (a+b) ) = 
 $$
 
@@ -125,15 +142,25 @@ $$
 
 $$
 (( a^2+2ab+b^2 )( a^2+2ab+b^2 )(a+b) )(a+b)^{n-6} =
+$$
+$$
 ( ( (a^2*a^2)+(a^2*2ab) + (a^2*b^2) + ( 2ab*a^2) + (2ab*2ab) + (2ab*b^2) + (b^2*a^2)+(b^2*2ab) + (b^2*b^2) ) (a+b) )(a+b)^{n-6} = 
+$$
+$$
 ( ( a^4 + 2a^3b+ a^2b^2 + 2a^3b + 4a^2b^2 + 2ab^3 + b^2a^2 + 2ab^3+ b^4) (a+b) )(a+b)^{n-6} =
+$$
+$$
 ( ( a^4 + 4a^3b + 6a2b^2 + 4ab^3+b^4) (a+b) )(a+b)^{n-6} = 
 $$
 
 [note: notice that the coefficients of $(a+b)^4$ are (1 4 6 4 1) ! ]
 $$
 ( ( a^4*a + a^4*b + 4a^3b*a + 4a^3b*b + 6a^2b^2*a + 6a^2b^2*b + 4ab^3*a + 4ab^3*b + b^4*a+b^4*b))(a+b)^{n-6} =
+$$
+$$
 ( ( a^5 + a^4b + 4a^4b + 4a^3b^2 + 6a^3b^2 + 6a^2b^3 + 4a^2b^3 + 4ab^4 + ab^4+b^5))(a+b)^{n-6}=
+$$
+$$
 ( ( a^5 +5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5)(a+b)^{n-6}
 $$
 
@@ -147,7 +174,11 @@ Now, to make things a little simpler, I will note some interesting "features" ab
 The general formula for binomial expansion is:
 
 $$
-(a+b)^n = \sum_{i=0}^{n}(P_{ni}a^{n-i}b^i)
+(a+b)^n = \sum_{i=0}^n (P_{ni}a^{n-i}b^i)
+$$
+
+$$
+\sum\limits_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}
 $$
 
 Where $P_{ni}$ is the coefficient at row $n$ (starting from 0) and column $i$ in
