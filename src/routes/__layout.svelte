@@ -58,7 +58,7 @@
 		on:themeChange={(evt) => setTheme(evt.detail)}
 	/>
   <Sidebar />
-  <div class="pl-2  pt-2">
+  <div class="content-area pl-2  pt-2 flex-1">
     <slot />
   </div>
   <Footer />
