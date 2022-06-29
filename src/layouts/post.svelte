@@ -55,14 +55,14 @@
 	<meta property="og:url" content={pageUrl} />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="{title} - RBE" />
-	<meta property="og:image" content={opengraphImage || twitterImage || cover} />
+	<meta property="og:image" content={opengraphImage || twitterImage || cover || '/rbe_logo.gif'} />
 	<meta property="og:description" content={description} />
 
 	<!-- Twitter Meta Tags (twitter also uses og tags) -->
 	<meta name="twitter:card" content={socialCardType} />
 	<meta property="twitter:site" content="@skamansam" />
 	<meta name="twitter:creator" content="@{author}" />
-	<meta name="twitter:image" content={twitterImage || opengraphImage || cover} />
+	<meta name="twitter:image" content={twitterImage || opengraphImage || cover || '/rbe_logo.gif'} />
 
 	<title>{title} | RBE</title>
 	<meta name="description" content={description} />

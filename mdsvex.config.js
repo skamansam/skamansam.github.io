@@ -58,10 +58,10 @@ const config = defineConfig({
 	},
 
 	remarkPlugins: [
+		remarkMath,
     remarkMermaid,
     remarkGfm,
 		[oembed, { syncWidget: true }],
-		remarkMath,
 		a11yEmoji,
 		remarkDefinitionList,
 		[emoji, { emoticon: true }],
@@ -74,7 +74,11 @@ const config = defineConfig({
       tight: true,
     }],
 	],
-	rehypePlugins: [rehypeKatexSvelte, rehypeSlug, defListHastHandlers]
+	rehypePlugins: [
+    rehypeKatexSvelte,
+    rehypeSlug,
+    defListHastHandlers
+  ]
 });
 
 export default config;

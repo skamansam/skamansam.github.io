@@ -2,17 +2,22 @@
   import GoogleFont, { getFontStyle } from "@svelte-web-fonts/google";
   import type { GoogleFontDefinition, GoogleFontVariant } from "@svelte-web-fonts/google";
 
+  let clazz = '';
+	export { clazz as class };
+
+  export let text: string|null = null;
   export let bgColor = "#FFDD00";
   export let coffeeColor: string = "brown";
   export let outlineColor: string = "#0D0C23";
   export let textColor: string = "#0D0C23";  
   export let fontFamily: string|null = null;
   export let fontVariant: string|null = "400";
-  export let height="153";
-  export let width="545";  
-  export let scale="1.0";  
+  export let height=153;
+  export let width=545;  
+  export let scale=1.0;
+  const buttonScaleFactor = 0.392156863; // height of normal button size (60px) / svg window (153)
+
   // export let fontWeight: string = "400";
-  export let text: string|null = null;
   if (text && !fontFamily) fontFamily = 'Cookie';
   if (fontFamily && !text) text = "Buy me a coffee";
 
@@ -42,7 +47,7 @@
   {/if}
 </svelte:head>
 
-<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" transform="scale({scale})" xmlns="http://www.w3.org/2000/svg">
+<svg width="{width * buttonScaleFactor * scale}" height="{height * buttonScaleFactor * scale}" viewBox="0 0 {width} {height}" fill="none" class="{clazz} inline-block align-left" xmlns="http://www.w3.org/2000/svg">
   <path 
     id="background" 
     d="M0 24.48C0 10.9601 10.9601 0 24.48 0H{width-24.8}C{width - 11.28} 0 {width - 0.32} 10.9601 {width - 0.32} 24.48V128.52C{width-0.32} 142.04 {width - 11.28} 153 {width -24.8} 153H24.48C10.9601 153 0 142.04 0 128.52V24.48Z" 

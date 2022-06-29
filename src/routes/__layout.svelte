@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Sidebar from '../components/Sidebar.svelte';
-	import Header from '../components/Header.svelte';
+  import Footer from '../components/Footer.svelte';
+  import Header from '../components/Header.svelte';
 	import '../app.css';
 	import { browser } from '$app/env';
   import Mermaid from '../components/Mermaid.svelte';
@@ -60,4 +61,5 @@
   <div class="pl-2  pt-2">
     <slot />
   </div>
+  <Footer />
 </div>
