@@ -20,14 +20,14 @@
 	export let lang = '';
 
 	/** @type string|null */
-	export let cover = '/rbe_logo.gif';
+	export let cover = null;
 	/** @type string|null */
 	export let opengraphImage = null;
 	/** @type string|null */
 	export let twitterImage = null;
 
-	if (!twitterImage) twitterImage = opengraphImage || cover;
-	if (!opengraphImage) opengraphImage = twitterImage || cover;
+	if (!twitterImage) twitterImage = opengraphImage || '/rbe_logo.gif';
+	if (!opengraphImage) opengraphImage = twitterImage || '/rbe_logo.gif';
 
 	let pageUrl = '';
 	let siteUrl = '';
