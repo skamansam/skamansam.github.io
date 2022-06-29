@@ -17,11 +17,6 @@ tags:
   - SSI
 created_at: 2009-05-29 9:57:57
 updated_at: 2009-05-29 9:57:57
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 lastmod: 2022-06-13T01:53:59.216Z
 ---
 

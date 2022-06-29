@@ -16,11 +16,6 @@ tags:
   - Puppy Linux
 created_at: 2009-05-10 17:02:00
 updated_at: 2009-05-10 17:02:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 SORRY!: The current sfs file is broken. I am working as fast as I can to fix this, so check back for more!

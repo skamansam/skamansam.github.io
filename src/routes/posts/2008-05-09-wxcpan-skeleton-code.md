@@ -16,11 +16,6 @@ tags:
   - gSoC
 created_at: 2008-05-09 14:40
 updated_at: 2008-05-09 14:40
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 I have started doing heavy-duty research into wxPerl, and have created a bit of 

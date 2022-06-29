@@ -16,11 +16,6 @@ tags:
   - CSS
 created_at: 2009-02-09 08:48
 updated_at: 2009-02-09 08:48
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 This is the first post in a series of articles on web technologies I most

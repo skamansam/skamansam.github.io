@@ -18,11 +18,6 @@ tags:
   - Gentoo
 created_at: 2009-02-02 08:31
 updated_at: 2009-02-02 08:31
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 # Why I Need A Virtual OS

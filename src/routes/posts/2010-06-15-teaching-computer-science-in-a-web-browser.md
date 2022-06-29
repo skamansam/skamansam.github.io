@@ -19,11 +19,6 @@ tags:
   - Computer Science
 created_at: 2010-06-15 08:28:37
 updated_at: 2010-06-15 08:28:37
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 With the web becoming more pervasive and HTML5 threatening to annihilate Flash,

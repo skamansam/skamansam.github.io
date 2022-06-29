@@ -20,7 +20,7 @@ tags:
   - Rude Boy Solutions
 created_at: 2016-09-14 10:06:59
 updated_at: 2016-09-14 10:06:59
-opengraphImage: /images/GSoC-logo-horizontal-800.png
+opengraphImage: null
 twitterImage: null
 ---
 

@@ -17,11 +17,6 @@ tags:
   - IDE
 created_at: 2012-08-30 23:29:00
 updated_at: 2012-08-30 23:29:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 After evaluating all editors and IDEs I could ahold of for Ruby On Rails
 development in Linux, I decided none were really up to my expectations. I was

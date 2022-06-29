@@ -18,11 +18,6 @@ tags:
   - Computer Science
 created_at: 2010-07-28 14:35:00
 updated_at: 2010-07-28 14:35:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 Ever notice how the  <a title="Tango Desktop Project"

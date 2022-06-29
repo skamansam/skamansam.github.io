@@ -18,11 +18,6 @@ tags:
   - Web Design
 created_at: 2009-01-08 10:49
 updated_at: 2009-01-08 10:49
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 Last semester, I started a project to ease my work quite a bit. I noticed that a

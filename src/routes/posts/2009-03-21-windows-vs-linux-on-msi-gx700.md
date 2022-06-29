@@ -17,11 +17,6 @@ tags:
   - Hardware
 created_at: 2009-03-21 9:32
 updated_at: 2009-03-21 9:32
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 When I built my desktop/server in 2005, I used as many MSI (Micro-Satr
 International) parts as I could find. They were a little more expensive, but

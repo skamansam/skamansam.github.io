@@ -16,11 +16,6 @@ tags:
   - gSoC
 created_at: 2008-05-24 13:41
 updated_at: 2008-05-24 13:41
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 It is now day 0 for gSoC - the first day. I have hit the ground running and am off to a good 

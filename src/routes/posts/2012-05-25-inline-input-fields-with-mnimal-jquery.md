@@ -16,11 +16,6 @@ tags:
   - jQuery
 created_at: 2012-05-25 14:46:00
 updated_at: 2012-05-25 14:46:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 For one of my projects, i needed to put a text field inside a header element.
 When I did so, the input field ruined my layout and good looks! So I went the

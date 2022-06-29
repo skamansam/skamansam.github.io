@@ -16,11 +16,6 @@ tags:
   - Theme
 created_at: 2009-07-31 9:25:00
 updated_at: 2009-08-09 9:25:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 Hello, all RBS followers! I am creating a new theme for WordPress called Bubbly

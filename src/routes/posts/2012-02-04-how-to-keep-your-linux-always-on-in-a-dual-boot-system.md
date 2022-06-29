@@ -18,11 +18,6 @@ tags:
   - CUDA
 created_at: 2012-02-04 8:10:00
 updated_at: 2020-09-01 1:29:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 During my move from Greensboro, NC to Baltimore, MD, I accidentally threw away
 my home server (case of mistaken identity), so I needed to build a new one. This

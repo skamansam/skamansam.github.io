@@ -17,11 +17,6 @@ tags:
   - Online Education
 created_at: 2010-06-02 21:48:00
 updated_at: 2010-06-02 21:48:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 With the web becoming more pervasive and HTML5 threatening to annihilate Flash,

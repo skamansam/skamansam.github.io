@@ -17,11 +17,6 @@ tags:
   - SSI
 created_at: 2012-08-31 22:44:51
 updated_at: 2012-08-31 22:44:51
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 lastmod: 2022-06-13T01:54:16.082Z
 ---
 This entry continues the Simple Rails Development Series with a discussion of

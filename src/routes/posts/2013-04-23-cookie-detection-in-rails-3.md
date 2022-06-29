@@ -16,11 +16,6 @@ tags:
   - Ruby on Rails
 created_at: 2013-04-23 17:14:12
 updated_at: 2016-08-30 00:00:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 I have seen a lot of posts on cookie detection in Rails. I believe this may be a

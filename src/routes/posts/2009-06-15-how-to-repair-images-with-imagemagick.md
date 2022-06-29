@@ -17,11 +17,6 @@ tags:
   - Image Repair
 created_at: 2009-06-15 11:23:00
 updated_at: 2009-06-15 11:23:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 I have been doing a lot of importing of photos on my photo site, and have noticed some images do not display properly. 

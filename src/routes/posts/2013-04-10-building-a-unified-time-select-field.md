@@ -16,11 +16,6 @@ tags:
   - Ruby on Rails
 created_at: 2013-04-10 11:10:11
 updated_at: 2013-04-10 11:10:11
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 Before I migrated to Rails 3.2, I used a plugin to provide a unified input field

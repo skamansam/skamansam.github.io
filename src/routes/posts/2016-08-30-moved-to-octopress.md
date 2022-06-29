@@ -16,11 +16,6 @@ tags:
   - Rude Boy Solutions
 created_at: 2016-08-30 20:21:48
 updated_at: 2016-08-30 20:21:48
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 
 ### Rude Boy Solutions has Moved To Octopress!

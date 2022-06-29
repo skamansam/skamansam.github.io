@@ -16,11 +16,6 @@ tags:
   - jQuery
 created_at: 2011-03-06 21:20:00
 updated_at: 2011-03-06 21:20:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 lastmod: 2022-06-11T21:01:45.827Z
 ---
 

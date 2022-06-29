@@ -19,11 +19,6 @@ tags:
   - Polynomials
 created_at: 2009-05-29 8:48:00
 updated_at: 2016-09-14 7:56:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 lastmod: 2022-06-12T17:33:05.016Z
 ---
 

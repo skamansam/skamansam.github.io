@@ -20,11 +20,6 @@ tags:
   - Editor
 created_at: 2009-03-11 7:50
 updated_at: 2009-03-11 7:50
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 I am working on installing Chromium for Fedora 10 x86_64 bit. Here's how you do it:
 

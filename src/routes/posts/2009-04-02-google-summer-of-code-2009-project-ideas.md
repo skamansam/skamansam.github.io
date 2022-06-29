@@ -16,11 +16,6 @@ tags:
   - Google Summer of Code
 created_at: 2009-04-02 21:31:00
 updated_at: 2009-04-02 21:31:00
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 lastmod: 2022-06-11T20:54:51.895Z
 ---
 

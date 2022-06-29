@@ -18,11 +18,6 @@ tags:
   - CSS
 created_at: 2009-04-01 18:16
 updated_at: 2009-04-01 18:16
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 ---
 I have been looking for a nifty style-switching script, and have found none. So here is the code for a checkbox-based 
 style switcher. This uses jQuery.

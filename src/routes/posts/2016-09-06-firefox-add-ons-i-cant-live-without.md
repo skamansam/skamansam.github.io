@@ -18,11 +18,6 @@ tags:
   - Browser Wars
 created_at: 2016-09-06 09:36:41
 updated_at: 2016-09-06 09:36:41
-meta:
-  - property: og:image
-    content: /images/GSoC-logo-horizontal-800.png
-  - name: twitter:image
-    content: /images/GSoC-logo-horizontal-800.png
 lastmod: 2022-06-13T01:54:28.448Z
 ---
 
