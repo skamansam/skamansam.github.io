@@ -20,7 +20,7 @@
 	export let lang = '';
 
 	/** @type string|null */
-	export let cover = null;
+	export let cover = '/rbe_logo.gif';
 	/** @type string|null */
 	export let opengraphImage = null;
 	/** @type string|null */
@@ -31,7 +31,7 @@
 
 	let pageUrl = '';
 	let siteUrl = '';
-	let socialCardType = opengraphImage || twitterImage || cover ? 'summary_large_image' : 'summary';
+	let socialCardType = (opengraphImage || twitterImage || cover) ? 'summary_large_image' : 'summary';
 
 	onMount(() => {
 		siteUrl = window.location.href;
@@ -55,14 +55,14 @@
 	<meta property="og:url" content={pageUrl} />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="{title} - RBE" />
-	<meta property="og:image" content={opengraphImage || twitterImage || cover || '/rbe_logo.gif'} />
+	<meta property="og:image" content={opengraphImage} />
 	<meta property="og:description" content={description} />
 
 	<!-- Twitter Meta Tags (twitter also uses og tags) -->
 	<meta name="twitter:card" content={socialCardType} />
 	<meta property="twitter:site" content="@skamansam" />
 	<meta name="twitter:creator" content="@{author}" />
-	<meta name="twitter:image" content={twitterImage || opengraphImage || cover || '/rbe_logo.gif'} />
+	<meta name="twitter:image" content={twitterImage} />
 
 	<title>{title} | RBE</title>
 	<meta name="description" content={description} />
