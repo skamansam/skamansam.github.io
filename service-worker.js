@@ -1,7 +1,7 @@
 const build = [
-  "/_app/immutable/start-4b320a65.js",
-  "/_app/immutable/pages/__layout.svelte-ab870099.js",
-  "/_app/immutable/assets/pages/__layout.svelte-30990c6a.css",
+  "/_app/immutable/start-b0c0f463.js",
+  "/_app/immutable/pages/__layout.svelte-ee440beb.js",
+  "/_app/immutable/assets/pages/__layout.svelte-0821087c.css",
   "/_app/immutable/assets/KaTeX_AMS-Regular-0cdd387c.woff2",
   "/_app/immutable/assets/KaTeX_AMS-Regular-30da91e8.woff",
   "/_app/immutable/assets/KaTeX_AMS-Regular-68534840.ttf",
@@ -184,7 +184,7 @@ const files = [
   "/sitemaps/sitemap_es.xml",
   "/sitemaps/sitemap_pt-br.xml"
 ];
-const version = "1656481292587";
+const version = "1656482661006";
 const worker = self;
 const FILES = `cache${version}`;
 const to_cache = build.concat(files);
