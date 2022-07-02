@@ -12,3 +12,7 @@ type remarkHeadingPlugin = {
   depth: number,
   value: string    
 }
+
+type ConfigFile = {
+  
+}

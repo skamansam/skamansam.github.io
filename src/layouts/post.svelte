@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+  import Settings from '$lib/settings';
 
 	export let title = '';
 	export let author = '';
@@ -26,8 +27,8 @@
 	/** @type string|null */
 	export let twitterImage = null;
 
-	if (!twitterImage) twitterImage = opengraphImage || '/rbe_logo.gif';
-	if (!opengraphImage) opengraphImage = twitterImage || '/rbe_logo.gif';
+	if (!twitterImage) twitterImage = opengraphImage || Settings.posts.default_image;
+	if (!opengraphImage) opengraphImage = twitterImage || 'https://rudeboy.dev/rbe_logo.gif';
 
 	let pageUrl = '';
 	let siteUrl = '';
@@ -47,7 +48,7 @@
 	{#each meta as prop}
 		<meta property={prop.property} content={prop.content} />
 	{/each}
-
+  <link rel='canonical' href="{page.url}"/>
 	<!-- Facebook Meta Tags -->
 	<meta property="og:site_name" content="Rude Boy Solutions" />
 	<meta property="article:published_time" content={updated_at} />

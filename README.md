@@ -52,3 +52,4 @@ I rolled this site in about a day, using Svelte, MDSvex, and Tailwind. It has th
 * [ ] Deployments to Firebase
 * [ ] Comments from Firebase
 * [ ] Show Bookmarks/Highlights/etc from Raindrop.io using api.raindrop.io
+* [ ] [JSON Resume support]()

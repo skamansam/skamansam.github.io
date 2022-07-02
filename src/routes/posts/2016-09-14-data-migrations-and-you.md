@@ -24,11 +24,11 @@ opengraphImage: null
 twitterImage: null
 ---
 
-<div class="toc">
+<nav class="toc">
 
-###### On This Page
+## On This Page
 
-</div>
+</nav>
 
 ## A Little Background
 
