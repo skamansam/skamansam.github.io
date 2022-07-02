@@ -31,6 +31,7 @@ I rolled this site in about a day, using Svelte, MDSvex, and Tailwind. It has th
 * [X] 😹 deploy to github pages
 ## Still TODO:
 
+* [ ] :bunny: use bunny fonts instead of google fonts
 * [ ] 👨‍🦱 Auto Generated [humans.txt](https://humanstxt.org) support
 * [ ] 🗺️ Auto Generated sitemap
 * [ ] 🚀 Automatic deployment when pushing to `svelte` branch
