@@ -1,5 +1,5 @@
 const build = [
-  "/_app/immutable/start-15c0c0e3.js",
+  "/_app/immutable/start-f158b90c.js",
   "/_app/immutable/pages/__layout.svelte-52f77fff.js",
   "/_app/immutable/assets/pages/__layout.svelte-25aa6b0b.css",
   "/_app/immutable/assets/KaTeX_AMS-Regular-0cdd387c.woff2",
@@ -109,7 +109,6 @@ const build = [
   "/_app/immutable/pages/posts/2016-09-06-installing-amaya-on-fedora-10-64bit.md-260a6c55.js",
   "/_app/immutable/pages/posts/2016-09-06-top-linux-apps-i-cant-live-without.md-692b8420.js",
   "/_app/immutable/pages/posts/2016-09-14-data-migrations-and-you.md-5a3dd273.js",
-  "/_app/immutable/pages/posts/README.md-1375c420.js",
   "/_app/immutable/pages/posts/index.svelte-f4f5da32.js",
   "/_app/immutable/pages/tags/_tag_.svelte-114041ef.js",
   "/_app/immutable/chunks/index-1458cd2c.js",
@@ -184,7 +183,7 @@ const files = [
   "/sitemaps/sitemap_es.xml",
   "/sitemaps/sitemap_pt-br.xml"
 ];
-const version = "1656800465786";
+const version = "1656820990654";
 const worker = self;
 const FILES = `cache${version}`;
 const to_cache = build.concat(files);

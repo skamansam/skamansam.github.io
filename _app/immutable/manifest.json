@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-15c0c0e3.js",
+    "file": "start-f158b90c.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -56,7 +56,6 @@
       "src/routes/posts/2016-09-06-installing-amaya-on-fedora-10-64bit.md",
       "src/routes/posts/2016-09-06-top-linux-apps-i-cant-live-without.md",
       "src/routes/posts/2016-09-14-data-migrations-and-you.md",
-      "src/routes/posts/README.md",
       "src/routes/posts/index.svelte",
       "src/routes/tags/[tag].svelte"
     ]
@@ -608,15 +607,6 @@
     "imports": [
       "_index-1458cd2c.js",
       "_post-a3452a60.js"
-    ]
-  },
-  "src/routes/posts/README.md": {
-    "file": "pages/posts/README.md-1375c420.js",
-    "src": "src/routes/posts/README.md",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_index-1458cd2c.js"
     ]
   },
   "src/routes/posts/index.svelte": {
