@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <atom:link href="settings.base_url/rss.xml" rel="self" type="application/rss+xml" />
+      <title>Rude Boy Enterprises</title>
+      <link>https://rudeboy.dev</link>
+      <description>Solutions. For Life.</description>
+      <language>en-US</language>
+      <image>
+        <url>https://rudeboy.dev/rbe_logo.gif</url>
+        <title>Rude Boy Enterprises</title>
+        <link>https://rudeboy.dev</link>
+      </image>
+      <copyright></copyright>
+      
+        <item>
+          <guid>https://rudeboy.dev/posts/2016-09-14-data-migrations-and-you</guid>
+          <title>Data Migrations and You!</title>
+          <link>https://rudeboy.dev/posts/2016-09-14-data-migrations-and-you</link>
+          <description>Best Practices for Data Migrations</description>
+          <pubDate>Wed, 14 Sep 2016 10:06:59 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2016-08-30-moved-to-octopress</guid>
+          <title>Moved To Octopress!</title>
+          <link>https://rudeboy.dev/posts/2016-08-30-moved-to-octopress</link>
+          <description>Rude Boy Solutions is now moving to Octopress</description>
+          <pubDate>Tue, 30 Aug 2016 20:21:48 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2013-04-23-cookie-detection-in-rails-3</guid>
+          <title>Cookie Detection in Rails 3</title>
+          <link>https://rudeboy.dev/posts/2013-04-23-cookie-detection-in-rails-3</link>
+          <description>How to detect cookies in Rails 3</description>
+          <pubDate>Tue, 30 Aug 2016 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2013-04-10-building-a-unified-time-select-field</guid>
+          <title>Building a unified `time_select` field</title>
+          <link>https://rudeboy.dev/posts/2013-04-10-building-a-unified-time-select-field</link>
+          <description>Build a unified `time_select` field</description>
+          <pubDate>Wed, 10 Apr 2013 11:10:11 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config</guid>
+          <title>Simple Rails Development Part I: Gedit Click Config</title>
+          <link>https://rudeboy.dev/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config</link>
+          <description>Configuring GEdit Click Config Plugin</description>
+          <pubDate>Thu, 30 Aug 2012 23:29:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2012-05-25-inline-input-fields-with-mnimal-jquery</guid>
+          <title>Inline input fields with minimal jQuery</title>
+          <link>https://rudeboy.dev/posts/2012-05-25-inline-input-fields-with-mnimal-jquery</link>
+          <description>Create an inline edit field with one line of jQuery</description>
+          <pubDate>Fri, 25 May 2012 14:46:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2012-02-04-how-to-keep-your-linux-always-on-in-a-dual-boot-system</guid>
+          <title>How to Keep Your Linux Always-On In A Dual-Boot System</title>
+          <link>https://rudeboy.dev/posts/2012-02-04-how-to-keep-your-linux-always-on-in-a-dual-boot-system</link>
+          <description>Keeping nVidia loaded across boots</description>
+          <pubDate>Tue, 01 Sep 2020 01:29:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2011-03-06-jquery-themeswitchertool-working-version</guid>
+          <title>jQuery ThemeSwitcherTool - Working Version!!!!!</title>
+          <link>https://rudeboy.dev/posts/2011-03-06-jquery-themeswitchertool-working-version</link>
+          <description>A working version of my ThemeSwitcherTool</description>
+          <pubDate>Sun, 06 Mar 2011 21:20:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2010-07-28-tango-icons-save-all</guid>
+          <title>Tango Icons: Save All</title>
+          <link>https://rudeboy.dev/posts/2010-07-28-tango-icons-save-all</link>
+          <description>A suggestion for a Save All icon for the Tango Project</description>
+          <pubDate>Wed, 28 Jul 2010 14:35:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2010-06-15-teaching-computer-science-in-a-web-browser</guid>
+          <title>Teaching Computer Science in a Web Browser?</title>
+          <link>https://rudeboy.dev/posts/2010-06-15-teaching-computer-science-in-a-web-browser</link>
+          <description>Ideas on how to teach CSC courses using only a web browser</description>
+          <pubDate>Tue, 15 Jun 2010 08:28:37 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2010-06-02-teaching-computer-science-in-a-web-browser</guid>
+          <title>Teaching Computer Science in a Web Browser?</title>
+          <link>https://rudeboy.dev/posts/2010-06-02-teaching-computer-science-in-a-web-browser</link>
+          <description>Ideas on how to teach CSC courses using only a web browser</description>
+          <pubDate>Wed, 02 Jun 2010 21:48:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-07-31-new-theme-under-construction-dot-dot-dot</guid>
+          <title>New Theme Under Construction...</title>
+          <link>https://rudeboy.dev/posts/2009-07-31-new-theme-under-construction-dot-dot-dot</link>
+          <description>New Theme Under Construction...</description>
+          <pubDate>Sun, 09 Aug 2009 09:25:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-06-15-how-to-repair-images-with-imagemagick</guid>
+          <title>How To Repair Images with ImageMagick</title>
+          <link>https://rudeboy.dev/posts/2009-06-15-how-to-repair-images-with-imagemagick</link>
+          <description>Using ImageMagick to repair corrupted images</description>
+          <pubDate>Mon, 15 Jun 2009 11:23:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-05-29-fun-with-numbers</guid>
+          <title>Fun With Numbers! (revised)</title>
+          <link>https://rudeboy.dev/posts/2009-05-29-fun-with-numbers</link>
+          <description>How to Find polynomial coefficients using Pascal's Triangle</description>
+          <pubDate>Wed, 14 Sep 2016 07:56:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-05-10-tetex-for-puppy-linux</guid>
+          <title>TeTex for Puppy Linux</title>
+          <link>https://rudeboy.dev/posts/2009-05-10-tetex-for-puppy-linux</link>
+          <description>Creating a TeTex .pup for Puppy Linux 4.20</description>
+          <pubDate>Sun, 10 May 2009 17:02:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64</guid>
+          <title>Building Enlightenment e17 on Fedora 10 x86_64</title>
+          <link>https://rudeboy.dev/posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64</link>
+          <description>How to Build Enlightenment Desktop on Fedora 10</description>
+          <pubDate>Thu, 02 Apr 2009 21:34:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-04-02-google-summer-of-code-2009-project-ideas</guid>
+          <title>Google Summer of Code 2009 Project Ideas</title>
+          <link>https://rudeboy.dev/posts/2009-04-02-google-summer-of-code-2009-project-ideas</link>
+          <description>List of projects for GSoC 2009</description>
+          <pubDate>Thu, 02 Apr 2009 21:31:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-04-01-jquery-style-sheet-css-switcher</guid>
+          <title>jQuery Style Sheet (CSS) Switcher</title>
+          <link>https://rudeboy.dev/posts/2009-04-01-jquery-style-sheet-css-switcher</link>
+          <description>Building a CSS Switcher using jQuery</description>
+          <pubDate>Wed, 01 Apr 2009 18:16:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-03-21-windows-vs-linux-on-msi-gx700</guid>
+          <title>Windows vs. Linux on MSI GX700</title>
+          <link>https://rudeboy.dev/posts/2009-03-21-windows-vs-linux-on-msi-gx700</link>
+          <description>Comparing Windows and Linux on MSI GX700</description>
+          <pubDate>Sat, 21 Mar 2009 09:32:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-03-11-building-chromium-on-fedora-10-x86-64</guid>
+          <title>Building Chromium on Fedora 10 x86_64</title>
+          <link>https://rudeboy.dev/posts/2009-03-11-building-chromium-on-fedora-10-x86-64</link>
+          <description>Installing Chromium for Fedora 10 x86_64 bit</description>
+          <pubDate>Wed, 11 Mar 2009 07:50:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-02-14-installing-aptana-in-fedora-eclipse</guid>
+          <title>Installing Aptana in Fedora Eclipse</title>
+          <link>https://rudeboy.dev/posts/2009-02-14-installing-aptana-in-fedora-eclipse</link>
+          <description>Installing Aptana in Fedora Eclipse</description>
+          <pubDate>Sat, 14 Feb 2009 12:09:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-02-09-drop-down-menu-with-css</guid>
+          <title>Drop-Down Menu with CSS</title>
+          <link>https://rudeboy.dev/posts/2009-02-09-drop-down-menu-with-css</link>
+          <description>Drop-down menu with no JS</description>
+          <pubDate>Mon, 09 Feb 2009 08:48:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-02-02-installing-gentoo-2008-in-qemu-suns-virtualbox-on-fedora-10</guid>
+          <title>Installing Gentoo 2008 in (qemu) Sun's VirtualBox on Fedora 10</title>
+          <link>https://rudeboy.dev/posts/2009-02-02-installing-gentoo-2008-in-qemu-suns-virtualbox-on-fedora-10</link>
+          <description>Information on virtual OSs and benchmarks</description>
+          <pubDate>Mon, 02 Feb 2009 08:31:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2009-01-08-webfx-at-uncg</guid>
+          <title>WebFX at UNCG</title>
+          <link>https://rudeboy.dev/posts/2009-01-08-webfx-at-uncg</link>
+          <description>Framework of js effects</description>
+          <pubDate>Thu, 08 Jan 2009 10:49:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2008-08-07-al-at-werk</guid>
+          <title>al at werk</title>
+          <link>https://rudeboy.dev/posts/2008-08-07-al-at-werk</link>
+          <description>pictures of al at werk</description>
+          <pubDate>Wed, 17 Jun 2020 01:34:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2008-08-07-al-at-werk-again</guid>
+          <title>al at werk again</title>
+          <link>https://rudeboy.dev/posts/2008-08-07-al-at-werk-again</link>
+          <description>pictures of al at werk again</description>
+          <pubDate>Wed, 17 Jun 2020 01:34:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2008-08-05-my-baby2</guid>
+          <title>My Baby 2</title>
+          <link>https://rudeboy.dev/posts/2008-08-05-my-baby2</link>
+          <description>more pictures of my baby</description>
+          <pubDate>Wed, 17 Jun 2020 01:34:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2008-08-05-my-baby</guid>
+          <title>My Baby</title>
+          <link>https://rudeboy.dev/posts/2008-08-05-my-baby</link>
+          <description>pictures of my baby</description>
+          <pubDate>Wed, 17 Jun 2020 01:34:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2008-08-05-my-bartender-mark</guid>
+          <title>my bartender, mark</title>
+          <link>https://rudeboy.dev/posts/2008-08-05-my-bartender-mark</link>
+          <description>pictures of my bartender, mark</description>
+          <pubDate>Wed, 17 Jun 2020 01:34:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2008-05-24-gsoc-day-0-equals-hit-the-ground-running</guid>
+          <title>gSoC_Day[0]='Hit The Ground Running';</title>
+          <link>https://rudeboy.dev/posts/2008-05-24-gsoc-day-0-equals-hit-the-ground-running</link>
+          <description>It is now day 0 for gSoC</description>
+          <pubDate>Sat, 24 May 2008 13:41:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2008-05-13-wxcpan-going-well</guid>
+          <title>wxCPAN Going Well</title>
+          <link>https://rudeboy.dev/posts/2008-05-13-wxcpan-going-well</link>
+          <description>wxCPAN Going Well</description>
+          <pubDate>Tue, 13 May 2008 14:56:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2008-05-09-wxcpan-skeleton-code</guid>
+          <title>wxCPAN Skeleton Code</title>
+          <link>https://rudeboy.dev/posts/2008-05-09-wxcpan-skeleton-code</link>
+          <description>wxCPAN is underway!</description>
+          <pubDate>Fri, 09 May 2008 14:40:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2008-04-23-accepted-into-google-summer-of-code</guid>
+          <title>Accepted Into Google Summer of Code!</title>
+          <link>https://rudeboy.dev/posts/2008-04-23-accepted-into-google-summer-of-code</link>
+          <description>GUI for CPAN</description>
+          <pubDate>Wed, 23 Apr 2008 15:24:00 GMT</pubDate>
+        </item>
+        <item>
+          <guid>https://rudeboy.dev/posts/2008-03-05-welcome-to-my-blog</guid>
+          <title>Welcome To My Blog!</title>
+          <link>https://rudeboy.dev/posts/2008-03-05-welcome-to-my-blog</link>
+          <description>A little bit about myself and my blog.</description>
+          <pubDate>Wed, 05 Mar 2008 19:44:00 GMT</pubDate>
+        </item>
+    </channel>
+    </rss>
+    
