@@ -19,7 +19,6 @@ I rolled this site in about a day, using Svelte, MDSvex, and Tailwind. It has th
   * [X] 📖 Extramark
   * [X] 😸 GitHub
   * [X] 📰 Pandoc
-  * [ ] 💯 [working on 100% across ALL flavors](https://gist.github.com/vimtaai/99f8c89e7d3d02a362117284684baa0f)
 * [X] 🌔 Dark-mode aware, and selectable
 * [X] 🖌️ Themes! (selector is working, but themes aren't done yet)
 * [X] ✅ Checkboxes! (user-editable, but not remembered)
@@ -29,20 +28,24 @@ I rolled this site in about a day, using Svelte, MDSvex, and Tailwind. It has th
 * [X] 🧑‍🤝‍🧑 OpenGraph support (including images form articles)
 * [X] 🆚 Good integration with VSCode / FrontMatter
 * [X] 😹 deploy to github pages
-## Still TODO:
+* [X] 🐰 use [bunny fonts](https://fonts.bunny.net/) instead of google fonts
+* [X] 🗺️ Auto Generated sitemap
+* [X] 🚀 Automatic deployment when pushing to `svelte` branch
+* [X] [JSON Resume support](https://jsonresume.org/) - user info
 
-* [ ] :bunny: use bunny fonts instead of google fonts
+
+## Still TODO:
+* [ ] 📻 Auto-generated RSS feed
+* [ ] 💯 [working on 100% Markdown compatibility across ALL flavors](https://gist.github.com/vimtaai/99f8c89e7d3d02a362117284684baa0f)
+  * [ ] 🅰️ abbreviation support
+  * [ ] ✳️ footnote support
+  * [ ] 📑 definition list support
+  * [ ] 📈 figures and charts with mermaid (initial tests failed. needs more work/debugging)
 * [ ] 👨‍🦱 Auto Generated [humans.txt](https://humanstxt.org) support
-* [ ] 🗺️ Auto Generated sitemap
-* [ ] 🚀 Automatic deployment when pushing to `svelte` branch
 * [ ] 🔍Algolia search integration
 * [ ] 💬 Comments using Github Discussions!
 * [ ] ✔️ [accessible site validation](https://usabilitygeek.com/10-free-web-based-web-site-accessibility-evaluation-tools)
   * 👋 [WAVE](https://wave.webaim.org/report#/https://rudeboy.dev)
-* [ ] 🅰️ abbreviation support
-* [ ] ✳️ footnote support
-* [ ] 📑 definition list support
-* [ ] 📈 figures and charts with mermaid (initial tests failed. needs more work/debugging)
 * [ ] 🖌️ Theme implementation:
   * [ ] 🆕 [Neumorphic](https://www.justinmind.com/ui-design/neumorphism) ([How To](https://dev.to/jackdomleo7/learning-neumorphic-design-3dj8))
   * [ ] 🆖 [Glassmorphic](https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9) ([more...](https://hype4.academy/tools/glassmorphism-generator))
@@ -53,4 +56,3 @@ I rolled this site in about a day, using Svelte, MDSvex, and Tailwind. It has th
 * [ ] Deployments to Firebase
 * [ ] Comments from Firebase
 * [ ] Show Bookmarks/Highlights/etc from Raindrop.io using api.raindrop.io
-* [ ] [JSON Resume support]()
