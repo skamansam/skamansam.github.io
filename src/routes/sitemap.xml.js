@@ -31,7 +31,7 @@ export async function get() {
       publishedPosts.map((post,index) => `
       <url>
         <loc>${settings.base_url}/posts/${post.slug}</loc>
-        <lastmod>${post.meta.updated_at}</lastmod>
+        <lastmod>${new Date(post.meta.updated_at || post.meta.created_at).toISOString()}</lastmod>
         <changefreq>yearly</changefreq>
         <priority>${(publishedPosts.length - index)/publishedPosts.length * 0.5 + 0.5}</priority>
       </url>`
