@@ -17,7 +17,10 @@
 	};
 </script>
 
-<svelete:head><title>Welcome to Rude Boy Solutions!</title></svelete:head>
+<svelete:head>
+  <title>Welcome to Rude Boy Solutions!</title>
+</svelete:head>
+
 <div class={clazz}>
   <Card title="Welcome to Rude Boy Solutions!">
     <p>This site is the online home of me, Samuel "Skaman Sam" Tyler. It outlines my adventures 

@@ -32,10 +32,10 @@ I rolled this site in about a day, using Svelte, MDSvex, and Tailwind. It has th
 * [X] 🗺️ Auto Generated sitemap
 * [X] 🚀 Automatic deployment when pushing to `svelte` branch
 * [X] [JSON Resume support](https://jsonresume.org/) - user info
+* [X] 📻 Auto-generated RSS feed
 
 
 ## Still TODO:
-* [ ] 📻 Auto-generated RSS feed
 * [ ] 💯 [working on 100% Markdown compatibility across ALL flavors](https://gist.github.com/vimtaai/99f8c89e7d3d02a362117284684baa0f)
   * [ ] 🅰️ abbreviation support
   * [ ] ✳️ footnote support
