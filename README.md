@@ -36,6 +36,9 @@ I rolled this site in about a day, using Svelte, MDSvex, and Tailwind. It has th
 
 
 ## Still TODO:
+* [ ] 🌳 Category browsing
+* [ ] 🌲 Tag Browsing
+* [ ] ☁️ Tag Cloud Generation
 * [ ] 💯 [working on 100% Markdown compatibility across ALL flavors](https://gist.github.com/vimtaai/99f8c89e7d3d02a362117284684baa0f)
   * [ ] 🅰️ abbreviation support
   * [ ] ✳️ footnote support
