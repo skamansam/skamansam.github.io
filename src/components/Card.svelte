@@ -11,10 +11,12 @@
 		/** @type string[]|null */
 		badges = [],
 		/** @type string|null */
-		to = null;
+		to = null,
+    /** @type string|null */
+    style="";
 </script>
 
-<div class="card mx-2 my-3 rounded-xl border p-2 {clazz}">
+<div class="card {clazz}" {style}>
   <section>
     <div class="card-head">
       <div class="card-badges">
