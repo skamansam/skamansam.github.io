@@ -1,5 +1,5 @@
 const build = [
-  "/_app/immutable/start-86bd24e2.js",
+  "/_app/immutable/start-3ffc77cd.js",
   "/_app/immutable/pages/__layout.svelte-c84ff3e8.js",
   "/_app/immutable/assets/pages/__layout.svelte-aa582d16.css",
   "/_app/immutable/assets/KaTeX_AMS-Regular-0cdd387c.woff2",
@@ -173,6 +173,8 @@ const files = [
   "/humans.txt",
   "/images/GSoC-logo-horizontal-800.png",
   "/images/rbe-banner.png",
+  "/images/social-media.png",
+  "/images/socila_media.xcf",
   "/manifest.json",
   "/music/ding.mp3",
   "/music/elevator.mp3",
@@ -181,7 +183,7 @@ const files = [
   "/rbe_logo.gif",
   "/robots.txt"
 ];
-const version = "1656999874129";
+const version = "1657028165593";
 const worker = self;
 const FILES = `cache${version}`;
 const to_cache = build.concat(files);
