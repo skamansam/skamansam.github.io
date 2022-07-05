@@ -8,5 +8,7 @@
 	<div class="self-center ml-1">
 		Made with 💖 by "Skaman Sam" Tyler<br />
 	</div>
-  <BuyMeACoffee scale="0.9" class="m-0 ml-auto mr-1"/>
+  <a class="hover:bg-transparent m-0 ml-auto mr-1" href="https://buymeacoffee.com/skamansamV">
+    <BuyMeACoffee scale="{0.9}"/>
+  </a>
 </div>
