@@ -49,7 +49,7 @@
 	detectBrightness();
 </script>
 
-<div class="theme-wrapper {brightness} theme-{theme} h-screen w-screen p-0 m-0 flex flex-col items-stretch">
+<div class="theme-wrapper {brightness} theme-{theme} h-screen w-full p-0 m-0 flex flex-col items-stretch">
 	<Header
 		{theme}
 		{themes}
@@ -58,7 +58,7 @@
 		on:themeChange={(evt) => setTheme(evt.detail)}
 	/>
   <Sidebar />
-  <div class="content-area pl-2  pt-2 flex-1">
+  <div class="content-area flex-1 p-3">
     <slot />
   </div>
   <Footer />

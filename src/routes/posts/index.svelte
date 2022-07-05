@@ -22,6 +22,7 @@
 		to={post.path}
 		subtitle={post.meta.description}
 		metadata="Published {new Date(post.meta.created_at).toLocaleString()}"
+    class="my-3 rounded-xl border p-2"
 	>
     <span slot="badges">
       {#each (post.meta?.categories || []) as category}
