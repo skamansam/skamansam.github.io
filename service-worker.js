@@ -1,5 +1,5 @@
 const build = [
-  "/_app/immutable/start-932d36d4.js",
+  "/_app/immutable/start-481af13c.js",
   "/_app/immutable/pages/__layout.svelte-259e83ba.js",
   "/_app/immutable/assets/pages/__layout.svelte-446c6964.css",
   "/_app/immutable/assets/KaTeX_AMS-Regular-0cdd387c.woff2",
@@ -177,10 +177,11 @@ const files = [
   "/music/ding.mp3",
   "/music/elevator.mp3",
   "/music/goingup.mp3",
+  "/rbe-logo.svg",
   "/rbe_logo.gif",
   "/robots.txt"
 ];
-const version = "1656957079344";
+const version = "1656993937794";
 const worker = self;
 const FILES = `cache${version}`;
 const to_cache = build.concat(files);
