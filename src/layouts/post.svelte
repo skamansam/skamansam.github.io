@@ -28,7 +28,7 @@
 	export let twitterImage = null;
 
 	if (!twitterImage) twitterImage = opengraphImage || Settings.posts.default_image;
-	if (!opengraphImage) opengraphImage = twitterImage || 'https://rudeboy.dev/rbe_logo.gif';
+	if (!opengraphImage) opengraphImage = twitterImage || Settings.posts.default_image;
 
 	let pageUrl = '';
 	let siteUrl = '';
