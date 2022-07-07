@@ -6,16 +6,16 @@
 	export let title = '';
 	export let author = '';
 	export let description = '';
-  /** @type {Array.<Object.<string, string>>} */
+	/** @type {Array.<Object.<string, string>>} */
 	export let meta = [];
 	export let updated_at = '';
 	export let created_at = '';
-  /** @type {Array.<string>} */
+	/** @type {Array.<string>} */
 	export let tags = [];
-  /** @type {Array.<string>} */
-  export let categories = [];
+	/** @type {Array.<string>} */
+	export let categories = [];
 	export let coverAlt = '';
-  /** @type {?string} */
+	/** @type {?string} */
 	export let coverImage = null;
 	export let excerpt = '';
 	export let comments = '';
@@ -36,7 +36,8 @@
 
 	let pageUrl = '';
 	let siteUrl = '';
-	let socialCardType = (opengraphImage || twitterImage || coverImage) ? 'summary_large_image' : 'summary';
+	let socialCardType =
+		opengraphImage || twitterImage || coverImage ? 'summary_large_image' : 'summary';
 
 	onMount(() => {
 		siteUrl = window.location.href;
@@ -46,47 +47,45 @@
 	/** @type {remarkHeadingPlugin[]} */
 	export let headings = [];
 
-
-  const ldjson = {
-			"@context": "https://schema.org",
-			"@type": articleType,
-			"headline": title,
-			"description": description,
-			"datePublished": created_at,
-			"datemodified": updated_at,
-			"mainEntityOfPage": "True",
-			"image": {
-				"@type": "imageObject",
-				"url": `${coverImage || opengraphImage || twitterImage }`,
-				"height": "600",
-				"width": "800"
-			},
-			"publisher": {
-				"@type": "Organization",
-				"name": "Rude Boy Enterprises",
-				"logo": {
-					"@type": "imageObject",
-					"url": `${siteUrl}/rbe-logo.png`
+	const ldjson = {
+		'@context': 'https://schema.org',
+		'@type': articleType,
+		headline: title,
+		description: description,
+		datePublished: created_at,
+		datemodified: updated_at,
+		mainEntityOfPage: 'True',
+		image: {
+			'@type': 'imageObject',
+			url: `${coverImage || opengraphImage || twitterImage}`,
+			height: '600',
+			width: '800'
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: 'Rude Boy Enterprises',
+			logo: {
+				'@type': 'imageObject',
+				url: `${siteUrl}/rbe-logo.png`
+			}
+		},
+		author: {
+			'@type': 'Person',
+			name: author
+		},
+		sharedContent: [
+			{
+				'@type': 'WebPage',
+				headline: title,
+				url: pageUrl,
+				author: {
+					'@type': 'Person',
+					name: author
 				}
-			},
-			"author": {
-				"@type": "Person",
-				"name": author
-			},
-			"sharedContent": [
-				{
-					"@type": "WebPage",
-					"headline": title,
-					"url": pageUrl,
-					"author": {
-						"@type": "Person",
-						"name": author
-					}
-				}
-			],
-			"articleBody": ""
-		}
-
+			}
+		],
+		articleBody: ''
+	};
 </script>
 
 <svelte:head>
@@ -113,7 +112,7 @@
 
 	<title>{title} | RBE</title>
 	<meta name="description" content={description} />
-	{@html `<script type="application/ld+json">${JSON.stringify(ldjson)}</script>`}
+	{@html `<script type="application/ld+json" ✂prettier:content✂="JHtKU09OLnN0cmluZ2lmeShsZGpzb24pfQ==">{}</script>`}
 </svelte:head>
 
 <!-- <meta property="og:site_name" content="Rude Boy Solutions" />
@@ -143,8 +142,10 @@
 				posted on: <span itemprop="pubDate">{new Date(created_at || null).toLocaleString()}</span>
 			</p>
 			{#if updated_at !== created_at}
-				<p class="date updated_at" >
-					last updated: <span itemprop="datemodified">{new Date(updated_at || null).toLocaleString()}</span>
+				<p class="date updated_at">
+					last updated: <span itemprop="datemodified"
+						>{new Date(updated_at || null).toLocaleString()}</span
+					>
 				</p>
 			{/if}
 			<p class="author">by: <span itemprop="author" content="@{author}" />{author}</p>
