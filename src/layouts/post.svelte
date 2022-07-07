@@ -1,27 +1,31 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-  import Settings from '$lib/settings';
+	import Settings from '$lib/settings';
 
 	export let title = '';
 	export let author = '';
-	export let lastmod = '';
 	export let description = '';
+  /** @type {Array.<Object.<string, string>>} */
 	export let meta = [];
 	export let updated_at = '';
 	export let created_at = '';
+  /** @type {Array.<string>} */
 	export let tags = [];
-	export let categories = [];
+  /** @type {Array.<string>} */
+  export let categories = [];
 	export let coverAlt = '';
-	export let coverImage = '';
+  /** @type {?string} */
+	export let coverImage = null;
 	export let excerpt = '';
 	export let comments = '';
 	export let view = '';
 	export let layout = '';
 	export let lang = '';
+	export let articleType = 'BlogPosting';
 
-	/** @type string|null */
-	export let cover = null;
+	/** @type {boolean} */
+	export let cover = false;
 	/** @type string|null */
 	export let opengraphImage = null;
 	/** @type string|null */
@@ -32,7 +36,7 @@
 
 	let pageUrl = '';
 	let siteUrl = '';
-	let socialCardType = (opengraphImage || twitterImage || cover) ? 'summary_large_image' : 'summary';
+	let socialCardType = (opengraphImage || twitterImage || coverImage) ? 'summary_large_image' : 'summary';
 
 	onMount(() => {
 		siteUrl = window.location.href;
@@ -41,6 +45,48 @@
 
 	/** @type {remarkHeadingPlugin[]} */
 	export let headings = [];
+
+
+  const ldjson = {
+			"@context": "https://schema.org",
+			"@type": articleType,
+			"headline": title,
+			"description": description,
+			"datePublished": created_at,
+			"datemodified": updated_at,
+			"mainEntityOfPage": "True",
+			"image": {
+				"@type": "imageObject",
+				"url": `${coverImage || opengraphImage || twitterImage }`,
+				"height": "600",
+				"width": "800"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Rude Boy Enterprises",
+				"logo": {
+					"@type": "imageObject",
+					"url": `${siteUrl}/rbe-logo.png`
+				}
+			},
+			"author": {
+				"@type": "Person",
+				"name": author
+			},
+			"sharedContent": [
+				{
+					"@type": "WebPage",
+					"headline": title,
+					"url": pageUrl,
+					"author": {
+						"@type": "Person",
+						"name": author
+					}
+				}
+			],
+			"articleBody": ""
+		}
+
 </script>
 
 <svelte:head>
@@ -48,7 +94,7 @@
 	{#each meta as prop}
 		<meta property={prop.property} content={prop.content} />
 	{/each}
-  <link rel='canonical' href="{page.url}"/>
+	<link rel="canonical" href={pageUrl} />
 	<!-- Facebook Meta Tags -->
 	<meta property="og:site_name" content="Rude Boy Solutions" />
 	<meta property="article:published_time" content={updated_at} />
@@ -67,6 +113,7 @@
 
 	<title>{title} | RBE</title>
 	<meta name="description" content={description} />
+	{@html `<script type="application/ld+json">${JSON.stringify(ldjson)}</script>`}
 </svelte:head>
 
 <!-- <meta property="og:site_name" content="Rude Boy Solutions" />
@@ -88,16 +135,21 @@
 </div> -->
 
 <main>
-	<article>
+	<article itemscope itemtype="https://schema.org/Article">
+		<meta itemprop="url" content={pageUrl} />
 		<hgroup>
-			<h1>{title}</h1>
-			<p class="date created_at">posted on: {new Date(created_at || null).toLocaleString()}</p>
+			<h1 itemprop="name">{title}</h1>
+			<p class="date created_at">
+				posted on: <span itemprop="pubDate">{new Date(created_at || null).toLocaleString()}</span>
+			</p>
 			{#if updated_at !== created_at}
-				<p class="date updated_at">last updated: {new Date(updated_at || null).toLocaleString()}</p>
+				<p class="date updated_at" >
+					last updated: <span itemprop="datemodified">{new Date(updated_at || null).toLocaleString()}</span>
+				</p>
 			{/if}
-			<p class="author">by: {author}</p>
+			<p class="author">by: <span itemprop="author" content="@{author}" />{author}</p>
 		</hgroup>
-		<div class="description hidden">{description}</div>
+		<div class="description hidden" itemprop="description">{description}</div>
 		<slot />
 	</article>
 </main>
