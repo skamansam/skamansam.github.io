@@ -1,15 +1,16 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-f3d7a57e.js",
+    "file": "start-577eed16.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
-      "_index-a5078a7d.js"
+      "_index-f5f19c4c.js"
     ],
     "dynamicImports": [
       "src/routes/__layout.svelte",
       "src/routes/__error.svelte",
       "src/routes/about.md",
+      "src/routes/authors/skamansam.md",
       "src/routes/categories/[category].svelte",
       "src/routes/contact.md",
       "src/routes/demo.md",
@@ -61,12 +62,12 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-c84ff3e8.js",
+    "file": "pages/__layout.svelte-bcadef1d.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js"
+      "_index-f5f19c4c.js"
     ],
     "css": [
       "assets/pages/__layout.svelte-aa582d16.css"
@@ -134,513 +135,570 @@
     ]
   },
   "src/routes/__error.svelte": {
-    "file": "pages/__error.svelte-1b408075.js",
+    "file": "pages/__error.svelte-8cbffef2.js",
     "src": "src/routes/__error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js"
+      "_index-f5f19c4c.js"
     ]
   },
   "src/routes/about.md": {
-    "file": "pages/about.md-b3c637ac.js",
+    "file": "pages/about.md-bac4aabc.js",
     "src": "src/routes/about.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
+    ]
+  },
+  "src/routes/authors/skamansam.md": {
+    "file": "pages/authors/skamansam.md-5a310bf8.js",
+    "src": "src/routes/authors/skamansam.md",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/categories/[category].svelte": {
-    "file": "pages/categories/_category_.svelte-9e3acc56.js",
+    "file": "pages/categories/_category_.svelte-16b54ef1.js",
     "src": "src/routes/categories/[category].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js"
+      "_index-f5f19c4c.js"
     ]
   },
   "src/routes/contact.md": {
-    "file": "pages/contact.md-9be3cdb5.js",
+    "file": "pages/contact.md-2b8ee704.js",
     "src": "src/routes/contact.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/demo.md": {
-    "file": "pages/demo.md-c029f3e0.js",
+    "file": "pages/demo.md-0db511d9.js",
     "src": "src/routes/demo.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-c0d102e3.js",
+    "file": "pages/index.svelte-deae5f25.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_Card-7c8aa3e3.js"
+      "_index-f5f19c4c.js",
+      "_Card-172307b4.js"
     ]
   },
   "src/routes/portfolio/index.svelte": {
-    "file": "pages/portfolio/index.svelte-3498ea45.js",
+    "file": "pages/portfolio/index.svelte-89fb0e40.js",
     "src": "src/routes/portfolio/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js"
+      "_index-f5f19c4c.js"
     ]
   },
   "src/routes/portfolio/svelte-blog.md": {
-    "file": "pages/portfolio/svelte-blog.md-74efc9a3.js",
+    "file": "pages/portfolio/svelte-blog.md-b1ed08a7.js",
     "src": "src/routes/portfolio/svelte-blog.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js"
+      "_index-f5f19c4c.js"
     ]
   },
   "src/routes/posts/2008-03-05-welcome-to-my-blog.md": {
-    "file": "pages/posts/2008-03-05-welcome-to-my-blog.md-24d3433a.js",
+    "file": "pages/posts/2008-03-05-welcome-to-my-blog.md-b4f52d4e.js",
     "src": "src/routes/posts/2008-03-05-welcome-to-my-blog.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2008-04-23-accepted-into-google-summer-of-code.md": {
-    "file": "pages/posts/2008-04-23-accepted-into-google-summer-of-code.md-a4854db4.js",
+    "file": "pages/posts/2008-04-23-accepted-into-google-summer-of-code.md-3df20938.js",
     "src": "src/routes/posts/2008-04-23-accepted-into-google-summer-of-code.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2008-05-09-wxcpan-skeleton-code.md": {
-    "file": "pages/posts/2008-05-09-wxcpan-skeleton-code.md-675097de.js",
+    "file": "pages/posts/2008-05-09-wxcpan-skeleton-code.md-0c968c40.js",
     "src": "src/routes/posts/2008-05-09-wxcpan-skeleton-code.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2008-05-13-wxcpan-going-well.md": {
-    "file": "pages/posts/2008-05-13-wxcpan-going-well.md-b4ced6cf.js",
+    "file": "pages/posts/2008-05-13-wxcpan-going-well.md-62862b72.js",
     "src": "src/routes/posts/2008-05-13-wxcpan-going-well.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2008-05-24-gsoc-day-0-equals-hit-the-ground-running.md": {
-    "file": "pages/posts/2008-05-24-gsoc-day-0-equals-hit-the-ground-running.md-bc59821c.js",
+    "file": "pages/posts/2008-05-24-gsoc-day-0-equals-hit-the-ground-running.md-b9da0050.js",
     "src": "src/routes/posts/2008-05-24-gsoc-day-0-equals-hit-the-ground-running.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2008-08-05-my-baby.md": {
-    "file": "pages/posts/2008-08-05-my-baby.md-9ad55cbd.js",
+    "file": "pages/posts/2008-08-05-my-baby.md-32887021.js",
     "src": "src/routes/posts/2008-08-05-my-baby.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2008-08-05-my-baby2.md": {
-    "file": "pages/posts/2008-08-05-my-baby2.md-77c6265c.js",
+    "file": "pages/posts/2008-08-05-my-baby2.md-4fd3d08c.js",
     "src": "src/routes/posts/2008-08-05-my-baby2.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2008-08-05-my-bartender-mark.md": {
-    "file": "pages/posts/2008-08-05-my-bartender-mark.md-07965de1.js",
+    "file": "pages/posts/2008-08-05-my-bartender-mark.md-d71b764f.js",
     "src": "src/routes/posts/2008-08-05-my-bartender-mark.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2008-08-07-al-at-werk-again.md": {
-    "file": "pages/posts/2008-08-07-al-at-werk-again.md-c6cb4248.js",
+    "file": "pages/posts/2008-08-07-al-at-werk-again.md-cdb76eb8.js",
     "src": "src/routes/posts/2008-08-07-al-at-werk-again.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2008-08-07-al-at-werk.md": {
-    "file": "pages/posts/2008-08-07-al-at-werk.md-1141b1cf.js",
+    "file": "pages/posts/2008-08-07-al-at-werk.md-916723a2.js",
     "src": "src/routes/posts/2008-08-07-al-at-werk.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-01-08-webfx-at-uncg.md": {
-    "file": "pages/posts/2009-01-08-webfx-at-uncg.md-2700f344.js",
+    "file": "pages/posts/2009-01-08-webfx-at-uncg.md-c368d08a.js",
     "src": "src/routes/posts/2009-01-08-webfx-at-uncg.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-02-02-installing-gentoo-2008-in-qemu-suns-virtualbox-on-fedora-10.md": {
-    "file": "pages/posts/2009-02-02-installing-gentoo-2008-in-qemu-suns-virtualbox-on-fedora-10.md-4faa970f.js",
+    "file": "pages/posts/2009-02-02-installing-gentoo-2008-in-qemu-suns-virtualbox-on-fedora-10.md-031401b2.js",
     "src": "src/routes/posts/2009-02-02-installing-gentoo-2008-in-qemu-suns-virtualbox-on-fedora-10.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-02-09-drop-down-menu-with-css.md": {
-    "file": "pages/posts/2009-02-09-drop-down-menu-with-css.md-d9b515fb.js",
+    "file": "pages/posts/2009-02-09-drop-down-menu-with-css.md-e44323cf.js",
     "src": "src/routes/posts/2009-02-09-drop-down-menu-with-css.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-02-14-installing-aptana-in-fedora-eclipse.md": {
-    "file": "pages/posts/2009-02-14-installing-aptana-in-fedora-eclipse.md-515025cf.js",
+    "file": "pages/posts/2009-02-14-installing-aptana-in-fedora-eclipse.md-595ab030.js",
     "src": "src/routes/posts/2009-02-14-installing-aptana-in-fedora-eclipse.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.md": {
-    "file": "pages/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.md-4713bfae.js",
+    "file": "pages/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.md-a36f653f.js",
     "src": "src/routes/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-03-21-windows-vs-linux-on-msi-gx700.md": {
-    "file": "pages/posts/2009-03-21-windows-vs-linux-on-msi-gx700.md-204079bf.js",
+    "file": "pages/posts/2009-03-21-windows-vs-linux-on-msi-gx700.md-16048480.js",
     "src": "src/routes/posts/2009-03-21-windows-vs-linux-on-msi-gx700.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-04-01-jquery-style-sheet-css-switcher.md": {
-    "file": "pages/posts/2009-04-01-jquery-style-sheet-css-switcher.md-64d2e21c.js",
+    "file": "pages/posts/2009-04-01-jquery-style-sheet-css-switcher.md-71c88197.js",
     "src": "src/routes/posts/2009-04-01-jquery-style-sheet-css-switcher.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64.md": {
-    "file": "pages/posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64.md-18744c50.js",
+    "file": "pages/posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64.md-87c8d6b5.js",
     "src": "src/routes/posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-04-02-google-summer-of-code-2009-project-ideas.md": {
-    "file": "pages/posts/2009-04-02-google-summer-of-code-2009-project-ideas.md-9efc55d9.js",
+    "file": "pages/posts/2009-04-02-google-summer-of-code-2009-project-ideas.md-00d37c3b.js",
     "src": "src/routes/posts/2009-04-02-google-summer-of-code-2009-project-ideas.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-05-10-tetex-for-puppy-linux.md": {
-    "file": "pages/posts/2009-05-10-tetex-for-puppy-linux.md-7e82c449.js",
+    "file": "pages/posts/2009-05-10-tetex-for-puppy-linux.md-a2bc51c9.js",
     "src": "src/routes/posts/2009-05-10-tetex-for-puppy-linux.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-05-29-fun-with-numbers.md": {
-    "file": "pages/posts/2009-05-29-fun-with-numbers.md-aa889f32.js",
+    "file": "pages/posts/2009-05-29-fun-with-numbers.md-c3bf3c16.js",
     "src": "src/routes/posts/2009-05-29-fun-with-numbers.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-05-29-how-to-build-a-dynamic-web-site-with-simple-server-technologies.md": {
-    "file": "pages/posts/2009-05-29-how-to-build-a-dynamic-web-site-with-simple-server-technologies.md-53ea5258.js",
+    "file": "pages/posts/2009-05-29-how-to-build-a-dynamic-web-site-with-simple-server-technologies.md-6fcd9563.js",
     "src": "src/routes/posts/2009-05-29-how-to-build-a-dynamic-web-site-with-simple-server-technologies.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-06-15-how-to-repair-images-with-imagemagick.md": {
-    "file": "pages/posts/2009-06-15-how-to-repair-images-with-imagemagick.md-91fb30d1.js",
+    "file": "pages/posts/2009-06-15-how-to-repair-images-with-imagemagick.md-095b1025.js",
     "src": "src/routes/posts/2009-06-15-how-to-repair-images-with-imagemagick.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.md": {
-    "file": "pages/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.md-c88f1f5a.js",
+    "file": "pages/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.md-c9a20e0b.js",
     "src": "src/routes/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2010-06-02-teaching-computer-science-in-a-web-browser.md": {
-    "file": "pages/posts/2010-06-02-teaching-computer-science-in-a-web-browser.md-2be169c4.js",
+    "file": "pages/posts/2010-06-02-teaching-computer-science-in-a-web-browser.md-df7b4184.js",
     "src": "src/routes/posts/2010-06-02-teaching-computer-science-in-a-web-browser.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2010-06-15-teaching-computer-science-in-a-web-browser.md": {
-    "file": "pages/posts/2010-06-15-teaching-computer-science-in-a-web-browser.md-bfc2132c.js",
+    "file": "pages/posts/2010-06-15-teaching-computer-science-in-a-web-browser.md-f831f042.js",
     "src": "src/routes/posts/2010-06-15-teaching-computer-science-in-a-web-browser.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2010-07-28-tango-icons-save-all.md": {
-    "file": "pages/posts/2010-07-28-tango-icons-save-all.md-9dd364f9.js",
+    "file": "pages/posts/2010-07-28-tango-icons-save-all.md-69047d21.js",
     "src": "src/routes/posts/2010-07-28-tango-icons-save-all.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2011-03-06-jquery-themeswitchertool-working-version.md": {
-    "file": "pages/posts/2011-03-06-jquery-themeswitchertool-working-version.md-88724996.js",
+    "file": "pages/posts/2011-03-06-jquery-themeswitchertool-working-version.md-88699267.js",
     "src": "src/routes/posts/2011-03-06-jquery-themeswitchertool-working-version.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2012-02-04-how-to-keep-your-linux-always-on-in-a-dual-boot-system.md": {
-    "file": "pages/posts/2012-02-04-how-to-keep-your-linux-always-on-in-a-dual-boot-system.md-d57f3bcd.js",
+    "file": "pages/posts/2012-02-04-how-to-keep-your-linux-always-on-in-a-dual-boot-system.md-adf8044a.js",
     "src": "src/routes/posts/2012-02-04-how-to-keep-your-linux-always-on-in-a-dual-boot-system.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md": {
-    "file": "pages/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md-a55b6999.js",
+    "file": "pages/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md-51c41816.js",
     "src": "src/routes/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config.md": {
-    "file": "pages/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config.md-39a7d171.js",
+    "file": "pages/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config.md-803faf76.js",
     "src": "src/routes/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md": {
-    "file": "pages/posts/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md-8426fa0b.js",
+    "file": "pages/posts/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md-21072aad.js",
     "src": "src/routes/posts/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2013-04-10-building-a-unified-time-select-field.md": {
-    "file": "pages/posts/2013-04-10-building-a-unified-time-select-field.md-04515e8c.js",
+    "file": "pages/posts/2013-04-10-building-a-unified-time-select-field.md-d75775b4.js",
     "src": "src/routes/posts/2013-04-10-building-a-unified-time-select-field.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2013-04-23-cookie-detection-in-rails-3.md": {
-    "file": "pages/posts/2013-04-23-cookie-detection-in-rails-3.md-0f1b8d15.js",
+    "file": "pages/posts/2013-04-23-cookie-detection-in-rails-3.md-fd373b09.js",
     "src": "src/routes/posts/2013-04-23-cookie-detection-in-rails-3.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2016-08-30-moved-to-octopress.md": {
-    "file": "pages/posts/2016-08-30-moved-to-octopress.md-049a1dd2.js",
+    "file": "pages/posts/2016-08-30-moved-to-octopress.md-fcc77b69.js",
     "src": "src/routes/posts/2016-08-30-moved-to-octopress.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2016-09-06-dynamic-models-in-rails-3.md": {
-    "file": "pages/posts/2016-09-06-dynamic-models-in-rails-3.md-21308a2a.js",
+    "file": "pages/posts/2016-09-06-dynamic-models-in-rails-3.md-b0df9420.js",
     "src": "src/routes/posts/2016-09-06-dynamic-models-in-rails-3.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2016-09-06-firefox-add-ons-i-cant-live-without.md": {
-    "file": "pages/posts/2016-09-06-firefox-add-ons-i-cant-live-without.md-927842d6.js",
+    "file": "pages/posts/2016-09-06-firefox-add-ons-i-cant-live-without.md-10ad60ec.js",
     "src": "src/routes/posts/2016-09-06-firefox-add-ons-i-cant-live-without.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2016-09-06-installing-amaya-on-fedora-10-64bit.md": {
-    "file": "pages/posts/2016-09-06-installing-amaya-on-fedora-10-64bit.md-23bc3986.js",
+    "file": "pages/posts/2016-09-06-installing-amaya-on-fedora-10-64bit.md-efcc2ac8.js",
     "src": "src/routes/posts/2016-09-06-installing-amaya-on-fedora-10-64bit.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2016-09-06-top-linux-apps-i-cant-live-without.md": {
-    "file": "pages/posts/2016-09-06-top-linux-apps-i-cant-live-without.md-d9a8cb66.js",
+    "file": "pages/posts/2016-09-06-top-linux-apps-i-cant-live-without.md-f6ee476f.js",
     "src": "src/routes/posts/2016-09-06-top-linux-apps-i-cant-live-without.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/2016-09-14-data-migrations-and-you.md": {
-    "file": "pages/posts/2016-09-14-data-migrations-and-you.md-2c4cae29.js",
+    "file": "pages/posts/2016-09-14-data-migrations-and-you.md-41d37735.js",
     "src": "src/routes/posts/2016-09-14-data-migrations-and-you.md",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_post-ac48aa50.js"
+      "_index-f5f19c4c.js",
+      "_post-a163cf6b.js",
+      "_settings-ae4c19cc.js"
     ]
   },
   "src/routes/posts/index.svelte": {
-    "file": "pages/posts/index.svelte-522d1598.js",
+    "file": "pages/posts/index.svelte-a503cf82.js",
     "src": "src/routes/posts/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js",
-      "_Card-7c8aa3e3.js"
+      "_index-f5f19c4c.js",
+      "_Card-172307b4.js"
     ]
   },
   "src/routes/tags/[tag].svelte": {
-    "file": "pages/tags/_tag_.svelte-681641e4.js",
+    "file": "pages/tags/_tag_.svelte-abbbd865.js",
     "src": "src/routes/tags/[tag].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-a5078a7d.js"
+      "_index-f5f19c4c.js"
     ]
   },
-  "_index-a5078a7d.js": {
-    "file": "chunks/index-a5078a7d.js"
+  "_index-f5f19c4c.js": {
+    "file": "chunks/index-f5f19c4c.js"
   },
-  "_post-ac48aa50.js": {
-    "file": "chunks/post-ac48aa50.js",
+  "_post-a163cf6b.js": {
+    "file": "chunks/post-a163cf6b.js",
     "imports": [
-      "_index-a5078a7d.js"
+      "_index-f5f19c4c.js",
+      "_settings-ae4c19cc.js"
     ]
   },
-  "_Card-7c8aa3e3.js": {
-    "file": "chunks/Card-7c8aa3e3.js",
+  "_settings-ae4c19cc.js": {
+    "file": "chunks/settings-ae4c19cc.js"
+  },
+  "_Card-172307b4.js": {
+    "file": "chunks/Card-172307b4.js",
     "imports": [
-      "_index-a5078a7d.js"
+      "_index-f5f19c4c.js"
     ]
   }
 }
