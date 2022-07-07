@@ -1,6 +1,6 @@
 ---
 title: Markdown Style Demo and Reference
-lastmod: 2022-06-13T20:24:59.519Z
+updated_at: 2022-06-13T20:24:59.519Z
 author: Samuel C Tyler
 description: A demonstration of the markdown rendering of this blog. Used for theming and a
   TODO list of features. Most of this is from the markdown-it demo, with which I

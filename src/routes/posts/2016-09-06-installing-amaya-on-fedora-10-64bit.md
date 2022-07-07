@@ -17,7 +17,6 @@ tags:
   - Rude Boy Solutions
 created_at: 2016-09-06 09:34:28
 updated_at: 2016-09-06 09:34:28
-lastmod: 2022-06-13T01:52:55.151Z
 ---
 
 Since I am a web developer, I prefer to test my web sites on as many browsers as

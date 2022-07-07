@@ -18,7 +18,6 @@ tags:
   - Fedora
 created_at: 2016-09-06 09:49:22
 updated_at: 2016-09-06 09:49:22
-lastmod: 2022-06-13T01:52:37.397Z
 ---
 
 Disclaimer: This post is mostly for my benefit, as it outlines all the software

@@ -16,7 +16,6 @@ tags:
   - Google Summer of Code
 created_at: 2009-04-02 21:31:00
 updated_at: 2009-04-02 21:31:00
-lastmod: 2022-06-11T20:54:51.895Z
 ---
 
 Google has announced a another [Summer of Code for 2009](http://code.google.com/soc/) ([video](http://www.youtube.com/watch?v=vBRRR0BQyz0&amp;feature=channel_page))! Here is a list of some project idea pages for this year.

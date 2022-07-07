@@ -16,7 +16,6 @@ tags:
   - jQuery
 created_at: 2011-03-06 21:20:00
 updated_at: 2011-03-06 21:20:00
-lastmod: 2022-06-11T21:01:45.827Z
 ---
 
 I recently tried to install the jQuery UI

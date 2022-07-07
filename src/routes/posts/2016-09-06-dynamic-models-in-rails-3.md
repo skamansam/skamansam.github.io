@@ -17,7 +17,6 @@ tags:
   - Ruby on Rails
 created_at: 2016-09-06 09:45:57
 updated_at: 2016-09-06 09:45:57
-lastmod: 2022-06-13T01:54:22.847Z
 ---
 
 Rails 3 has a lot of nifty new features. However, this is not about those

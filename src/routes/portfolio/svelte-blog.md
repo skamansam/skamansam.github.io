@@ -1,6 +1,6 @@
 ---
 title: "Portfolio: Svelte Blog (this blog!)"
-lastmod: 2022-06-13T01:32:59.312Z
+updated_at: 2022-06-13T01:32:59.312Z
 ---
 
 

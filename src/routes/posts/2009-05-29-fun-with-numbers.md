@@ -19,7 +19,6 @@ tags:
   - Polynomials
 created_at: 2009-05-29 8:48:00
 updated_at: 2016-09-14 7:56:00
-lastmod: 2022-06-12T17:33:05.016Z
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">

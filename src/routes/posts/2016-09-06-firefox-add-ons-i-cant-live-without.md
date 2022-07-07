@@ -18,7 +18,6 @@ tags:
   - Browser Wars
 created_at: 2016-09-06 09:36:41
 updated_at: 2016-09-06 09:36:41
-lastmod: 2022-06-13T01:54:28.448Z
 ---
 
 I have been a web developer since 1996, and have seen many things come and go in
