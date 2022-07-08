@@ -112,7 +112,8 @@
 
 	<title>{title} | RBE</title>
 	<meta name="description" content={description} />
-	{@html `<script type="application/ld+json" ✂prettier:content✂="JHtKU09OLnN0cmluZ2lmeShsZGpzb24pfQ==">{}</script>`}
+	<!-- /* prettier-ignore */ -->
+	{@html `<script type="application/ld+json">${JSON.stringify(ldjson)}</script>`}
 </svelte:head>
 
 <!-- <meta property="og:site_name" content="Rude Boy Solutions" />
