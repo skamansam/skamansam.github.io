@@ -8,9 +8,6 @@
   export let preview;
   export let previewHtml;
   export let textContent;
-  console.log('preview', preview);
-  console.log('previewHtml', previewHtml);
-  console.log('textContent', textContent);
 
 	export let title = '';
 	export let author = '';
