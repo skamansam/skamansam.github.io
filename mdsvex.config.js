@@ -12,6 +12,8 @@ import remarkReferenceLinks from 'remark-reference-links';
 import remarkInlineLinks from 'remark-inline-links';
 import remarkMermaid from 'remark-mermaid';
 import remarkTOC from 'remark-toc';
+import preview, { htmlFormatter, textFormatter } from 'remark-preview';
+import readingTime from 'remark-reading-time';
 
 import remarkTypographer from './src/util/remarkTypographer.js';
 
@@ -73,6 +75,26 @@ const config = defineConfig({
       heading: 'toc|(table[ -]of[ -])?contents|on this page',
       tight: true,
     }],
+    readingTime(),
+    preview(textFormatter({ length: 250, maxBlocks: 2 })),
+    preview(
+      htmlFormatter({
+        length: 250,
+        maxBlocks: 2,
+      }),
+      {
+        attribute: 'previewHtml',
+      }
+    ),
+    preview(
+      textFormatter({
+        // length: 250,
+        // maxBlocks: 2,
+      }),
+      {
+        attribute: 'textContent',
+      }
+    ),
 	],
 	rehypePlugins: [
     rehypeKatexSvelte,

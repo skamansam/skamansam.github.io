@@ -2,6 +2,15 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import Settings from '$lib/settings';
+  
+  /** @type {readingTime} */
+  export let readingTime;
+  export let preview;
+  export let previewHtml;
+  export let textContent;
+  console.log('preview', preview);
+  console.log('previewHtml', previewHtml);
+  console.log('textContent', textContent);
 
 	export let title = '';
 	export let author = '';
@@ -84,7 +93,7 @@
 				}
 			}
 		],
-		articleBody: ''
+		articleBody: textContent
 	};
 </script>
 
@@ -95,7 +104,7 @@
 	{/each}
 	<link rel="canonical" href={pageUrl} />
 	<!-- Facebook Meta Tags -->
-	<meta property="og:site_name" content="Rude Boy Solutions" />
+	<meta property="og:site_name" content={Settings.site.title} />
 	<meta property="article:published_time" content={updated_at} />
 	<meta property="article:author" content={author} />
 	<meta property="og:url" content={pageUrl} />
@@ -116,40 +125,23 @@
 	{@html `<script type="application/ld+json">${JSON.stringify(ldjson)}</script>`}
 </svelte:head>
 
-<!-- <meta property="og:site_name" content="Rude Boy Solutions" />
-<div itemscope itemtype="http://schema.org/Article" class="hidden">
-    <meta itemprop="url" content="{pageUrl}" />
-    <span itemprop="name" content="{title} - RBE" />
-    by <span itemprop="author" content="@{author}" />
-    {#if opengraphImage}
-    <img itemprop="image" src="{opengraphImage}" alt="{coverAlt}" />
-    {/if}
-    <span itemprop="description">{description}</span>
-    <div itemprop="relatedItem" itemscope itemtype="http://schema.org/Article">
-        <a itemprop="url" href="{pageUrl}">
-    </div>
-    <div itemprop="realatedItem" itemscope itemtype="http://schema.org/Article">
-        <a itemprop="url" href="{siteUrl}/categories/{categories[0]}">
-    </div>
-    <span itemprop="datePublished" content="{new Date(updated_at).toString()}"></span>
-</div> -->
-
 <main>
 	<article itemscope itemtype="https://schema.org/Article">
 		<meta itemprop="url" content={pageUrl} />
 		<hgroup>
 			<h1 itemprop="name">{title}</h1>
 			<p class="date created_at">
-				posted on: <span itemprop="pubDate">{new Date(created_at || null).toLocaleString()}</span>
+				posted on: <span itemprop="pubDate">{new Date(created_at).toLocaleString()}</span>
 			</p>
-			{#if updated_at !== created_at}
+			{#if updated_at ?? updated_at !== created_at}
 				<p class="date updated_at">
 					last updated: <span itemprop="datemodified"
-						>{new Date(updated_at || null).toLocaleString()}</span
+						>{new Date(updated_at).toLocaleString()}</span
 					>
 				</p>
 			{/if}
 			<p class="author">by: <span itemprop="author" content="@{author}" />{author}</p>
+			<p class="readingTime"><span itemprop="readingTime" />{readingTime.text}</p>
 		</hgroup>
 		<div class="description hidden" itemprop="description">{description}</div>
 		<slot />

@@ -16,3 +16,10 @@ type remarkHeadingPlugin = {
 type ConfigFile = {
   
 }
+
+type readingTime = {
+  minutes: number,
+  text: string,
+  time: number,
+  words: number
+}
