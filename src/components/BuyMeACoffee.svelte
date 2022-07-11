@@ -1,17 +1,13 @@
 <script lang="ts">
-  import GoogleFont, { getFontStyle } from "@svelte-web-fonts/google";
-  import type { GoogleFontDefinition, GoogleFontVariant } from "@svelte-web-fonts/google";
-
-  let clazz = '';
-	export { clazz as class };
-
+  import type { Font, FontVariant } from '$lib/WebFontImporterTypes';
+  import WebFontImporter from "./WebFontImporter.svelte";
   export let text: string|null = null;
   export let bgColor = "#FFDD00";
   export let coffeeColor: string = "brown";
-  export let outlineColor: string = "#0D0C23";
+  // export let outlineColor: string = "#0D0C23";
   export let textColor: string = "#0D0C23";  
   export let fontFamily: string|null = null;
-  export let fontVariant: string|null = "400";
+  export let fontVariant: FontVariant = "400";
   export let height=153;
   export let width=545;  
   export let scale=1.0;
@@ -21,15 +17,16 @@
   if (text && !fontFamily) fontFamily = 'Cookie';
   if (fontFamily && !text) text = "Buy me a coffee";
 
-  let fonts: GoogleFontDefinition[] = [];
+  let fonts:Font[] = [];
   $: {
-      fonts  = [{
-        family: fontFamily,
-        text
-      }
-    ];
-    if (fontVariant) fonts[0].variants = [fontVariant];
-
+      if (fontFamily) {
+        fonts  = [{
+          family: fontFamily,
+          variants: ["400"],
+        }
+      ];
+      if (fontVariant) fonts[0].variants = [fontVariant];
+    }
   }
 </script>
 
@@ -41,13 +38,11 @@
 
 <svelte:head>
   {#if fontFamily && text}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <GoogleFont {fonts} display="swap" />
+    <WebFontImporter {fonts}/>
   {/if}
 </svelte:head>
 
-<svg width="{width * buttonScaleFactor * scale}" height="{height * buttonScaleFactor * scale}" viewBox="0 0 {width} {height}" fill="none" class="{clazz} inline-block align-left" xmlns="http://www.w3.org/2000/svg">
+<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" transform="scale({scale * buttonScaleFactor})" xmlns="http://www.w3.org/2000/svg">
   <path 
     id="background" 
     d="M0 24.48C0 10.9601 10.9601 0 24.48 0H{width-24.8}C{width - 11.28} 0 {width - 0.32} 10.9601 {width - 0.32} 24.48V128.52C{width-0.32} 142.04 {width - 11.28} 153 {width -24.8} 153H24.48C10.9601 153 0 142.04 0 128.52V24.48Z" 

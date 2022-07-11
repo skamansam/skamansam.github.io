@@ -3,10 +3,13 @@
 	import { onMount } from 'svelte';
 	import Settings from '$lib/settings';
   
+  export let slug;
+  console.log('SLUG', slug);
+
   /** @type {readingTime} */
   export let readingTime;
-  export let preview;
-  export let previewHtml;
+  // export let preview;
+  // export let previewHtml;
   export let textContent;
 
 	export let title = '';
@@ -16,22 +19,22 @@
 	export let meta = [];
 	export let updated_at = '';
 	export let created_at = '';
-	/** @type {Array.<string>} */
-	export let tags = [];
-	/** @type {Array.<string>} */
-	export let categories = [];
-	export let coverAlt = '';
+	// /** @type {Array.<string>} */
+	// export let tags = [];
+	// /** @type {Array.<string>} */
+	// export let categories = [];
+	// export let coverAlt = '';
 	/** @type {?string} */
 	export let coverImage = null;
-	export let excerpt = '';
-	export let comments = '';
-	export let view = '';
-	export let layout = '';
-	export let lang = '';
+	// export let excerpt = '';
+	// export let comments = '';
+	// export let view = '';
+	// export let layout = '';
+	// export let lang = '';
 	export let articleType = 'BlogPosting';
 
-	/** @type {boolean} */
-	export let cover = false;
+	// /** @type {boolean} */
+	// export let cover = false;
 	/** @type string|null */
 	export let opengraphImage = null;
 	/** @type string|null */
@@ -40,18 +43,18 @@
 	if (!twitterImage) twitterImage = opengraphImage || Settings.posts.default_image;
 	if (!opengraphImage) opengraphImage = twitterImage || Settings.posts.default_image;
 
-	let pageUrl = '';
-	let siteUrl = '';
+	let pageUrl = $page.url.toString();
+	let siteUrl = $page.url.origin;
 	let socialCardType =
 		opengraphImage || twitterImage || coverImage ? 'summary_large_image' : 'summary';
 
 	onMount(() => {
-		siteUrl = window.location.href;
-		pageUrl = siteUrl + page.path;
+		// siteUrl = window.location.href;
+		// pageUrl = siteUrl + page.path;
 	});
 
-	/** @type {remarkHeadingPlugin[]} */
-	export let headings = [];
+	// /** @type {remarkHeadingPlugin[]} */
+	// export let headings = [];
 
 	const ldjson = {
 		'@context': 'https://schema.org',
@@ -92,6 +95,7 @@
 		],
 		articleBody: textContent
 	};
+  const ldjsonTag = `<script type="application/ld+json">${JSON.stringify(ldjson)}\<\/script>`
 </script>
 
 <svelte:head>
@@ -119,7 +123,7 @@
 	<title>{title} | RBE</title>
 	<meta name="description" content={description} />
 	<!-- /* prettier-ignore */ -->
-	{@html `<script type="application/ld+json">${JSON.stringify(ldjson)}</script>`}
+	{ @html ldjsonTag }
 </svelte:head>
 
 <main>

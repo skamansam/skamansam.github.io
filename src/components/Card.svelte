@@ -8,7 +8,7 @@
 		subtitle = null,
 		/** @type string|null */
 		metadata = null,
-		/** @type string[]|null */
+		/** @type string[] */
 		badges = [],
 		/** @type string|null */
 		to = null,

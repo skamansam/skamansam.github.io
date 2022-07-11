@@ -20,9 +20,19 @@ const REPLACEMENTS = {
   '<input type="checkbox" $1 $2 $3>': /:::\s*checkb?o?x?( disabled)?( checked)?( indeterminate)?\s*:::/ig,
 }
 
-function transformer(ast, file) {
+/**
+ * 
+ * @param {*} ast 
+ * @param {*} _file 
+ */
+function transformer(ast, _file) {
   visit(ast, 'text', visitor)
 
+  /**
+   * 
+   * @param {*} node 
+   * @returns 
+   */
   function visitor(node) {
     if (!node.value) return;
     Object.entries(REPLACEMENTS).forEach(([to, from]) => {

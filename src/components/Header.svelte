@@ -19,7 +19,7 @@
 
 <header class={`site-head flex ${clazz || ''}`}>
 	<div class="header-logo inline-block text-onPrimaryBg">
-		<RBELogo width="100" height="100" />
+		<RBELogo width={100} height={100} />
 		<!-- <img src="/rbe-logo.svg" alt="Rude Boy Enterprises Logo" width="100" height="100"> -->
 	</div>
 	<div class="flex flex-col grow justify-center ml-3">

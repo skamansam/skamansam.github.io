@@ -9,6 +9,6 @@
 		Made with 💖 by "Skaman Sam" Tyler<br />
 	</div>
   <a class="hover:bg-transparent m-0 ml-auto mr-1" href="https://buymeacoffee.com/skamansamV">
-    <BuyMeACoffee scale="{0.9}"/>
+    <BuyMeACoffee scale={0.9}/>
   </a>
 </div>

@@ -1,6 +1,6 @@
-export const allPostFiles = import.meta.glob('../routes/posts/**/*.md')
+export const allPostFiles = import.meta.glob('../routes/posts/**/*.md');
 
-export const allPosts = await Promise.all(
+export const allPosts:PostJSON[] = await Promise.all(
   Object.entries(allPostFiles).map(async ([path, resolver]) => {
     const { metadata } = await resolver()
     const pathAry = path.split('/');

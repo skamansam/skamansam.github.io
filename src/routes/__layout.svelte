@@ -4,7 +4,7 @@
   import Header from '../components/Header.svelte';
 	import '../app.css';
 	import { browser } from '$app/env';
-  import Mermaid from '../components/Mermaid.svelte';
+  // import Mermaid from '../components/Mermaid.svelte';
 
 	let brightness = 'light';
 	let theme = '';
