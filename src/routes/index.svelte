@@ -1,20 +1,26 @@
-<script>
+<script context="module">
+  /** @type {import('@sveltejs/kit').Load} */
+  export const load = async ({ fetch }) => {
+		const posts = await fetch('/api/posts.json');
+		const latestPosts = await posts.json();
+		const projects = await fetch('/api/projects.json');
+		const latestProjects = await projects.json();
+		return {
+			props: {
+				latestPosts: latestPosts.slice(0, 3),
+				latestProjects: latestProjects.slice(0, 3)
+			}
+		};
+	};
+</script>
+
+<script lang="js">
   import Card from '../components/Card.svelte'
   import Badge from '../components/Badge.svelte';
 	let clazz = '';
 	export { clazz as class };
-  /** @type PostJSON[] */
-  let latestPosts = [];
-  /** @type {import('@sveltejs/kit').Load} */
-  export const load = async ({ fetch }) => {
-		const posts = await fetch('/api/posts/bysize/5.json?size=5');
-		latestPosts = await posts.json();
-		return {
-			props: {
-				latestPosts
-			}
-		};
-	};
+  /** @type {PostJSON[]} */
+	export let latestPosts = [];
 </script>
 
 <svelete:head>
@@ -29,13 +35,6 @@
   </Card>
   <h2>Latest Posts</h2>
 
-  <h2>Latest Projects</h2>
-</div>
-
-
-
-<script context="module">
-</script>
 
 {#each latestPosts as post}
 	<Card
@@ -57,3 +56,5 @@
     </span>		{post.meta.excerpt}
 	</Card>
 {/each}
+<h2>Latest Projects</h2>
+</div>

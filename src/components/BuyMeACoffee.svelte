@@ -42,10 +42,10 @@
   {/if}
 </svelte:head>
 
-<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" transform="scale({scale * buttonScaleFactor})" xmlns="http://www.w3.org/2000/svg">
+<svg width="{545}" height="{153}" viewBox="0 0 {545} {153}" fill="none" transform="scale({scale * buttonScaleFactor})" xmlns="http://www.w3.org/2000/svg">
   <path 
     id="background" 
-    d="M0 24.48C0 10.9601 10.9601 0 24.48 0H{width-24.8}C{width - 11.28} 0 {width - 0.32} 10.9601 {width - 0.32} 24.48V128.52C{width-0.32} 142.04 {width - 11.28} 153 {width -24.8} 153H24.48C10.9601 153 0 142.04 0 128.52V24.48Z" 
+    d="M0 24.48C0 10.9601 10.9601 0 24.48 0H{545-24.8}C{545 - 11.28} 0 {545 - 0.32} 10.9601 {545 - 0.32} 24.48V128.52C{545-0.32} 142.04 {545 - 11.28} 153 {545 -24.8} 153H24.48C10.9601 153 0 142.04 0 128.52V24.48Z" 
     fill="{bgColor}"
   />
   <!-- <path d="M109.522 50.3178L109.455 50.2783L109.299 50.2308C109.362 50.2836 109.44 50.3142 109.522 50.3178Z" fill="#0D0C22"/> -->

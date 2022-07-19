@@ -142,7 +142,7 @@
 				</p>
 			{/if}
 			<p class="author">by: <span itemprop="author" content="@{author}" />{author}</p>
-			<p class="readingTime"><span itemprop="readingTime" />{readingTime.text}</p>
+			<p class="readingTime"><span itemprop="readingTime" />{readingTime?.text}</p>
 		</hgroup>
 		<div class="description hidden" itemprop="description">{description}</div>
 		<slot />

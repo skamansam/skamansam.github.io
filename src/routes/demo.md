@@ -445,6 +445,7 @@ Emoticons are supported via [emoticons](https://github.com/wooorm/emoticon/blob/
 
 ## ✅ Latex Support
 You can write html, that contains expressions like this:  $x ^ 2 + 5$ inside them. As you probably know. You also can write expressions in display mode as follows: 
+
 $$ 
 \sum_{i=1}^n(x_i^2 - \overline{x}^2)
 $$
