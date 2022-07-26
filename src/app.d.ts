@@ -78,3 +78,7 @@ type PostJSON = {
   slug: string,
   path: string,
 }
+type Project = Post;
+type ProjectJSON = PostJSON;
+type Portfolio = Post;
+type PortfolioJSON = PostJSON;

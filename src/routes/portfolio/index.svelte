@@ -1,9 +1,43 @@
-<script lang="ts">
-	let clazz = '';
-	export { clazz as class };
+<script context="module">
+	import Card from '../../components/Card.svelte';
+  import Badge from '../../components/Badge.svelte';
+
+  /** @type {import('@sveltejs/kit').Load} */
+  export const load = async ({ fetch }) => {
+    const portfolios = await fetch('/api/portfolio.json');
+    /** @type {Portfolio[]} */
+		const allPortfolios = await portfolios.json();
+		return {
+			props: {
+				portfolios: allPortfolios
+			}
+		};
+	};
 </script>
 
-<svelete:head><title>Sam's Portfolio</title></svelete:head>
-<div class={clazz}>
-	<h1>Portfolio</h1>
-</div>
+<script lang="js">
+  /** @type {PortfolioJSON[]} */
+	export let portfolios;
+</script>
+
+{#each portfolios as portfolio}
+	<Card
+		title={portfolio.meta.title}
+		to={portfolio.path}
+		subtitle={portfolio.meta.description}
+		metadata="Published {new Date(portfolio.meta.created_at).toLocaleString()}"
+    class="my-3 rounded-xl border p-2"
+	>
+    <span slot="badges">
+      {#each (portfolio.meta?.categories || []) as category}
+        <Badge text={category} to="/categories/{category}"/>
+      {/each}
+    </span>
+    <span slot="metadata">
+      Published {new Date(portfolio.meta.created_at).toLocaleString()}
+      {#each (portfolio.meta?.tags || []) as tag}
+        <a href="/tags/{tag}">#{tag}</a>
+      {/each}
+    </span>		{portfolio.meta.excerpt}
+	</Card>
+{/each}
