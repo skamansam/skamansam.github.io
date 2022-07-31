@@ -1,5 +1,7 @@
 /// <reference types="@sveltejs/kit" />
 
+import type { IconSource } from "@steeze-ui/heroicons/types"
+
 // import type Posts from "./layouts/posts.svelte"
 
 // See https://kit.svelte.dev/docs/types#app
@@ -82,3 +84,10 @@ type Project = Post;
 type ProjectJSON = PostJSON;
 type Portfolio = Post;
 type PortfolioJSON = PostJSON;
+
+
+type NavLink = {
+  name?: string,
+  icon?: IconSource,
+  link: string
+}
