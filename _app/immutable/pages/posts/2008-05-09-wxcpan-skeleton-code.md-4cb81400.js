@@ -1,0 +1,15 @@
+import{S as f,i as h,s as p,D as l,x as y,y as _,z as g,A as v,B as d,r as w,p as x,C as b,L as c,e as I,t as C,c as $,a as k,h as A,d as m,g as P,I as T,n as S}from"../../chunks/index-f0cd6aaa.js";import{P as z}from"../../chunks/post-d11a0746.js";import"../../chunks/stores-707f9fa0.js";import"../../chunks/settings-69239d06.js";function B(r){let e,s;return{c(){e=I("p"),s=C(`I have started doing heavy-duty research into w\u{1F61D}erl, and have created a bit of
+skeleton code for subclasses, as well as cpan-ready file layout. I am starting
+on the documentation of the classes I am using (mainly subclasses of wxTreeCtrl
+to display the data).  At this rate, my documentation will be mostly finished
+before I even have one line of handwritten code!`)},l(a){e=$(a,"P",{});var n=k(e);s=A(n,`I have started doing heavy-duty research into w\u{1F61D}erl, and have created a bit of
+skeleton code for subclasses, as well as cpan-ready file layout. I am starting
+on the documentation of the classes I am using (mainly subclasses of wxTreeCtrl
+to display the data).  At this rate, my documentation will be mostly finished
+before I even have one line of handwritten code!`),n.forEach(m)},m(a,n){P(a,e,n),T(e,s)},p:S,d(a){a&&m(e)}}}function E(r){let e,s;const a=[r[0],u];let n={$$slots:{default:[B]},$$scope:{ctx:r}};for(let t=0;t<a.length;t+=1)n=l(n,a[t]);return e=new z({props:n}),{c(){y(e.$$.fragment)},l(t){_(e.$$.fragment,t)},m(t,o){g(e,t,o),s=!0},p(t,[o]){const i=o&1?v(a,[o&1&&d(t[0]),o&0&&d(u)]):{};o&2&&(i.$$scope={dirty:o,ctx:t}),e.$set(i)},i(t){s||(w(e.$$.fragment,t),s=!0)},o(t){x(e.$$.fragment,t),s=!1},d(t){b(e,t)}}}const u={comments:!0,view:"post",layout:"post",lang:"en",author:"skamansam",title:"wxCPAN Skeleton Code",description:"wxCPAN is underway!",excerpt:"I have started doing heavy-duty research into wxPerl",cover:!1,coverImage:"/images/GSoC-logo-horizontal-800.png",coverAlt:"RBE Logo",categories:["perl"],tags:["gSoC"],created_at:"2008-05-09 14:40",updated_at:"2008-05-09 14:40",readingTime:{text:"1 min read",minutes:.31,time:18600,words:62},preview:`I have started doing heavy-duty research into w\u{1F61D}erl, and have created a bit of 
+skeleton code for subclasses, as well as cpan-ready file layout. I am starting 
+on the documentation of the classes I am using (mainly subclasses of wxTreeCtrl 
+to...`,previewHtml:"<p>I have started doing heavy-duty research into w\u{1F61D}erl, and have created a bit of skeleton code for subclasses, as well as cpan-ready file layout. I am starting on the documentation of the classes I am using (mainly subclasses of wxTreeCtrl to display t...</p>",textContent:`I have started doing heavy-duty research into w\u{1F61D}erl, and have created a bit of 
+skeleton code for subclasses, as well as cpan-ready file layout. I am starting 
+on the documentation of the classes I am using (mainly subclasses of wxTreeCtrl 
+to display the data).  At this rate, my documentation...`};function L(r,e,s){return r.$$set=a=>{s(0,e=l(l({},e),c(a)))},e=c(e),[e]}class G extends f{constructor(e){super(),h(this,e,L,E,p,{})}}export{G as default,u as metadata};
