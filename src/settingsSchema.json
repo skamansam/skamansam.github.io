@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "base_url": {
+      "type": "string",
+      "description": "The base URL for the deployed site."
+    },
+    "default_theme": {
+      "type": "string"
+    },
+    "posts": {
+      "type": "object",
+      "properties": {
+        "default_image": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "default_image"
+      ]
+    }
+  },
+  "required": [
+    "base_url",
+    "default_theme",
+    "posts"
+  ]
+}

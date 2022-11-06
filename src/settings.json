@@ -1,0 +1,17 @@
+{
+  "$schema": "./settingsSchema.json",
+  "site": {
+    "title": "Rude Boy Enterprises",
+    "description": "Solutions. For Life.",
+    "organization": "Rude Boy Enterprises",
+    "author": "Samuel C. \"Skaman Sam\" Tyler",
+    "language": "en-US",
+    "email": "skamansam@gmail.com",
+    "image": "https://rudeboy.dev/rbe_logo.gif"
+  },
+  "base_url": "https://rudeboy.dev",
+  "default_theme": "plain",
+  "posts": {
+    "default_image": "https://rudeboy.dev/images/social-media.png"
+  }
+}

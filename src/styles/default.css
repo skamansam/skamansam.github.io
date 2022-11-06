@@ -1,0 +1,214 @@
+/**
+ * Default styles for html elements, cuz tailwind removes them
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 16px;
+}
+
+.katex {
+  font-size: 18px;
+}
+
+ul, ol {
+  display: block;
+  /* margin-block-start: 1em;
+  margin-block-end: 1em; */
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 2em;
+}
+
+/* generate permutations: https://www.dcode.fr/permutations-with-repetitions */
+ul ul,
+ol ul { 
+  list-style-type: circle; 
+}
+ul ol, 
+ol ol { 
+  list-style-type: upper-alpha; 
+}
+ol ol ol,
+ol ul ol,
+ul ol ol,
+ul ul ol { list-style-type: lower-alpha; }
+
+ol ol ul,
+ol ul ul,
+ul ol ul,
+ul ul ul { list-style-type: circle; }
+
+ol ol ol ol,
+ol ol ul ol,
+ol ul ol ol,
+ol ul ul ol,
+ul ol ol ol,
+ul ol ul ol,
+ul ul ol ol,
+ul ul ul ol { list-style-type: upper-roman; }
+
+
+ol ol ol ul,
+ol ol ul ul,
+ol ul ol ul,
+ol ul ul ul,
+ul ol ol ul,
+ul ol ul ul,
+ul ul ol ul,
+ul ul ul ul { list-style-type: square; }
+
+ol ol ol ol ol,
+ol ol ol ul ol,
+ol ol ul ol ol,
+ol ol ul ul ol,
+ol ul ol ol ol,
+ol ul ol ul ol,
+ol ul ul ol ol,
+ol ul ul ul ol,
+ul ol ol ol ol,
+ul ol ol ul ol,
+ul ol ul ol ol,
+ul ol ul ul ol,
+ul ul ol ol ol,
+ul ul ol ul ol,
+ul ul ul ol ol,
+ul ul ul ul ol { list-style-type: lower-roman; }
+
+ol ol ol ol ul,
+ol ol ol ul ul,
+ol ol ul ol ul,
+ol ol ul ul ul,
+ol ul ol ol ul,
+ol ul ol ul ul,
+ol ul ul ol ul,
+ol ul ul ul ul,
+ul ol ol ol ul,
+ul ol ol ul ul,
+ul ol ul ol ul,
+ul ol ul ul ul,
+ul ul ol ol ul,
+ul ul ol ul ul,
+ul ul ul ol ul,
+ul ul ul ul ul { list-style-type: '\25AB'; }
+
+ol {
+  @apply list-decimal;
+}
+ul {
+  @apply list-disc;
+}
+li {
+  @apply list-item;
+}
+
+h1 {
+  @apply text-4xl font-bold my-2;
+}
+h2 {
+  @apply text-3xl font-bold my-2;
+}
+h3 {
+  @apply text-2xl font-bold my-2;
+}
+h4 {
+  @apply text-xl font-bold my-2;
+}
+h5 {
+  @apply text-lg font-bold my-2;
+}
+h6 {
+  @apply font-bold my-2;
+}
+
+hr {
+  @apply py-3 px-2 border-secondary;
+}
+
+a {
+  @apply text-secondary;
+  text-decoration: var(--linkDecoration)
+}
+a:hover {
+  @apply text-onSecondaryBg bg-secondary;
+  /* background-color: var(--color-linkColor); */
+}
+blockquote {
+  @apply ml-3 border-l-secondarySoft border-l-4 pl-2 py-1
+}
+
+p {
+  @apply my-2
+}
+
+th:first-child {
+  @apply rounded-tl-lg;
+}
+
+th:last-child {
+  @apply rounded-tr-lg;
+}
+
+th:only-child{
+  @apply rounded-t-lg;
+}
+td:not(:last-child) {
+  @apply border-r;
+}
+thead th {
+  @apply px-2;
+}
+tr:last-child {
+  @apply rounded-b-lg;
+}
+tr:last-child td:last-child {
+  @apply rounded-br-lg;
+}
+tr:last-child td:first-child {
+  @apply rounded-bl-lg;
+}
+table {
+  @apply w-full shadow-md rounded-lg;
+}
+table thead {
+  @apply w-full shadow-md rounded-lg;  
+}
+table td {
+  @apply py-1 px-2;
+}
+
+p > img {
+  @apply w-1/3 inline-block
+}
+
+code {
+  @apply bg-violet-200 pl-0 px-2 text-violet-700;
+}
+
+.card {
+}
+
+.card-badges {
+  margin-top: -22px;
+  margin-bottom: -5px;
+  float: right;
+}
+.card-badges .badge {
+  background-color: #333;
+  color: #ccc;
+  @apply ml-2 rounded px-1 font-bold py-0.5 text-xs bg-secondary text-onSecondaryBg;
+}
+.card .card-metadata a {
+  @apply decoration-transparent ml-2;
+}
+
+.sidebar {
+
+}
+
+nav.toc h2 {
+  font-size: 100%;
+}
