@@ -1,0 +1,8 @@
+@import '../node_modules/prism-themes/themes/prism-synthwave84.css';
+/* @import 'prism-themes/themes/prism-laserwave.css'; */
+@import '../node_modules/katex/dist/katex.css';
+@import 'styles/default.css';
+@import 'styles/themes/default.css';
+@import 'styles/themes/brutal.css';
+@import 'styles/themes/neumorphic.css';
+@import 'styles/themes/glassmorphic.css';

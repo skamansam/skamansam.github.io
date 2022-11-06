@@ -11,7 +11,7 @@ excerpt: skamansam@gmail.com
 
 <script>
   import Settings from '$lib/settings';
-  import { browser } from '$app/env';
+  import { browser } from '$app/environment';
 
   if(browser) {
     const iframe = document.querySelector("iframe")?.addEventListener( "load", function(e) {

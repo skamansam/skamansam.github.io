@@ -1,9 +1,10 @@
 <script lang="ts">
+  export const prerender = true;
 	import Sidebar from '../components/Sidebar.svelte';
   import Footer from '../components/Footer.svelte';
   import Header from '../components/Header.svelte';
 	import '../app.css';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
   // import Mermaid from '../components/Mermaid.svelte';
 
 	let brightness = 'light';
