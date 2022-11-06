@@ -1,6 +1,6 @@
 import { sortedPosts } from '$lib/posts';
 
-export const get = async () => {
+export const GET = async () => {
   return {
     body: sortedPosts
   }

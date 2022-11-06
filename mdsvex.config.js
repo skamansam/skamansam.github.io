@@ -56,50 +56,51 @@ const config = defineConfig({
 		_: './src/layouts/post.svelte'
 	},
 	smartypants: {
+    quotes: false,
 		dashes: 'oldschool'
 	},
 
 	remarkPlugins: [
-		remarkMath,
-    remarkMermaid,
-    remarkGfm,
-		[oembed, { syncWidget: true }],
-		a11yEmoji,
-		remarkDefinitionList,
-		[emoji, { emoticon: true }],
-		[remarkGithub, { repository: 'https://github.com/skamansam/skamansam.github.io/' }],
-    remarkTypographer,
+    remarkMath,
+    // remarkMermaid,
+    // remarkGfm,
+		// [oembed, { syncWidget: true }],
+		// remarkDefinitionList,
+		// [emoji, { emoticon: true }],
+		// [remarkGithub, { repository: 'https://github.com/skamansam/skamansam.github.io/' }],
+    // remarkTypographer,
     // remarkReferenceLinks,
-    remarkInlineLinks,
-    [remarkTOC, {
-      heading: 'toc|(table[ -]of[ -])?contents|on this page',
-      tight: true,
-    }],
-    readingTime(),
-    preview(textFormatter({ length: 250, maxBlocks: 2 })),
-    preview(
-      htmlFormatter({
-        length: 250,
-        maxBlocks: 2,
-      }),
-      {
-        attribute: 'previewHtml',
-      }
-    ),
-    preview(
-      textFormatter({
-        // length: 250,
-        // maxBlocks: 2,
-      }),
-      {
-        attribute: 'textContent',
-      }
-    ),
+    // remarkInlineLinks,
+    // [remarkTOC, {
+    //   heading: 'toc|(table[ -]of[ -])?contents|on this page',
+    //   tight: true,
+    // }],
+    // a11yEmoji,
+    // readingTime(),
+    // preview(textFormatter({ length: 250, maxBlocks: 2 })),
+    // preview(
+    //   htmlFormatter({
+    //     length: 250,
+    //     maxBlocks: 2,
+    //   }),
+    //   {
+    //     attribute: 'previewHtml',
+    //   }
+    // ),
+    // preview(
+    //   textFormatter({
+    //     // length: 250,
+    //     // maxBlocks: 2,
+    //   }),
+    //   {
+    //     attribute: 'textContent',
+    //   },
+    // ),
 	],
 	rehypePlugins: [
     rehypeKatexSvelte,
-    rehypeSlug,
-    defListHastHandlers
+    // rehypeSlug,
+    // defListHastHandlers
   ]
 });
 

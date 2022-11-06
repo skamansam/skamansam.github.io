@@ -1,6 +1,6 @@
 import { sortedProjects } from '$lib/projects';
 
-export const get = async () => {
+export const GET = async () => {
   return {
     body: sortedProjects
   }

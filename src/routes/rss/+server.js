@@ -1,15 +1,14 @@
 import { publishedPosts } from '$lib/posts';
 import settings from '$lib/settings';
 
-export const get = async () => {
+export const GET = async () => {
   const xml = String.raw;
   const headers = {
     'Cache-Control': `max-age=0, s-max-age=3600`,
     'Content-Type': 'application/xml',
   };
-  return {
-    headers,
-    body: xml`<?xml version="1.0" encoding="UTF-8" ?>
+  return new Response(
+    xml`<?xml version="1.0" encoding="UTF-8" ?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <atom:link href="settings.base_url/rss.xml" rel="self" type="application/rss+xml" />
@@ -35,5 +34,5 @@ export const get = async () => {
     </channel>
     </rss>
     `,
-  };
+  { headers });
 };
