@@ -92,7 +92,7 @@
           "title": "Date Created",
           "name": "created_at",
           "type": "datetime",
-          "default": "{{now}}",
+          "default": "{{now}}"
         },
         {
           "title": "Last Updated",
@@ -129,12 +129,12 @@
         {
           "title": "Twitter Iamge",
           "name": "twitterImage",
-          "type": "image",
+          "type": "image"
         },
         {
           "title": "OpenGraph Image",
           "name": "opengraphImage",
-          "type": "image",
+          "type": "image"
         },
         {
           "title": "Metadata",
