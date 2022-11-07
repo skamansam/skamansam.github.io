@@ -2,22 +2,12 @@
 	import Card from '../../components/Card.svelte';
   import Badge from '../../components/Badge.svelte';
 
-  /** @type {import('@sveltejs/kit').Load} */
-  export const load = async ({ fetch }) => {
-    const portfolios = await fetch('/api/portfolio.json');
-    /** @type {Portfolio[]} */
-		const allPortfolios = await portfolios.json();
-		return {
-			props: {
-				portfolios: allPortfolios
-			}
-		};
-	};
 </script>
 
 <script lang="js">
+  export let data = {};
   /** @type {PortfolioJSON[]} */
-	export let portfolios;
+	export let {portfolios = []} = data;
 </script>
 
 {#each portfolios as portfolio}
