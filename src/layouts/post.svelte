@@ -2,16 +2,16 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import Settings from '$lib/settings';
-  
+  console.log($$props)
   export let slug;
   console.log('SLUG', slug);
-
   /** @type {readingTime} */
   export let readingTime;
   // export let preview;
   // export let previewHtml;
   export let textContent;
-
+  export let data;
+  console.log(readingTime, data);
 	export let title = '';
 	export let author = '';
 	export let description = '';
@@ -142,7 +142,7 @@
 				</p>
 			{/if}
 			<p class="author">by: <span itemprop="author" content="@{author}" />{author}</p>
-			<p class="readingTime"><span itemprop="readingTime" />{readingTime?.text}</p>
+			<p class="readingTime"><span itemprop="readingTime" />Reading Time: {readingTime}</p>
 		</hgroup>
 		<div class="description hidden" itemprop="description">{description}</div>
 		<slot />

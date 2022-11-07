@@ -447,7 +447,7 @@ Emoticons are supported via [emoticons](https://github.com/wooorm/emoticon/blob/
 You can write html, that contains expressions like this:  $x ^ 2 + 5$ inside them. As you probably know. You also can write expressions in display mode as follows: 
 
 $$ 
-\sum_{i=1}^n(x_i^2 - \overline{x}^2)
+{'\sum_{i=1}^n(x_i^2 - \overline{x}^2)'}
 $$
 In first case you will need to use \$expression\$ and in the second one \$\$expression\$\$. To escape the \$ symbol it's mandatory to write as follows: \\$. To use `display` mode, the block 
 MUST begin with \$\$ and end with \$\$.
@@ -457,7 +457,7 @@ You can write html, that contains expressions like this:
 $x ^ 2 + 5$ inside them. As you probably know. You also can write 
 expressions in display mode as follows: 
 $$
-\sum_{i=1}^n(x_i^2 - \overline{x}^2)
+{'\sum_{i=1}^n(x_i^2 - \overline{x}^2)'}
 $$
 In first case you will need to use \$expression\$ and in the 
 second one \$\$expression\$\$. To escape the \$ symbol it's

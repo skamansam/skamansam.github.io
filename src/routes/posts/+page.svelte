@@ -2,23 +2,15 @@
 	import Card from '../../components/Card.svelte';
   import Badge from '../../components/Badge.svelte';
 
-  /** @type {import('@sveltejs/kit').Load} */
-  export const load = async ({ fetch }) => {
-    const posts = await fetch('/api/posts.json');
-    /** @type {Post[]} */
-		const allPosts = await posts.json();
-		return {
-			props: {
-				posts: allPosts
-			}
-		};
-	};
 </script>
 
 <script lang="js">
-  /** @type {PostJSON[]} */
-	export let posts;
+  export let data;
+  /** @type {{posts:PostJSON[]}} */
+	export let {posts=[]} = data;
+  console.log(data);
 </script>
+<h2>Posts</h2>
 
 {#each posts as post}
 	<Card

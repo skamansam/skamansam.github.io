@@ -17,7 +17,7 @@
 
 <script lang="js">
   /** @type {ProjectJSON[]} */
-	export let projects;
+	export let projects = [];
 </script>
 
 <h1>Projects</h1>

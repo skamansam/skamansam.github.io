@@ -10,11 +10,12 @@ import oembed from 'remark-oembed';
 import remarkGfm from 'remark-gfm';
 import remarkReferenceLinks from 'remark-reference-links';
 import remarkInlineLinks from 'remark-inline-links';
-import remarkMermaid from 'remark-mermaid';
+import * as remarkMermaid from 'remark-mermaid';
 import remarkTOC from 'remark-toc';
 import preview, { htmlFormatter, textFormatter } from 'remark-preview';
 import readingTime from 'remark-reading-time';
-
+import readingMdxTime from "remark-reading-time/mdx.js";
+import rehypeKatex from 'rehype-katex';
 import remarkTypographer from './src/util/remarkTypographer.js';
 
 // XXX: NOT WORKING!
@@ -61,9 +62,8 @@ const config = defineConfig({
 	},
 
 	remarkPlugins: [
-    remarkMath,
-    // remarkMermaid,
-    // remarkGfm,
+    // remarkMermaid, // for diagrams
+    // remarkGfm,  
 		// [oembed, { syncWidget: true }],
 		// remarkDefinitionList,
 		// [emoji, { emoticon: true }],
@@ -76,7 +76,9 @@ const config = defineConfig({
     //   tight: true,
     // }],
     // a11yEmoji,
-    // readingTime(),
+    // [readingTime, {key: 'readingTime'}],
+    // // readingMdxTime,
+    // // remarkMath,  // for latex support
     // preview(textFormatter({ length: 250, maxBlocks: 2 })),
     // preview(
     //   htmlFormatter({
@@ -98,7 +100,7 @@ const config = defineConfig({
     // ),
 	],
 	rehypePlugins: [
-    rehypeKatexSvelte,
+    // rehypeKatex,
     // rehypeSlug,
     // defListHastHandlers
   ]
