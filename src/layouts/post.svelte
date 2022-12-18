@@ -2,16 +2,18 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import Settings from '$lib/settings';
-  
-  export let slug;
-  console.log('SLUG', slug);
+  import { readingTime } from 'reading-time-estimator';
 
-  /** @type {readingTime} */
-  export let readingTime;
+  export let data;
+  console.log('DATA', data);
+  export let slug;
+  console.log('PROPS', $$props)
   // export let preview;
   // export let previewHtml;
   export let textContent;
-
+  /** @type {import('reading-time-estimator').readingTime} */
+  console.log('text',textContent);
+  export let timeToRead = readingTime(textContent || '', 30);
 	export let title = '';
 	export let author = '';
 	export let description = '';
@@ -142,7 +144,7 @@
 				</p>
 			{/if}
 			<p class="author">by: <span itemprop="author" content="@{author}" />{author}</p>
-			<p class="readingTime"><span itemprop="readingTime" />{readingTime?.text}</p>
+			<p class="readingTime"><span itemprop="readingTime" />Reading Time: {timeToRead.text}</p>
 		</hgroup>
 		<div class="description hidden" itemprop="description">{description}</div>
 		<slot />

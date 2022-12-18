@@ -99,7 +99,8 @@
           "name": "updated_at",
           "type": "datetime",
           "default": "{{now}}",
-          "isPublishDate": true
+          "isPublishDate": true,
+          "isModifiedDate": true
         },
         {
           "title": "Cover Image",
@@ -143,6 +144,11 @@
           "fieldGroup": [
             "opengraph"
           ]
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "string"
         }
       ]
     }
