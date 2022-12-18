@@ -13,6 +13,7 @@
 		{ name: 'plain', value: '' },
 		{ name: 'neumorphic', value: 'neumorphic' },
 		{ name: 'glassmorphic', value: 'glassmorphic' },
+		{ name: 'claymorphic', value: 'claymorphic' },
 		{ name: 'brutal', value: 'brutal' }
 	];
 
@@ -50,7 +51,7 @@
 	detectBrightness();
 </script>
 
-<div class="theme-wrapper {brightness} theme-{theme} h-screen w-full p-0 m-0 flex flex-col items-stretch">
+<div class="theme-wrapper {brightness} theme-{theme} w-full p-0 m-0 flex flex-col items-stretch">
 	<Header
 		{theme}
 		{themes}
