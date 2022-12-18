@@ -1,10 +1,11 @@
-<script type="ts">
-	export let src: string = '',
-		title: string = '',
-		caption: string|null = null,
-		alt: string = '';
-
-  let dialog: HTMLDialogElement|null = null;
+<script>
+	export let src = '',
+		title = '',
+    /** @type {string|null} */
+		caption = null,
+		alt= '';
+  /** @type {HTMLDialogElement|null} */
+  let dialog = null;
 
   const showImage = () => dialog?.showModal();
   const close = () => dialog?.close()

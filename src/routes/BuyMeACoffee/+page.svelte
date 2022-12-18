@@ -1,5 +1,5 @@
 <script>
-import BuyMeACoffee from "../components/BuyMeACoffee.svelte";
+import BuyMeACoffee from "sveltemeacoffee";
 
 </script>
 

@@ -1,4 +1,4 @@
-<script type="ts">
+<script>
   export let title = "";
   export let updated_on = "";
   export let created_at = "";

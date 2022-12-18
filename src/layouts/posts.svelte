@@ -1,4 +1,4 @@
-<script type="ts">
+<script>
   export let title = "";
   export let author = "";
   export let date = "";
