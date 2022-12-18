@@ -1,129 +1,162 @@
-const build = [
-  "/_app/immutable/start-70796370.js",
-  "/_app/immutable/pages/__layout.svelte-9b5cbf69.js",
-  "/_app/immutable/assets/pages/__layout.svelte-c1873716.css",
+const l = [
   "/_app/immutable/assets/KaTeX_AMS-Regular-0cdd387c.woff2",
-  "/_app/immutable/assets/KaTeX_AMS-Regular-30da91e8.woff",
-  "/_app/immutable/assets/KaTeX_AMS-Regular-68534840.ttf",
   "/_app/immutable/assets/KaTeX_Caligraphic-Bold-de7701e4.woff2",
-  "/_app/immutable/assets/KaTeX_Caligraphic-Bold-1ae6bd74.woff",
-  "/_app/immutable/assets/KaTeX_Caligraphic-Bold-07d8e303.ttf",
   "/_app/immutable/assets/KaTeX_Caligraphic-Regular-5d53e70a.woff2",
-  "/_app/immutable/assets/KaTeX_Caligraphic-Regular-3398dd02.woff",
-  "/_app/immutable/assets/KaTeX_Caligraphic-Regular-ed0b7437.ttf",
   "/_app/immutable/assets/KaTeX_Fraktur-Bold-74444efd.woff2",
-  "/_app/immutable/assets/KaTeX_Fraktur-Bold-9be7ceb8.woff",
-  "/_app/immutable/assets/KaTeX_Fraktur-Bold-9163df9c.ttf",
   "/_app/immutable/assets/KaTeX_Fraktur-Regular-51814d27.woff2",
-  "/_app/immutable/assets/KaTeX_Fraktur-Regular-5e28753b.woff",
-  "/_app/immutable/assets/KaTeX_Fraktur-Regular-1e6f9579.ttf",
   "/_app/immutable/assets/KaTeX_Main-Bold-0f60d1b8.woff2",
-  "/_app/immutable/assets/KaTeX_Main-Bold-c76c5d69.woff",
-  "/_app/immutable/assets/KaTeX_Main-Bold-138ac28d.ttf",
   "/_app/immutable/assets/KaTeX_Main-BoldItalic-99cd42a3.woff2",
-  "/_app/immutable/assets/KaTeX_Main-BoldItalic-a6f7ec0d.woff",
-  "/_app/immutable/assets/KaTeX_Main-BoldItalic-70ee1f64.ttf",
   "/_app/immutable/assets/KaTeX_Main-Italic-97479ca6.woff2",
-  "/_app/immutable/assets/KaTeX_Main-Italic-f1d6ef86.woff",
-  "/_app/immutable/assets/KaTeX_Main-Italic-0d85ae7c.ttf",
   "/_app/immutable/assets/KaTeX_Main-Regular-c2342cd8.woff2",
-  "/_app/immutable/assets/KaTeX_Main-Regular-c6368d87.woff",
-  "/_app/immutable/assets/KaTeX_Main-Regular-d0332f52.ttf",
   "/_app/immutable/assets/KaTeX_Math-BoldItalic-dc47344d.woff2",
-  "/_app/immutable/assets/KaTeX_Math-BoldItalic-850c0af5.woff",
-  "/_app/immutable/assets/KaTeX_Math-BoldItalic-f9377ab0.ttf",
   "/_app/immutable/assets/KaTeX_Math-Italic-7af58c5e.woff2",
-  "/_app/immutable/assets/KaTeX_Math-Italic-8a8d2445.woff",
-  "/_app/immutable/assets/KaTeX_Math-Italic-08ce98e5.ttf",
   "/_app/immutable/assets/KaTeX_SansSerif-Bold-e99ae511.woff2",
-  "/_app/immutable/assets/KaTeX_SansSerif-Bold-ece03cfd.woff",
-  "/_app/immutable/assets/KaTeX_SansSerif-Bold-1ece03f7.ttf",
   "/_app/immutable/assets/KaTeX_SansSerif-Italic-00b26ac8.woff2",
-  "/_app/immutable/assets/KaTeX_SansSerif-Italic-91ee6750.woff",
-  "/_app/immutable/assets/KaTeX_SansSerif-Italic-3931dd81.ttf",
   "/_app/immutable/assets/KaTeX_SansSerif-Regular-68e8c73e.woff2",
-  "/_app/immutable/assets/KaTeX_SansSerif-Regular-11e4dc8a.woff",
-  "/_app/immutable/assets/KaTeX_SansSerif-Regular-f36ea897.ttf",
   "/_app/immutable/assets/KaTeX_Script-Regular-036d4e95.woff2",
-  "/_app/immutable/assets/KaTeX_Script-Regular-d96cdf2b.woff",
-  "/_app/immutable/assets/KaTeX_Script-Regular-1c67f068.ttf",
   "/_app/immutable/assets/KaTeX_Size1-Regular-6b47c401.woff2",
-  "/_app/immutable/assets/KaTeX_Size1-Regular-c943cc98.woff",
-  "/_app/immutable/assets/KaTeX_Size1-Regular-95b6d2f1.ttf",
   "/_app/immutable/assets/KaTeX_Size2-Regular-d04c5421.woff2",
-  "/_app/immutable/assets/KaTeX_Size2-Regular-2014c523.woff",
-  "/_app/immutable/assets/KaTeX_Size2-Regular-a6b2099f.ttf",
-  "/_app/immutable/assets/KaTeX_Size3-Regular-6ab6b62e.woff",
-  "/_app/immutable/assets/KaTeX_Size3-Regular-500e04d5.ttf",
   "/_app/immutable/assets/KaTeX_Size4-Regular-a4af7d41.woff2",
-  "/_app/immutable/assets/KaTeX_Size4-Regular-99f9c675.woff",
-  "/_app/immutable/assets/KaTeX_Size4-Regular-c647367d.ttf",
   "/_app/immutable/assets/KaTeX_Typewriter-Regular-71d517d6.woff2",
+  "/_app/immutable/assets/KaTeX_AMS-Regular-30da91e8.woff",
+  "/_app/immutable/assets/KaTeX_Caligraphic-Bold-1ae6bd74.woff",
+  "/_app/immutable/assets/KaTeX_Caligraphic-Regular-3398dd02.woff",
+  "/_app/immutable/assets/KaTeX_Fraktur-Bold-9be7ceb8.woff",
+  "/_app/immutable/assets/KaTeX_Fraktur-Regular-5e28753b.woff",
+  "/_app/immutable/assets/KaTeX_Main-Bold-c76c5d69.woff",
+  "/_app/immutable/assets/KaTeX_Main-BoldItalic-a6f7ec0d.woff",
+  "/_app/immutable/assets/KaTeX_Main-Italic-f1d6ef86.woff",
+  "/_app/immutable/assets/KaTeX_Main-Regular-c6368d87.woff",
+  "/_app/immutable/assets/KaTeX_Math-BoldItalic-850c0af5.woff",
+  "/_app/immutable/assets/KaTeX_Math-Italic-8a8d2445.woff",
+  "/_app/immutable/assets/KaTeX_SansSerif-Bold-ece03cfd.woff",
+  "/_app/immutable/assets/KaTeX_SansSerif-Italic-91ee6750.woff",
+  "/_app/immutable/assets/KaTeX_SansSerif-Regular-11e4dc8a.woff",
+  "/_app/immutable/assets/KaTeX_Script-Regular-d96cdf2b.woff",
+  "/_app/immutable/assets/KaTeX_Size1-Regular-c943cc98.woff",
+  "/_app/immutable/assets/KaTeX_Size2-Regular-2014c523.woff",
+  "/_app/immutable/assets/KaTeX_Size3-Regular-6ab6b62e.woff",
+  "/_app/immutable/assets/KaTeX_Size4-Regular-99f9c675.woff",
   "/_app/immutable/assets/KaTeX_Typewriter-Regular-e14fed02.woff",
+  "/_app/immutable/assets/KaTeX_AMS-Regular-68534840.ttf",
+  "/_app/immutable/assets/KaTeX_Caligraphic-Bold-07d8e303.ttf",
+  "/_app/immutable/assets/KaTeX_Caligraphic-Regular-ed0b7437.ttf",
+  "/_app/immutable/assets/KaTeX_Fraktur-Bold-9163df9c.ttf",
+  "/_app/immutable/assets/KaTeX_Fraktur-Regular-1e6f9579.ttf",
+  "/_app/immutable/assets/KaTeX_Main-Bold-138ac28d.ttf",
+  "/_app/immutable/assets/KaTeX_Main-BoldItalic-70ee1f64.ttf",
+  "/_app/immutable/assets/KaTeX_Main-Italic-0d85ae7c.ttf",
+  "/_app/immutable/assets/KaTeX_Main-Regular-d0332f52.ttf",
+  "/_app/immutable/assets/KaTeX_Math-BoldItalic-f9377ab0.ttf",
+  "/_app/immutable/assets/KaTeX_Math-Italic-08ce98e5.ttf",
+  "/_app/immutable/assets/KaTeX_SansSerif-Bold-1ece03f7.ttf",
+  "/_app/immutable/assets/KaTeX_SansSerif-Italic-3931dd81.ttf",
+  "/_app/immutable/assets/KaTeX_SansSerif-Regular-f36ea897.ttf",
+  "/_app/immutable/assets/KaTeX_Script-Regular-1c67f068.ttf",
+  "/_app/immutable/assets/KaTeX_Size1-Regular-95b6d2f1.ttf",
+  "/_app/immutable/assets/KaTeX_Size2-Regular-a6b2099f.ttf",
+  "/_app/immutable/assets/KaTeX_Size3-Regular-500e04d5.ttf",
+  "/_app/immutable/assets/KaTeX_Size4-Regular-c647367d.ttf",
   "/_app/immutable/assets/KaTeX_Typewriter-Regular-f01f3e87.ttf",
-  "/_app/immutable/pages/__error.svelte-93cd06af.js",
-  "/_app/immutable/pages/BuyMeACoffeeDemo.svelte-b031a66c.js",
-  "/_app/immutable/pages/about.md-ceddf24c.js",
-  "/_app/immutable/pages/authors/skamansam.md-091669c4.js",
-  "/_app/immutable/pages/categories/_category_.svelte-cc6a6a50.js",
-  "/_app/immutable/pages/contact.md-890de62f.js",
-  "/_app/immutable/pages/demo.md-252f83e9.js",
-  "/_app/immutable/pages/index.svelte-49902bad.js",
-  "/_app/immutable/pages/portfolio/index.svelte-1fd5f717.js",
-  "/_app/immutable/pages/portfolio/svelte-blog.md-0fee067e.js",
-  "/_app/immutable/pages/posts/2008-03-05-welcome-to-my-blog.md-005c1dae.js",
-  "/_app/immutable/pages/posts/2008-04-23-accepted-into-google-summer-of-code.md-1bde1cda.js",
-  "/_app/immutable/pages/posts/2008-05-09-wxcpan-skeleton-code.md-4cb81400.js",
-  "/_app/immutable/pages/posts/2008-05-13-wxcpan-going-well.md-674d7cb2.js",
-  "/_app/immutable/pages/posts/2008-05-24-gsoc-day-0-equals-hit-the-ground-running.md-2dc22137.js",
-  "/_app/immutable/pages/posts/2008-08-05-my-baby.md-5b5df12a.js",
-  "/_app/immutable/pages/posts/2008-08-05-my-baby2.md-7c63ab27.js",
-  "/_app/immutable/pages/posts/2008-08-05-my-bartender-mark.md-b2669342.js",
-  "/_app/immutable/pages/posts/2008-08-07-al-at-werk-again.md-0d495f92.js",
-  "/_app/immutable/pages/posts/2008-08-07-al-at-werk.md-47c6fdba.js",
-  "/_app/immutable/pages/posts/2009-01-08-webfx-at-uncg.md-43ab90aa.js",
-  "/_app/immutable/pages/posts/2009-02-02-installing-gentoo-2008-in-qemu-suns-virtualbox-on-fedora-10.md-f0a63971.js",
-  "/_app/immutable/pages/posts/2009-02-09-drop-down-menu-with-css.md-a5b44f55.js",
-  "/_app/immutable/pages/posts/2009-02-14-installing-aptana-in-fedora-eclipse.md-b2834429.js",
-  "/_app/immutable/pages/posts/2009-03-11-building-chromium-on-fedora-10-x86-64.md-4477c6b8.js",
-  "/_app/immutable/pages/posts/2009-03-21-windows-vs-linux-on-msi-gx700.md-d4d45f9b.js",
-  "/_app/immutable/pages/posts/2009-04-01-jquery-style-sheet-css-switcher.md-19ff79b6.js",
-  "/_app/immutable/pages/posts/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64.md-69286aaa.js",
-  "/_app/immutable/pages/posts/2009-04-02-google-summer-of-code-2009-project-ideas.md-4ec38bdd.js",
-  "/_app/immutable/pages/posts/2009-05-10-tetex-for-puppy-linux.md-9c30f6c4.js",
-  "/_app/immutable/pages/posts/2009-05-29-fun-with-numbers.md-49faf232.js",
-  "/_app/immutable/pages/posts/2009-05-29-how-to-build-a-dynamic-web-site-with-simple-server-technologies.md-4ba75b53.js",
-  "/_app/immutable/pages/posts/2009-06-15-how-to-repair-images-with-imagemagick.md-7a0cd25f.js",
-  "/_app/immutable/pages/posts/2009-07-31-new-theme-under-construction-dot-dot-dot.md-113cfc74.js",
-  "/_app/immutable/pages/posts/2010-06-02-teaching-computer-science-in-a-web-browser.md-2bd25159.js",
-  "/_app/immutable/pages/posts/2010-06-15-teaching-computer-science-in-a-web-browser.md-e1b46880.js",
-  "/_app/immutable/pages/posts/2010-07-28-tango-icons-save-all.md-a30f0ff7.js",
-  "/_app/immutable/pages/posts/2011-03-06-jquery-themeswitchertool-working-version.md-8eeb110f.js",
-  "/_app/immutable/pages/posts/2012-02-04-how-to-keep-your-linux-always-on-in-a-dual-boot-system.md-8e776578.js",
-  "/_app/immutable/pages/posts/2012-05-25-inline-input-fields-with-mnimal-jquery.md-fd795944.js",
-  "/_app/immutable/pages/posts/2012-08-30-simple-rails-development-part-i-gedit-click-config.md-7ab9d68a.js",
-  "/_app/immutable/pages/posts/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins.md-91aa36b9.js",
-  "/_app/immutable/pages/posts/2013-04-10-building-a-unified-time-select-field.md-0279e438.js",
-  "/_app/immutable/pages/posts/2013-04-23-cookie-detection-in-rails-3.md-c6ec698d.js",
-  "/_app/immutable/pages/posts/2016-08-30-moved-to-octopress.md-eaf91614.js",
-  "/_app/immutable/pages/posts/2016-09-06-dynamic-models-in-rails-3.md-1b747958.js",
-  "/_app/immutable/pages/posts/2016-09-06-firefox-add-ons-i-cant-live-without.md-fd7bf5b6.js",
-  "/_app/immutable/pages/posts/2016-09-06-installing-amaya-on-fedora-10-64bit.md-0d2910e2.js",
-  "/_app/immutable/pages/posts/2016-09-06-top-linux-apps-i-cant-live-without.md-62367a39.js",
-  "/_app/immutable/pages/posts/2016-09-14-data-migrations-and-you.md-98b390d4.js",
-  "/_app/immutable/pages/posts/2022-07-11-creating-a-svelte-blog.md-c2c723a9.js",
-  "/_app/immutable/pages/posts/index.svelte-b822310a.js",
-  "/_app/immutable/pages/projects/index.svelte-66db9e43.js",
-  "/_app/immutable/pages/tags/_tag_.svelte-bfc2b877.js",
-  "/_app/immutable/chunks/index-f0cd6aaa.js",
-  "/_app/immutable/chunks/stores-707f9fa0.js",
-  "/_app/immutable/chunks/BuyMeACoffee-55d78963.js",
-  "/_app/immutable/assets/BuyMeACoffee-a50f78b6.css",
-  "/_app/immutable/chunks/post-d11a0746.js",
-  "/_app/immutable/chunks/settings-69239d06.js",
-  "/_app/immutable/chunks/Card-f79e05e2.js"
-];
-const files = [
+  "/_app/immutable/assets/_page-e52784cd.css",
+  "/_app/immutable/assets/2022-11-11-online-pdf-viewer-9a89ba65.css",
+  "/_app/immutable/assets/_layout-3eadef47.css",
+  "/_app/immutable/chunks/singletons-afd5e12e.js",
+  "/_app/immutable/chunks/preload-helper-41c905a7.js",
+  "/_app/immutable/chunks/settings-192de886.js",
+  "/_app/immutable/components/pages/categories/_category_/_page.svelte-8862c156.js",
+  "/_app/immutable/components/pages/authors/skamansam/_page.md-e5b1e786.js",
+  "/_app/immutable/chunks/index-6a3f2268.js",
+  "/_app/immutable/chunks/stores-8cbed542.js",
+  "/_app/immutable/components/pages/_error.svelte-86e8e277.js",
+  "/_app/immutable/chunks/Card-3d935959.js",
+  "/_app/immutable/components/pages/about/_page.md-ab3ca497.js",
+  "/_app/immutable/start-a003a894.js",
+  "/_app/immutable/components/pages/_page.svelte-0e250578.js",
+  "/_app/immutable/chunks/post-3c5a9cb3.js",
+  "/_app/immutable/modules/pages/projects/_page.js-4ed993c7.js",
+  "/_app/immutable/chunks/2010-07-28-tango-icons-save-all-6ba1d727.js",
+  "/_app/immutable/chunks/2011-03-06-jquery-themeswitchertool-working-version-5d548055.js",
+  "/_app/immutable/chunks/2010-06-15-teaching-computer-science-in-a-web-browser-aff50f19.js",
+  "/_app/immutable/chunks/2012-02-04-how-to-keep-your-linux-always-on-in-a-dual-boot-system-b0bd5261.js",
+  "/_app/immutable/chunks/2013-04-10-building-a-unified-time-select-field-5f2161b3.js",
+  "/_app/immutable/chunks/2016-08-30-moved-to-octopress-9e2478d1.js",
+  "/_app/immutable/modules/pages/posts/_page.js-db7b680f.js",
+  "/_app/immutable/chunks/2016-09-06-installing-amaya-on-fedora-10-64bit-56bd7ee6.js",
+  "/_app/immutable/chunks/2016-09-06-top-linux-apps-i-cant-live-without-dad2910f.js",
+  "/_app/immutable/modules/pages/portfolio/_slug_/_page.js-ee673113.js",
+  "/_app/immutable/chunks/2016-09-14-data-migrations-and-you-86c21f69.js",
+  "/_app/immutable/modules/pages/posts/_slug_/_page.js-c37ac9c7.js",
+  "/_app/immutable/chunks/2016-09-06-dynamic-models-in-rails-3-4b939db5.js",
+  "/_app/immutable/chunks/portfolio-a2b05a41.js",
+  "/_app/immutable/chunks/_page-6551a313.js",
+  "/_app/immutable/chunks/dynamic-import-helper-be004503.js",
+  "/_app/immutable/chunks/_page-e11e2711.js",
+  "/_app/immutable/components/pages/posts/_slug_/_page.svelte-35f86252.js",
+  "/_app/immutable/chunks/_page-88a8a947.js",
+  "/_app/immutable/components/pages/projects/_page.svelte-def8c348.js",
+  "/_app/immutable/chunks/1-dc190d50.js",
+  "/_app/immutable/chunks/3-535300a9.js",
+  "/_app/immutable/components/pages/tags/_tag_/_page.svelte-12036541.js",
+  "/_app/immutable/chunks/0-190ef47c.js",
+  "/_app/immutable/chunks/2016-09-06-firefox-add-ons-i-cant-live-without-75140182.js",
+  "/_app/immutable/modules/pages/portfolio/_page.js-19357723.js",
+  "/_app/immutable/chunks/6-4fbae90c.js",
+  "/_app/immutable/chunks/2022-07-11-creating-a-svelte-blog-f65b9c30.js",
+  "/_app/immutable/chunks/9-c257c23e.js",
+  "/_app/immutable/chunks/13-dbc7119a.js",
+  "/_app/immutable/chunks/svelte-blog-9278a1e9.js",
+  "/_app/immutable/chunks/2008-03-05-welcome-to-my-blog-ba9627d6.js",
+  "/_app/immutable/chunks/2010-06-02-teaching-computer-science-in-a-web-browser-7b55bac4.js",
+  "/_app/immutable/chunks/2008-04-23-accepted-into-google-summer-of-code-372b8706.js",
+  "/_app/immutable/chunks/2008-05-09-wxcpan-skeleton-code-a2c27595.js",
+  "/_app/immutable/chunks/10-506397a0.js",
+  "/_app/immutable/chunks/2008-08-05-my-baby2-78a1377d.js",
+  "/_app/immutable/chunks/2-1bf1b227.js",
+  "/_app/immutable/chunks/_page-c10e51ee.js",
+  "/_app/immutable/chunks/2008-08-07-al-at-werk-again-0d3bb61a.js",
+  "/_app/immutable/chunks/4-969d509a.js",
+  "/_app/immutable/components/pages/portfolio/_slug_/_page.svelte-35f86252.js",
+  "/_app/immutable/chunks/2013-04-23-cookie-detection-in-rails-3-833ff7ae.js",
+  "/_app/immutable/chunks/2008-08-07-al-at-werk-d42abab3.js",
+  "/_app/immutable/chunks/2009-01-08-webfx-at-uncg-2b5b0d7c.js",
+  "/_app/immutable/chunks/2009-05-10-tetex-for-puppy-linux-fefa2d00.js",
+  "/_app/immutable/chunks/11-81fef879.js",
+  "/_app/immutable/chunks/2009-03-11-building-chromium-on-fedora-10-x86-64-af9a4a64.js",
+  "/_app/immutable/chunks/2009-06-15-how-to-repair-images-with-imagemagick-baa0909d.js",
+  "/_app/immutable/chunks/2009-04-01-jquery-style-sheet-css-switcher-51f35d1a.js",
+  "/_app/immutable/chunks/2012-08-31-simple-rails-development-part-ii-core-gedit-plugins-bb168dce.js",
+  "/_app/immutable/components/pages/contact/_page.md-cf8ee044.js",
+  "/_app/immutable/chunks/2012-05-25-inline-input-fields-with-mnimal-jquery-326b2c59.js",
+  "/_app/immutable/chunks/14-158359f7.js",
+  "/_app/immutable/components/pages/BuyMeACoffee/_page.svelte-30407a7c.js",
+  "/_app/immutable/chunks/12-b208383e.js",
+  "/_app/immutable/chunks/2022-11-10-questlists-258306ef.js",
+  "/_app/immutable/chunks/2009-02-09-drop-down-menu-with-css-c563c46f.js",
+  "/_app/immutable/components/pages/portfolio/_page.svelte-d7499087.js",
+  "/_app/immutable/chunks/7-e5777c97.js",
+  "/_app/immutable/chunks/2012-08-30-simple-rails-development-part-i-gedit-click-config-4fde45e5.js",
+  "/_app/immutable/chunks/2008-08-05-my-baby-6bb34aaa.js",
+  "/_app/immutable/chunks/2008-08-05-my-bartender-mark-18b54edd.js",
+  "/_app/immutable/chunks/2022-11-26-introduction-to-readme-driven-development-28bc9116.js",
+  "/_app/immutable/components/pages/posts/_page.svelte-f6890df4.js",
+  "/_app/immutable/chunks/5-0c3483aa.js",
+  "/_app/immutable/chunks/_page-ed77219c.js",
+  "/_app/immutable/chunks/2008-05-24-gsoc-day-0-equals-hit-the-ground-running-ae1bc093.js",
+  "/_app/immutable/chunks/2009-02-02-installing-gentoo-2008-in-qemu-suns-virtualbox-on-fedora-10-c072fddc.js",
+  "/_app/immutable/components/pages/_layout.svelte-95b00fe2.js",
+  "/_app/immutable/chunks/2008-05-13-wxcpan-going-well-a339a3ea.js",
+  "/_app/immutable/chunks/2009-02-14-installing-aptana-in-fedora-eclipse-6123a0ac.js",
+  "/_app/immutable/chunks/8-d2aecb4d.js",
+  "/_app/immutable/chunks/2009-05-29-how-to-build-a-dynamic-web-site-with-simple-server-technologies-f56f89fe.js",
+  "/_app/immutable/chunks/2009-03-21-windows-vs-linux-on-msi-gx700-bb57215a.js",
+  "/_app/immutable/chunks/2009-04-02-building-enlightenment-e17-on-fedora-10-x86-64-b44a0882.js",
+  "/_app/immutable/chunks/2009-04-02-google-summer-of-code-2009-project-ideas-7bca7bea.js",
+  "/_app/immutable/chunks/2022-11-11-online-pdf-viewer-e0b9855b.js",
+  "/_app/immutable/chunks/2009-07-31-new-theme-under-construction-dot-dot-dot-485795bb.js",
+  "/_app/immutable/components/pages/demo/_page.md-5c2b37d2.js",
+  "/_app/immutable/chunks/2009-05-29-fun-with-numbers-6ec9b042.js"
+], u = [
   "/.nojekyll",
   "/CNAME",
   "/README.md",
@@ -167,6 +200,7 @@ const files = [
   "/favicon/mstile-150x150.png",
   "/favicon/safari-pinned-tab.svg",
   "/favicon/site.webmanifest",
+  "/favicon.png",
   "/files/document-save-all/document-save-all.png",
   "/files/document-save-all/document-save-all1.png",
   "/files/document-save-all/document-save-all2.png",
@@ -179,7 +213,9 @@ const files = [
   "/general/web-development.png",
   "/humans.txt",
   "/images/GSoC-logo-horizontal-800.png",
+  "/images/Screenshot - 2022-11-27_17-15.png",
   "/images/rbe-banner.png",
+  "/images/redshred-pdf-viewer.png",
   "/images/social-media.png",
   "/images/socila_media.xcf",
   "/manifest.json",
@@ -189,51 +225,40 @@ const files = [
   "/rbe-logo.svg",
   "/rbe_logo.gif",
   "/robots.txt"
-];
-const version = "1667757701249";
-const worker = self;
-const FILES = `cache${version}`;
-const to_cache = build.concat(files);
-const staticAssets = new Set(to_cache);
-worker.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(FILES).then((cache) => cache.addAll(to_cache)).then(() => {
-    worker.skipWaiting();
-  }));
+], m = "1671395366411", t = self, c = `cache${m}`, o = l.concat(u), f = new Set(o);
+t.addEventListener("install", (a) => {
+  a.waitUntil(
+    caches.open(c).then((e) => e.addAll(o)).then(() => {
+      t.skipWaiting();
+    })
+  );
 });
-worker.addEventListener("activate", (event) => {
-  event.waitUntil(caches.keys().then(async (keys) => {
-    for (const key of keys) {
-      if (key !== FILES)
-        await caches.delete(key);
-    }
-    worker.clients.claim();
-  }));
+t.addEventListener("activate", (a) => {
+  a.waitUntil(
+    caches.keys().then(async (e) => {
+      for (const s of e)
+        s !== c && await caches.delete(s);
+      t.clients.claim();
+    })
+  );
 });
-async function fetchAndCache(request) {
-  const cache = await caches.open(`offline${version}`);
+async function b(a) {
+  const e = await caches.open(`offline${m}`);
   try {
-    const response = await fetch(request);
-    cache.put(request, response.clone());
-    return response;
-  } catch (err) {
-    const response = await cache.match(request);
-    if (response)
-      return response;
-    throw err;
+    const s = await fetch(a);
+    return e.put(a, s.clone()), s;
+  } catch (s) {
+    const p = await e.match(a);
+    if (p)
+      return p;
+    throw s;
   }
 }
-worker.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET" || event.request.headers.has("range"))
+t.addEventListener("fetch", (a) => {
+  if (a.request.method !== "GET" || a.request.headers.has("range"))
     return;
-  const url = new URL(event.request.url);
-  const isHttp = url.protocol.startsWith("http");
-  const isDevServerRequest = url.hostname === self.location.hostname && url.port !== self.location.port;
-  const isStaticAsset = url.host === self.location.host && staticAssets.has(url.pathname);
-  const skipBecauseUncached = event.request.cache === "only-if-cached" && !isStaticAsset;
-  if (isHttp && !isDevServerRequest && !skipBecauseUncached) {
-    event.respondWith((async () => {
-      const cachedAsset = isStaticAsset && await caches.match(event.request);
-      return cachedAsset || fetchAndCache(event.request);
-    })());
-  }
+  const e = new URL(a.request.url), s = e.protocol.startsWith("http"), p = e.hostname === self.location.hostname && e.port !== self.location.port, i = e.host === self.location.host && f.has(e.pathname), n = a.request.cache === "only-if-cached" && !i;
+  s && !p && !n && a.respondWith(
+    (async () => i && await caches.match(a.request) || b(a.request))()
+  );
 });

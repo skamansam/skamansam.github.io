@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="./favicon/favicon.ico" />
+		<link rel="icon" href="/favicon/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -15,15 +15,17 @@
     <meta name="theme-color" content="#eeeeee">
     <link type="text/plain" rel="author" href="/humans.txt" />
 		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/_app/immutable/start-70796370.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-f0cd6aaa.js">
-			<script>
-		if ('serviceWorker' in navigator) {
-			addEventListener('load', () => {
-				navigator.serviceWorker.register('/service-worker.js');
-			});
-		}
-	</script>
+		<link rel="modulepreload" href="/_app/immutable/start-a003a894.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/index-6a3f2268.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/singletons-afd5e12e.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/preload-helper-41c905a7.js">
+		<script>
+			if ('serviceWorker' in navigator) {
+				addEventListener('load', function () {
+					navigator.serviceWorker.register('/service-worker.js');
+				});
+			}
+		</script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CV0J6F3VM"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
@@ -38,16 +40,14 @@
 	<body>
 		
 		<script type="module" data-sveltekit-hydrate="45h">
-		import { start } from "/_app/immutable/start-70796370.js";
-		start({
-			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
-			paths: {"base":"","assets":""},
-			session: {},
-			route: true,
-			spa: true,
-			trailing_slash: "never",
-			hydrate: null
-		});
-	</script>
+			import { start } from "/_app/immutable/start-a003a894.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
+				version: "1671395366411"
+			});
+		</script>
 	</body>
 </html>
