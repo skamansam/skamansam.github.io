@@ -212,3 +212,20 @@ code {
 nav.toc h2 {
   font-size: 100%;
 }
+
+.center-items {
+  @apply flex justify-center;
+}
+.center-items > * {
+  @apply flex justify-center;
+}
+.center-items img {
+  @apply w-7/12;
+}
+
+figure {
+  @apply border flex flex-col p-1 w-7/12 m-auto my-4;
+}
+figure figcaption {
+  @apply text-center bg-secondary text-onSecondaryBg;
+}
