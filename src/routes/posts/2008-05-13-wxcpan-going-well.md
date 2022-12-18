@@ -6,16 +6,16 @@ lang: en
 author: skamansam
 title: wxCPAN Going Well
 description: wxCPAN Going Well
-excerpt:  I have successfully managed to implement a CPANPLUS::Shell.
+excerpt: I have successfully managed to implement a CPANPLUS::Shell.
 cover: false
 coverImage: /images/GSoC-logo-horizontal-800.png
 coverAlt: RBE Logo
 categories:
   - perl
-tags: 
+tags:
   - gSoC
 created_at: 2008-05-13 14:56
-updated_at: 2008-05-13 14:56
+updated_at: 2022-11-11T03:50:25.290Z
 ---
 
 I have successfully managed to implement a CPANPLUS::Shell.  You call the shell like:
