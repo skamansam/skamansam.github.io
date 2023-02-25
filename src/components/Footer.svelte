@@ -9,7 +9,9 @@
 		Made with 💖 by "Skaman Sam" Tyler<br />
     <a rel="me" href="https://fosstodon.org/@skamansam">Find me on Mastodon</a>
 	</div>
-  <a class="hover:bg-transparent m-0 ml-auto mr-1" href="https://buymeacoffee.com/skamansamV">
-    <BuyMeACoffee />
-  </a>
+  <div class="self-end buymeacoffee">
+    <BuyMeACoffee scale={2} height={150} width={545}/>
+  <!-- <a class="hover:bg-transparent m-0 ml-auto mr-1 buymeacoffee mt-2" href="https://buymeacoffee.com/skamansamV">
+  </a> -->
+  </div>
 </div>
