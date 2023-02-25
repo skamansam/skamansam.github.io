@@ -14,24 +14,29 @@
   --color-neutral-700: theme('colors.gray.700');
   --color-neutral-800: theme('colors.gray.800');
   --color-neutral-900: theme('colors.gray.900');
-  
+
   --color-secondary: theme('colors.violet.600');
   --color-secondarySoft: theme('colors.violet.400');
   --color-onPrimaryBg: theme('colors.gray.900');
   --color-primaryBorder: theme('colors.gray.900');
   --color-onSecondaryBg: theme('colors.gray.100');
   --color-primarySoft: theme('colors.slate.300');
-  --linkDecoration: underline overline theme('colors.violet.300');
+  --linkDecoration: theme('colors.violet.300');
   --font-logoFont: "Goldman", cursive;
+
+  --sidebar-height: 30px;
 }
 
 .dark {
   --color-onPrimaryBg: theme('colors.gray.300');
   --color-primaryBg: theme('colors.gray.900');
-
+}
+html {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
-.theme-wrapper {
+body {
   @apply text-onPrimaryBg bg-primaryBg;
 }
 
@@ -41,7 +46,7 @@ header.site-head {
 header.site-head {}
 
 .sidebar {
-  @apply border mx-3 rounded-xl pt-2 pb-1 font-logoFont;
+  @apply border-t border-b pt-2 pb-1 font-logoFont shadow-md dark:shadow-white;
 }
 .sidebar ul{
   @apply w-full block list-none p-0 m-0 flex justify-center;
@@ -78,3 +83,101 @@ table tr:hover, table tr:nth-child(even):hover {
 table tr:nth-child(even) {
   @apply bg-slate-200;
 }
+.footer .buymeacoffee svg {
+  /* margin-top: -35px; */
+  width: 40%;
+  height: 40%;
+}
+
+
+/**********************************************
+ *  MENU BUTTON
+ */
+.sidebar * {
+  transition: all 300ms cubic-bezier(.5, 0, .5, 1);
+}
+
+@media only screen and (max-width: 700px) {
+  .sidebar {
+    height: var(--sidebar-height);
+    @apply p-2;
+  }
+  .sidebar .navMenu {
+    transform: translateX(-100%);
+    display: block;
+    position: absolute;
+    background: var(--color-primaryBg);
+    margin: 0px;
+    width: 90%;
+    margin-top: -22px;
+    /* top: 0px; */
+    left: 0px;
+    @apply border-2 rounded p-2 text-onPrimaryBg
+  }
+  .sidebar .navMenu li a{
+    @apply text-onPrimaryBg w-fit
+  }
+  .sidebar .navMenu li{
+    display: block;
+  }
+  .sidebar .menuButton {
+    @apply block !important;
+    z-index: 3;
+  }
+}
+.sidebar .menuButton {
+  width: 50px;
+  @apply block p-1 relative hidden cursor-pointer;
+}
+
+.sidebar .menuButton .hamburger {
+  display: block;
+  position: relative;
+}
+
+.sidebar .menuButton .hamburger,
+.sidebar .menuButton .hamburger::before,
+.sidebar .menuButton .hamburger::after {
+  width: 2em;
+  height: 3px;
+  background: var(--color-onPrimaryBg);
+  /* transition: transform 350ms ease-in-out, opacity 200ms linear; */
+}
+
+.sidebar .menuButton .hamburger::before,
+.sidebar .menuButton .hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.sidebar .menuButton .hamburger::before { bottom: 6px; }
+.sidebar .menuButton .hamburger::after { top: 6px;}
+
+
+/* Navigation open styles */
+.sidebar.nav-open .menuButton {
+  left: calc(90% - 33px);
+  /* transform: translateX(80%); */
+}
+
+.sidebar.nav-open .navMenu {
+  transform: translateX(0);
+}
+
+/* Change this stuff below */
+
+.sidebar.nav-open .hamburger {
+  transform: rotate(45deg);
+}
+
+.sidebar.nav-open .hamburger::before {
+  opacity: 0;
+}
+
+.sidebar.nav-open .hamburger::after {
+  transform: rotate(90deg) translate(-6px);
+}
+
+/*  /MENU BUTTON
+**********************************************/
