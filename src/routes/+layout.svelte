@@ -1,5 +1,4 @@
 <script lang="ts">
-  export const prerender = true;
 	import Sidebar from '../components/Sidebar.svelte';
   import Footer from '../components/Footer.svelte';
   import Header from '../components/Header.svelte';
@@ -51,17 +50,17 @@
 	detectBrightness();
 </script>
 
-<div class="theme-wrapper {brightness} theme-{theme} w-full p-0 m-0 flex flex-col items-stretch">
-	<Header
-		{theme}
-		{themes}
-		{brightness}
-		on:brightnessChange={(evt) => setBrightness(evt.detail)}
-		on:themeChange={(evt) => setTheme(evt.detail)}
-	/>
-  <Sidebar />
-  <div class="content-area flex-1 p-3">
-    <slot />
-  </div>
-  <Footer />
+<svelte:body class="{brightness} theme-{theme}"/>
+
+<Header
+  {theme}
+  {themes}
+  {brightness}
+  on:brightnessChange={(evt) => setBrightness(evt.detail)}
+  on:themeChange={(evt) => setTheme(evt.detail)}
+/>
+<Sidebar />
+<div class="content-area flex-1 p-3">
+  <slot />
 </div>
+<Footer />
