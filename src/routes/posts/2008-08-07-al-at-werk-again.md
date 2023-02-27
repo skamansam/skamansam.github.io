@@ -23,7 +23,7 @@ and the host has long since gone offline. They were presumably pictures of my wi
 before we were married. This page will remain foir historical purposes.
 
 
-[![Unknown Image](http://media2.shozu.com/cache/portal/media/51b3203/16777228_journal "unknown image")](http://media2.shozu.com/cache/portal/media/51b3203/16777228)
+[![my boss at work](http://media2.shozu.com/cache/portal/media/51b3203/16777228_journal "my boss at work")](http://media2.shozu.com/cache/portal/media/51b3203/16777228)
 [![Upload graphic](http://www.shozu.com/resources/messages/logo_blog.gif "Upload with Shozu")](http://www.shozu.com/portal/?utm_source=upload&amp;utm_medium=graphic&amp;utm_campaign=upload_graphic/)
 
 <!-- <a href="http://media2.shozu.com/cache/portal/media/51b3203/16777228">

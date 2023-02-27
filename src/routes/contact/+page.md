@@ -15,8 +15,6 @@ excerpt: skamansam@gmail.com
 
   if(browser) {
     const iframe = document.querySelector("iframe")?.addEventListener( "load", function(e) {
-      // debugger;
-      console.log('HEIGHT:', this.contentWindow.document.body.scrollHeight);
       this.style.height = this.contentWindow.document.body.scrollHeight + 'px';
 
     } );
@@ -29,5 +27,5 @@ You can contact us via email at skamansam@gmail.com, or by filling out the follo
 
 <div class="typeform typeform--fix">
 
-  <iframe id="contactForm" src="https://docs.google.com/forms/d/e/1FAIpQLSdryji69bvkVEN3XNeO-WfWaDtdZdaNKVcGbAFRD_oxn9lx4g/viewform?embedded=true" class="w-full" style="height: 110vh" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <iframe id="contactForm" src="https://docs.google.com/forms/d/e/1FAIpQLSdryji69bvkVEN3XNeO-WfWaDtdZdaNKVcGbAFRD_oxn9lx4g/viewform?embedded=true" class="w-full" title="contact form" style="height: 110vh" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </div>

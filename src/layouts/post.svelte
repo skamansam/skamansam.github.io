@@ -4,15 +4,12 @@
 	import Settings from '$lib/settings';
   import { readingTime } from 'reading-time-estimator';
 
-  export let data;
-  console.log('DATA', data);
-  export let slug;
-  console.log('PROPS', $$props)
+  // export let data;
+  // export let slug;
   // export let preview;
   // export let previewHtml;
   export let textContent;
   /** @type {import('reading-time-estimator').readingTime} */
-  console.log('text',textContent);
   export let timeToRead = readingTime(textContent || '', 30);
 	export let title = '';
 	export let author = '';

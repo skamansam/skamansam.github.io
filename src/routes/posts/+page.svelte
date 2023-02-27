@@ -8,7 +8,6 @@
   export let data;
   /** @type {{posts:PostJSON[]}} */
 	export let {posts=[]} = data;
-  console.log(data);
 </script>
 <h2>Posts</h2>
 

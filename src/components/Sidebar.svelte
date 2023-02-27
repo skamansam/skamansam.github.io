@@ -30,7 +30,6 @@
     // let yDown : number | null = null;
 
     function handleTouchStart(evt:TouchEvent) {
-        console.log(evt);
         const firstTouch = evt.touches[0];
         xDown = firstTouch.clientX;
         yDown = firstTouch.clientY;
@@ -55,13 +54,13 @@
 </script>
 
 <nav class="sidebar {clazz}" class:nav-open={navOpen}>
-	<div class="menuButton" on:click={toggleNav}>
+	<div class="menuButton" on:click={toggleNav} on:keypress={toggleNav}>
 		<div class="hamburger"/>
 	</div>
 	<ul class="navMenu">
 		{#each nav as navItem}
 			<li class:active={isActive(navItem)}>
-				<a href={navItem.link} on:click={toggleNav}>
+				<a href={navItem.link} on:click={toggleNav} on:keypress={toggleNav}>
 					{#if navItem.icon}
 						<Icon src={Rss} theme="solid" width="20" height="20" class="color-gray-900" />
 					{/if}
