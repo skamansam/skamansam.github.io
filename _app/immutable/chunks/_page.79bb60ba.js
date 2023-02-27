@@ -1,0 +1,1 @@
+const e=async({fetch:t})=>{const s=await(await t("/api/posts.json")).json(),o=await(await t("/api/projects.json")).json();return{latestPosts:s.slice(0,3),latestProjects:o.slice(0,3)}},n=Object.freeze(Object.defineProperty({__proto__:null,load:e},Symbol.toStringTag,{value:"Module"}));export{n as _,e as l};

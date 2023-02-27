@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="/favicon/favicon.ico" />
@@ -15,17 +15,11 @@
     <meta name="theme-color" content="#eeeeee">
     <link type="text/plain" rel="author" href="/humans.txt" />
 		<meta http-equiv="content-security-policy" content="">
-		<link rel="modulepreload" href="/_app/immutable/start-fcb83328.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/index-6a3f2268.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/singletons-afd5e12e.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/preload-helper-41c905a7.js">
-		<script>
-			if ('serviceWorker' in navigator) {
-				addEventListener('load', function () {
-					navigator.serviceWorker.register('/service-worker.js');
-				});
-			}
-		</script>
+		<link rel="modulepreload" href="/_app/immutable/entry/start.f70748e7.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/index.37f37dfa.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/singletons.9ce67f39.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.0c62e75f.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/preload-helper.41c905a7.js">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CV0J6F3VM"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
@@ -37,17 +31,30 @@
       gtag('config', 'G-G3FBL50ZMF');
     </script>
   </head>
-	<body>
+	<body >
 		
-		<script type="module" data-sveltekit-hydrate="45h">
-			import { start } from "/_app/immutable/start-fcb83328.js";
+			<script>
+				{
+					__sveltekit_7w4vun = {
+						env: {},
+						assets: "",
+						element: document.currentScript.parentElement
+					};
 
-			start({
-				env: {},
-				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
-				version: "1671398841488"
-			});
-		</script>
+					Promise.all([
+						import("/_app/immutable/entry/start.f70748e7.js"),
+						import("/_app/immutable/entry/app.0c62e75f.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_7w4vun.element);
+					});
+
+					if ('serviceWorker' in navigator) {
+						addEventListener('load', function () {
+							navigator.serviceWorker.register('/service-worker.js');
+						});
+					}
+				}
+			</script>
+		
 	</body>
 </html>
