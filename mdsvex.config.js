@@ -18,6 +18,9 @@ import readingMdxTime from "remark-reading-time/mdx.js";
 import rehypeKatex from 'rehype-katex';
 import remarkTypographer from './src/util/remarkTypographer.js';
 
+import remarkEmbedder from '@remark-embedder/core';
+import oembedTransformer from '@remark-embedder/transformer-oembed'
+
 // XXX: NOT WORKING!
 // import remarkHeadings from '@vcarl/remark-headings'; // adds to teh processing data. no way to get data out
 
@@ -30,6 +33,7 @@ import rehypeSlug from 'rehype-slug';
 
 const oembedOptions = {
   usePrefix: false,
+  // syncWidget: true,
   providers: {
     include: ['Twitter', 'Instagram'],
     settings: {
@@ -42,12 +46,12 @@ const oembedOptions = {
       // add a facebook access token
       Instagram: {
         hidecaption: true,
-        access_token: 'a-facebook-access-token'
+        // access_token: 'a-facebook-access-token'
       }
     }
   }
 }
-
+const oembedTransformerConfig = {params: {theme: 'dark', dnt: true, omit_script: true}};
 const config = defineConfig({
 	extensions: ['.svelte.md', '.md', '.svx', '.mdx'],
 	layout: {
@@ -62,47 +66,48 @@ const config = defineConfig({
 	},
 
 	remarkPlugins: [
-    // remarkMermaid, // for diagrams
-    // remarkGfm,  
-		// [oembed, { syncWidget: true }],
-		// remarkDefinitionList,
-		// [emoji, { emoticon: true }],
-		// [remarkGithub, { repository: 'https://github.com/skamansam/skamansam.github.io/' }],
-    // remarkTypographer,
-    // remarkReferenceLinks,
-    // remarkInlineLinks,
-    // [remarkTOC, {
-    //   heading: 'toc|(table[ -]of[ -])?contents|on this page',
-    //   tight: true,
-    // }],
-    // a11yEmoji,
-    // [readingTime, {key: 'readingTime'}],
+    [remarkEmbedder, {transformers: [[oembedTransformer,oembedTransformerConfig]]}],
+    remarkMermaid, // for diagrams
+    remarkGfm,
+		// [oembed, oembedOptions],
+		remarkDefinitionList,
+		[emoji, { emoticon: true }],
+		[remarkGithub, { repository: 'https://github.com/skamansam/skamansam.github.io/' }],
+    remarkTypographer,
+    remarkReferenceLinks,
+    remarkInlineLinks,
+    [remarkTOC, {
+      heading: 'toc|(table[ -]of[ -])?contents|on this page',
+      tight: true,
+    }],
+    a11yEmoji,
+    [readingTime, {key: 'readingTime'}],
     // // readingMdxTime,
-    // // remarkMath,  // for latex support
-    // preview(textFormatter({ length: 250, maxBlocks: 2 })),
-    // preview(
-    //   htmlFormatter({
-    //     length: 250,
-    //     maxBlocks: 2,
-    //   }),
-    //   {
-    //     attribute: 'previewHtml',
-    //   }
-    // ),
-    // preview(
-    //   textFormatter({
-    //     // length: 250,
-    //     // maxBlocks: 2,
-    //   }),
-    //   {
-    //     attribute: 'textContent',
-    //   },
-    // ),
+    remarkMath,  // for latex support
+    preview(textFormatter({ length: 250, maxBlocks: 2 })),
+    preview(
+      htmlFormatter({
+        length: 250,
+        maxBlocks: 2,
+      }),
+      {
+        attribute: 'previewHtml',
+      }
+    ),
+    preview(
+      textFormatter({
+        // length: 250,
+        // maxBlocks: 2,
+      }),
+      {
+        attribute: 'textContent',
+      },
+    ),
 	],
 	rehypePlugins: [
-    // rehypeKatex,
-    // rehypeSlug,
-    // defListHastHandlers
+    rehypeKatexSvelte,
+    rehypeSlug,
+    defListHastHandlers
   ]
 });
 
