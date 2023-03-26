@@ -16,7 +16,7 @@
     style="";
 </script>
 
-<div class="card {clazz}" {style}>
+<div class="card {clazz} text-onSecondaryBg bg-secondaryBg rounded-element p-4 my-4 drop-shadow-element" {style}>
   <section>
     <div class="card-head">
       <div class="card-badges">

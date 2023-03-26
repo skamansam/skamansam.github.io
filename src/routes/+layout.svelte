@@ -2,6 +2,7 @@
 	import Sidebar from '../components/Sidebar.svelte';
   import Footer from '../components/Footer.svelte';
   import Header from '../components/Header.svelte';
+  import Waves from '../components/Waves.svelte';
 	import '../app.css';
 	import { browser } from '$app/environment';
   // import Mermaid from '../components/Mermaid.svelte';
@@ -51,16 +52,19 @@
 </script>
 
 <svelte:body class="{brightness} theme-{theme}"/>
-
+<Waves/>
+<div class="mainContent absolute top-0 left-0 right-0 z-10">
 <Header
   {theme}
   {themes}
   {brightness}
   on:brightnessChange={(evt) => setBrightness(evt.detail)}
   on:themeChange={(evt) => setTheme(evt.detail)}
+  class=""
 />
 <Sidebar />
 <div class="content-area flex-1 p-3">
   <slot />
 </div>
 <Footer />
+</div>
