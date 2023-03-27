@@ -6,6 +6,8 @@ module.exports = {
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
+        tertiary: 'var(--color-tertiary)',
+        quaternary: 'var(--color-quaternary)',
         secondarySoft: 'var(--color-secondarySoft)',
         secondaryBg: 'var(--color-secondaryBg)',
         primaryBorder: 'var(--color-primaryBorder)',
@@ -49,6 +51,9 @@ module.exports = {
       dropShadow: {
         'element': 'var(--drop-shadow-element)',
       },
+      width: {
+        'md': 'var(--width-md, 768px)',
+      }
     },
     fontFamily: {
       logoFont: 'var(--font-logoFont)',
