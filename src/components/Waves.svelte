@@ -1,7 +1,7 @@
 
-<div class="waves-animation h-94 pt-56 bg-gradient-to-r from-tertiaryBg">
+<div class="waves-animation absolute w-full h-72 pt-44 bg-gradient-to-r from-tertiaryBg -z-50">
   <!-- Stolen from https://github.com/SayanBarcha/Simple-Waves-->
-  <svg class="waves relative bottom-0 w-full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+  <svg class="waves absolute bottom-0 w-full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
     <defs>
       <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
     </defs>

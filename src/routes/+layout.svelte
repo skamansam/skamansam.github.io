@@ -51,20 +51,28 @@
 	detectBrightness();
 </script>
 
-<svelte:body class="{brightness} theme-{theme}"/>
+<style>
+
+</style>
+
+<svelte:body class="{brightness} theme-{theme} m-0"/>
 <Waves/>
-<div class="mainContent absolute top-0 left-0 right-0 z-10">
-<Header
-  {theme}
-  {themes}
-  {brightness}
-  on:brightnessChange={(evt) => setBrightness(evt.detail)}
-  on:themeChange={(evt) => setTheme(evt.detail)}
-  class=""
-/>
-<Sidebar />
-<div class="content-area flex-1 p-3">
-  <slot />
-</div>
-<Footer />
+<div class="layout-container m-0 p-0">
+  <div class="md:w-md mx-auto my-0 center">
+    <Header
+      {theme}
+      {themes}
+      {brightness}
+      on:brightnessChange={(evt) => setBrightness(evt.detail)}
+      on:themeChange={(evt) => setTheme(evt.detail)}
+      class="pr-5"
+    />
+    <Sidebar />
+  </div>
+  <div class="center md:w-md mx-auto my-0">
+    <main class="content-area p-3">
+      <slot />
+    </main>
+    <Footer />
+  </div>
 </div>
