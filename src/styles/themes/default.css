@@ -31,6 +31,9 @@
   --border-radius-element: 0.5rem;
   --color-secondaryBg: theme('colors.zinc.100');
   --drop-shadow-element: theme('boxShadow.xl');
+  --color-tertiary: theme('colors.yellow.400');
+  --color-quaternary: theme('colors.stone.900');
+
 }
 
 .dark {
@@ -51,6 +54,12 @@ html {
 
 body {
   @apply text-onPrimaryBg bg-primaryBg;
+}
+.layout-container {
+  @apply m-0 w-full;
+}
+.mainContent {
+  @apply mx-auto my-0;
 }
 
 header.site-head {
