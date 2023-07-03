@@ -1,1 +1,0 @@
-const t=async({fetch:o})=>({portfolios:await(await o("/api/portfolio.json")).json()}),r=Object.freeze(Object.defineProperty({__proto__:null,load:t},Symbol.toStringTag,{value:"Module"}));export{r as _,t as l};
