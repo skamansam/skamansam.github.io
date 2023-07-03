@@ -41,4 +41,19 @@
 	</Card>
 {/each}
 <h2>Latest Projects</h2>
+{#if latestProjects.length === 0}
+  <p>No projects added here yet. Please see <a href="https://github.com/skamansam">my Github Page</a>
+    for all the open source projects on which I am currently working, including this site.</p>
+{/if}
+{#each latestProjects as project}
+	<Card
+		title={project.meta.title}
+		to={project.path}
+		subtitle={project.meta.description}
+		metadata="Published {new Date(project.meta.created_at).toLocaleString()} {project.meta?.readingTime}"
+    badges={project.meta?.categories}
+    tags={project.meta?.tags}
+	>		{project.meta.excerpt}
+	</Card>
+{/each}
 </div>
