@@ -60,9 +60,9 @@
 	<ul class="navMenu">
 		{#each nav as navItem}
 			<li class:active={isActive(navItem)}>
-				<a href={navItem.link} on:click={toggleNav} on:keypress={toggleNav}>
+				<a href={navItem.link} on:click={toggleNav} on:keypress={toggleNav} class="text-onPrimaryBg">
 					{#if navItem.icon}
-						<Icon src={Rss} theme="solid" width="20" height="20" class="color-gray-900" />
+						<Icon src={Rss} theme="solid" width="20" height="20" />
 					{/if}
 					{navItem.name || ''}</a
 				>
