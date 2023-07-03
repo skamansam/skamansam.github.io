@@ -66,12 +66,14 @@ const config = defineConfig({
 	},
 
 	remarkPlugins: [
+    remarkMath,  // for latex support
     [remarkEmbedder, {transformers: [[oembedTransformer,oembedTransformerConfig]]}],
     remarkMermaid, // for diagrams
+    // // readingMdxTime,
     remarkGfm,
 		// [oembed, oembedOptions],
 		remarkDefinitionList,
-		[emoji, { emoticon: true }],
+		// [emoji, { emoticon: true }],
 		[remarkGithub, { repository: 'https://github.com/skamansam/skamansam.github.io/' }],
     remarkTypographer,
     remarkReferenceLinks,
@@ -82,8 +84,6 @@ const config = defineConfig({
     }],
     a11yEmoji,
     [readingTime, {key: 'readingTime'}],
-    // // readingMdxTime,
-    remarkMath,  // for latex support
     preview(textFormatter({ length: 250, maxBlocks: 2 })),
     preview(
       htmlFormatter({
