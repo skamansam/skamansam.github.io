@@ -17,6 +17,10 @@
 		{ name: 'brutal', value: 'brutal' }
 	];
 
+  let systemBrightness = 'light';
+  if (browser && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    systemBrightness = 'dark';
+  }
 	const detectBrightness = () => {
 		if (!browser) return;
 		const storedBrightness = window.localStorage.getItem('brightness');
