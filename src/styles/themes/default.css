@@ -68,7 +68,7 @@ header.site-head {
 header.site-head {}
 
 .sidebar {
-  @apply border-t border-b pt-2 pb-1 font-logoFont shadow-md dark:shadow-white;
+  @apply  pt-2 pb-1 font-logoFont;
 }
 .sidebar ul{
   @apply w-full block list-none p-0 m-0 flex justify-center;
