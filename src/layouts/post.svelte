@@ -19,18 +19,22 @@
 	export let updated_at = '';
 	export let created_at = '';
 	// /** @type {Array.<string>} */
-	// export let tags = [];
+	export let tags = [];
 	// /** @type {Array.<string>} */
-	// export let categories = [];
-	// export let coverAlt = '';
+	export let categories = [];
+  export let cover = false;
+	export let coverAlt = '';
 	/** @type {?string} */
 	export let coverImage = null;
 	// export let excerpt = '';
-	// export let comments = '';
-	// export let view = '';
-	// export let layout = '';
-	// export let lang = '';
+	export let comments = '';
+	export let view = '';
+	export let layout = '';
+	export let lang = '';
 	export let articleType = 'BlogPosting';
+  export let lastmod = '';
+  export let preview = '';
+  export let previewHtml = '';
 
 	// /** @type {boolean} */
 	// export let cover = false;
