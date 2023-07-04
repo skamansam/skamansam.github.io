@@ -43,8 +43,8 @@
   --color-primaryBorder: theme('colors.stone.300');
   --color-onSecondaryBg: theme('colors.stone.300');
   --color-secondaryBg: theme('colors.zinc.800');
-  /* --color-tertiaryBg: theme('colors.purple.900');
-  --color-onTertiaryBg: theme('colors.stone.300'); */
+  --color-tertiaryBg: theme('colors.purple.900');
+  --color-onTertiaryBg: theme('colors.stone.300');
 }
 
 html {
