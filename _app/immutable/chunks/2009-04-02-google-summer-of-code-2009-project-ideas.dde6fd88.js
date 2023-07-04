@@ -1,0 +1,31 @@
+import{s as v,r as d,B as _,f,a as w,g as u,C as c,c as S,i as h,y as T,d as p}from"./scheduler.28ea7184.js";import{S as M,i as G,b as y,d as x,m as P,a as O,t as b,e as L}from"./index.8021bc93.js";import{g as j,a as C}from"./spread.8a54911c.js";import{P as B}from"./post.60382223.js";function z(s){let e,n='Google has announced a another <a href="http://code.google.com/soc/" title="">Summer of Code for 2009</a> (<a href="http://www.youtube.com/watch?v=vBRRR0BQyz0&amp;feature=channel_page" title="">video</a>)! Here is a list of some project idea pages for this year.',l,i,t='<li><a href="http://wiki.gimp.org/gimp/SummerOfCode2009ideas" title="">GIMP</a></li> <li><a href="http://live.gnome.org/SummerOfCode2009/Ideas" title="">GNOME</a></li> <li><a href="http://wiki.python.org/moin/SummerOfCode" title="">Python</a></li> <li><a href="https://wiki.mozilla.org/Community:SummerOfCode09:Brainstorming" title="">Mozilla</a></li> <li><a href="http://docs.codehaus.org/display/RVM/Project+Proposals+2009" title="">Jikes</a></li> <li><a href="http://code.zikula.org/core/ticket/333" title="">Zikula</a></li> <li><a href="http://www.olat.org/website/en/html/about_participating.htm" title="">OLAT</a></li> <li><a href="http://wiki.maemo.org/GSoC_2009/Project_ideas" title="">Maemo</a></li> <li><a href="http://www.netbsd.org/contrib/soc-projects.html" title="">NetBSD</a></li> <li><a href="http://wiki.tcl.tk/22182" title="">Tcl/Tk</a></li> <li><a href="http://wiki.apache.org/general/SummerOfCode2009" title="">Apache Software Foundation</a></li> <li><a href="https://www.linuxfoundation.org/en/Google_Summer_of_Code_2009" title="">The Linux Foundation</a></li> <li><a href="http://groups.drupal.org/soc-2009" title="">Drupal</a></li> <li><a href="http://techbase.kde.org/Projects/Summer_of_Code/2009/Ideas" title="">KDE</a></li> <li><a href="http://wiki.eclipse.org/Google_Summer_of_Code_2009_Ideas" title="">Eclipse Foundation</a></li> <li><a href="http://www.nabble.com/Google-Summer-of-Code-2009-td22090319.html" title="">The R Foundation</a></li> <li><a href="http://openacs.org/forums/message-view?message_id=2564672" title="">Open ACS</a></li> <li><a href="http://bbs.archlinux.org/viewtopic.php?id=65052" title="">Arch Linux</a></li> <li><a href="http://www.wesnoth.org/" title="">Battle for Wesnoth</a></li>',a,r,g='<a href="http://www.google.com/search?hl=en&amp;client=firefox-a&amp;rls=org.mozilla:en-US:official&amp;q=summer+of+code+2009&amp;start=20&amp;sa=N" title="">Search More Here:</a>';return{c(){e=f("p"),e.innerHTML=n,l=w(),i=f("ul"),i.innerHTML=t,a=w(),r=f("p"),r.innerHTML=g},l(o){e=u(o,"P",{["data-svelte-h"]:!0}),c(e)!=="svelte-1ahp14l"&&(e.innerHTML=n),l=S(o),i=u(o,"UL",{["data-svelte-h"]:!0}),c(i)!=="svelte-xy7ukr"&&(i.innerHTML=t),a=S(o),r=u(o,"P",{["data-svelte-h"]:!0}),c(r)!=="svelte-1l74jcu"&&(r.innerHTML=g)},m(o,m){h(o,e,m),h(o,l,m),h(o,i,m),h(o,a,m),h(o,r,m)},p:T,d(o){o&&(p(e),p(l),p(i),p(a),p(r))}}}function H(s){let e,n;const l=[s[0],k];let i={$$slots:{default:[z]},$$scope:{ctx:s}};for(let t=0;t<l.length;t+=1)i=d(i,l[t]);return e=new B({props:i}),{c(){y(e.$$.fragment)},l(t){x(e.$$.fragment,t)},m(t,a){P(e,t,a),n=!0},p(t,[a]){const r=a&1?j(l,[a&1&&C(t[0]),a&0&&C(k)]):{};a&2&&(r.$$scope={dirty:a,ctx:t}),e.$set(r)},i(t){n||(O(e.$$.fragment,t),n=!0)},o(t){b(e.$$.fragment,t),n=!1},d(t){L(e,t)}}}const k={comments:!0,view:"post",layout:"post",lang:"en",author:"skamansam",title:"Google Summer of Code 2009 Project Ideas",description:"List of projects for GSoC 2009",excerpt:"Google has announced a another Summer of Code for 2009",cover:!1,coverImage:"/images/GSoC-logo-horizontal-800.png",coverAlt:"RBE Logo",categories:["open-source"],tags:["Google Summer of Code"],created_at:"2009-04-02T21:31:00.000Z",updated_at:"2009-04-02T21:31:00.000Z",preview:`Google has announced a another Summer of Code for 2009 (video)! Here is a list of some project idea pages for this year.
+
+- GIMP
+- GNOME
+- Python
+- Mozilla
+- Jikes
+- Zikula
+- OLAT
+- Maemo
+- NetBSD
+- Tcl/Tk
+- Apache Software Foundation
+- The Linux...`,previewHtml:'<p>Google has announced a another <a href="http://code.google.com/soc/" title>Summer of Code for 2009</a> (<a href="http://www.youtube.com/watch?v=vBRRR0BQyz0&#x26;feature=channel_page" title>video</a>)! Here is a list of some project idea pages for this year.</p> <ul> <li><a href="http://wiki.gimp.org/gimp/SummerOfCode2009ideas" title>GIMP</a></li> <li><a href="http://live.gnome.org/SummerOfCode2009/Ideas" title>GNOME</a></li> <li><a href="http://wiki.python.org/moin/SummerOfCode" title>Python</a></li> <li><a href="https://wiki.mozilla.org/Community:SummerOfCode09:Brainstorming" title>Mozilla</a></li> <li><a href="http://docs.codehaus.org/display/RVM/Project+Proposals+2009" title>Jikes</a></li> <li><a href="http://code.zikula.org/core/ticket/333" title>Zikula</a></li> <li><a href="http://www.olat.org/website/en/html/about_participating.htm" title>OLAT</a></li> <li><a href="http://wiki.maemo.org/GSoC_2009/Project_ideas" title>Maemo</a></li> <li><a href="http://www.netbsd.org/contrib/soc-projects.html" title>NetBSD</a></li> <li><a href="http://wiki.tcl.tk/22182" title>Tcl/Tk</a></li> <li><a href="http://wiki.apache.org/general/SummerOfCode2009" title>Apache Software Foundation</a></li> <li><a href="https://www.linuxfoundation.org/en/Google_Summer_of_Code_2009" title>The Linux Foundation</a></li> <li><a href="http://groups.drupal.org/soc-2009" title>Drupal</a></li> <li><a href="http://techbase.kde.org/Projects/Summer_of_Code/2009/Ideas" title>KDE</a></li> <li><a href="http://wiki.eclipse.org/Google_Summer_of_Code_2009_Ideas" title>Eclip...</a></li></ul>',textContent:`Google has announced a another Summer of Code for 2009 (video)! Here is a list of some project idea pages for this year.
+
+- GIMP
+- GNOME
+- Python
+- Mozilla
+- Jikes
+- Zikula
+- OLAT
+- Maemo
+- NetBSD
+- Tcl/Tk
+- Apache Software Foundation
+- The Linux Foundation
+- Drupal
+- KDE
+- Eclipse Foundation
+- The...`};function I(s,e,n){return s.$$set=l=>{n(0,e=d(d({},e),_(l)))},e=_(e),[e]}class R extends M{constructor(e){super(),G(this,e,I,H,v,{})}}export{R as default,k as metadata};
