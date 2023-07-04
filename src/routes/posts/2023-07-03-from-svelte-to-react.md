@@ -3,7 +3,7 @@ title: From Svelte to React
 description: Learning React for Svelte Developers
 excerpt: ""
 created_at: 2023-07-03T20:42:50.725Z
-updated_at: 2023-07-04T21:07:01.191Z
+updated_at: 2023-07-04T21:13:52.340Z
 coverImage: /images/cover/from-svelte-to-react.jpg
 coverImageAlt: a programmer sitting  at a desk with two laptops in front of him. on the left laptop screen, there is the svelte logo. on the right laptop screen there is the react logo
 draft: false
@@ -24,7 +24,10 @@ keywords: []
   import TabView from '../../components/TabView.svelte';
 </script>
 
-# Contents
+> NOTE: This entry is in a preview state. It may not be complete yet,
+
+
+## Contents
 
 ## Creating a Web App Skaffold
 
