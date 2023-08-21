@@ -102,25 +102,35 @@ header.site-head {}
 @media only screen and (max-width: 700px) {
   .sidebar {
     height: var(--sidebar-height);
-    @apply p-2;
+    @apply p-2 flex items-center items-stretch text-center ;
   }
-  .sidebar .navMenu {
+  .sidebar .open-text {
+    animation: blinker .5s linear 3;
+    @apply self-center;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: .5;
+      @apply text-yellow-300
+    }
+  }
+.sidebar .navMenu {
     transform: translateX(-100%);
-    display: block;
     position: absolute;
     background: var(--color-primaryBg);
     margin: 0px;
     width: 90%;
-    margin-top: -22px;
+    height: calc(100% - 100px);
+    margin-top: -12px;
     /* top: 0px; */
     left: 0px;
-    @apply border-2 rounded p-2 text-onPrimaryBg
+    @apply flex-col border-2 rounded p-2 text-onPrimaryBg justify-evenly font-bold text-xl;
+  }
+  .sidebar .navMenu li{
+    @apply flex-col;
   }
   .sidebar .navMenu li a{
     @apply text-onPrimaryBg w-fit
-  }
-  .sidebar .navMenu li{
-    display: block;
   }
   .sidebar .menuButton {
     @apply block !important;
@@ -164,7 +174,7 @@ header.site-head {}
 }
 
 .sidebar.nav-open .navMenu {
-  transform: translateX(0);
+  transform: translateX(5%);
 }
 
 /* Change this stuff below */

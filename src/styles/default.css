@@ -189,14 +189,22 @@ code {
 }
 
 .card {
+
+}
+
+.card-markers {
+  margin-top: -30px;
+  margin-bottom: -5px;
+  margin-left: -30px;
+  float: left;
 }
 
 .card-badges {
-  margin-top: -22px;
+  margin-top: -30px;
   margin-bottom: -5px;
   float: right;
 }
-.card-badges .badge {
+.card-badges .badge, .card-markers .badge {
   @apply ml-2 rounded px-1 font-bold py-0.5 text-xs;
 }
 .card .card-metadata a {

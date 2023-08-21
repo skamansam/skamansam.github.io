@@ -24,15 +24,17 @@
 	const isActive = ({ link }: NavLink) => {
 		return link === $page.url.pathname;
 	};
+  let supportsTouch = false;
 
   if (browser) {
+    supportsTouch = !!('ontouchstart' in window || navigator.maxTouchPoints);
+
     let xDown : number | null = null;
-    // let yDown : number | null = null;
 
     function handleTouchStart(evt:TouchEvent) {
         const firstTouch = evt.touches[0];
         xDown = firstTouch.clientX;
-        yDown = firstTouch.clientY;
+        // yDown = firstTouch.clientY;
     };
 
     function handleTouchMove(evt:TouchEvent) {
@@ -69,6 +71,9 @@
 			</li>
 		{/each}
 	</ul>
+  {#if supportsTouch}
+    <div class="open-text">Slide right to open menu. --&gt;</div>
+  {/if}
 </nav>
 
 <style>
