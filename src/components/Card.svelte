@@ -10,6 +10,8 @@
 		metadata = null,
 		/** @type string[] */
 		badges = [],
+		/** @type string[] */
+		markers = [],
 		/** @type string|null */
 		to = null,
     /** @type string|null */
@@ -17,6 +19,9 @@
     /**@type string[] */
     tags = []
     ;
+  if(markers.length > 0 || badges.length > 0) {
+    clazz += 'mt-6';
+  }
 </script>
 
 <style>
@@ -29,6 +34,13 @@
 <div class="card {clazz} text-onSecondaryBg bg-secondaryBg rounded-element p-4 my-4 drop-shadow-element" {style}>
   <section>
     <div class="card-head">
+      <div class="card-markers">
+        <slot name="marker">
+          {#each markers as marker}
+          <Badge text={marker} />
+          {/each}
+        </slot>
+      </div>
       <div class="card-badges">
         <slot name="badges">
           {#each badges as badge}

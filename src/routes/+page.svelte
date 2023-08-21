@@ -34,8 +34,8 @@
 		title={post.meta.title}
 		to={post.path}
 		subtitle={post.meta.description}
-		metadata="Published {new Date(post.meta.created_at).toLocaleString()} {post.meta.readingTime}"
     badges={post.meta?.categories}
+    markers={[new Date(post.meta.created_at).toLocaleString(), post.meta.readingTime]}
     tags={post.meta?.tags}
 	>		{post.meta.excerpt}
 	</Card>
