@@ -17,17 +17,17 @@
 		
 		<link href="../_app/immutable/assets/0.db06f06f.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/2023-07-03-from-svelte-to-react.d3249787.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.58ccd3db.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.05c6fc7e.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.28ea7184.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.185f7c86.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.fa60ed10.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.11b6e4ab.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.fcbd6b1e.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.41c905a7.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.8021bc93.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.8b5730f4.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.bff05890.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/stores.4e306638.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.6e27f5f8.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/spread.8a54911c.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/14.050348c7.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/14.1db02d91.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/dynamic-import-helper.be004503.js"><title>From Svelte to React | RBE</title><!-- HEAD_svelte-ft2lrj_START --><link rel="canonical" href="http://sveltekit-prerender/posts/2023-07-03-from-svelte-to-react"><meta property="og:site_name" content="Rude Boy Enterprises"><meta property="article:published_time" content="2023-07-04T21:13:52.340Z"><meta property="article:author" content=""><meta property="og:url" content="http://sveltekit-prerender/posts/2023-07-03-from-svelte-to-react"><meta property="og:type" content="article"><meta property="og:title" content="From Svelte to React - RBE"><meta property="og:image" content="/images/cover/from-svelte-to-react.jpg"><meta property="og:description" content="Learning React for Svelte Developers"><meta name="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@skamansam"><meta name="twitter:creator" content="@"><meta name="twitter:image" content="/images/cover/from-svelte-to-react.jpg"><meta name="description" content="Learning React for Svelte Developers"><!-- HTML_TAG_START --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"From Svelte to React","description":"Learning React for Svelte Developers","datePublished":"2023-07-03T20:42:50.725Z","datemodified":"2023-07-04T21:13:52.340Z","mainEntityOfPage":"True","image":{"@type":"imageObject","url":"/images/cover/from-svelte-to-react.jpg","height":"600","width":"800"},"publisher":{"@type":"Organization","name":"Rude Boy Enterprises","logo":{"@type":"imageObject","url":"http://sveltekit-prerender/rbe-logo.png"}},"author":{"@type":"Person","name":""},"sharedContent":[{"@type":"WebPage","headline":"From Svelte to React","url":"http://sveltekit-prerender/posts/2023-07-03-from-svelte-to-react","author":{"@type":"Person","name":""}}],"articleBody":"NOTE: This entry is in a preview state. It may not be complete yet,\n\nContents\n\n- Creating a Web App Skaffold\n- Defining a Component\n- Nesting Components\n- Returning Multiple Components\n- Styling Components\n- Displaying Variables\n- Conditional Rendering\n- Rendering Data Structures\n- Passing Props to..."}</script><!-- HTML_TAG_END --><!-- HEAD_svelte-ft2lrj_END --><!-- HEAD_svelte-hmy4qy_START --><!-- HEAD_svelte-hmy4qy_END -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CV0J6F3VM"></script>
@@ -127,7 +127,7 @@ used in normal HTML. the <code>style</code> attribute takes an object, so you ca
 			
 			<script>
 				{
-					__sveltekit_tdyh7d = {
+					__sveltekit_b4cjay = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -137,8 +137,8 @@ used in normal HTML. the <code>style</code> attribute takes an object, so you ca
 					const data = [null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.58ccd3db.js"),
-						import("../_app/immutable/entry/app.fa60ed10.js")
+						import("../_app/immutable/entry/start.05c6fc7e.js"),
+						import("../_app/immutable/entry/app.fcbd6b1e.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 14],
