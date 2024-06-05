@@ -1,0 +1,50 @@
+---
+title: Django Filtering Like A Pro!
+---
+
+class FieldFilterMixin:
+    """This is a filter on models; a way of specifying which fields to show."""
+
+    def get_fields(self, *args, **kwargs):
+        request = self.context.get("request")
+        if request is None:
+            return super().get_fields(*args, **kwargs)
+
+        requested_fields = request.query_params.getlist("fields")
+        if len(requested_fields) < 1:
+            fields = super().get_fields(*args, **kwargs)
+            return fields
+
+        elif len(requested_fields) == 1:
+            requested_fields = requested_fields[0].split(",")
+
+        self.Meta.fields = "__all__"
+        fields = super().get_fields(*args, **kwargs)
+
+        field_names = fields.keys()
+        if len(requested_fields - field_names) != len(requested_fields):
+            requested_fields += ["id"]
+            removed_fields = field_names - requested_fields
+            for field in removed_fields:
+                fields.pop(field, None)
+        return fields
+
+class PageNumberPagination(PageNumberPagination):
+    """
+    This custom pagination aligns with elasticsearch's method of using `page` and `size`.
+    We use this for legacy reasons, though if we should change this next time we do a
+    lot of breaking changes
+    """
+
+    page_query_param = "page"
+    page_size_query_param = "size"
+    max_page_size = settings.REST_FRAMEWORK["MAX_PAGE_SIZE"]
+
+
+def on_transaction_commit(func):
+    """@on_transaction_commit - use a method when a transaction completes. mainly for signals."""
+
+    def inner(*args, **kwargs):
+        transaction.on_commit(lambda: func(*args, **kwargs))
+
+    return inner
