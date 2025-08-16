@@ -111,7 +111,7 @@ header.site-head {}
   @keyframes blinker {
     50% {
       opacity: .5;
-      @apply text-yellow-300
+      color: #fde047; /* Replaced @apply text-yellow-300 with direct color value */
     }
   }
 .sidebar .navMenu {

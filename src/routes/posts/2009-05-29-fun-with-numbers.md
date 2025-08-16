@@ -17,7 +17,7 @@ tags:
   - Pascal's Triangle
   - Polynomials
 created_at: 2009-05-29 8:48:00
-updated_at: 2023-07-03T17:45:26.473Z
+updated_at: 2025-08-16T18:54:32.749Z
 lastmod: 2022-11-06T21:44:22.048Z
 ---
 
@@ -182,7 +182,7 @@ supposing $i=3$, you would get:
 
 
 $$
-\sum_{i=0}^{3}(P_{3i}a^{3-i}b^i) = 
+\sum_{i=0}^{3}(P_{`3i`}a^{3-i}b^i) = 
 $$
 
 $$
