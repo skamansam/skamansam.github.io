@@ -2,9 +2,7 @@
  * Default styles for html elements, cuz tailwind removes them
  */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 html {
   font-size: 16px;
