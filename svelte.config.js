@@ -14,7 +14,15 @@ const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: [
-    preprocess({postcss: true, preserve: ['ld+json']}),
+    preprocess({
+      postcss: true, 
+      preserve: ['ld+json'],
+      typescript: {
+        compilerOptions: {
+          verbatimModuleSyntax: true
+        }
+      }
+    }),
     mdsvex(mdsvexConfig),
     documentPreprocessor(), // this needs to be last
   ],
