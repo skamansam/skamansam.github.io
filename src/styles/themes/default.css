@@ -3,7 +3,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Goldman&family=Mukta&family=Fugaz+One&family=Playball&family=Oswald&display=swap'); */
 @import url('https://fonts.bunny.net/css?family=Amiri:400|Goldman:400|Mukta:400|Fugaz+One:400|Playball:400|Oswald:400|Roboto:400&display=swap');
 
-@import '@tailwindcss';
+@import 'tailwindcss';
 
 :root {
   --color-neutral-100: theme('colors.stone.100');
