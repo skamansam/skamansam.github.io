@@ -62,7 +62,7 @@
 <svelte:body class="{brightness} m-0" data-theme={theme}/>
 <Waves/>
 <div class="layout-container m-0 p-0">
-  <div class="md:w-md mx-auto my-0 center">
+  <div class="md:w-3/4 w-full mx-auto my-0 center">
     <Header
       bind:theme
       {themes}
@@ -73,7 +73,7 @@
     />
     <Sidebar />
   </div>
-  <div class="center md:w-md mx-auto my-0">
+  <div class="center md:w-3/4 w-full mx-auto my-0">
     <main class="content-area p-3">
       <slot />
     </main>
