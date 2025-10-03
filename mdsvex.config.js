@@ -31,6 +31,9 @@ import rehypeKatexSvelte from 'rehype-katex-svelte';
 import rehypeTOC from 'rehype-toc';
 import rehypeSlug from 'rehype-slug';
 
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
 const oembedOptions = {
   usePrefix: false,
   // syncWidget: true,
@@ -55,10 +58,10 @@ const oembedTransformerConfig = {params: {theme: 'dark', dnt: true, omit_script:
 const config = defineConfig({
 	extensions: ['.svelte.md', '.md', '.svx', '.mdx'],
 	layout: {
-		post: './src/layouts/post.svelte',
-		posts: './src/layouts/posts.svelte',
-		portfolio: './src/layouts/portfolio.svelte',
-		_: './src/layouts/post.svelte'
+		post:  dirname(fileURLToPath(import.meta.url)) + '/src/layouts/post.svelte',
+		posts:  dirname(fileURLToPath(import.meta.url)) + '/src/layouts/posts.svelte',
+		portfolio:  dirname(fileURLToPath(import.meta.url)) + '/src/layouts/portfolio.svelte',
+		_:  dirname(fileURLToPath(import.meta.url)) + '/src/layouts/post.svelte'
 	},
 	smartypants: {
     quotes: false,
