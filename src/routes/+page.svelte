@@ -1,15 +1,18 @@
-<script lang="js">
+<script lang="ts">
   import Card from '../components/Card.svelte'
   import Badge from '../components/Badge.svelte';
 	import Avatar from '../components/Avatar.svelte';
+  import type { PageData } from './$types';
 
-  /** @type {import('./$types').PageData} */
- export let data;
+  interface Props {
+    data: PageData;
+    class?: string;
+  }
 
-  let clazz = '';
-	export { clazz as class };
-  /** @type {PostJSON[]} */
-	const {latestPosts, latestProjects} = data;
+  let { data, class: clazz = '' }: Props = $props();
+
+	const latestPosts = $derived(data.latestPosts);
+	const latestProjects = $derived(data.latestProjects);
 </script>
 
 <svelete:head>

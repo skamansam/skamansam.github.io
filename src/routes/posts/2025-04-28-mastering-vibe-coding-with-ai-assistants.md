@@ -7,8 +7,8 @@ updated_at: 2025-04-28T15:56:58.502Z
 coverImage: /images/cover/vide-coding-with-ai-assistants.png
 coverImageAlt: Illustration of a human developer and a glowing AI assistant collaborating at a laptop, surrounded by faint outlines of code snippets, checklists, and planning diagrams. The image symbolizes the collaborative approach of vibe coding with AI assistants.
 draft: false
-tags: ai, coding, development, productivity
-categories: technology
+tags: [ai, coding, development, productivity]
+categories: [technology]
 twitterImage: ""
 opengraphImage: ""
 meta: ""

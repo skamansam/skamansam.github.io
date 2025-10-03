@@ -1,23 +1,14 @@
-<script context="module">
+<script lang="ts">
 	import Card from '../../components/Card.svelte';
   import Badge from '../../components/Badge.svelte';
+  import type { PageData } from './$types';
 
-  /** @type {import('@sveltejs/kit').Load} */
-  export const load = async ({ fetch }) => {
-    const projects = await fetch('/api/projects.json');
-    /** @type {Project[]} */
-		const allProjects = await projects.json();
-		return {
-			props: {
-				projects: allProjects
-			}
-		};
-	};
-</script>
+  interface Props {
+    data: PageData;
+  }
 
-<script lang="js">
-  /** @type {ProjectJSON[]} */
-	export let projects = [];
+  let { data }: Props = $props();
+  const projects = $derived(data.projects || []);
 </script>
 
 <h1>Projects</h1>

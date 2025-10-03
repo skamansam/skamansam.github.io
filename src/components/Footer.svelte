@@ -1,7 +1,11 @@
-<script>
+<script lang="ts">
 	import BuyMeACoffee from './BuyMeACoffee.svelte';
-	let clazz = '';
-	export { clazz as class };
+
+  interface Props {
+    class?: string;
+  }
+
+	let { class: clazz = '' }: Props = $props();
 </script>
 
 <div class="{clazz} footer flex w-full border-t-2 py-0 flex-grow-0" style="height: 80px;">

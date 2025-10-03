@@ -3,20 +3,26 @@
 	import { Icon } from '@steeze-ui/svelte-icon';
 	import { Rss } from '@steeze-ui/heroicons';
   import { browser } from '$app/environment';
-	let clazz = '';
-	export { clazz as class };
 
-	export let nav: NavLink[] = [
-		{ name: 'Portfolio', link: '/portfolio' },
-		{ name: 'Blog', link: '/posts' },
-		{ name: 'Projects', link: '/projects' },
-		{ name: 'About', link: '/about' },
-		{ name: 'Contact', link: '/contact' },
-		{ name: 'MD Demo', link: '/demo' },
-		{ icon: Rss, link: '/rss.xml' }
-	];
+  interface Props {
+    class?: string;
+    nav?: NavLink[];
+  }
 
-  let navOpen = false;
+	let { 
+    class: clazz = '',
+    nav = [
+      { name: 'Portfolio', link: '/portfolio' },
+      { name: 'Blog', link: '/posts' },
+      { name: 'Projects', link: '/projects' },
+      { name: 'About', link: '/about' },
+      { name: 'Contact', link: '/contact' },
+      { name: 'MD Demo', link: '/demo' },
+      { icon: Rss, link: '/rss.xml' }
+    ]
+  }: Props = $props();
+
+  let navOpen = $state(false);
   const toggleNav = () => {
     navOpen = !navOpen;
   }
@@ -24,45 +30,51 @@
 	const isActive = ({ link }: NavLink) => {
 		return link === $page.url.pathname;
 	};
-  let supportsTouch = false;
+  let supportsTouch = $state(false);
 
-  if (browser) {
-    supportsTouch = !!('ontouchstart' in window || navigator.maxTouchPoints);
+  $effect(() => {
+    if (browser) {
+      supportsTouch = !!('ontouchstart' in window || navigator.maxTouchPoints);
 
-    let xDown : number | null = null;
+      let xDown : number | null = null;
 
-    function handleTouchStart(evt:TouchEvent) {
-        const firstTouch = evt.touches[0];
-        xDown = firstTouch.clientX;
-        // yDown = firstTouch.clientY;
-    };
+      function handleTouchStart(evt:TouchEvent) {
+          const firstTouch = evt.touches[0];
+          xDown = firstTouch.clientX;
+      }
 
-    function handleTouchMove(evt:TouchEvent) {
-        if ( !xDown) return;
+      function handleTouchMove(evt:TouchEvent) {
+          if ( !xDown) return;
 
-        const xUp = evt.touches[0].clientX;
-        const xDiff = xUp - xDown;
+          const xUp = evt.touches[0].clientX;
+          const xDiff = xUp - xDown;
 
-        if ( Math.abs( xDiff ) > 7 ) { // swipe tolerance
-              navOpen = xDiff > 0;
-        }
-        xDown = null;
-    };
+          if ( Math.abs( xDiff ) > 7 ) { // swipe tolerance
+                navOpen = xDiff > 0;
+          }
+          xDown = null;
+      }
 
-    document.addEventListener('touchstart', handleTouchStart, false);
-    document.addEventListener('touchmove', handleTouchMove, false);
-  }
+      document.addEventListener('touchstart', handleTouchStart, false);
+      document.addEventListener('touchmove', handleTouchMove, false);
+
+      return () => {
+        document.removeEventListener('touchstart', handleTouchStart);
+        document.removeEventListener('touchmove', handleTouchMove);
+      };
+    }
+  });
 
 </script>
 
 <nav class="sidebar {clazz}" class:nav-open={navOpen}>
-	<div class="menuButton" on:click={toggleNav} on:keypress={toggleNav}>
+	<div class="menuButton" onclick={toggleNav} onkeypress={toggleNav}>
 		<div class="hamburger"/>
 	</div>
 	<ul class="navMenu">
 		{#each nav as navItem}
 			<li class:active={isActive(navItem)}>
-				<a href={navItem.link} on:click={toggleNav} on:keypress={toggleNav} class="text-onPrimaryBg">
+				<a href={navItem.link} onclick={toggleNav} onkeypress={toggleNav} class="text-onPrimaryBg">
 					{#if navItem.icon}
 						<Icon src={Rss} theme="solid" width="20" height="20" />
 					{/if}

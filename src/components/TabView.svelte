@@ -1,28 +1,30 @@
-<script>
-  import { onMount } from 'svelte';
+<script lang="ts">
+  let activeTab = $state(0);
+  let tabElements = $state<HTMLElement | null>(null);
+  let tabNames = $state<string[]>([]);
 
-  let activeTab = 0;
-
-  /** @type {HTMLElement} */
-  let tabElements = null;
-
-  /** @type {string[]} */
-  let tabNames = [];
-
-  onMount(() => {
-    console.log(tabElements.children);
-    tabNames = Array.from(tabElements.children).map(el => el.getAttribute('title'));
-    Array.from(tabElements.children).forEach(el => el.setAttribute('role', 'tabpanel'));
-    const tab = tabElements.children[activeTab];
-    tab.classList.add('active');
+  $effect(() => {
+    if (tabElements) {
+      console.log(tabElements.children);
+      tabNames = Array.from(tabElements.children).map(el => el.getAttribute('title') || '');
+      Array.from(tabElements.children).forEach(el => el.setAttribute('role', 'tabpanel'));
+      const tab = tabElements.children[activeTab];
+      if (tab) {
+        tab.classList.add('active');
+      }
+    }
   });
-  /**
-   * @param {number} idx
-   */
-  const setActiveTab = (idx) => {
+
+  const setActiveTab = (idx: number) => {
+    if (!tabElements) return;
     const tab = tabElements.children[idx];
-    tabElements.children[activeTab].classList.remove('active');
-    tab.classList.add('active');
+    const currentTab = tabElements.children[activeTab];
+    if (currentTab) {
+      currentTab.classList.remove('active');
+    }
+    if (tab) {
+      tab.classList.add('active');
+    }
     activeTab = idx;
   }
 </script>
@@ -30,7 +32,7 @@
 <div>
   <ul role="tablist" class="tabList">
     {#each tabNames as tabName, idx}
-      <li role="tab" class="tab {idx === activeTab && 'active' }" on:click={() => setActiveTab(idx)}>{tabName}</li>
+      <li role="tab" class="tab {idx === activeTab && 'active' }" onclick={() => setActiveTab(idx)}>{tabName}</li>
     {/each }
   </ul>
   <div class="tabPanels border rounded-sm p-2" bind:this={tabElements}>

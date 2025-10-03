@@ -1,13 +1,14 @@
-<script context="module">
+<script lang="ts">
 	import Card from '../../components/Card.svelte';
   import Badge from '../../components/Badge.svelte';
+  import type { PageData } from './$types';
 
-</script>
+  interface Props {
+    data: PageData;
+  }
 
-<script lang="js">
-  export let data = {};
-  /** @type {PortfolioJSON[]} */
-	export let {portfolios = []} = data;
+  let { data }: Props = $props();
+  const portfolios = $derived(data.portfolios || []);
 </script>
 
 {#each portfolios as portfolio}

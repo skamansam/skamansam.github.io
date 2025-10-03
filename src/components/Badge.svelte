@@ -1,14 +1,17 @@
-<script>
+<script lang="ts">
 	import { capitalize } from "$lib/util";
 
-  export let text = '';
-  export let color = 'tertiary';
-  /** @type string|null */
-  export let to = null;
+  interface Props {
+    text?: string;
+    color?: string;
+    to?: string | null;
+  }
+
+  let { text = '', color = 'tertiary', to = null }: Props = $props();
   
   // Create dynamic class based on color
-  $: bgClass = `bg-${color}Bg`;
-  $: textClass = `text-on${capitalize(color)}Bg`;
+  const bgClass = $derived(`bg-${color}Bg`);
+  const textClass = $derived(`text-on${capitalize(color)}Bg`);
 </script>
 
 <style>

@@ -1,27 +1,31 @@
-<script>
-	let clazz = '';
-	export { clazz as class };
+<script lang="ts">
 	import Badge from './Badge.svelte';
-	/** @type string|null */
-	export let title = 'Test Title',
-		/** @type string|null */
-		subtitle = null,
-		/** @type string|null */
-		metadata = null,
-		/** @type string[] */
-		badges = [],
-		/** @type string[] */
-		markers = [],
-		/** @type string|null */
-		to = null,
-    /** @type string|null */
-    style="",
-    /**@type string[] */
-    tags = []
-    ;
-  if(markers.length > 0 || badges.length > 0) {
-    clazz += 'mt-6';
+
+  interface Props {
+    class?: string;
+    title?: string;
+    subtitle?: string | null;
+    metadata?: string | null;
+    badges?: string[];
+    markers?: string[];
+    to?: string | null;
+    style?: string;
+    tags?: string[];
   }
+
+	let { 
+    class: clazz = '',
+    title = 'Test Title',
+    subtitle = null,
+    metadata = null,
+    badges = [],
+    markers = [],
+    to = null,
+    style = "",
+    tags = []
+  }: Props = $props();
+
+  const cardClass = $derived(markers.length > 0 || badges.length > 0 ? `${clazz} mt-6` : clazz);
 </script>
 
 <style>
@@ -32,7 +36,7 @@
   }
 </style>
 
-<div class="card {clazz} text-onSecondaryBg bg-secondaryBg rounded-element p-4 my-4 drop-shadow-element" {style}>
+<div class="card {cardClass} text-onSecondaryBg bg-secondaryBg rounded-element p-4 my-4 drop-shadow-element" {style}>
   <section>
     <div class="card-head">
       <div class="card-markers">
