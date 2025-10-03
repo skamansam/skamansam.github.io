@@ -7,9 +7,9 @@
 	import { browser } from '$app/environment';
   // import Mermaid from '../components/Mermaid.svelte';
 
-	let brightness = 'light';
-	let theme = '';
-	let themes = [
+	let brightness = $state<'light' | 'dark'>('light');
+	let theme = $state('');
+	const themes = [
 		{ name: 'plain', value: '' },
 		{ name: 'neumorphic', value: 'neumorphic' },
 		{ name: 'glassmorphic', value: 'glassmorphic' },
@@ -17,10 +17,6 @@
 		{ name: 'brutal', value: 'brutal' }
 	];
 
-  let systemBrightness = 'light';
-  if (browser && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    systemBrightness = 'dark';
-  }
 	const detectBrightness = () => {
 		if (!browser) return;
 		const storedBrightness = window.localStorage.getItem('brightness');
@@ -37,22 +33,26 @@
 		else theme = '';
 	};
 
-	const setBrightness = (brightness: string) => {
+	const setBrightness = (newBrightness: 'light' | 'dark') => {
 		if (!browser) return;
-		if (['dark', 'light'].includes(brightness))
-			window.localStorage.setItem('brightness', brightness);
-		if (brightness === 'none') window.localStorage.removeItem('brightness');
-		detectBrightness();
+		if (['dark', 'light'].includes(newBrightness))
+			window.localStorage.setItem('brightness', newBrightness);
+		brightness = newBrightness;
 	};
 
-	const setTheme = (theme: string) => {
+	const setTheme = (newTheme: string) => {
+		console.log(newTheme);
 		if (!browser) return;
-		if (themes.find((t) => t.name === theme)) window.localStorage.setItem('theme', theme);
+		if (themes.find((t) => t.name === newTheme)) window.localStorage.setItem('theme', newTheme);
 		else window.localStorage.removeItem('theme');
-		detectTheme();
+		theme = newTheme;
 	};
 
-	detectBrightness();
+	// Initialize on mount
+	$effect(() => {
+		detectBrightness();
+		detectTheme();
+	});
 </script>
 
 <style>
@@ -64,11 +64,11 @@
 <div class="layout-container m-0 p-0">
   <div class="md:w-md mx-auto my-0 center">
     <Header
-      {theme}
+      bind:theme
       {themes}
       {brightness}
-      on:brightnessChange={(evt) => setBrightness(evt.detail)}
-      on:themeChange={(evt) => setTheme(evt.detail)}
+      onbrightnessChange={setBrightness}
+      onthemeChange={setTheme}
       class="pr-5"
     />
     <Sidebar />

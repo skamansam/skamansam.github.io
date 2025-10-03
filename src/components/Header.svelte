@@ -1,20 +1,36 @@
 <script lang="ts">
 	import { Moon, Sun } from '@steeze-ui/heroicons';
 	import { Icon } from '@steeze-ui/svelte-icon';
-	import { createEventDispatcher } from 'svelte';
 	import RBELogo from './RBELogo.svelte';
-	let clazz = '';
-	export { clazz as class };
-	export let theme = '';
-	export let themes = [{ value: '', name: 'Plain' }];
-	export let brightness = 'light';
-	let isDark = brightness === 'dark';
 
-	const dispatch = createEventDispatcher();
-	const updateBrightness = () => (isDark = !isDark);
+	interface Props {
+		class?: string;
+		theme?: string;
+		themes?: Array<{ value: string; name: string }>;
+		brightness?: 'light' | 'dark';
+		onbrightnessChange?: (brightness: 'light' | 'dark') => void;
+		onthemeChange?: (theme: string) => void;
+	}
 
-	$: dispatch('brightnessChange', isDark ? 'dark' : 'light');
-	$: dispatch('themeChange', theme);
+	let {
+		class: clazz = '',
+		theme = $bindable(''),
+		themes = [{ value: '', name: 'Plain' }],
+		brightness = 'light',
+		onbrightnessChange,
+		onthemeChange
+	}: Props = $props();
+
+	let isDark = $state(brightness === 'dark');
+
+	const updateBrightness = () => { 
+		isDark = !isDark;
+		onbrightnessChange?.(isDark ? 'dark' : 'light');
+	}
+
+	$effect(() => {
+		onthemeChange?.(theme);
+	});
 </script>
 
 <header class={`site-head flex ${clazz || ''}`}>
@@ -27,9 +43,9 @@
 		<div class=" indent-5">Solutions. For Life.</div>
 	</div>
 	<div class="mt-2 mr-2 text-sm">
-		<span on:click={updateBrightness} on:keypress={updateBrightness}
-			><Icon src={isDark ? Sun : Moon} width={18} height={18} class="inline mr-1" /></span
-		>
+		<span onclick={updateBrightness} onkeypress={updateBrightness} role="button" aria-label="Toggle Brightness">
+			<Icon src={isDark ? Sun : Moon} width={18} height={18} class="inline mr-1" />
+		</span>
 		<select bind:value={theme} style="width: 16px;height: 18px;" id="themeSelector">
 			{#each themes as pTheme}
 				<option value={pTheme.value}>{pTheme.name}</option>
