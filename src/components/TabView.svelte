@@ -40,6 +40,7 @@
 
 
 <style type="text/postcss">
+  @reference "../styles/default.css";
   .tabList {
     @apply flex justify-start align-middle list-none p-0 m-0;
   }

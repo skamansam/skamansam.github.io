@@ -1,5 +1,5 @@
 
-.theme-glassmorphic {
+[data-theme="glassmorphic"] {
   --color-onPrimaryBg: theme('colors.blue.600');
   --color-primary-100: theme('colors.green.100');
   --color-primary-200: theme('colors.green.200');

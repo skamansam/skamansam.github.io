@@ -59,7 +59,7 @@
 
 </style>
 
-<svelte:body class="{brightness} theme-{theme} m-0"/>
+<svelte:body class="{brightness} m-0" data-theme={theme}/>
 <Waves/>
 <div class="layout-container m-0 p-0">
   <div class="md:w-md mx-auto my-0 center">

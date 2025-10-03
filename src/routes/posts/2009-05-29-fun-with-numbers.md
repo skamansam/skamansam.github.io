@@ -182,7 +182,7 @@ supposing $i=3$, you would get:
 
 
 $$
-\sum_{i=0}^{3}(P_{`3i`}a^{3-i}b^i) = 
+${"\sum_{i=0}^{3}(P_{`3i`}a^{3-i}b^i)"} = 
 $$
 
 $$
@@ -215,7 +215,7 @@ $$
 Using the commutative property, it can be rewritten as such:
 
 $$
-\sum_{i=0}^{n}(P_{3i}(x^{n-i}y^{i})a^{n-i}b^i) 
+${"\sum_{i=0}^{n}(P_{3i}(x^{n-i}y^{i})a^{n-i}b^i)"} 
 $$
 
 Let's try an example!

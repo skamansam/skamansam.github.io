@@ -36,7 +36,7 @@ export let scale = "1";
 </style>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="avatar-svg" version="1.1" width="{200 * scale}px" height="{200 * scale}px"
-  xlink="http://www.w3.org/1999/xlink" style="overflow:hidden!important;">
+  xlink="http://www.w3.org/1999/xlink" style="overflow:hidden !important;">
   <g id="svga-group-wrapper" transform="scale({scale} {scale})">
     <g id="svga-group-backs-single"></g>
     <g id="svga-group-subwrapper"

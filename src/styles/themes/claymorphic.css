@@ -1,5 +1,5 @@
 
-.theme-claymorphic {
+[data-theme="claymorphic"] {
   --color-onPrimaryBg: theme('colors.purple.600');
   --color-primary-100: theme('colors.green.100');
   --color-primary-200: theme('colors.green.200');

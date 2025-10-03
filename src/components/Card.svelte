@@ -25,6 +25,7 @@
 </script>
 
 <style>
+  @reference "../styles/default.css";
   a.tag {
     @apply text-tertiary bg-quaternary rounded-element mx-2 px-2 py-1 inline-block;
     text-decoration: none;
