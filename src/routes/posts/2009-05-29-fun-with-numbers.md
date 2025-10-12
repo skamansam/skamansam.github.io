@@ -17,7 +17,7 @@ tags:
   - Pascal's Triangle
   - Polynomials
 created_at: 2009-05-29 8:48:00
-updated_at: 2025-08-16T18:54:32.749Z
+updated_at: 2025-10-12T20:04:07.400Z
 lastmod: 2022-11-06T21:44:22.048Z
 ---
 
@@ -111,7 +111,7 @@ $$
 ( (a*a) + (a*b) + (b*a) + (b*b) )(a+b)^{n-1}= 
 $$
 $$
-(a^2+2ab+b^2)(a+b)^{n-1} = 
+(a^2 + 2ab + b^2)(a + b)^{n - 1} = 
 $$
 
 See the coefficients so far, with $n = 2$ ? They are $[1 2 1]$, which corresponds
@@ -121,14 +121,8 @@ let's jump ahead to $n = 5$ to see if that works as well.
 
 $$
 (a+b)^n = 
-$$
-$$
 (a+b)^{n-6}(a+b)^5 = 
-$$
-$$
 (a+b)^{n-6}( (a+b) (a+b) (a+b) (a+b) (a+b) ) = 
-$$
-$$
 (a+b)^{n-6}( ( (a+b)(a+b) )( (a+b)(a+b) ) (a+b) ) = 
 $$
 
@@ -155,7 +149,7 @@ $$
 ( ( a^5 + a^4b + 4a^4b + 4a^3b^2 + 6a^3b^2 + 6a^2b^3 + 4a^2b^3 + 4ab^4 + ab^4+b^5))(a+b)^{n-6}=
 $$
 $$
-( ( a^5 +5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5)(a+b)^{n-6}
+( a^5 +5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5)(a+b)^{n-6}
 $$
 
 
@@ -182,7 +176,7 @@ supposing $i=3$, you would get:
 
 
 $$
-${"\sum_{i=0}^{3}(P_{`3i`}a^{3-i}b^i)"} = 
+{"\sum_{i=0}^{3}(P_{`3i`}a^{3-i}b^i)"} = 
 $$
 
 $$
@@ -215,7 +209,7 @@ $$
 Using the commutative property, it can be rewritten as such:
 
 $$
-${"\sum_{i=0}^{n}(P_{3i}(x^{n-i}y^{i})a^{n-i}b^i)"} 
+{"\sum_{i=0}^{n}(P_{3i}(x^{n-i}y^{i})a^{n-i}b^i)"} 
 $$
 
 Let's try an example!

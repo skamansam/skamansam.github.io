@@ -449,6 +449,7 @@ You can write html, that contains expressions like this:  $x ^ 2 + 5$ inside the
 $$ 
 {'\sum_{i=1}^n(x_i^2 - \overline{x}^2)'}
 $$
+
 In first case you will need to use \$expression\$ and in the second one \$\$expression\$\$. To escape the \$ symbol it's mandatory to write as follows: \\$. To use `display` mode, the block 
 MUST begin with \$\$ and end with \$\$.
 
