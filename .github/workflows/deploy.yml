@@ -25,6 +25,7 @@ jobs:
         run: | 
           rm -rf build
           pnpm build
+          touch build/.nojekyll
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
