@@ -1,0 +1,14 @@
+import"./DsnmJJEf.js";import"./DUAmNnRy.js";import"./7VeBLrFP.js";import{n as s}from"./zEET8Voz.js";import{f as p,a as l}from"./6j56-UlN.js";import{l as m,s as n}from"./DLHvm563.js";import{P as h}from"./Dzp0gZK0.js";const e={comments:!0,view:"post",layout:"post",lang:"en",author:"skamansam",title:"al at werk again",description:"pictures of al at werk again",excerpt:"auto uploaded pics of al at werk again",cover:!1,coverImage:"/images/GSoC-logo-horizontal-800.png",coverAlt:"RBE Logo",categories:["personal"],tags:["Photographs"],created_at:"2008-08-07 14:36",updated_at:"2020-06-17 01:34",preview:`EDIT: the following was a few pictures I took in 2008. I have no idea what they were
+and the host has long since gone offline. They were presumably pictures of my wife, 
+before we were married. This page will remain foir historical purposes.
+
+`,previewHtml:'<p>EDIT: the following was a few pictures I took in 2008. I have no idea what they were and the host has long since gone offline. They were presumably pictures of my wife, before we were married. This page will remain foir historical purposes.</p> <p><a href="http://media2.shozu.com/cache/portal/media/51b3203/16777228"><img src="http://media2.shozu.com/cache/portal/media/51b3203/16777228_journal" alt="my boss at work" title="my boss at work"></a> <a href="http://www.shozu.com/portal/?utm_source=upload&amp;utm_medium=graphic&amp;utm_campaign=upload_graphic/"><img src="http://www.shozu.com/resources/messages/logo_blog.gif" alt="Upload graphic" title="Upload with Shozu"></a></p>',textContent:`EDIT: the following was a few pictures I took in 2008. I have no idea what they were
+and the host has long since gone offline. They were presumably pictures of my wife, 
+before we were married. This page will remain foir historical purposes.
+
+
+
+
+`},{comments:b,view:I,layout:k,lang:z,author:T,title:$,description:x,excerpt:E,cover:D,coverImage:P,coverAlt:U,categories:C,tags:S,created_at:j,updated_at:A,preview:H,previewHtml:B,textContent:G}=e;var c=p(`<p>EDIT: the following was a few pictures I took in 2008. I have no idea what they were
+and the host has long since gone offline. They were presumably pictures of my wife,
+before we were married. This page will remain foir historical purposes.</p> <p><a href="http://media2.shozu.com/cache/portal/media/51b3203/16777228"><img src="http://media2.shozu.com/cache/portal/media/51b3203/16777228_journal" alt="my boss at work" title="my boss at work"/></a> <a href="http://www.shozu.com/portal/?utm_source=upload&amp;utm_medium=graphic&amp;utm_campaign=upload_graphic/"><img src="http://www.shozu.com/resources/messages/logo_blog.gif" alt="Upload graphic" title="Upload with Shozu"/></a></p>`,1);function L(a,o){const t=m(o,["children","$$slots","$$events","$$legacy"]);h(a,n(()=>t,()=>e,{children:(r,w)=>{var i=c();s(2),l(r,i)},$$slots:{default:!0}}))}export{L as default,e as metadata};
