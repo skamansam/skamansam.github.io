@@ -1,33 +1,47 @@
 <script lang="ts">
   import type { Font, FontVariant } from '$lib/WebFontImporterTypes';
   import WebFontImporter from "./WebFontImporter.svelte";
-  export let text: string|null = null;
-  export let bgColor = "#FFDD00";
-  export let coffeeColor: string = "brown";
-  // export let outlineColor: string = "#0D0C23";
-  export let textColor: string = "#0D0C23";  
-  export let fontFamily: string|null = null;
-  export let fontVariant: FontVariant = "400";
-  export let height=153;
-  export let width=545;  
-  export let scale=1.0;
+
+  interface Props {
+    text?: string | null;
+    bgColor?: string;
+    coffeeColor?: string;
+    textColor?: string;
+    fontFamily?: string | null;
+    fontVariant?: FontVariant;
+    height?: number;
+    width?: number;
+    scale?: number;
+  }
+
+  let {
+    text: initialText = null,
+    bgColor = "#FFDD00",
+    coffeeColor = "brown",
+    textColor = "#0D0C23",
+    fontFamily: initialFontFamily = null,
+    fontVariant = "400",
+    height = 153,
+    width = 545,
+    scale = 1.0
+  }: Props = $props();
+
   const buttonScaleFactor = 0.392156863; // height of normal button size (60px) / svg window (153)
 
-  // export let fontWeight: string = "400";
-  if (text && !fontFamily) fontFamily = 'Cookie';
-  if (fontFamily && !text) text = "Buy me a coffee";
+  // Create state variables for text and fontFamily since they need to be mutable
+  let text = $state(initialText);
+  let fontFamily = $state(initialFontFamily);
 
-  let fonts:Font[] = [];
-  $: {
-      if (fontFamily) {
-        fonts  = [{
-          family: fontFamily,
-          variants: ["400"],
-        }
-      ];
-      if (fontVariant) fonts[0].variants = [fontVariant];
-    }
-  }
+  // Set defaults based on props
+  $effect(() => {
+    if (text && !fontFamily) fontFamily = 'Cookie';
+    if (fontFamily && !text) text = "Buy me a coffee";
+  });
+
+  const fonts = $derived<Font[]>(fontFamily ? [{
+    family: fontFamily,
+    variants: fontVariant ? [fontVariant] : ["400"],
+  }] : []);
 </script>
 
 <style>

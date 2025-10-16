@@ -144,8 +144,8 @@
 					>
 				</p>
 			{/if}
-			<p class="author">by: <span itemprop="author" content="@{author}" />{author}</p>
-			<p class="readingTime"><span itemprop="readingTime" />Reading Time: {timeToRead.text}</p>
+			<p class="author">by: <span itemprop="author" content="@{author}"></span>{author}</p>
+			<p class="readingTime"><span itemprop="readingTime"></span>Reading Time: {timeToRead.text}</p>
 		</hgroup>
 		<div class="description hidden" itemprop="description">{description}</div>
 		<slot />

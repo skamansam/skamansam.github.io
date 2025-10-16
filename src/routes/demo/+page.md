@@ -444,11 +444,17 @@ Github-style emojis are supported via [node-emoji](https://github.com/omnidan/no
 Emoticons are supported via [emoticons](https://github.com/wooorm/emoticon/blob/HEAD/support.md).
 
 ## ✅ Latex Support
+
+
+>The current working version of `remark-math` is `3.0.1`, which is not the latest version, but is the only version that works well with `mdsvex`, which is what this blog uses to render markdown. 
+
+
 You can write html, that contains expressions like this:  $x ^ 2 + 5$ inside them. As you probably know. You also can write expressions in display mode as follows: 
 
 $$ 
 {'\sum_{i=1}^n(x_i^2 - \overline{x}^2)'}
 $$
+
 In first case you will need to use \$expression\$ and in the second one \$\$expression\$\$. To escape the \$ symbol it's mandatory to write as follows: \\$. To use `display` mode, the block 
 MUST begin with \$\$ and end with \$\$.
 

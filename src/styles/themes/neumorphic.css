@@ -1,5 +1,5 @@
 
-.theme-neumorphic {
+[data-theme="neumorphic"] {
   --color-onPrimaryBg: theme('colors.gray.300');
   --color-primary-100: theme('colors.blue.100');
   --color-primary-200: theme('colors.blue.200');

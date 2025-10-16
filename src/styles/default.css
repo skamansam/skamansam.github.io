@@ -2,9 +2,8 @@
  * Default styles for html elements, cuz tailwind removes them
  */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@reference "./themes/default.css";
 
 html {
   font-size: 16px;
@@ -125,7 +124,8 @@ h6 {
 }
 
 hr {
-  @apply py-3 px-2 border-secondary;
+  @apply py-3 px-2;
+  border-color: var(--color-secondary);
 }
 
 a {

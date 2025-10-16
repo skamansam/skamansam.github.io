@@ -1,50 +1,48 @@
 
-/* NOTE: To use google fonts instead of bunny fonts, toggle the comments on the following lines: */
-/* @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Goldman&family=Mukta&family=Fugaz+One&family=Playball&family=Oswald&display=swap'); */
-@import url('https://fonts.bunny.net/css?family=Amiri:400|Goldman:400|Mukta:400|Fugaz+One:400|Playball:400|Oswald:400|Roboto:400&display=swap');
 
+@theme {
+  --color-neutral-100: theme("color.stone.100");
+  --color-neutral-200: theme("color.stone.200");
+  --color-neutral-300: theme("color.stone.300");
+  --color-neutral-400: theme("color.stone.400");
+  --color-neutral-500: theme("color.stone.500");
+  --color-neutral-600: theme("color.stone.600");
+  --color-neutral-700: theme("color.stone.700");
+  --color-neutral-800: theme("color.stone.800");
+  --color-neutral-900: theme("color.stone.900");
 
-:root {
-  --color-neutral-100: theme('colors.stone.100');
-  --color-neutral-200: theme('colors.stone.200');
-  --color-neutral-300: theme('colors.stone.300');
-  --color-neutral-400: theme('colors.stone.400');
-  --color-neutral-500: theme('colors.stone.500');
-  --color-neutral-600: theme('colors.stone.600');
-  --color-neutral-700: theme('colors.stone.700');
-  --color-neutral-800: theme('colors.stone.800');
-  --color-neutral-900: theme('colors.stone.900');
-
-  --color-secondary: theme('colors.violet.600');
-  --color-secondarySoft: theme('colors.violet.400');
-  --color-onPrimaryBg: theme('colors.stone.900');
-  --color-primaryBorder: theme('colors.stone.900');
-  --color-primarySoft: theme('colors.slate.300');
-  --linkDecoration: theme('colors.violet.300');
-  --font-logoFont: "Goldman", cursive;
+  --color-secondary: theme("color.violet.600");
+  --color-secondarySoft: theme("color.violet.400");
+  --color-onPrimaryBg: theme("color.stone.900");
+  --color-primaryBorder: theme("color.stone.900");
+  --color-primarySoft: theme("color.slate.300");
+  --linkDecoration: theme("color.violet.300");
+  --font-logoFont: "Goldman", sans-serif;
   --sidebar-height: 30px;
-  --color-tertiaryBg: theme('colors.purple.500');
-  --color-onTertiaryBg: theme('colors.stone.300');
-  --color-onSecondaryBg: theme('colors.stone.900');
-  --color-primaryBg: theme('colors.stone.300');
+  --color-tertiaryBg: theme("color.purple.500");
+  --color-onTertiaryBg: theme("color.stone.300");
+  --color-onSecondaryBg: theme("color.stone.900");
+  --color-primaryBg: theme("color.stone.300");
   --color-primaryBgRGB: 214, 211, 209;
   --border-radius-element: 0.5rem;
-  --color-secondaryBg: theme('colors.zinc.100');
-  --drop-shadow-element: theme('boxShadow.xl');
-  --color-tertiary: theme('colors.yellow.400');
-  --color-quaternary: theme('colors.stone.900');
+  --color-secondaryBg: theme("color.zinc.100");
+  --drop-shadow-element: var(--box-shadow-xl);
+  --color-tertiary: theme("color.yellow.400");
+  --color-quaternary: theme("color.stone.900");
+
+  --radius-element: 0.5rem;
 
 }
 
 .dark {
-  --color-onPrimaryBg: theme('colors.stone.300');
-  --color-primaryBg: theme('colors.stone.900');
+  --color-onPrimaryBg: theme("color.stone.300");
+  --color-primaryBg: theme("color.stone.900");
   --color-primaryBgRGB: 28, 25, 23;
-  --color-primaryBorder: theme('colors.stone.300');
-  --color-onSecondaryBg: theme('colors.stone.300');
-  --color-secondaryBg: theme('colors.zinc.800');
-  --color-tertiaryBg: theme('colors.purple.900');
-  --color-onTertiaryBg: theme('colors.stone.300');
+  --color-primaryBorder: theme("color.stone.300");
+  --color-onSecondaryBg: theme("color.stone.300");
+  --color-secondaryBg: theme("color.zinc.800");
+  --color-tertiaryBg: theme("color.purple.900");
+  --color-onTertiaryBg: theme("color.stone.300");
 }
 
 html {
@@ -111,7 +109,7 @@ header.site-head {}
   @keyframes blinker {
     50% {
       opacity: .5;
-      @apply text-yellow-300
+      color: #fde047; /* Replaced @apply text-yellow-300 with direct color value */
     }
   }
 .sidebar .navMenu {
@@ -133,7 +131,7 @@ header.site-head {}
     @apply text-onPrimaryBg w-fit
   }
   .sidebar .menuButton {
-    @apply block !important;
+    @apply block!;
     z-index: 3;
   }
 }

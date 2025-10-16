@@ -1,10 +1,12 @@
+/* NOTE: To use google fonts instead of bunny fonts, toggle the comments on the following lines: */
+/* @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Goldman&family=Mukta&family=Fugaz+One&family=Playball&family=Oswald&display=swap'); */
+@import url('https://fonts.bunny.net/css?family=Amiri:400|Goldman:400|Mukta:400|Fugaz+One:400|Playball:400|Oswald:400|Roboto:400&display=swap');
+
+@import "tailwindcss";
+
 @import '../node_modules/prism-themes/themes/prism-synthwave84.css';
 /* @import 'prism-themes/themes/prism-laserwave.css'; */
 @import '../node_modules/katex/dist/katex.css';
 
-@import 'styles/default.css';
-@import 'styles/themes/default.css';
-@import 'styles/themes/brutal.css';
-@import 'styles/themes/neumorphic.css';
-@import 'styles/themes/glassmorphic.css';
-@import 'styles/themes/claymorphic.css';
+@import './styles/tailwind.css';
+

@@ -16,8 +16,9 @@
 </script>
 
 <style>
+  @reference "../styles/default.css";
   dialog {
-    @apply bg-secondarySoft
+    @apply bg-secondarySoft;
   }
   dialog::backdrop {
     background-color: black;

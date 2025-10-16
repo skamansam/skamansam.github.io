@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@import './default.css';
+
+@import './themes/default.css';
+@import './themes/brutal.css';
+@import './themes/neumorphic.css';
+@import './themes/glassmorphic.css';
+@import './themes/claymorphic.css';

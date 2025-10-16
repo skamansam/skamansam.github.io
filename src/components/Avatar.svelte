@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 /**
   Avatar is a component that renders an avatar image in SVG. To create your own,
   1. go to https://www.cartoonize.net/avatar-maker/
@@ -11,9 +11,13 @@
   TODO: get multiple svgs and add them to the html below
 */
 
-export let width = "600px";
-export let height = "600px";
-export let scale = "1";
+interface Props {
+  width?: string;
+  height?: string;
+  scale?: string;
+}
+
+let { width = "600px", height = "600px", scale = "1" }: Props = $props();
 </script>
 
 <style>
@@ -36,7 +40,7 @@ export let scale = "1";
 </style>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="avatar-svg" version="1.1" width="{200 * scale}px" height="{200 * scale}px"
-  xlink="http://www.w3.org/1999/xlink" style="overflow:hidden!important;">
+  xlink="http://www.w3.org/1999/xlink" style="overflow:hidden !important;">
   <g id="svga-group-wrapper" transform="scale({scale} {scale})">
     <g id="svga-group-backs-single"></g>
     <g id="svga-group-subwrapper"
