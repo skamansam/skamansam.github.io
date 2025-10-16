@@ -3,16 +3,26 @@ title: Mastering Vibe Coding with AI Assistants
 description: A comprehensive guide on how to effectively use AI assistants as your personal junior developer to enhance your coding workflow.
 excerpt: Vibe coding is a new frontier in programming that leverages AI assistants as your personal junior developer. Learn how to effectively mentor your AI assistant to produce better code and enhance your development workflow.
 created_at: 2025-04-28T08:41:40-04:00
-updated_at: 2025-04-28T15:56:58.502Z
-coverImage: /images/cover/vide-coding-with-ai-assistants.png
-coverImageAlt: Illustration of a human developer and a glowing AI assistant collaborating at a laptop, surrounded by faint outlines of code snippets, checklists, and planning diagrams. The image symbolizes the collaborative approach of vibe coding with AI assistants.
+updated_at: 2025-10-16T03:06:09.653Z
+coverImage: /images/cover/mastering-vibe-coding-with-ai-assistants.png
+coverImageAlt: "A realistic modern developer workspace: a sleek laptop on a wooden desk showing a split screen—left side is a code editor with syntax‑highlighted JavaScript/Python lines, right side displays a GitHub pull‑request review UI with comment bubbles and green checkmarks. A human hand (right hand) gently points to a highlighted line of code. Subtle neon blue/green tones dominate the scene. In the top left corner, a faint stylized neural network icon is present but not prominent. Clear overlay text reads “Human‑in‑the‑Loop” at the top and “Mastering Vibe Coding with AI Assistants” below in a clean sans‑serif font. High resolution, photorealistic style. No clutter, no cartoonish elements, no harsh reds or oranges, minimal background distractions."
 draft: false
-tags: [ai, coding, development, productivity]
-categories: [technology]
-twitterImage: ""
-opengraphImage: ""
+tags:
+    - ai
+    - coding
+    - development
+    - productivity
+categories:
+    - technology
+twitterImage: /images/mastering-vibe-coding-with-ai-assistants.png
+opengraphImage: /images/mastering-vibe-coding-with-ai-assistants.png
 meta: ""
-layout: ""
+layout: post
+keywords:
+    - ai
+    - coding
+    - development
+    - productivity
 ---
 
 > NOTE: This article was vibed using Windsurf and Claude 3.7, based on my responses to many posts, articles, and videos online. I decided to summarize all my notes here to help me remember the key points and to share them with others.
