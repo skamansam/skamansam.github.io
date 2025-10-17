@@ -1,5 +1,6 @@
 ---
-view: author
+# view: author
+layout: author
 lang: en
 title: Articles by "Skaman Sam" Tyler
 description: Samuel Tyler is a 10 year full-stack software developer, specializing in Python, Ruby on Rails, Kubernetes, and Javascript.

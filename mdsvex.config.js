@@ -60,6 +60,7 @@ const config = defineConfig({
 	layout: {
 		post:  dirname(fileURLToPath(import.meta.url)) + '/src/layouts/post.svelte',
 		posts:  dirname(fileURLToPath(import.meta.url)) + '/src/layouts/posts.svelte',
+		author:  dirname(fileURLToPath(import.meta.url)) + '/src/layouts/author.svelte',
 		portfolio:  dirname(fileURLToPath(import.meta.url)) + '/src/layouts/portfolio.svelte',
 		_:  dirname(fileURLToPath(import.meta.url)) + '/src/layouts/post.svelte'
 	},
