@@ -46,7 +46,7 @@ I rolled this site in about a day, using Svelte, MDSvex, and Tailwind. It has th
   * [ ] 📈 figures and charts with mermaid (initial tests failed. needs more work/debugging)
 * [ ] 👨‍🦱 Auto Generated [humans.txt](https://humanstxt.org) support
 * [ ] 🔍Algolia search integration
-* [ ] 💬 Comments using Github Discussions!
+* [X] 💬 Comments using Github Discussions! (See [setup guide](docs/GITHUB_DISCUSSIONS_SETUP.md))
 * [ ] ✔️ [accessible site validation](https://usabilitygeek.com/10-free-web-based-web-site-accessibility-evaluation-tools)
   * 👋 [WAVE](https://wave.webaim.org/report#/https://rudeboy.dev)
 * [ ] 🖌️ Theme implementation:

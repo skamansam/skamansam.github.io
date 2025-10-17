@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import Settings from '$lib/settings';
   import { readingTime } from 'reading-time-estimator';
+	import GitHubDiscussions from '../components/GitHubDiscussions.svelte';
 
   // export let data;
   // export let slug;
@@ -149,5 +150,12 @@
 		</hgroup>
 		<div class="description hidden" itemprop="description">{description}</div>
 		<slot />
+		
+		<GitHubDiscussions 
+			owner="skamansam"
+			repo="skamansam.github.io"
+			postTitle={title}
+			discussionCategory="General"
+		/>
 	</article>
 </main>
