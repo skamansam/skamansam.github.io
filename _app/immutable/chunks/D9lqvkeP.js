@@ -1,1 +1,0 @@
-import{a2 as t,a3 as S,q as b,a4 as h,S as k}from"./zEET8Voz.js";function u(r,a){return r===a||r?.[k]===a}function c(r={},a,f,q){return t(()=>{var i,s;return S(()=>{i=s,s=[],b(()=>{r!==f(...s)&&(a(r,...s),i&&u(f(...i),r)&&a(null,...i))})}),()=>{h(()=>{s&&u(f(...s),r)&&a(null,...s)})}}),r}export{c as b};
