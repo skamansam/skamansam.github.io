@@ -76,33 +76,43 @@ The component is already integrated into the post layout (`src/layouts/post.svel
 
 ## How It Works
 
-### First Visit
-1. When a user visits a blog post, the component searches for an existing discussion with the post title
-2. If no discussion exists, a message is shown: "No discussion found for this post"
-3. Users can still post comments, which will create the discussion automatically
+### Automatic Discussion Creation (New!)
 
-### Posting Comments
-1. User writes a comment in the textarea
-2. If no discussion exists, one is created automatically with the post title
-3. The comment is posted to the discussion via GitHub's GraphQL API
-4. The comment appears immediately in the list
+Discussions are now created **automatically during deployment**:
+
+1. When you push to the `svelte` branch, a sync script runs before building
+2. The script scans all published articles (non-draft markdown files)
+3. For each article, it checks if a discussion exists
+4. If not, it creates a new discussion in the "Blog Entries" category
+5. A mapping file is generated linking articles to their discussions
+6. The site is built and deployed with the mapping file
+
+See [SYNC_DISCUSSIONS.md](./SYNC_DISCUSSIONS.md) for detailed information about the sync process.
 
 ### Viewing Comments
-1. Comments are fetched from the GitHub Discussions API
-2. Each comment shows:
+1. When a user visits a blog post, the component loads the discussion number from the mapping file
+2. Comments are fetched from the GitHub Discussions API
+3. Each comment shows:
    - Author's avatar and username
    - Comment content (rendered as HTML with Markdown support)
    - Timestamp
    - Link to view on GitHub
 
+### Posting Comments
+1. User writes a comment in the textarea
+2. The comment is posted to the existing discussion via GitHub's GraphQL API
+3. The comment appears immediately in the list
+
 ## Discussion Categories
 
-You can organize discussions by category. To use a specific category:
+**Important**: You must create a "Blog Entries" category in your repository:
 
 1. Go to your repository's Discussions tab
 2. Click the gear icon next to "Categories"
-3. Create a new category (e.g., "Blog Comments")
-4. Update the `discussionCategory` prop in your component
+3. Create a new category called **"Blog Entries"** (exact name)
+4. (Optional) Add a description and emoji
+
+The sync script uses this category by default. To use a different category, edit the `DISCUSSION_CATEGORY` constant in `scripts/sync-discussions.js`.
 
 ## Deployment Considerations
 

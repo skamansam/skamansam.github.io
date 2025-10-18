@@ -10,3 +10,4 @@ node_modules
 
 # VuePress
 /vuepress/.*
+.discussions-mapping.json

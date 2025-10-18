@@ -10,7 +10,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"sync-discussions": "node scripts/sync-discussions.js"
 	},
 	"devDependencies": {
 		"@playwright/test": "1.55.1",
@@ -45,7 +46,9 @@
 		"@sveltekit-addons/document": "^1.0.1",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.1.14",
+		"dotenv": "^16.4.5",
 		"eslint-plugin-svelte": "^3.12.4",
+		"gray-matter": "^4.0.3",
 		"katex": "^0.16.22",
 		"prism-themes": "^1.9.0",
 		"reading-time": "^1.5.0",

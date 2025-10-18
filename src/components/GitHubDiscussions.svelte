@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { getDiscussionByTitle } from '$lib/discussions';
 
 	interface Props {
 		repo: string;
@@ -47,7 +48,10 @@
 	let newComment = $state('');
 	let posting = $state(false);
 
-	const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
+	// Use read-only token for fetching (exposed to client)
+	const GITHUB_TOKEN_READONLY = import.meta.env.VITE_GITHUB_TOKEN_READONLY || import.meta.env.VITE_GITHUB_TOKEN;
+	// Use write token for posting (should only be used server-side, but included for backward compatibility)
+	const GITHUB_TOKEN_WRITE = import.meta.env.VITE_GITHUB_TOKEN;
 
 	async function fetchDiscussion() {
 		if (!discussionNumber) {
@@ -91,7 +95,7 @@
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					Authorization: `Bearer ${GITHUB_TOKEN}`
+					Authorization: `Bearer ${GITHUB_TOKEN_READONLY}`
 				},
 				body: JSON.stringify({
 					query,
@@ -143,7 +147,7 @@
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					Authorization: `Bearer ${GITHUB_TOKEN}`
+					Authorization: `Bearer ${GITHUB_TOKEN_READONLY}`
 				},
 				body: JSON.stringify({
 					query: searchQuery,
@@ -198,7 +202,7 @@
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					Authorization: `Bearer ${GITHUB_TOKEN}`
+					Authorization: `Bearer ${GITHUB_TOKEN_WRITE}`
 				},
 				body: JSON.stringify({
 					query: categoryQuery,
@@ -246,7 +250,7 @@
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					Authorization: `Bearer ${GITHUB_TOKEN}`
+					Authorization: `Bearer ${GITHUB_TOKEN_WRITE}`
 				},
 				body: JSON.stringify({
 					query: repoQuery,
@@ -261,7 +265,7 @@
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					Authorization: `Bearer ${GITHUB_TOKEN}`
+					Authorization: `Bearer ${GITHUB_TOKEN_WRITE}`
 				},
 				body: JSON.stringify({
 					query: createQuery,
@@ -325,7 +329,7 @@
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					Authorization: `Bearer ${GITHUB_TOKEN}`
+					Authorization: `Bearer ${GITHUB_TOKEN_WRITE}`
 				},
 				body: JSON.stringify({
 					query: mutation,
@@ -364,12 +368,26 @@
 		});
 	}
 
-	onMount(() => {
-		if (!GITHUB_TOKEN) {
-			error = 'GitHub token not configured. Please set VITE_GITHUB_TOKEN environment variable.';
+	onMount(async () => {
+		if (!GITHUB_TOKEN_READONLY) {
+			error = 'GitHub token not configured. Please set VITE_GITHUB_TOKEN_READONLY environment variable.';
 			loading = false;
 			return;
 		}
+		
+		// Try to load discussion number from mapping if not provided
+		if (!discussionNumber && postTitle) {
+			try {
+				const mapping = await getDiscussionByTitle(postTitle);
+				if (mapping) {
+					discussionNumber = mapping.discussionNumber;
+					console.log(`Found discussion #${discussionNumber} for "${postTitle}"`);
+				}
+			} catch (err) {
+				console.warn('Could not load discussion mapping:', err);
+			}
+		}
+		
 		fetchDiscussion();
 	});
 </script>
@@ -419,7 +437,7 @@
 		{/each}
 	</div>
 
-	{#if GITHUB_TOKEN}
+	{#if GITHUB_TOKEN_WRITE}
 		<div class="comment-form">
 			<h3>Leave a comment</h3>
 			<p class="info">
