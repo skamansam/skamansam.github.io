@@ -1,3 +1,4 @@
+
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
@@ -150,4 +151,8 @@
 		<div class="description hidden" itemprop="description">{description}</div>
 		<slot />
 	</article>
+	<div class="comments">
+		<script defer src="https://i.emote.com/js/emote.js"></script>
+		<div id="emote_com"></div>
+	</div>
 </main>
