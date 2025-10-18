@@ -1,0 +1,12 @@
+import"./DsnmJJEf.js";import"./DUAmNnRy.js";import"./7VeBLrFP.js";import{n as i}from"./Dhn-IdaH.js";import{f as r,a as h}from"./B988bg3s.js";import{l as d,s as l}from"./9VelmjdU.js";import{P as c}from"./BFPr3XtU.js";const e={draft:!0,comments:!0,view:"post",layout:"post",lang:"en",author:"skamansam",title:"Firefox Add-Ons I can't Live Without",description:"Firefox Add-Ons I can't Live Without",excerpt:"Since Firefox is the best browser so far (Google's Chrome a close second), here is a list of the best Firefox add-ons.",cover:!1,coverImage:!1,coverAlt:"RBE Logo",categories:["web-development"],tags:["Browser Wars"],created_at:"2016-09-06T09:36:41.000Z",updated_at:"2016-09-06T09:36:41.000Z",preview:`I have been a web developer since 1996, and have seen many things come and go in
+web technologies. I have since read Tim Berners-Lee's book on how he started the
+Web, "Weaving The Web". In it, he explains about his original ideas for
+seperation of...`,previewHtml:`<p>I have been a web developer since 1996, and have seen many things come and go in web technologies. I have since read Tim Berners-Lee's book on how he started the Web, "Weaving The Web". In it, he explains about his original ideas for seperation of co...</p>`,textContent:`I have been a web developer since 1996, and have seen many things come and go in
+web technologies. I have since read Tim Berners-Lee's book on how he started the
+Web, "Weaving The Web". In it, he explains about his original ideas for
+seperation of content and style - which is finally here - in...`},{draft:x,comments:I,view:W,layout:y,lang:$,author:T,title:L,description:F,excerpt:B,cover:k,coverImage:C,coverAlt:A,categories:S,tags:H,created_at:P,updated_at:G,preview:O,previewHtml:Z,textContent:z}=e;var p=r(`<p>I have been a web developer since 1996, and have seen many things come and go in
+web technologies. I have since read Tim Berners-Lee's book on how he started the
+Web, "Weaving The Web". In it, he explains about his original ideas for
+seperation of content and style - which is finally here - in XHTML and CSS.
+Since Firefox is the best browser so far (Google's Chrome a close second), here
+is a list of the best Firefox add-ons.</p> <ol><li>Firebug</li></ol>`,1);function E(o,t){const a=d(t,["children","$$slots","$$events","$$legacy"]);c(o,l(()=>a,()=>e,{children:(n,m)=>{var s=p();i(2),h(n,s)},$$slots:{default:!0}}))}export{E as default,e as metadata};
